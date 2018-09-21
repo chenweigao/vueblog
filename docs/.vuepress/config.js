@@ -1,11 +1,11 @@
 module.exports = {
-    title: 'Hello VuePress',
-    description: 'Just playing around',
+    title: 'WGsite-2',
+    description: 'anothor site for work',
     themeConfig: {
         nav: [
           { text: 'Home', link: '/' },
-          { text: 'Guide', link: '/guide/' },
-          { text: 'External', link: 'https://google.com' },
+          { text: 'Blog', link: '/blog/' },
+          { text: 'Docs', link: '/logs/' },
         ]
       }
   }
