@@ -1,4 +1,5 @@
 # 2018/work log
+
 ## July
 
 [Jul 17](https://www.weigao.cc/blog/2018/07/19/facerecog.html)  Darknet, YOLO, write the patent, new version.

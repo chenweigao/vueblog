@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'WEIGAO WORK',
+  title: 'work.weigao.cc',
   description: 'anothor site for work',
   // head: [
   //   ['link', { rel: 'icon', href: '/dist/assets/img/author21.png'}]
@@ -54,9 +54,9 @@ module.exports = {
         '',
         'c'
       ],
-      // '/algorithm/leetcode/': [
-      //   '',
-      // ],
+      '/algorithm/leetcode/': [
+        '',
+      ],
       '/linux/': [
         '',
         'git'
@@ -69,6 +69,7 @@ module.exports = {
       '/algorithm/': [
         '',
         '/cpp/',
+        '/leetcode/'
       ],
       '/logs/':[
         '',
