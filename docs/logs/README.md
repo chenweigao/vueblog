@@ -1,2 +1,65 @@
-# Worklog
+# 2018/work log
+## July
 
+[Jul 17](https://www.weigao.cc/blog/2018/07/19/facerecog.html)  Darknet, YOLO, write the patent, new version.
+
+[Jul 18](https://www.weigao.cc/blog/2018/07/25/flask.html) Flask web development, with Visual Studio
+
+[Jul 23](https://github.com/chenweigao/smarttrack.git)  Flask video stream [v1.0](#)
+[Jul 24](https://www.weigao.cc/blog/2018/07/25/flask.html)  Flask database: MongoDB [v0.1](#)
+
+[Jul 25]()  Flask unit test; meeting about Flask site develop
+
+[Jul 26](https://www.weigao.cc/blog/2017/11/13/csitool.html) visit NLP team; rebuild CSI tool(**ERROR** in `log_to_file`); modify [`one_key_install.sh`](https://www.weigao.cc/blog/2018/03/31/shell#4-sed)
+
+[Jul 27](https://www.weigao.cc/blog/2018/07/25/flask.html#rendering-templates) Flask 404 page, rendering templates
+
+[Jul 28]() test bootstrap: how to import flask from `flask_bootstrap` and use it in `extends`; Flask struct, **FAILED** and checkout all code(sad..); path import problem
+
+[Jul 29](https://www.weigao.cc/blog/2018/07/25/flask.html#flask_bootstrap) add new branch `bootstrap_test` and **SUCCESS** [import](https://www.weigao.cc/blog/2018/07/25/flask.html#flask_bootstrap)
+
+[Jul 30](https://www.weigao.cc/blog/2018/07/25/flask.html#flask_bootstrap) add new function into `bootstrap_test` branch; initialize the app by flask extend; `Flask-Moment` to show time format
+
+
+
+## August
+
+[Aug  01]() Flask MongoDB initialization
+
+[Aug  02](https://www.weigao.cc/blog/2018/07/25/flask.html#blueprint) solved path problem in Flask; Login [v1.0](#){:.button.button--secondary.button--pill} with `wtforms`; new Struct  [v2.0](#){:.button.button--secondary.button--pill}; [blueprint](https://www.weigao.cc/blog/2018/07/25/flask.html#blueprint)
+
+[Aug  03]() `@property` in Python; login in terminal
+
+[Aug 22](http://www.runoob.com/sqlite/sqlite-tutorial.html) `@mian.route()` usage; SQLite
+
+[Aug 23]() switches by Flask Forms
+
+[Aug 30]() Flask PyMongo, bootstrap CSS, CDN, Jinja block
+
+[Aug 31](https://www.weigao.cc/blog/2018/08/31/charts.html) Charts, JavaScript used in Flask
+
+
+
+## September
+
+[Sep 01]() `Charts.js`, npm
+
+[Sep 05]() responsive charts
+
+[Sep 06]() solved problem, `kramdown` problem, fix bug highlight problem in Jekyll, with [highlight.js](https://highlightjs.org/)
+
+[Sep 11](https://flask-socketio.readthedocs.io/en/latest/) Flask-SocketIO
+
+[Sep 12]() rebuild struct, add the extra servers for socket server
+
+[Sep 13]() CSS `!important` usage
+
+[Sep 14]() [Vundle.vim](https://github.com/VundleVim/Vundle.vim),plugin: [YCM](https://github.com/Valloric/YouCompleteMe)
+
+[Sep 15]() Mongo DB restore, rebuild Flask site, implemented web camera
+
+[Sep 18]() Dashboard
+
+[Sep 19]() Start `vue.js`
+
+[Sep 25]() Deploy the site in Aliyun, let the site available via [IP address: 120.78.71.220](120.78.71.220) 

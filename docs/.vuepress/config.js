@@ -66,12 +66,12 @@ module.exports = {
         'a',
         'b',
       ],
-      'algorithm': [
+      '/algorithm/': [
         '',
         '/cpp/',
       ],
-      'docs':[
-        ''
+      '/logs/':[
+        '',
       ],
       '/': [
         '',
