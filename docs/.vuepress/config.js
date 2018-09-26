@@ -18,8 +18,8 @@ module.exports = {
         link: '/web/'
       },
       {
-        text: 'Tool',
-        link: '/tool/'
+        text: 'Linux',
+        link: '/linux/'
       },
       {
         text: 'Docs',
@@ -57,6 +57,10 @@ module.exports = {
       // '/algorithm/leetcode/': [
       //   '',
       // ],
+      '/linux/': [
+        '',
+        'git'
+      ],
       '/web/': [
         '',
         'a',
@@ -64,13 +68,15 @@ module.exports = {
       ],
       'algorithm': [
         '',
-        '/cpp/'
+        '/cpp/',
+      ],
+      'docs':[
+        ''
       ],
       '/': [
         '',
       ]
     },
-    // sidebar : 'auto',
     serviceWorker: {
       updatePopup: true // Boolean | Object, 默认值是 undefined.
       // 如果设置为 true, 默认的文本配置将是: 
