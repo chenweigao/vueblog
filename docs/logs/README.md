@@ -64,3 +64,5 @@
 [Sep 19]() Start `vue.js`
 
 [Sep 25]() Deploy the site in Aliyun, let the site available via [IP address: 120.78.71.220](120.78.71.220) 
+
+[Sep 26]() Debug the site
