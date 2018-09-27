@@ -38,7 +38,7 @@ pip install flask-socketio
 ```python
 from flask import current_app
 ```
-> [`g`](http://flask.pocoo.org/docs/1.0/api/#flask.g) is a special object that is unique for each request. It is used to store data that might be accessed by multiple functions during the request. The connection is stored and reused instead of creating a new connection if `get_db` is called a second time in the same request.
+[`g`](http://flask.pocoo.org/docs/1.0/api/#flask.g) is a special object that is unique for each request. It is used to store data that might be accessed by multiple functions during the request. The connection is stored and reused instead of creating a new connection if `get_db` is called a second time in the same request.
 
 ## Blueprint
 
@@ -46,8 +46,7 @@ from flask import current_app
 
 We use the `create_app()` so that the application is created at runtime.
 
-> A blueprint is similar to an application in that it can also define routes. The difference is that routes associated with
-> a blueprint are in a dormant state until the blueprint is registered with an application, at which point the routes become part of it.
+A blueprint is similar to an application in that it can also define routes. The difference is that routes associated with a blueprint are in a dormant state until the blueprint is registered with an application, at which point the routes become part of it.
 
 ```python
 # app/main/__init__.py
