@@ -1,12 +1,12 @@
 
-# Python Web Development, Flask
+# Flask
 
 [How to build socketio in Flask project : socketio](#socketio)
 
 Flask **variable, [blueprint](#blueprint)** and install from **[requirement.txt](#requirement.txt)**, some basic knowledge about **WSGI, Nginx and Django**.
 
 
-# Reference
+## Reference
 
 | NAME           | URL                                                          | DESCRIPTION                                                  |
 | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -16,7 +16,7 @@ Flask **variable, [blueprint](#blueprint)** and install from **[requirement.txt]
 
 
 
-# SocketIO
+## SocketIO
 
 ```shell
 pip install flask-socketio
@@ -24,7 +24,7 @@ pip install flask-socketio
 
 
 
-# Flask Structure
+## Flask Structure
 
 **application context and request context**：
 
@@ -40,7 +40,7 @@ from flask import current_app
 ```
 > [`g`](http://flask.pocoo.org/docs/1.0/api/#flask.g) is a special object that is unique for each request. It is used to store data that might be accessed by multiple functions during the request. The connection is stored and reused instead of creating a new connection if `get_db` is called a second time in the same request.
 
-# Blueprint
+## Blueprint
 
 [Tutorial : Modular Applications with Blueprints](http://flask.pocoo.org/docs/1.0/blueprints/)
 
@@ -57,9 +57,9 @@ main = Blueprint('main', __name__)
 
 The constructor for this class takes two required arguments: **the blueprint name** and **the model or package where the blueprint is located**(always default `__name__`).
 
-# Virtual environment
+## Virtual environment
 
-## Installation
+### Installation
 
 Take Linux system as example:
 
@@ -67,7 +67,7 @@ Take Linux system as example:
 pip install virtualenv
 ```
 
-## Usage 
+### Usage 
 
 ```python
 cd [project directory]
@@ -100,7 +100,7 @@ source ./venv/bin/activate
 (venv) xxx:~/xxx$ deactivate
 ```
 
-# Requirement.txt
+## Requirement.txt
 
 Install from `requirement.txt`:
 
@@ -114,9 +114,9 @@ generate a `requirement.txt` from current project:
 pip freeze > requirement.txt
 ```
 
-# Video Streaming with Flask
+## Video Streaming with Flask
 
-# Flask Script
+## Flask Script
 
 ```python
 # manage.py
@@ -140,7 +140,7 @@ if __name__ == '__main__':
     manager.run()
 ```
 
-# Web Server
+## Web Server
 
 目前主流的Web服务器包括**Nginx, Apache, lighthttpd, IIS, etc..**，Python服务端程序在Linux平台下使用最广泛的是Nginx。
 
@@ -234,7 +234,7 @@ python manage.py makemigrations app
 python manage.py migrate
 ```
 
-# New Words
+## New Words
 
 | words |                means                |
 | :---: | :---------------------------------: |
