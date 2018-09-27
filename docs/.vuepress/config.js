@@ -74,7 +74,7 @@ module.exports = {
       ],
       '/web/': [
         '',
-        'a',
+        'b',
         'flask',
       ],
       '/algorithm/': [
