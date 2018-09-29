@@ -48,7 +48,6 @@ module.exports = {
   // },
   themeConfig: {
     lastUpdated: 'Last Updated',
-    // showScrollToTop: true,
     nav: [{
         text: 'Home',
         link: '/'
@@ -126,15 +125,6 @@ module.exports = {
       //    message: "New content is available.", 
       //    buttonText: "Refresh" 
       // }
-    },
-    plugins: {
-      '@vuepress/i18n-ui': true,
-      '@vuepress/plugin-back-to-top': true,
-      '@vuepress/pwa': {
-        serviceWorker: true,
-        updatePopup: true
-      },
-      '@vuepress/plugin-medium-zoom': true
     }
 }
 }
