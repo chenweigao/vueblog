@@ -129,7 +129,7 @@ module.exports = {
     },
     plugins: {
       '@vuepress/i18n-ui': true,
-      '@vuepress/back-to-top': true,
+      '@vuepress/plugin-back-to-top': true,
       '@vuepress/pwa': {
         serviceWorker: true,
         updatePopup: true
