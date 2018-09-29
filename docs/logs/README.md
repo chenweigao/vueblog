@@ -59,10 +59,16 @@
 
 [Sep 15]() Mongo DB restore, rebuild Flask site, implemented web camera
 
-[Sep 18]() Dashboard
+[Sep 18]() Dashboard, the new version of frontend
 
-[Sep 19]() Start `vue.js`
+[Sep 19]() Start `vue.js`, `vuepress` docs
 
-[Sep 25]() Deploy the site in Aliyun, let the site available via [IP address: 120.78.71.220](120.78.71.220) 
+[Sep 24]() Update `README.md` make the site easy to deploy for non-professionals
 
-[Sep 26]() Debug the site
+[Sep 25]() Deploy the site in Aliyun, let the site available via [IP address: 120.78.71.220](120.78.71.220)(unused), new Tencent server IP is [118.24.241.17](118.24.241.17)
+
+[Sep 26]() Debug the site, delete unused files, Jinja2 will not be used in the future
+
+[Sep 27]() Use Vue.js rebuild site’s frontend, start `Vue Cli3`, make the backend and frontend separated
+
+[Sep 28]() Deploy the radar device, apply for custom domain, server migration
