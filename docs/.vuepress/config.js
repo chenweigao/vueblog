@@ -1,6 +1,7 @@
 module.exports = {
   title: 'work.weigao.cc',
   description: 'anothor site for work',
+  plugins: ['back-to-top', true],  
   head: [
     ['link', {
       rel: 'icon',
