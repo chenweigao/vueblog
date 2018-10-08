@@ -4,6 +4,7 @@ module.exports = {
   // plugins: ['@vuepress/back-to-top'],
   plugins: {
     '@vuepress/back-to-top' : true,
+    '@vuepress/last-updated' : true
   },
   head: [
     ['link', {
@@ -51,7 +52,7 @@ module.exports = {
   //   lineNumbers: true
   // },
   themeConfig: {
-    lastUpdated: 'Last Updated',
+    // lastUpdated: 'Last Updated',
     nav: [{
         text: 'Home',
         link: '/'
