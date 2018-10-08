@@ -1,7 +1,10 @@
 module.exports = {
   title: 'work.weigao.cc',
   description: 'anothor site for work',
-  plugins: ['@vuepress/back-to-top'],
+  // plugins: ['@vuepress/back-to-top'],
+  plugins: {
+    '@vuepress/back-to-top' : true,
+  },
   head: [
     ['link', {
       rel: 'icon',
