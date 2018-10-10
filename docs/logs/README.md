@@ -72,3 +72,9 @@
 [Sep 27]() Use Vue.js rebuild site’s frontend, start `Vue Cli3`, make the backend and frontend separated
 
 [Sep 28]() Deploy the radar device, apply for custom domain, server migration
+
+
+
+## October
+
+[Oct 10]() Create a qqbot

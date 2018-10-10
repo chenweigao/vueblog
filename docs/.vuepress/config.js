@@ -1,7 +1,7 @@
 module.exports = {
   title: 'work.weigao.cc',
   description: 'anothor site for work',
-  plugins: ['@vuepress/back-to-top'],
+  plugins: ['@vuepress/back-to-top', '@vuepress/last-updated'],
   // plugins: {
   //   '@vuepress/back-to-top' : true,
   //   // '@vuepress/last-updated' : true
@@ -58,8 +58,8 @@ module.exports = {
         link: '/'
       },
       {
-        text: 'Web',
-        link: '/web/'
+        text: 'Dev',
+        link: '/dev/'
       },
       {
         text: 'Linux',
@@ -105,10 +105,11 @@ module.exports = {
         '',
         'git'
       ],
-      '/web/': [
+      '/dev/': [
         '',
         'b',
         'flask',
+        'qqbot'
       ],
       '/algorithm/': [
         '',
