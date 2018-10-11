@@ -6,13 +6,13 @@ In the [github document](https://github.com/pandolia/qqbot/blob/master/README.MD
 
 Installation:
 
-```shell
+```bash
 pip install qqbot
 ```
 
-Run: 
+Run:  
 
-```shell
+```bash
 qqbot
 
 #or in these way
@@ -21,17 +21,19 @@ qqbot -q qqnumber
 
 See help or others:
 
-```shell
+```bash
 qq help|stop|restart|fresh-restart
 ```
 
 ## Plugin
 
-```shell
+```bash
 qq plug/unplug myplugin
 ```
 
 ## Create a bot
+
+## urllib, url request
 
 Use the ‘图灵机器人’ API:
 

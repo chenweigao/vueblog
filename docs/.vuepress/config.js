@@ -76,6 +76,10 @@ module.exports = {
             link: '/algorithm/cpp/'
           },
           {
+            text: 'Python',
+            link: '/algorithm/python/'
+          },
+          {
             text: 'Leetcode',
             link: '/algorithm/leetcode/'
           }
@@ -101,6 +105,10 @@ module.exports = {
       '/algorithm/leetcode/': [
         '',
       ],
+      '/algorithm/python/': [
+        '',
+        're'
+      ],
       '/linux/': [
         '',
         'git'
@@ -114,6 +122,7 @@ module.exports = {
       '/algorithm/': [
         '',
         '/cpp/',
+        '/python/',
         '/leetcode/'
       ],
       '/logs/': [
@@ -132,5 +141,5 @@ module.exports = {
       //    buttonText: "Refresh" 
       // }
     }
-}
+  }
 }

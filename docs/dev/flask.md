@@ -18,7 +18,7 @@ Flask **variable, [blueprint](#blueprint)** and install from **[requirement.txt]
 
 ## SocketIO
 
-```shell
+```bash
 pip install flask-socketio
 ```
 
@@ -109,7 +109,7 @@ pip install -r requirements.txt
 
 generate a `requirement.txt` from current project:
 
-```
+```bash
 pip freeze > requirement.txt
 ```
 
