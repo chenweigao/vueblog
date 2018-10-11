@@ -1,6 +1,15 @@
 # Vue
 
+## devtools
 
+[github-vue-remote-devtools](https://github.com/vuejs/vue-devtools/blob/master/shells/electron/README.md)
+
+usage:
+
+```bash
+npm install -g @vue/devtools
+vue-devtools
+```
 
 ## components
 
@@ -22,14 +31,14 @@ Vue.component('my-component-name', {
 
 update the `vuepress`:
 
-```
+```bash
 yarn add vuepress@next -D
 yarn add @vuepress/plugin-back-to-top -D
 ```
 
 and the add the `back-to-top` plugin to `config.js`:
 
-```
+```js
 plugins: ['@vuepress/back-to-top']
 ```
 
