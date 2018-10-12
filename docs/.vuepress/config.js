@@ -59,7 +59,7 @@ module.exports = {
       },
       {
         text: 'Blog',
-        link: '/dev/'
+        link: '/blog/'
       },
       {
         text: 'Docs',
@@ -94,45 +94,45 @@ module.exports = {
     ],
 
     sidebar: {
-      '/dev/': [{
+      '/blog/': [{
           title: 'Zen',
           collapsable: false,
           children: [
-            '/dev/zen/pyzen'
+            '/blog/zen/pyzen'
           ]
         },
         {
           title: 'Web',
           collapsable: true,
           children: [
-            '/dev/web/vue',
-            '/dev/web/qqbot',
-            '/dev/web/database',
-            '/dev/web/flask'
+            '/blog/web/vue',
+            '/blog/web/database',
+            '/blog/web/flask'
           ]
         },
         {
           title: 'Python',
           collapsable: true,
           children: [
-            '/dev/python/fileserver',
-            '/dev/python/re',
+            '/blog/python/fileserver',
+            '/blog/python/qqbot',
+            '/blog/python/re',
           ]
         },
         {
           title: 'Tool',
           collapsable: false,
           children: [
-            '/dev/tool/apt',
-            '/dev/tool/git',
-            '/dev/tool/vim',
-            '/dev/tool/jekyll'
+            '/blog/tool/apt',
+            '/blog/tool/git',
+            '/blog/tool/vim',
+            '/blog/tool/jekyll'
           ]
         },
         {
           title: 'Research',
           children: [
-            '/dev/research/'
+            '/blog/research/'
           ]
         },
       ],
