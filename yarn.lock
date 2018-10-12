@@ -696,6 +696,13 @@
     source-map "^0.5.6"
     vue-template-es2015-compiler "^1.6.0"
 
+"@vuepress/cli@^1.0.0-alpha.0":
+  version "1.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/cli/-/cli-1.0.0-alpha.0.tgz#81f360557dc715724c08ec1ee037ec627ea1988e"
+  dependencies:
+    chalk "^2.3.2"
+    semver "^5.5.0"
+
 "@vuepress/cli@^1.0.0-alpha.9":
   version "1.0.0-alpha.9"
   resolved "https://registry.yarnpkg.com/@vuepress/cli/-/cli-1.0.0-alpha.9.tgz#9bada53401682821ce89bcf17351c1c8fb13d5dc"
@@ -838,6 +845,12 @@
     markdown-it-table-of-contents "^0.4.0"
     prismjs "^1.13.0"
 
+"@vuepress/plugin-active-header-links@^1.0.0-alpha.0":
+  version "1.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-active-header-links/-/plugin-active-header-links-1.0.0-alpha.0.tgz#aa127fb5bd5d504fb9cbd65ca5e2fa37fd1cc324"
+  dependencies:
+    lodash.throttle "^4.1.1"
+
 "@vuepress/plugin-active-header-links@^1.0.0-alpha.9":
   version "1.0.0-alpha.9"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-active-header-links/-/plugin-active-header-links-1.0.0-alpha.9.tgz#4f59b83438aa156980b2e2290e1b24cf3aa3a983"
@@ -882,6 +895,10 @@
   dependencies:
     "@vuepress/shared-utils" "^1.0.0-alpha.9"
 
+"@vuepress/plugin-search@^1.0.0-alpha.0":
+  version "1.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-search/-/plugin-search-1.0.0-alpha.0.tgz#9faf04047d03a16f0bb5d98bee0df3435e3c8c58"
+
 "@vuepress/plugin-search@^1.0.0-alpha.9":
   version "1.0.0-alpha.9"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-search/-/plugin-search-1.0.0-alpha.9.tgz#f12bc3bbf8a2b16e0250e341cc8058453cb888fe"
@@ -906,6 +923,17 @@
     globby "^8.0.1"
     hash-sum "^1.0.2"
     upath "^1.1.0"
+
+"@vuepress/theme-default@^1.0.0-alpha.0":
+  version "1.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/theme-default/-/theme-default-1.0.0-alpha.0.tgz#346e8e632b9dd99867aab77b8531ae114e237c3b"
+  dependencies:
+    "@vuepress/plugin-active-header-links" "^1.0.0-alpha.0"
+    "@vuepress/plugin-search" "^1.0.0-alpha.0"
+    docsearch.js "^2.5.2"
+    nprogress "^0.2.0"
+    stylus "^0.54.5"
+    stylus-loader "^3.0.2"
 
 "@vuepress/theme-default@^1.0.0-alpha.9":
   version "1.0.0-alpha.9"

@@ -1,0 +1,11 @@
+{
+    "name": "my-cool-docs",
+    "type": "static",
+    "static": {
+      "public": "docs/.vuepress/dist"
+    },
+    "alias": "my-cool-docs",
+    "files": [
+      "docs/.vuepress/dist"
+    ]
+  }
