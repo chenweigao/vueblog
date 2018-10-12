@@ -10,6 +10,7 @@ module.exports = {
       updatePopup: true
     },
     '@vuepress/last-update': true
+    
   },
   head: [
     ['link', {
@@ -57,7 +58,7 @@ module.exports = {
   //   lineNumbers: true
   // },
   themeConfig: {
-    lastUpdated: 'Updated',
+    lastUpdated: 'Last Updated',
     nav: [{
         text: 'Home',
         link: '/'

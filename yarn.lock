@@ -704,6 +704,53 @@
     commander "^2.15.1"
     semver "^5.5.0"
 
+"@vuepress/core@^1.0.0-alpha.0":
+  version "1.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/core/-/core-1.0.0-alpha.0.tgz#e1ff4465b740bd486db195d6e274790bdf9e9a10"
+  dependencies:
+    "@babel/core" "7.0.0-beta.47"
+    "@vue/babel-preset-app" "3.0.0-beta.11"
+    "@vuepress/markdown" "^1.0.0-alpha.0"
+    "@vuepress/markdown-loader" "^1.0.0-alpha.0"
+    "@vuepress/plugin-last-updated" "^1.0.0-alpha.0"
+    "@vuepress/plugin-register-components" "^1.0.0-alpha.0"
+    "@vuepress/shared-utils" "^1.0.0-alpha.0"
+    autoprefixer "^8.2.0"
+    babel-loader "8.0.0-beta.3"
+    cache-loader "^1.2.2"
+    chokidar "^2.0.3"
+    commander "^2.15.1"
+    connect-history-api-fallback "^1.5.0"
+    copy-webpack-plugin "^4.5.1"
+    cross-spawn "^6.0.5"
+    css-loader "^0.28.11"
+    file-loader "^1.1.11"
+    globby "^8.0.1"
+    gray-matter "^4.0.1"
+    js-yaml "^3.11.0"
+    koa-connect "^2.0.1"
+    koa-mount "^3.0.0"
+    koa-range "^0.3.0"
+    koa-static "^4.0.2"
+    lru-cache "^4.1.2"
+    mini-css-extract-plugin "^0.4.1"
+    optimize-css-assets-webpack-plugin "^4.0.0"
+    portfinder "^1.0.13"
+    postcss-loader "^2.1.5"
+    toml "^2.3.3"
+    url-loader "^1.0.1"
+    vue "^2.5.16"
+    vue-loader "^15.2.4"
+    vue-router "^3.0.1"
+    vue-server-renderer "^2.5.16"
+    vue-template-compiler "^2.5.16"
+    vuepress-html-webpack-plugin "^3.2.0"
+    webpack "^4.8.1"
+    webpack-chain "^4.6.0"
+    webpack-merge "^4.1.2"
+    webpack-serve "^1.0.2"
+    webpackbar "^2.6.1"
+
 "@vuepress/core@^1.0.0-alpha.9":
   version "1.0.0-alpha.9"
   resolved "https://registry.yarnpkg.com/@vuepress/core/-/core-1.0.0-alpha.9.tgz#c029a74a59d43512255754ce3f65e1585251cb59"
@@ -749,12 +796,33 @@
     webpack-serve "^1.0.2"
     webpackbar "^2.6.1"
 
+"@vuepress/markdown-loader@^1.0.0-alpha.0":
+  version "1.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/markdown-loader/-/markdown-loader-1.0.0-alpha.0.tgz#683e4cf598b1317390769a54f9dfbb8350c836df"
+  dependencies:
+    "@vuepress/markdown" "^1.0.0-alpha.0"
+    loader-utils "^1.1.0"
+
 "@vuepress/markdown-loader@^1.0.0-alpha.9":
   version "1.0.0-alpha.9"
   resolved "https://registry.yarnpkg.com/@vuepress/markdown-loader/-/markdown-loader-1.0.0-alpha.9.tgz#508ef12ae5ebdde0da2f958e9675dff43d8b04b3"
   dependencies:
     "@vuepress/markdown" "^1.0.0-alpha.9"
     loader-utils "^1.1.0"
+
+"@vuepress/markdown@^1.0.0-alpha.0":
+  version "1.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/markdown/-/markdown-1.0.0-alpha.0.tgz#a0186276bd04cf15248c3b00abbcc41925b67496"
+  dependencies:
+    "@vuepress/shared-utils" "^1.0.0-alpha.0"
+    diacritics "^1.3.0"
+    markdown-it "^8.4.1"
+    markdown-it-anchor "^5.0.2"
+    markdown-it-chain "^1.2.0"
+    markdown-it-container "^2.0.0"
+    markdown-it-emoji "^1.4.0"
+    markdown-it-table-of-contents "^0.4.0"
+    prismjs "^1.13.0"
 
 "@vuepress/markdown@^1.0.0-alpha.9":
   version "1.0.0-alpha.9"
@@ -782,6 +850,12 @@
   dependencies:
     lodash.debounce "^4.0.8"
 
+"@vuepress/plugin-last-updated@^1.0.0-alpha.0":
+  version "1.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-last-updated/-/plugin-last-updated-1.0.0-alpha.0.tgz#e4d4d8665dea30f8213f4525d88921abee1cdafc"
+  dependencies:
+    cross-spawn "^6.0.5"
+
 "@vuepress/plugin-last-updated@^1.0.0-alpha.9":
   version "1.0.0-alpha.9"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-last-updated/-/plugin-last-updated-1.0.0-alpha.9.tgz#a6bf5b655bcf61cfd25a17926d9060c8355f9f1e"
@@ -795,6 +869,12 @@
     "@vuepress/shared-utils" "^1.0.0-alpha.0"
     register-service-worker "^1.5.2"
     workbox-build "^3.1.0"
+
+"@vuepress/plugin-register-components@^1.0.0-alpha.0":
+  version "1.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-register-components/-/plugin-register-components-1.0.0-alpha.0.tgz#90896d4ed289f81eaca7dce42dc26e77483e6f38"
+  dependencies:
+    "@vuepress/shared-utils" "^1.0.0-alpha.0"
 
 "@vuepress/plugin-register-components@^1.0.0-alpha.9":
   version "1.0.0-alpha.9"
@@ -3752,7 +3832,7 @@ markdown-it-anchor@^5.0.2:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/markdown-it-anchor/-/markdown-it-anchor-5.0.2.tgz#cdd917a05b7bf92fb736a6dae3385c6d0d0fa552"
 
-markdown-it-chain@^1.2.1:
+markdown-it-chain@^1.2.0, markdown-it-chain@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/markdown-it-chain/-/markdown-it-chain-1.2.1.tgz#eb77a8dc06265d48d0b6c729170e391902db22cb"
   dependencies:

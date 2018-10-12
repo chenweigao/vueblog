@@ -48,3 +48,8 @@ and the add the `back-to-top` plugin to `config.js`:
 plugins: ['@vuepress/back-to-top']
 ```
 
+### run
+
+```bash
+vuepress dev docs
+---
