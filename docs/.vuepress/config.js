@@ -103,10 +103,11 @@ module.exports = {
         },
         {
           title: 'Web',
-          collapsable: false,
+          collapsable: true,
           children: [
             '/dev/web/vue',
             '/dev/web/qqbot',
+            '/dev/web/database',
             '/dev/web/flask'
           ]
         },
@@ -115,14 +116,16 @@ module.exports = {
           collapsable: true,
           children: [
             '/dev/python/fileserver',
-            '/dev/python/re'
+            '/dev/python/re',
           ]
         },
         {
           title: 'Tool',
           collapsable: false,
           children: [
+            '/dev/tool/apt',
             '/dev/tool/git',
+            '/dev/tool/vim',
             '/dev/tool/jekyll'
           ]
         },

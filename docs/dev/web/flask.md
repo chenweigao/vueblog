@@ -217,7 +217,7 @@ my_project/
 
 内置web服务器运行：
 
-```pyton
+```python
 python manage.py runserver 0.0.0.0:8001
 ```
 
@@ -229,7 +229,7 @@ python manage.py makemigrations app
 
 移植到数据库：
 
-```pyth
+```python
 python manage.py migrate
 ```
 
