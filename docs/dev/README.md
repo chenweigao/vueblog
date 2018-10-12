@@ -1,2 +1,4 @@
 # Hello 
-# This is blog
+## This is blog
+
+<counter></counter>

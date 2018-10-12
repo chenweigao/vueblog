@@ -58,12 +58,8 @@ module.exports = {
         link: '/'
       },
       {
-        text: 'Dev',
+        text: 'Blog',
         link: '/dev/'
-      },
-      {
-        text: 'Linux',
-        link: '/linux/'
       },
       {
         text: 'Docs',
@@ -98,6 +94,45 @@ module.exports = {
     ],
 
     sidebar: {
+      '/dev/': [{
+          title: 'Zen',
+          collapsable: false,
+          children: [
+            '/dev/zen/pyzen'
+          ]
+        },
+        {
+          title: 'Web',
+          collapsable: false,
+          children: [
+            '/dev/web/vue',
+            '/dev/web/qqbot',
+            '/dev/web/flask'
+          ]
+        },
+        {
+          title: 'Python',
+          collapsable: true,
+          children: [
+            '/dev/python/fileserver',
+            '/dev/python/re'
+          ]
+        },
+        {
+          title: 'Tool',
+          collapsable: false,
+          children: [
+            '/dev/tool/git',
+            '/dev/tool/jekyll'
+          ]
+        },
+        {
+          title: 'Research',
+          children: [
+            '/dev/research/'
+          ]
+        },
+      ],
       '/algorithm/cpp/': [
         '',
         'c'
@@ -107,23 +142,7 @@ module.exports = {
       ],
       '/algorithm/python/': [
         '',
-        're'
-      ],
-      '/linux/': [
-        '',
-        'git'
-      ],
-      '/dev/': [
-        '',
-        'b',
-        'flask',
-        'qqbot'
-      ],
-      '/algorithm/': [
-        '',
-        '/cpp/',
-        '/python/',
-        '/leetcode/'
+        'urllib'
       ],
       '/logs/': [
         '',
