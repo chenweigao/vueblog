@@ -16,8 +16,12 @@
     "@vuepress/cli": "^1.0.0-alpha.0",
     "@vuepress/core": "^1.0.0-alpha.0",
     "@vuepress/plugin-back-to-top": "^1.0.0-alpha.0",
+    "@vuepress/plugin-last-updated": "^1.0.0-alpha.0",
     "@vuepress/plugin-pwa": "^1.0.0-alpha.0",
     "@vuepress/theme-default": "^1.0.0-alpha.0",
     "vuepress": "^1.0.0-alpha.9"
+  },
+  "dependencies": {
+    "cross-spawn": "^6.0.5"
   }
 }

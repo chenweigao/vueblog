@@ -3,15 +3,14 @@ module.exports = {
   description: 'anothor site for work',
   // plugins: ['@vuepress/back-to-top'],
   plugins: {
-    '@vuepress/back-to-top' : true,
-    // '@vuepress/last-updated' : true
+    '@vuepress/back-to-top': true,
     '@vuepress/pwa': {
       serviceWorker: true,
       updatePopup: true
     },
-    '@vuepress/last-update': true
-    
+    '@vuepress/plugin-last-updated': true
   },
+ 
   head: [
     ['link', {
       rel: 'icon',
@@ -51,14 +50,8 @@ module.exports = {
       content: '#000000'
     }]
   ],
-  // head: [
-  //   ['link', { rel: 'icon', href: '/dist/assets/img/author21.png'}]
-  // ],
-  // markdown: {
-  //   lineNumbers: true
-  // },
   themeConfig: {
-    lastUpdated: 'Last Updated',
+    lastUpdated: "Last update",
     nav: [{
         text: 'Home',
         link: '/'
@@ -163,9 +156,9 @@ module.exports = {
     },
     serviceWorker: {
       updatePopup: true,
-      updatePopup: { 
-         message: "New content is available.", 
-         buttonText: "Refresh" 
+      updatePopup: {
+        message: "New content is available.",
+        buttonText: "Refresh"
       }
     }
   }

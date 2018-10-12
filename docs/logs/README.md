@@ -79,3 +79,5 @@
 [Oct 10]() Create a qqbot
 
 [Oct 11]() Vuex and components
+
+[Oct 12]() Write some components in vuepress
