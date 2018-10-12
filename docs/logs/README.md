@@ -74,8 +74,8 @@
 [Sep 28]() Deploy the radar device, apply for custom domain, server migration
 
 
-
 ## October
 
 [Oct 10]() Create a qqbot
+
 [Oct 11]() Vuex and components

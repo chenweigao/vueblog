@@ -1,4 +1,9 @@
-# Hello 
-## This is blog
+# Hello
 
-<counter></counter>
+<!-- <counter></counter> -->
+
+## This is index of blog: 
+
+:::warning Index
+<BlogIndex/>
+:::

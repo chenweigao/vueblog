@@ -1,7 +1,7 @@
 module.exports = {
   title: 'work.weigao.cc',
   description: 'anothor site for work',
-  plugins: ['@vuepress/back-to-top', '@vuepress/last-updated'],
+  plugins: ['@vuepress/back-to-top'],
   // plugins: {
   //   '@vuepress/back-to-top' : true,
   //   // '@vuepress/last-updated' : true
@@ -52,7 +52,7 @@ module.exports = {
   //   lineNumbers: true
   // },
   themeConfig: {
-    lastUpdated: 'Last Updated',
+    lastUpdated: 'Updated',
     nav: [{
         text: 'Home',
         link: '/'
@@ -156,12 +156,11 @@ module.exports = {
       ]
     },
     serviceWorker: {
-      updatePopup: true // Boolean | Object, 默认值是 undefined.
-      // 如果设置为 true, 默认的文本配置将是: 
-      // updatePopup: { 
-      //    message: "New content is available.", 
-      //    buttonText: "Refresh" 
-      // }
+      updatePopup: true,
+      updatePopup: { 
+         message: "New content is available.", 
+         buttonText: "Refresh" 
+      }
     }
   }
 }
