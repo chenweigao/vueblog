@@ -96,13 +96,14 @@ module.exports = {
           title: 'Zen',
           collapsable: false,
           children: [
-            '/blog/zen/pyzen'
+            '/blog/zen/'
           ]
         },
         {
           title: 'Web',
           collapsable: true,
           children: [
+            '/blog/web/',
             '/blog/web/vue',
             '/blog/web/database',
             '/blog/web/flask'
@@ -112,6 +113,7 @@ module.exports = {
           title: 'Python',
           collapsable: true,
           children: [
+            '/blog/python/',
             '/blog/python/fileserver',
             '/blog/python/qqbot',
             '/blog/python/re',
@@ -121,6 +123,7 @@ module.exports = {
           title: 'Tool',
           collapsable: false,
           children: [
+            '/blog/tool/',
             '/blog/tool/apt',
             '/blog/tool/git',
             '/blog/tool/vim',
@@ -130,7 +133,7 @@ module.exports = {
         {
           title: 'Research',
           children: [
-            '/blog/research/'
+            '/blog/research/',
           ]
         },
       ],

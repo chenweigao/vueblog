@@ -23,6 +23,90 @@ Vue.component('my-component-name', {
 })
 ```
 
+## Directives
+
+### v-cloak
+
+可以使用`v-cloak`取得变量：
+
+```html
+<div v-cloak>  
+  {{ msg }}
+</div>
+```
+
+如果这样取得`msg`变量，会导致插值表达式闪烁问题，使用如下方法解决：
+
+```html
+<head>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+```
+
+The `<div>` will not be visible until the compilation is done.
+
+### v-text
+
+```html
+<h4 v-text="msg"></h4>
+```
+
+Updates the element’s `textContent`(whole)
+
+### v-html
+
+直接解析HTML:
+
+```html
+<div v-html="msg2"></div>
+```
+
+Note that the contents are inserted as plain HTML - they will not be compiled as Vue templates.(尽量不用)
+
+### v-bind
+
+使用`v-bind` 绑定变量的值，注意其后面可以用`+`增加字符串, [see also api](https://cn.vuejs.org/v2/api/#v-bind)
+
+```html
+<input type="button" value="Button" :title="mytitle + 'a string'" v-on:click="show">
+```
+
+### v-on
+
+上面的`v-on`用于绑定事件
+
+the javascript code used is:
+
+```js
+<script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '123',
+                msg2: '<h1>haha</h1>',
+                mytitle: 'This is a title'
+            },
+            methods: {
+                show:function() {
+                    alert('Hello')
+                }
+            }
+        })
+    </script>
+```
+
+:::tip
+`v-bind:title` is equal to `:title`
+
+`v-on:click` is equal to `@click`
+:::
+
+
 ## Pre-Processors
 
 This boilerplate has pre-configured CSS extraction for most popular CSS pre-processors including LESS, SASS, Stylus, and PostCSS. To use a pre-processor, all you need to do is install the appropriate webpack loader for it. For example, to use SASS:
