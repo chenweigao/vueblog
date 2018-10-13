@@ -51,5 +51,5 @@ plugins: ['@vuepress/back-to-top']
 ### run
 
 ```bash
-vuepress dev docs
----
+yarn dev:docs
+```

@@ -8,13 +8,15 @@ module.exports = {
       serviceWorker: true,
       updatePopup: true
     },
-    '@vuepress/plugin-last-updated': true
+    '@vuepress/last-updated': {
+      lastUpdated: 'last '
+    }
   },
- 
+
   head: [
     ['link', {
       rel: 'icon',
-      href: `/logo.png`
+      href: `/logo3.png`
     }],
     ['link', {
       rel: 'manifest',
@@ -51,7 +53,6 @@ module.exports = {
     }]
   ],
   themeConfig: {
-    lastUpdated: "Last update",
     nav: [{
         text: 'Home',
         link: '/'

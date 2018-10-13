@@ -1,8 +1,8 @@
 ---
 sidebar: false
 home: true
-actionText: See Something
-actionLink: /logs/
+actionText: To View Blogs
+actionLink: /blog/
 features:
 - title: Web
   details: somthing
