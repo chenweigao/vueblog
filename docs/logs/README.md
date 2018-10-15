@@ -6,8 +6,8 @@
 
 [Jul 18](https://www.weigao.cc/blog/2018/07/25/flask.html) Flask web development, with Visual Studio
 
-[Jul 23](https://github.com/chenweigao/smarttrack.git)  Flask video stream [v1.0](#)
-[Jul 24](https://www.weigao.cc/blog/2018/07/25/flask.html)  Flask database: MongoDB [v0.1](#)
+[Jul 23](https://github.com/chenweigao/smarttrack.git)  Flask video stream
+[Jul 24](https://www.weigao.cc/blog/2018/07/25/flask.html)  Flask database: MongoDB
 
 [Jul 25]()  Flask unit test; meeting about Flask site develop
 
@@ -27,7 +27,7 @@
 
 [Aug  01]() Flask MongoDB initialization
 
-[Aug  02](https://www.weigao.cc/blog/2018/07/25/flask.html#blueprint) solved path problem in Flask; Login [v1.0](#){:.button.button--secondary.button--pill} with `wtforms`; new Struct  [v2.0](#){:.button.button--secondary.button--pill}; [blueprint](https://www.weigao.cc/blog/2018/07/25/flask.html#blueprint)
+[Aug  02](https://www.weigao.cc/blog/2018/07/25/flask.html#blueprint) solved path problem in Flask; Login [v1.0](#) with `wtforms`; new Struct  [v2.0](#){:.button.button--secondary.button--pill}; [blueprint](https://www.weigao.cc/blog/2018/07/25/flask.html#blueprint)
 
 [Aug  03]() `@property` in Python; login in terminal
 
@@ -81,3 +81,5 @@
 [Oct 11]() Vuex and components
 
 [Oct 12]() Write some components in vuepress
+
+[Oct 15]() Vue `v-on` and `v-model`
