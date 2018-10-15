@@ -7,6 +7,7 @@
 [Jul 18](https://www.weigao.cc/blog/2018/07/25/flask.html) Flask web development, with Visual Studio
 
 [Jul 23](https://github.com/chenweigao/smarttrack.git)  Flask video stream
+
 [Jul 24](https://www.weigao.cc/blog/2018/07/25/flask.html)  Flask database: MongoDB
 
 [Jul 25]()  Flask unit test; meeting about Flask site develop
