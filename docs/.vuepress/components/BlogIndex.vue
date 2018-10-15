@@ -2,7 +2,7 @@
 <div>
     <div v-for="post in posts">
         <h4>
-            <router-link :to="post.path">{{ post.title }}</router-link>
+            <router-link :to="post.path">>> {{ post.title }}</router-link>
         </h4>
     </div>
 </div>

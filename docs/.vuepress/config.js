@@ -7,7 +7,8 @@ module.exports = {
     '@vuepress/pwa': {
       serviceWorker: true,
       updatePopup: true
-    }
+    },
+    '@vuepress/last-updated' : true
   },
 
   head: [
@@ -50,7 +51,7 @@ module.exports = {
     }]
   ],
   themeConfig: {
-    lastUpdated: "Last: ",
+    // lastUpdated: "Last: ",
     nav: [{
         text: 'Home',
         link: '/'
@@ -76,6 +77,10 @@ module.exports = {
           {
             text: 'Leetcode',
             link: '/algorithm/leetcode/'
+          },
+          {
+            text: 'Web&JS',
+            link: '/algorithm/web/'
           }
         ]
       },
@@ -147,6 +152,9 @@ module.exports = {
       '/algorithm/python/': [
         '',
         'urllib'
+      ],
+      '/algorithm/web/': [
+        ''
       ],
       '/logs/': [
         '',

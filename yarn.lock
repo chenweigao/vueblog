@@ -696,25 +696,25 @@
     source-map "^0.5.6"
     vue-template-es2015-compiler "^1.6.0"
 
-"@vuepress/cli@^1.0.0-alpha.9":
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/@vuepress/cli/-/cli-1.0.0-alpha.9.tgz#9bada53401682821ce89bcf17351c1c8fb13d5dc"
+"@vuepress/cli@^1.0.0-alpha.10":
+  version "1.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/@vuepress/cli/-/cli-1.0.0-alpha.10.tgz#80b0e14d2ca9d8e684277d3b72ac756b03aeb9af"
   dependencies:
     chalk "^2.3.2"
     commander "^2.15.1"
     semver "^5.5.0"
 
-"@vuepress/core@^1.0.0-alpha.9":
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/@vuepress/core/-/core-1.0.0-alpha.9.tgz#c029a74a59d43512255754ce3f65e1585251cb59"
+"@vuepress/core@^1.0.0-alpha.10":
+  version "1.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/@vuepress/core/-/core-1.0.0-alpha.10.tgz#0cb65a0df58a931c7d55963d3dbec6360aab5c21"
   dependencies:
     "@babel/core" "7.0.0-beta.47"
     "@vue/babel-preset-app" "3.0.0-beta.11"
-    "@vuepress/markdown" "^1.0.0-alpha.9"
-    "@vuepress/markdown-loader" "^1.0.0-alpha.9"
-    "@vuepress/plugin-last-updated" "^1.0.0-alpha.9"
-    "@vuepress/plugin-register-components" "^1.0.0-alpha.9"
-    "@vuepress/shared-utils" "^1.0.0-alpha.9"
+    "@vuepress/markdown" "^1.0.0-alpha.10"
+    "@vuepress/markdown-loader" "^1.0.0-alpha.10"
+    "@vuepress/plugin-last-updated" "^1.0.0-alpha.10"
+    "@vuepress/plugin-register-components" "^1.0.0-alpha.10"
+    "@vuepress/shared-utils" "^1.0.0-alpha.10"
     autoprefixer "^8.2.0"
     babel-loader "8.0.0-beta.3"
     cache-loader "^1.2.2"
@@ -749,18 +749,18 @@
     webpack-serve "^1.0.2"
     webpackbar "^2.6.1"
 
-"@vuepress/markdown-loader@^1.0.0-alpha.9":
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/@vuepress/markdown-loader/-/markdown-loader-1.0.0-alpha.9.tgz#508ef12ae5ebdde0da2f958e9675dff43d8b04b3"
+"@vuepress/markdown-loader@^1.0.0-alpha.10":
+  version "1.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/@vuepress/markdown-loader/-/markdown-loader-1.0.0-alpha.10.tgz#23a99dd489b2d286e4209b107e2667d7a76e5329"
   dependencies:
-    "@vuepress/markdown" "^1.0.0-alpha.9"
+    "@vuepress/markdown" "^1.0.0-alpha.10"
     loader-utils "^1.1.0"
 
-"@vuepress/markdown@^1.0.0-alpha.9":
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/@vuepress/markdown/-/markdown-1.0.0-alpha.9.tgz#83668161ea18805f2654091ba412e4630e32ccb2"
+"@vuepress/markdown@^1.0.0-alpha.10":
+  version "1.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/@vuepress/markdown/-/markdown-1.0.0-alpha.10.tgz#74548253b7bce176c1cc808d91b8bc0f0f86c178"
   dependencies:
-    "@vuepress/shared-utils" "^1.0.0-alpha.9"
+    "@vuepress/shared-utils" "^1.0.0-alpha.10"
     diacritics "^1.3.0"
     markdown-it "^8.4.1"
     markdown-it-anchor "^5.0.2"
@@ -770,9 +770,9 @@
     markdown-it-table-of-contents "^0.4.0"
     prismjs "^1.13.0"
 
-"@vuepress/plugin-active-header-links@^1.0.0-alpha.9":
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/@vuepress/plugin-active-header-links/-/plugin-active-header-links-1.0.0-alpha.9.tgz#4f59b83438aa156980b2e2290e1b24cf3aa3a983"
+"@vuepress/plugin-active-header-links@^1.0.0-alpha.10":
+  version "1.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-active-header-links/-/plugin-active-header-links-1.0.0-alpha.10.tgz#45e4e82805cad107d8ac99cde18809b3faefaae3"
   dependencies:
     lodash.throttle "^4.1.1"
 
@@ -788,9 +788,9 @@
   dependencies:
     cross-spawn "^6.0.5"
 
-"@vuepress/plugin-last-updated@^1.0.0-alpha.9":
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/@vuepress/plugin-last-updated/-/plugin-last-updated-1.0.0-alpha.9.tgz#a6bf5b655bcf61cfd25a17926d9060c8355f9f1e"
+"@vuepress/plugin-last-updated@^1.0.0-alpha.10":
+  version "1.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-last-updated/-/plugin-last-updated-1.0.0-alpha.10.tgz#852f0bcdc48693c05fbe992df47857b391bb6375"
   dependencies:
     cross-spawn "^6.0.5"
 
@@ -802,15 +802,15 @@
     register-service-worker "^1.5.2"
     workbox-build "^3.1.0"
 
-"@vuepress/plugin-register-components@^1.0.0-alpha.9":
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/@vuepress/plugin-register-components/-/plugin-register-components-1.0.0-alpha.9.tgz#6010d2b9c28d76a807de688c0468e87fa33e0799"
+"@vuepress/plugin-register-components@^1.0.0-alpha.10":
+  version "1.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-register-components/-/plugin-register-components-1.0.0-alpha.10.tgz#c81510c7296fc24c5874919e136da453293b1981"
   dependencies:
-    "@vuepress/shared-utils" "^1.0.0-alpha.9"
+    "@vuepress/shared-utils" "^1.0.0-alpha.10"
 
-"@vuepress/plugin-search@^1.0.0-alpha.9":
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/@vuepress/plugin-search/-/plugin-search-1.0.0-alpha.9.tgz#f12bc3bbf8a2b16e0250e341cc8058453cb888fe"
+"@vuepress/plugin-search@^1.0.0-alpha.10":
+  version "1.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-search/-/plugin-search-1.0.0-alpha.10.tgz#1e0f14a1f3e6666ec1342babc2264a14c5d9d45e"
 
 "@vuepress/shared-utils@^1.0.0-alpha.0":
   version "1.0.0-alpha.0"
@@ -822,9 +822,9 @@
     globby "^8.0.1"
     hash-sum "^1.0.2"
 
-"@vuepress/shared-utils@^1.0.0-alpha.9":
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/@vuepress/shared-utils/-/shared-utils-1.0.0-alpha.9.tgz#e1d9554e6546003ca3fd2550acb27c217afe8ccd"
+"@vuepress/shared-utils@^1.0.0-alpha.10":
+  version "1.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/@vuepress/shared-utils/-/shared-utils-1.0.0-alpha.10.tgz#14c414b45bcad9be42322a0c4718aaae15da1e0e"
   dependencies:
     chalk "^2.3.2"
     escape-html "^1.0.3"
@@ -833,12 +833,12 @@
     hash-sum "^1.0.2"
     upath "^1.1.0"
 
-"@vuepress/theme-default@^1.0.0-alpha.9":
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/@vuepress/theme-default/-/theme-default-1.0.0-alpha.9.tgz#b134a055fc82ef04bb96c841a6f804ace08dc904"
+"@vuepress/theme-default@^1.0.0-alpha.10":
+  version "1.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/@vuepress/theme-default/-/theme-default-1.0.0-alpha.10.tgz#142298d25157ddb8978afbfb8e2a43ea83b200e7"
   dependencies:
-    "@vuepress/plugin-active-header-links" "^1.0.0-alpha.9"
-    "@vuepress/plugin-search" "^1.0.0-alpha.9"
+    "@vuepress/plugin-active-header-links" "^1.0.0-alpha.10"
+    "@vuepress/plugin-search" "^1.0.0-alpha.10"
     docsearch.js "^2.5.2"
     nprogress "^0.2.0"
     stylus "^0.54.5"
@@ -1810,8 +1810,8 @@ connect-history-api-fallback@^1.5.0:
   resolved "https://registry.yarnpkg.com/connect-history-api-fallback/-/connect-history-api-fallback-1.5.0.tgz#b06873934bc5e344fef611a196a6faae0aee015a"
 
 consola@^1.4.3:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/consola/-/consola-1.4.3.tgz#945e967e05430ddabd3608b37f5fa37fcfacd9dd"
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/consola/-/consola-1.4.4.tgz#cf5eda375c0e99df8970cc8f5e98be023da24ce0"
   dependencies:
     chalk "^2.3.2"
     figures "^2.0.0"
@@ -2298,8 +2298,8 @@ duplexer3@^0.1.4:
   resolved "https://registry.yarnpkg.com/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
 
 duplexify@^3.4.2, duplexify@^3.6.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/duplexify/-/duplexify-3.6.0.tgz#592903f5d80b38d037220541264d69a198fb3410"
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/duplexify/-/duplexify-3.6.1.tgz#b1a7a29c4abfd639585efaecce80d666b1e34125"
   dependencies:
     end-of-stream "^1.0.0"
     inherits "^2.0.1"
@@ -6002,13 +6002,13 @@ vuepress-html-webpack-plugin@^3.2.0:
     toposort "^1.0.0"
     util.promisify "1.0.0"
 
-vuepress@^1.0.0-alpha.9:
-  version "1.0.0-alpha.9"
-  resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-1.0.0-alpha.9.tgz#0a417eed72d3d2622ce233b030b1c6560de1b340"
+vuepress@^1.0.0-alpha.10:
+  version "1.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-1.0.0-alpha.10.tgz#927a46cc4ff4eef8ea5353bdc2fb74d9ccd599b8"
   dependencies:
-    "@vuepress/cli" "^1.0.0-alpha.9"
-    "@vuepress/core" "^1.0.0-alpha.9"
-    "@vuepress/theme-default" "^1.0.0-alpha.9"
+    "@vuepress/cli" "^1.0.0-alpha.10"
+    "@vuepress/core" "^1.0.0-alpha.10"
+    "@vuepress/theme-default" "^1.0.0-alpha.10"
 
 watchpack@^1.5.0:
   version "1.6.0"

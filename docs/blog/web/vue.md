@@ -79,7 +79,26 @@ Note that the contents are inserted as plain HTML - they will not be compiled as
 
 上面的`v-on`用于绑定事件
 
-the javascript code used is:
+`v-on` 事件修饰符：
+
+
+:::tip
+`v-bind:title` is equal to `:title`
+
+`v-on:click` is equal to `@click`
+:::
+
+```html
+<!-- stop propogation -->
+<button @click.stop="doThis"></button>
+
+<!-- key modifier using keyAlias -->
+<input @keyup.enter="onEnter">
+```
+
+
+
+the JavaScript code used is:
 
 ```js
 <script src="https://cdn.bootcss.com/vue/2.4.2/vue.min.js"></script>
@@ -100,12 +119,45 @@ the javascript code used is:
     </script>
 ```
 
-:::tip
-`v-bind:title` is equal to `:title`
+### v-model 
 
-`v-on:click` is equal to `@click`
-:::
+We can use the `v-model` directive to create two-way data bindings on form input, text area, and select element.
 
+Bind the value to a dynamic property on the Vue instance.
+
+```html
+<input type="text" v-model="msg" placeholder="edit me">
+<p>
+    Message is {{ msg }}
+</p>
+```
+
+**Modifiers**
+
+`.number`
+
+```html
+<input v-model.number='age' type="number">
+```
+
+make input to be automatically typecast as a number.
+
+`.trim`
+
+```html
+<input v-model.trim="msg">
+```
+
+make input to be trimmed automatically.
+
+`.lazy`
+
+```html
+<input v-model.lazy="msg">
+```
+
+
+synced after "change" instead of "input" .
 
 ## Pre-Processors
 
