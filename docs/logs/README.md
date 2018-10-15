@@ -27,7 +27,7 @@
 
 [Aug  01]() Flask MongoDB initialization
 
-[Aug  02](https://www.weigao.cc/blog/2018/07/25/flask.html#blueprint) solved path problem in Flask; Login [v1.0](#) with `wtforms`; new Struct  [v2.0](#){:.button.button--secondary.button--pill}; [blueprint](https://www.weigao.cc/blog/2018/07/25/flask.html#blueprint)
+[Aug  02](https://www.weigao.cc/blog/2018/07/25/flask.html#blueprint) solved path problem in Flask; Login [v1.0](#) with `wtforms`; new Struct  [v2.0](#); [blueprint](https://www.weigao.cc/blog/2018/07/25/flask.html#blueprint)
 
 [Aug  03]() `@property` in Python; login in terminal
 
