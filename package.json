@@ -6,9 +6,8 @@
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.0.0-alpha.0",
     "@vuepress/plugin-last-updated": "^1.0.0-alpha.0",
-    "@vuepress/plugin-pwa": "^1.0.0-alpha.0"
+    "@vuepress/plugin-pwa": "^1.0.0-alpha.0",
+    "vuepress": "^1.0.0-alpha.11"
   },
-  "dependencies": {
-    "vuepress": "^1.0.0-alpha.10"
-  }
+  "dependencies": {}
 }
