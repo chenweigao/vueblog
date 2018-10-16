@@ -23,6 +23,47 @@ Vue.component('my-component-name', {
 })
 ```
 
+## Filters
+
+Define local  filters:
+
+```js
+var vm = new Vue({
+    //...
+    filters: {
+        capitalize: function (value) {
+            if (!value) return ''
+            value = value.toString()
+            return value.charAt(0).toUpperCase() + value.slice(1)
+  }
+    }
+})
+```
+
+Define a filter globally before creating the Vue instance:
+
+```js
+Vue.filter('capitalize', function (value) {
+  if (!value) return ''
+  value = value.toString()
+  return value.charAt(0).toUpperCase() + value.slice(1)
+})
+
+new Vue({
+  // ...
+})
+```
+
+usage:
+
+```html
+<!-- in mustaches -->
+{{ message | capitalize }}
+
+<!-- in v-bind -->
+<div v-bind:id="rawId | formatId"></div>
+```
+
 ## Directives
 
 ### v-cloak
@@ -96,8 +137,17 @@ Note that the contents are inserted as plain HTML - they will not be compiled as
 <input @keyup.enter="onEnter">
 ```
 
+### key modifiers
 
+```html
+<!-- same as above -->
+<input v-on:keyup.enter="submit">
 
+<!-- also works for shorthand -->
+<input @keyup.enter="submit">
+```
+
+binging the methods `submit`.
 the JavaScript code used is:
 
 ```js
@@ -156,8 +206,56 @@ make input to be trimmed automatically.
 <input v-model.lazy="msg">
 ```
 
-
 synced after "change" instead of "input" .
+
+### Custom Directives
+
+there are may be cases where you need some low-level DOM access on plain elements, and this is where custom directibes would still be useful.
+
+```js
+// Register a global custom directive called `v-focus`
+Vue.directive('focus', {
+  // When the bound element is inserted into the DOM...
+  inserted: function (el) {
+    // Focus the element
+    el.focus()
+  }
+})
+```
+
+Then in a template, you can use the new v-focus attribute on any element, like this:
+
+```html
+<input v-focus>
+```
+
+**Hook function** include `bind` `inserted` and `update` and so on.. see from [API](https://vuejs.org/v2/guide/custom-directive.html#Hook-Functions).
+there we use the `bingding` arguement:
+
+```js
+ Vue.directive('color', {
+    bind: function (el, binding) {
+    // el.style.color = 'blue'
+    el.style.color = binding.value
+    }
+})
+```
+
+`binding` has the properties: `value` `name` and `expression` and so on, to see it:
+
+```js
+console.log(binding.value)
+//or
+console.log(binding.expression)
+```
+
+:::tip usage
+in html, use the `'blue'` other than `blue`:
+:::
+
+```html
+<input v-color="'blue'">
+```
 
 ## Pre-Processors
 
