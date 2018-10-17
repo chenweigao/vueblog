@@ -4,7 +4,8 @@
     <div v-for="post in posts">
         <!-- <h4 v-show="flag"> -->
           <h4>
-            <router-link :to="post.path">>> {{ post.title }}</router-link>
+            {{ timestampToTime(post.lastUpdated) }} >> 
+            <router-link :to="post.path">{{ post.title }} </router-link>
         </h4>
     </div>
 </div>
@@ -20,15 +21,38 @@ export default {
   //     this.flag = ! this.flag
   //   }
   // },
+  methods: {
+    timestampToTime(timestamp) {
+      var date = new Date(timestamp); //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+      var dt = date.toLocaleString();
+      return dt;
+      // var Y = dt.getFullYear();
+      // var M = (dt.getMonth() + 1).toString().padStart(2, "0");
+      // var D = dt
+      //   .getDate()
+      //   .toString()
+      //   .padStart(2, "0");
+      // var hh = dt
+      //   .getHours()
+      //   .toString()
+      //   .padStart(2, "0");
+      // var mm = dt
+      //   .getMinutes()
+      //   .toString()
+      //   .padStart(2, "0");
+      // var ss = dt
+      //   .getSeconds()
+      //   .toString()
+      //   .padStart(2, "0");
+      // return `${Y}-${M}-${D} ${hh}:${mm}:${ss}`;
+    }
+  },
   computed: {
     posts() {
       return (
         this.$site.pages
           .filter(x => x.path.startsWith("/blog/") && !x.frontmatter.blog_index)
-          // .sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
-          .sort((a, b) => {
-            return a < b;
-          })
+          .sort((a, b) => b.lastUpdated - a.lastUpdated)
       );
     }
   }

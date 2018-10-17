@@ -52,7 +52,7 @@ module.exports = {
   ],
   themeConfig: {
     sidebarDepth: 2,
-    lastUpdated: 'Last Updated: ',
+    lastUpdated: 'Last Updated',
     nav: [{
         text: 'Home',
         link: '/'

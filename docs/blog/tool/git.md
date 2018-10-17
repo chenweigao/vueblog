@@ -100,7 +100,7 @@ git rm log/\*.log
 git mv README.md README
 ```
 
-**查看提交历史**
+查看提交历史
 
 ```bash
 git log

@@ -274,6 +274,7 @@ update the `vuepress`:
 ```bash
 yarn add vuepress@next -D
 yarn add @vuepress/plugin-back-to-top -D
+yarn add @vuepress/last-updated@next -D
 ```
 
 and the add the `back-to-top` plugin to `config.js`:
