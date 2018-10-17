@@ -84,3 +84,5 @@
 [Oct 12]() Write some components in vuepress
 
 [Oct 15]() Vue `v-on` and `v-model`
+
+[Oct 16]() Vue `dev-tools`, custom directives `.focus()` and `keyup.enter`

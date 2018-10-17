@@ -4,8 +4,8 @@
     <div v-for="post in posts">
         <!-- <h4 v-show="flag"> -->
           <h4>
-            {{ timestampToTime(post.lastUpdated) }} >> 
-            <router-link :to="post.path">{{ post.title }} </router-link>
+            <!-- {{ timestampToTime(post.lastUpdated) }} >>  -->
+            <router-link :to="post.path">{{ timestampToTime(post.lastUpdated) }} >> {{ post.title }} </router-link>
         </h4>
     </div>
 </div>
