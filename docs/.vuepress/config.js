@@ -7,7 +7,8 @@ module.exports = {
     '@vuepress/pwa': {
       serviceWorker: true,
       updatePopup: true
-    }
+    },
+    '@vuepress/last-updated': true
   },
 
   head: [
@@ -50,7 +51,8 @@ module.exports = {
     }]
   ],
   themeConfig: {
-    lastUpdated: "Last: ",
+    sidebarDepth: 2,
+    lastUpdated: 'Last Updated: ',
     nav: [{
         text: 'Home',
         link: '/'
