@@ -24,7 +24,7 @@ export default {
   methods: {
     timestampToTime(timestamp) {
       var date = new Date(timestamp); //时间戳为10位需*1000，时间戳为13位的话不需乘1000
-      var dt = date.toLocaleString();
+      var dt = date.toDateString();
       return dt;
       // var Y = dt.getFullYear();
       // var M = (dt.getMonth() + 1).toString().padStart(2, "0");
