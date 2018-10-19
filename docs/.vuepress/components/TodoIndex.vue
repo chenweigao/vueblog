@@ -61,8 +61,8 @@ export default {
     return {
       visibility: 'all',
       filters,
-      todos: JSON.parse(window.localStorage.getItem(STORAGE_KEY)) || defalutList
-      // todos: defalutList
+      // todos: JSON.parse(window.localStorage.getItem(STORAGE_KEY)) || defalutList
+      todos: defalutList
     }
   },
   computed: {
