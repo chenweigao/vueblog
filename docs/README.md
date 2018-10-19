@@ -1,8 +1,7 @@
 ---
 sidebar: false
-home: true
 footer: MIT Licensed | Copyright © 2018-present Weigao Chen
 ---
 
-## The Motivation
+## To visitor
 <welcome/>
