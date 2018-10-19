@@ -1,4 +1,7 @@
-# Vue
+# Vue.js Study Notes
+
+## Vue resource
+
 
 ## Devtools
 

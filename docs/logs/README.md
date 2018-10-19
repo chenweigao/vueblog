@@ -86,3 +86,5 @@
 [Oct 15]() Vue `v-on` and `v-model`
 
 [Oct 16]() Vue `dev-tools`, custom directives `.focus()` and `keyup.enter`
+
+[Oct 18]() Vue animation, custom css using `Animate.css`
