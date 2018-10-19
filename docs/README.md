@@ -4,9 +4,7 @@ actionText: To View Blogs →
 actionLink: /blog/
 footer: MIT Licensed | Copyright © 2018-present Weigao Chen
 ---
-<!-- 
-## Todos
-<TodoIndex/> -->
+
 
 ## To Visitor
 <welcome/>
