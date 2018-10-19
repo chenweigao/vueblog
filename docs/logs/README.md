@@ -88,3 +88,5 @@
 [Oct 16]() Vue `dev-tools`, custom directives `.focus()` and `keyup.enter`
 
 [Oct 18]() Vue animation, custom css using `Animate.css`
+
+[Oct 19]() Vue todo app, make some css beautiful
