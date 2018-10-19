@@ -1,9 +1,8 @@
 ---
 sidebar: false
-actionText: To View Blogs →
-actionLink: /blog/
+home: true
 footer: MIT Licensed | Copyright © 2018-present Weigao Chen
 ---
 
-## To Visitor
+## The Motivation
 <welcome/>

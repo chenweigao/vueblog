@@ -1,6 +1,6 @@
 module.exports = {
   title: 'WeiGao',
-  description: 'Develping Personal Site...',
+  description: 'Welcome, friend! ',
   // plugins: ['@vuepress/back-to-top'],
   plugins: {
     '@vuepress/back-to-top': true,

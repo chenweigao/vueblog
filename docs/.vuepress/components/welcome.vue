@@ -1,9 +1,9 @@
 <template>
-<transition appear enter-active-class="slideInUp">
+<transition appear enter-active-class="slideInRight">
 <div class="animated">
 
 <p :class="['thin', 'color']"> 
-    Welcome, friend. I spent some time building this blog, for the motivation that writing down what I think, noting what I learned and delivering my opinion about pretty design...
+    Hi, friend. I spent some time building this blog, for the motivation that writing down what I think, noting what I learned and delivering my opinion about pretty design...
     <br/>
     There you could <a href="/blog/">see the post list</a> or know something about me, or share your idea, I will be extremely happy if you share something to me.
     <br/>
