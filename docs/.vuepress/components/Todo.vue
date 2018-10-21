@@ -3,7 +3,7 @@
    <label>Add:
         <input type="text" name="" id="" v-model="content" @keyup.enter="add">  
     </label>
-    <input type="button" value="Add" @click="add">
+    <input type="button" :class="['button']" value="Add" @click="add">
     <ul v-for="item in todo">
         {{ item.content }}
     </ul>
@@ -11,15 +11,13 @@
 </template>
 
 <script>
+const STORAGE_KEY = "content";
+const todoList = [{ content: "Add some todos!" }];
 export default {
   data: function() {
     return {
       content: "",
-      todo: [
-        {
-          content: "Add something todo!"
-        }
-      ]
+      todo: todoList || JSON.parse(window.localStorage.getItem(STORAGE_KEY))
     };
   },
   methods: {
@@ -36,6 +34,21 @@ export default {
 </script>
 
 <style>
+.button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .thin {
   font-weight: 300;
 }
