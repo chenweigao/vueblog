@@ -62,9 +62,13 @@ module.exports = {
         link: '/blog/'
       },
       {
+        text: 'Discuss',
+        link: '/discuss/'
+      },
+      {
         text: 'Docs',
         link: '/logs/'
-      },
+      }, 
       {
         text: 'Code',
         items: [{
