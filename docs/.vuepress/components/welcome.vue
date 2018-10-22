@@ -1,5 +1,5 @@
 <template>
-<transition appear enter-active-class="slideInRight">
+<transition appear enter-active-class="fadeInUp">
 <div class="animated">
 
 <p :class="['thin', 'color']"> 
@@ -8,6 +8,8 @@
     There you could <router-link to="/blog/">See The Post List</router-link> or know something about me, or share your idea, I will be extremely happy if you share something to me.
     <br/>
     In the past two years, I was keeping on building my personal site, from GitHub pages to Jekyll, it spent me a lot of time, but I lost myself in it until I learned Vue, which is what I wanted, so I built this site with Vue.
+    <br/>
+    I will be very appreciate if you are willing to <router-link to="/discuss/">Leave Some Comments</router-link>!
     <br/>
     Although I know, I am a new fish in coding, but I have always been proud of my work. Have your nice trip here, thank you so much.</p>
 </div>
