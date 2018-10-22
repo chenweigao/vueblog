@@ -24,10 +24,11 @@ export default {
       el: "#vcomments",
       appId: "wJrq8Ck2MqeaFzOYUf0TcP6G-gzGzoHsz", // your appId
       appKey: "taRHm1fEce4nGp2lmNgkiW9U", // your appKey
-      notify: true,
-      avatar: "mm",
+      // notify: true,
+      avatar: "retro",
       placeholder: "writing somrthing...",
       visitor: true,
+      verfy: false,
       lang: 'en',
       meta: ['nick']
     });
