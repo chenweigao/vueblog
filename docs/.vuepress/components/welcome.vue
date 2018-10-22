@@ -1,5 +1,5 @@
 <template>
-<transition appear enter-active-class="zoomIn">
+<transition appear enter-active-class="fadeInRight">
 <div class="animated">
 
 <p :class="['thin', 'color']"> 
