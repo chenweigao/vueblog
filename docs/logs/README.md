@@ -90,3 +90,5 @@
 [Oct 18]() Vue animation, custom css using `Animate.css`
 
 [Oct 19]() Vue todo app, make some css beautiful
+
+[Oct 22]() Use the `vue-element-admin`, build vuepress site with new function: `Discuss` by `Valine`
