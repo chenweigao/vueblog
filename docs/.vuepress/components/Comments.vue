@@ -1,10 +1,10 @@
 <template>
-<!-- <div>
-    <transition appear enter-active-class="zoomIn">
+<div>
+    <transition appear enter-active-class="fadeInUp">
     <div id="vcomments" class="animated"></div>
     </transition>
-</div> -->
-    <div id="vcomments" class="animated"></div>
+</div>
+    <!-- <div id="vcomments" class="animated"></div> -->
 </template>
 
 <script>
@@ -26,7 +26,7 @@ export default {
       appId: "wJrq8Ck2MqeaFzOYUf0TcP6G-gzGzoHsz", // your appId
       appKey: "taRHm1fEce4nGp2lmNgkiW9U", // your appKey
       // notify: true,
-      avatar: false,
+      avatar: 'hide',
       placeholder: "writing somrthing...",
       visitor: true,
       verfy: false,
