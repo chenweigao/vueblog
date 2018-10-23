@@ -1,7 +1,44 @@
-# Vue.js Study Notes
+# Vue.js Basics
 
-## Vue resource
+## axios
+In the project, it is important to use AJAX. `Vue resource` and `axios` is very useful.
 
+```bash
+yarn add axios -D
+```
+When building a **project** using it in `Vue` Components:
+
+```js
+import axios from 'axios'
+export deafult = {
+}
+```
+
+In signal `HTML` file `<script>`:
+
+```js
+// remeber to import CDN
+var vm = new Vue({
+  methods: {
+    getInfo() {
+      axios.get('url').then( function(response) {
+      console.log(response)
+        })
+    .catch( function(error) {
+      console.log(error)
+    })
+}
+```
+
+:::tip
+If want function `getInfo` automaticlly, use `create` hook function
+:::
+
+## localStorage
+
+Useful method in localStorage:
+  - getItem
+  - xxx
 
 ## Devtools
 
@@ -16,6 +53,8 @@ vue-devtools
 
 ## components
 
+### register
+
 There are two types of component registration: global and local.
 
 using `Vue.component` to register component globally:
@@ -25,6 +64,9 @@ Vue.component('my-component-name', {
   // ... options ...
 })
 ```
+
+
+父子组件：
 
 ## Filters
 
