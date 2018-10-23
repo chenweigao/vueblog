@@ -92,3 +92,5 @@
 [Oct 19]() Vue todo app, make some css beautiful
 
 [Oct 22]() Use the `vue-element-admin`, build vuepress site with new function: `Discuss` by `Valine`
+
+[Oct 23]() Use `element UI` to build a table(data from radar project by axios), make the table adjustable and read data by 'props'
