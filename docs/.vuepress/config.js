@@ -131,7 +131,7 @@ module.exports = {
         },
         {
           title: 'Tool',
-          collapsable: false,
+          collapsable: true,
           children: [
             '/blog/tool/',
             '/blog/tool/apt',

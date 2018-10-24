@@ -696,25 +696,25 @@
     source-map "^0.5.6"
     vue-template-es2015-compiler "^1.6.0"
 
-"@vuepress/cli@^1.0.0-alpha.13":
-  version "1.0.0-alpha.13"
-  resolved "https://registry.yarnpkg.com/@vuepress/cli/-/cli-1.0.0-alpha.13.tgz#656b29539ce9da5901e2b9e365b0588dba28d9a6"
+"@vuepress/cli@^1.0.0-alpha.16":
+  version "1.0.0-alpha.16"
+  resolved "https://registry.yarnpkg.com/@vuepress/cli/-/cli-1.0.0-alpha.16.tgz#65f335677dbdc8e26cf6f8768d067ab41c4ffc56"
   dependencies:
     chalk "^2.3.2"
     commander "^2.15.1"
     semver "^5.5.0"
 
-"@vuepress/core@^1.0.0-alpha.13":
-  version "1.0.0-alpha.13"
-  resolved "https://registry.yarnpkg.com/@vuepress/core/-/core-1.0.0-alpha.13.tgz#aaa16e606839f8c6483423405757074eed2fd203"
+"@vuepress/core@^1.0.0-alpha.16":
+  version "1.0.0-alpha.16"
+  resolved "https://registry.yarnpkg.com/@vuepress/core/-/core-1.0.0-alpha.16.tgz#09c035271e3f91dc805696ec345409f3f06d4da6"
   dependencies:
     "@babel/core" "7.0.0-beta.47"
     "@vue/babel-preset-app" "3.0.0-beta.11"
-    "@vuepress/markdown" "^1.0.0-alpha.13"
-    "@vuepress/markdown-loader" "^1.0.0-alpha.13"
-    "@vuepress/plugin-last-updated" "^1.0.0-alpha.13"
-    "@vuepress/plugin-register-components" "^1.0.0-alpha.13"
-    "@vuepress/shared-utils" "^1.0.0-alpha.13"
+    "@vuepress/markdown" "^1.0.0-alpha.16"
+    "@vuepress/markdown-loader" "^1.0.0-alpha.16"
+    "@vuepress/plugin-last-updated" "^1.0.0-alpha.16"
+    "@vuepress/plugin-register-components" "^1.0.0-alpha.16"
+    "@vuepress/shared-utils" "^1.0.0-alpha.16"
     autoprefixer "^8.2.0"
     babel-loader "8.0.0-beta.3"
     cache-loader "^1.2.2"
@@ -749,18 +749,18 @@
     webpack-serve "^1.0.2"
     webpackbar "^2.6.1"
 
-"@vuepress/markdown-loader@^1.0.0-alpha.13":
-  version "1.0.0-alpha.13"
-  resolved "https://registry.yarnpkg.com/@vuepress/markdown-loader/-/markdown-loader-1.0.0-alpha.13.tgz#2eda7ba364e61d9aef11b18f5b937d9cf88dc849"
+"@vuepress/markdown-loader@^1.0.0-alpha.16":
+  version "1.0.0-alpha.16"
+  resolved "https://registry.yarnpkg.com/@vuepress/markdown-loader/-/markdown-loader-1.0.0-alpha.16.tgz#2d1b78a5c01f49dde665dea437d433ae5b877aef"
   dependencies:
-    "@vuepress/markdown" "^1.0.0-alpha.13"
+    "@vuepress/markdown" "^1.0.0-alpha.16"
     loader-utils "^1.1.0"
 
-"@vuepress/markdown@^1.0.0-alpha.13":
-  version "1.0.0-alpha.13"
-  resolved "https://registry.yarnpkg.com/@vuepress/markdown/-/markdown-1.0.0-alpha.13.tgz#2de647dc1fcd6ab3f2b84bff17616e899ce15db2"
+"@vuepress/markdown@^1.0.0-alpha.16":
+  version "1.0.0-alpha.16"
+  resolved "https://registry.yarnpkg.com/@vuepress/markdown/-/markdown-1.0.0-alpha.16.tgz#541264471893abca87a68babe7fd8e4af5f30e3a"
   dependencies:
-    "@vuepress/shared-utils" "^1.0.0-alpha.13"
+    "@vuepress/shared-utils" "^1.0.0-alpha.16"
     markdown-it "^8.4.1"
     markdown-it-anchor "^5.0.2"
     markdown-it-chain "^1.2.1"
@@ -769,9 +769,9 @@
     markdown-it-table-of-contents "^0.4.0"
     prismjs "^1.13.0"
 
-"@vuepress/plugin-active-header-links@^1.0.0-alpha.13":
-  version "1.0.0-alpha.13"
-  resolved "https://registry.yarnpkg.com/@vuepress/plugin-active-header-links/-/plugin-active-header-links-1.0.0-alpha.13.tgz#1f6abc5b3a979906e91eae5a18d6ebff20038e79"
+"@vuepress/plugin-active-header-links@^1.0.0-alpha.16":
+  version "1.0.0-alpha.16"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-active-header-links/-/plugin-active-header-links-1.0.0-alpha.16.tgz#a015ac596b005a4a0486c007f5185195a4112544"
   dependencies:
     lodash.throttle "^4.1.1"
 
@@ -787,9 +787,9 @@
   dependencies:
     cross-spawn "^6.0.5"
 
-"@vuepress/plugin-last-updated@^1.0.0-alpha.13":
-  version "1.0.0-alpha.13"
-  resolved "https://registry.yarnpkg.com/@vuepress/plugin-last-updated/-/plugin-last-updated-1.0.0-alpha.13.tgz#2b02e55bf785ddf52c7f1e18b14c99c820b34888"
+"@vuepress/plugin-last-updated@^1.0.0-alpha.16":
+  version "1.0.0-alpha.16"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-last-updated/-/plugin-last-updated-1.0.0-alpha.16.tgz#5cfc49617c4c8a2c1559389c041d7c47e2b0cdc4"
   dependencies:
     cross-spawn "^6.0.5"
 
@@ -801,15 +801,15 @@
     register-service-worker "^1.5.2"
     workbox-build "^3.1.0"
 
-"@vuepress/plugin-register-components@^1.0.0-alpha.13":
-  version "1.0.0-alpha.13"
-  resolved "https://registry.yarnpkg.com/@vuepress/plugin-register-components/-/plugin-register-components-1.0.0-alpha.13.tgz#42ab86f9fcfa2502c8dae59596d0155d5b93e0bc"
+"@vuepress/plugin-register-components@^1.0.0-alpha.16":
+  version "1.0.0-alpha.16"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-register-components/-/plugin-register-components-1.0.0-alpha.16.tgz#4e1c5e1f38f9fc7c468b764ff25847c43a59a4d6"
   dependencies:
-    "@vuepress/shared-utils" "^1.0.0-alpha.13"
+    "@vuepress/shared-utils" "^1.0.0-alpha.16"
 
-"@vuepress/plugin-search@^1.0.0-alpha.13":
-  version "1.0.0-alpha.13"
-  resolved "https://registry.yarnpkg.com/@vuepress/plugin-search/-/plugin-search-1.0.0-alpha.13.tgz#5d3a03d000a3396dd9c55db696adc62fabf68fb0"
+"@vuepress/plugin-search@^1.0.0-alpha.16":
+  version "1.0.0-alpha.16"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-search/-/plugin-search-1.0.0-alpha.16.tgz#fc19eb036cb596a870cb2f75ef4c736f0fb0fc4f"
 
 "@vuepress/shared-utils@^1.0.0-alpha.0":
   version "1.0.0-alpha.0"
@@ -821,9 +821,9 @@
     globby "^8.0.1"
     hash-sum "^1.0.2"
 
-"@vuepress/shared-utils@^1.0.0-alpha.13":
-  version "1.0.0-alpha.13"
-  resolved "https://registry.yarnpkg.com/@vuepress/shared-utils/-/shared-utils-1.0.0-alpha.13.tgz#35e9095e04b441e5349f1480b72960e8e947717d"
+"@vuepress/shared-utils@^1.0.0-alpha.16":
+  version "1.0.0-alpha.16"
+  resolved "https://registry.yarnpkg.com/@vuepress/shared-utils/-/shared-utils-1.0.0-alpha.16.tgz#5c1bd6c301e5db499d4921698da89365b3cbcfc9"
   dependencies:
     chalk "^2.3.2"
     diacritics "^1.3.0"
@@ -833,12 +833,12 @@
     hash-sum "^1.0.2"
     upath "^1.1.0"
 
-"@vuepress/theme-default@^1.0.0-alpha.13":
-  version "1.0.0-alpha.13"
-  resolved "https://registry.yarnpkg.com/@vuepress/theme-default/-/theme-default-1.0.0-alpha.13.tgz#776bbbe120b9f213f83d2c0997cfb81907246279"
+"@vuepress/theme-default@^1.0.0-alpha.16":
+  version "1.0.0-alpha.16"
+  resolved "https://registry.yarnpkg.com/@vuepress/theme-default/-/theme-default-1.0.0-alpha.16.tgz#90416efece8f8c418a1ce43c77413b462e3af587"
   dependencies:
-    "@vuepress/plugin-active-header-links" "^1.0.0-alpha.13"
-    "@vuepress/plugin-search" "^1.0.0-alpha.13"
+    "@vuepress/plugin-active-header-links" "^1.0.0-alpha.16"
+    "@vuepress/plugin-search" "^1.0.0-alpha.16"
     docsearch.js "^2.5.2"
     nprogress "^0.2.0"
     stylus "^0.54.5"
@@ -1240,6 +1240,12 @@ async-limiter@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/async-limiter/-/async-limiter-1.0.0.tgz#78faed8c3d074ab81f22b4e985d79e8738f720f8"
 
+async-validator@~1.8.1:
+  version "1.8.5"
+  resolved "https://registry.yarnpkg.com/async-validator/-/async-validator-1.8.5.tgz#dc3e08ec1fd0dddb67e60842f02c0cd1cec6d7f0"
+  dependencies:
+    babel-runtime "6.x"
+
 async@^1.5.2:
   version "1.5.2"
   resolved "http://registry.npmjs.org/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
@@ -1309,7 +1315,7 @@ babel-extract-comments@^1.0.0:
   dependencies:
     babylon "^6.18.0"
 
-babel-helper-vue-jsx-merge-props@^2.0.3:
+babel-helper-vue-jsx-merge-props@^2.0.0, babel-helper-vue-jsx-merge-props@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-2.0.3.tgz#22aebd3b33902328e513293a8e4992b384f9f1b6"
 
@@ -1349,7 +1355,7 @@ babel-plugin-transform-vue-jsx@^4.0.1:
   dependencies:
     esutils "^2.0.2"
 
-babel-runtime@^6.26.0, babel-runtime@^6.6.1:
+babel-runtime@6.x, babel-runtime@^6.26.0, babel-runtime@^6.6.1:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -2293,7 +2299,7 @@ deep-extend@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.6.0.tgz#c4fa7c95404a17a9c3e8ca7e1537312b736330ac"
 
-deepmerge@^1.5.2:
+deepmerge@^1.2.0, deepmerge@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-1.5.2.tgz#10499d868844cdad4fee0842df8c7f6f0c95a753"
 
@@ -2466,6 +2472,17 @@ ee-first@1.1.1:
 electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.47:
   version "1.3.79"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.79.tgz#774718f06284a4bf8f578ac67e74508fe659f13a"
+
+element-ui@^2.4.8:
+  version "2.4.8"
+  resolved "https://registry.yarnpkg.com/element-ui/-/element-ui-2.4.8.tgz#04c684540f84983ef440b516680b0dc6a4c66eff"
+  dependencies:
+    async-validator "~1.8.1"
+    babel-helper-vue-jsx-merge-props "^2.0.0"
+    deepmerge "^1.2.0"
+    normalize-wheel "^1.0.1"
+    resize-observer-polyfill "^1.5.0"
+    throttle-debounce "^1.0.1"
 
 elliptic@^6.0.0:
   version "6.4.1"
@@ -4680,6 +4697,10 @@ normalize-url@^1.4.0:
     query-string "^4.1.0"
     sort-keys "^1.0.0"
 
+normalize-wheel@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/normalize-wheel/-/normalize-wheel-1.0.1.tgz#aec886affdb045070d856447df62ecf86146ec45"
+
 npm-bundled@^1.0.1:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/npm-bundled/-/npm-bundled-1.0.5.tgz#3c1732b7ba936b3a10325aef616467c0ccbcc979"
@@ -5725,6 +5746,10 @@ require-main-filename@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/require-main-filename/-/require-main-filename-1.0.1.tgz#97f717b69d48784f5f526a6c5aa8ffdda055a4d1"
 
+resize-observer-polyfill@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.0.tgz#660ff1d9712a2382baa2cad450a4716209f9ca69"
+
 resolve-cwd@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/resolve-cwd/-/resolve-cwd-2.0.0.tgz#00a9f7387556e27038eae232caa372a6a59b665a"
@@ -6333,6 +6358,10 @@ thenify-all@^1.0.0:
   dependencies:
     any-promise "^1.0.0"
 
+throttle-debounce@^1.0.1:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/throttle-debounce/-/throttle-debounce-1.1.0.tgz#51853da37be68a155cb6e827b3514a3c422e89cd"
+
 through2@^2.0.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/through2/-/through2-2.0.3.tgz#0004569b37c7c74ba39c43f3ced78d1ad94140be"
@@ -6767,13 +6796,13 @@ vuepress-html-webpack-plugin@^3.2.0:
     toposort "^1.0.0"
     util.promisify "1.0.0"
 
-vuepress@^1.0.0-alpha.13:
-  version "1.0.0-alpha.13"
-  resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-1.0.0-alpha.13.tgz#f3c86c48f02ae84068149ffdc0c57c6d57f41806"
+vuepress@^1.0.0-alpha.16:
+  version "1.0.0-alpha.16"
+  resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-1.0.0-alpha.16.tgz#99d12c25bcc8a3541e87eb33a99265aeaaf9ed6f"
   dependencies:
-    "@vuepress/cli" "^1.0.0-alpha.13"
-    "@vuepress/core" "^1.0.0-alpha.13"
-    "@vuepress/theme-default" "^1.0.0-alpha.13"
+    "@vuepress/cli" "^1.0.0-alpha.16"
+    "@vuepress/core" "^1.0.0-alpha.16"
+    "@vuepress/theme-default" "^1.0.0-alpha.16"
 
 watchpack@^1.5.0:
   version "1.6.0"

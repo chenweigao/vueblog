@@ -1,5 +1,8 @@
 # 2018/work log
 
+<DateComponent/>
+
+
 ## July
 
 [Jul 17](https://www.weigao.cc/blog/2018/07/19/facerecog.html)  Darknet, YOLO, write the patent, new version.
@@ -93,4 +96,6 @@
 
 [Oct 22]() Use the `vue-element-admin`, build vuepress site with new function: `Discuss` by `Valine`
 
-[Oct 23]() Use `element UI` to build a table(data from radar project by axios), make the table adjustable and read data by 'props'
+[Oct 23]() Use `element UI` to build a table(data from radar project by axios), make the table adjustable and read data by `props`
+
+[Oct 24]() `Element UI` date component: add a new function date choose, vue-router, import element ui in `main.js`
