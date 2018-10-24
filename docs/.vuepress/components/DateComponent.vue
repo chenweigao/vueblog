@@ -8,9 +8,6 @@
                 <el-tooltip placement="bottom" content="to this day!" effect="light" open-delay=200 hide-after=600>
                 <el-button @click="toThisDate" icon="el-icon-search"></el-button>
                 </el-tooltip>
-                <el-tooltip placement="right" content="to today!" effect="light" open-delay=200 hide-after=600>
-                <el-button @click="toToday" icon="el-icon-date"></el-button>
-                </el-tooltip>
             </div>
         </div>
     </transition>
@@ -82,24 +79,6 @@ export default {
             // console.log(date);
             // this.date = date
             this.$router.push({ path: '#' + this.date })
-        },
-        toToday() {
-            var month = new Array("January",
-                "February",
-                "March",
-                "April",
-                "May",
-                "June",
-                "July",
-                "August",
-                "September",
-                "October",
-                "November",
-                "December")
-            var today = new Date()
-            var n = month[today.getMonth()]
-            var date = n.toLowerCase()
-            this.$router.push({ path: '#' + date })
         }
     }
 };
