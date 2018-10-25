@@ -98,4 +98,6 @@
 
 [Oct 23]() Use `element UI` to build a table(data from radar project by axios), make the table adjustable and read data by `props`
 
-[Oct 24]() `Element UI` date component: add a new function date choose, vue-router, import element ui in `main.js`
+[Oct 24]() `Element UI` date component: add a new function date choose, vue-router, import element ui in `enhanceApp.js`
+
+[Oct 25]() Add a new table attribution: **angle**, and make the project home dasnboard more professional; add new map using `iframe`

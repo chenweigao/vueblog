@@ -68,7 +68,7 @@ module.exports = {
       {
         text: 'Docs',
         link: '/logs/'
-      }, 
+      },
       {
         text: 'Code',
         items: [{
@@ -91,13 +91,7 @@ module.exports = {
       },
       {
         text: 'About',
-        items: [{
-          text: 'Main Blog',
-          link: 'https://www.weigao.cc'
-        }, {
-          text: 'GitHub',
-          link: 'https://github.com/chenweigao'
-        }]
+        link: '/about/'
       }
     ],
 

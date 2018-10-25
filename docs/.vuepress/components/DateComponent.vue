@@ -42,7 +42,7 @@ export default {
                     }
                 }]
             },
-            value: '',
+            value: new Date(),
             date: null
         };
     },
