@@ -54,8 +54,8 @@
                 <el-card class="box-card">
                     <div class="text item">
                         <ul>Email:<a href="mailto: mail@weigao.cc"> mail@weigao.cc </a></ul>
-                        <ul>QQ: 297859260 </ul>
-                        <ul>Wechat: 297859260 </ul>
+                        <ul>QQ:  </ul>
+                        <ul>Wechat:  </ul>
                         <ul>Github: <a href="https://github.com/chenweigao">chenweigao</a> </ul>
                     </div>
                 </el-card>

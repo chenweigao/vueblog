@@ -49,12 +49,6 @@ export default {
 }
 ```
 
-## localStorage
-
-Useful method in localStorage:
-  - getItem
-  - xxx
-
 ## Devtools
 
 [github-vue-remote-devtools](https://github.com/vuejs/vue-devtools/blob/master/shells/electron/README.md)
