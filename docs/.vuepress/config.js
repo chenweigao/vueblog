@@ -110,7 +110,8 @@ module.exports = {
             '/blog/web/',
             '/blog/web/vue',
             '/blog/web/database',
-            '/blog/web/flask'
+            '/blog/web/flask',
+            '/blog/web/javascript',
           ]
         },
         {

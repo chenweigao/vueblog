@@ -1,11 +1,13 @@
 # Vue.js Basics
 
 ## axios
+
 In the project, it is important to use AJAX. `Vue resource` and `axios` is very useful.
 
 ```bash
 yarn add axios -D
 ```
+
 When building a **project** using it in `Vue` Components:
 
 ```js
@@ -19,20 +21,33 @@ In signal `HTML` file `<script>`:
 ```js
 // remeber to import CDN
 var vm = new Vue({
-  methods: {
-    getInfo() {
-      axios.get('url').then( function(response) {
-      console.log(response)
-        })
-    .catch( function(error) {
-      console.log(error)
-    })
-}
+    methods: {
+        getInfo() {
+            //axios code
+        }
+    }
+})
 ```
 
 :::tip
 If want function `getInfo` automaticlly, use `create` hook function
 :::
+
+```js
+export default {
+  created: function () {
+    axios
+      .get('')
+      .then(response => {
+
+        }
+      })
+      .catch(error => {
+
+      })
+  },
+}
+```
 
 ## localStorage
 
