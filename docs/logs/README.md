@@ -100,5 +100,7 @@
 
 [Oct 24]() `Element UI` date component: add a new function date choose, vue-router, import element ui in `enhanceApp.js`
 
-[Oct 25]() Add a new table attribution: **angle**, and make the project home dasnboard more professional; add new map using `<iframe>`; tool: **Stdio 3T for MongoDB**
+[Oct 25]() Add a new table attribution: **angle**, and make the project home dashboard more professional; add new map using `<iframe>`; tool: **Studio 3T for MongoDB**
+
+[Oct 26]() MongoDb database’s CRUD
 

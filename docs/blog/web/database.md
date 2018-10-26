@@ -83,6 +83,18 @@ db.inventory.replaceOne(
 
 If there are matching documents, then the `upsert` operation modifies or replaces the matching document or documents. 
 
+### Delate
+
+MongoDb provides the followinng methods to delete documents of a collection:
+
+- `db.collection.deleteOne()`
+- `db.collection.deleteMany()`
+- `db.collection.remove()`
+
+
+
+
+
 Process in terminal:
 
 ```bash
@@ -103,7 +115,7 @@ batch import `.json` file:
 mongoimport --db users --collection contacts --file xx.json
 ```
 
-### mongorestore
+### Restore
 
 ```bash
 mongorestore -h <hostname><:port> -d dbname <path>

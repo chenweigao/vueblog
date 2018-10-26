@@ -31,7 +31,7 @@ export default {
       visitor: true,
       verfy: false,
       lang: 'en',
-      meta: ['nick']
+      meta: ['nick', 'mail']
     });
   }
 };
