@@ -1,14 +1,87 @@
-# Database
+# MongoDB
 
 Common RDB(Relational Database): PostgreSQL, MySQL, Orcal, MS SQL Server and SQLite.
-
-## MongoDB
-
-### Basic
 
 `database` –`collection` – `document`– `field` – `index`.
 
 [Install in LInux](http://www.runoob.com/mongodb/mongodb-linux-install.html)
+
+## CRUD
+
+CRUD operations create, read, update, and create documents.
+
+### Cteate
+
+- `db.collection.insertOne()` New in version 3.2
+- `db.collection.insertMany()` New in version 3.2
+
+```sh
+db.collection.insertOne(
+	{
+		"name" : "aaa",
+		"age: 26
+	}
+)
+```
+
+```sh
+db.collection.insertMany(
+	[
+		{ ... },
+		{ ... }
+	]
+)
+```
+
+### Read
+
+Query a collection for document
+
+```bash
+db.collections.find(
+	{ age: { $gt: 18 } }
+).limit(5)
+```
+
+### Update
+
+```bash
+db.inventory.updateOne(
+   { item: "paper" },
+   {
+     $set: { "size.uom": "cm", status: "P" },
+     $currentDate: { lastModified: true }
+   }
+)
+# created filed: 
+# "lastModified" : ISODate("2018-10-26T08:59:26.038+0000")
+```
+
+- `$set` to update the value
+- `$currentDate` operator to update the value of the `lastModified` field to the current date, If lastModified field does not exist, `$currentDate ` will create the field. 
+
+Update many: to update document on inventory where **qty** is less than **50**:
+
+```bash
+db.inventory.updateMany(
+   { "qty": { $lt: 50 } },
+   {
+	   #same as updateOne()
+   }
+)
+```
+Replace: 
+
+```sh
+db.inventory.replaceOne(
+	# or updateOne() updateMany()
+   { item: "paperpaper" },
+   { item: "paper", instock: [ { warehouse: "A", qty: 60 }, { warehouse: "B", qty: 40 } ] },
+   { upsert: true }
+)
+```
+
+If there are matching documents, then the `upsert` operation modifies or replaces the matching document or documents. 
 
 Process in terminal:
 
