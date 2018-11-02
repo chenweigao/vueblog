@@ -105,9 +105,3 @@
 [Oct 26]() MongoDb database’s CRUD
 
 [Oct 29]() Vue-router: query, params, children
-
-## November
-
-[Nov 1]() basic webpack
-
-[Nov 2]() basic css

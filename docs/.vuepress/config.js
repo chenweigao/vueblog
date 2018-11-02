@@ -112,6 +112,7 @@ module.exports = {
             '/blog/web/database',
             '/blog/web/flask',
             '/blog/web/javascript',
+            '/blog/web/css'
           ]
         },
         {

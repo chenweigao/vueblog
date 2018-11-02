@@ -61,3 +61,4 @@ date.toDateString().slice(4, 11).replace(/ /, '-')
 
 ## localStorage
 
+## Var, Let and Const
