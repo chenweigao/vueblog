@@ -62,6 +62,10 @@ module.exports = {
         link: '/blog/'
       },
       {
+        text: 'Books',
+        link: '/books/'
+      },
+      {
         text: 'Discuss',
         link: '/discuss/'
       },
@@ -142,6 +146,10 @@ module.exports = {
             '/blog/research/',
           ]
         },
+      ],
+      '/books/': [
+        '',
+        'coder'
       ],
       '/algorithm/cpp/': [
         '',

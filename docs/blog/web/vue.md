@@ -1,5 +1,12 @@
 # Vue.js Basics
 
+## Animating State
+
+- watch
+- keyup
+- computed
+
+
 ## axios
 
 In the project, it is important to use AJAX. `Vue resource` and `axios` is very useful.
