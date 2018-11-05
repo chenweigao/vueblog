@@ -149,7 +149,8 @@ module.exports = {
       ],
       '/books/': [
         '',
-        'coder'
+        'coder',
+        'cpp'
       ],
       '/algorithm/cpp/': [
         '',
