@@ -6,7 +6,7 @@ description: Thread and Process
 An application consists of one or more processes. A process, in the simplest terms, is an executing program. One or more threads run in the context of the process. A thread is the basic unit to which the operating system allocates processor time. A thread can execute any part of the process code, including parts currently being executed by another thread.
 <!-- more -->
 
-## Thread and Process
+# Thread and Process
 
 1. What is *process*?
 

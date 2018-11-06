@@ -111,3 +111,8 @@
 [Nov 1]() basic webpack
 
 [Nov 2]() basic css
+
+[Nov 5](https://docs.microsoft.com/en-us/windows/desktop/procthread/creating-processes) new site header: Books, different between *Process* and *Thread*
+
+[Nov 6]() String problem solved(1/2)
+

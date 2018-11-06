@@ -1,4 +1,4 @@
-# JS basic
+# JavaScript
 
 ## Date Object
 

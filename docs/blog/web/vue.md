@@ -1,4 +1,4 @@
-# Vue.js Basics
+# Vue
 
 ## Animating State
 
