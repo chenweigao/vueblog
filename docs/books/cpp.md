@@ -6,9 +6,9 @@ description: C++ prime book
 This is a reading note when I studying C++ basic grammar.
 <!-- more -->
 
-# Type
+## Type
 
-## Compound Types
+### Compound Types
 
 C++ has several compound types, **reference** and **pointers** is important.
 
@@ -19,9 +19,9 @@ int &refVal = ival;
 //refVal is an another name of oval
 ```
 
-# IO
+## IO
 
-## Output buffer
+### Output buffer
 
 Flushing the output buffer:
 
@@ -35,9 +35,9 @@ Flushing the output buffer:
 `cin >> ival;` causes the buffer associated with `cout` to bu flushed, because the library ties input and output streams together.
 :::
 
-# String
+## String
 
-## Initialization
+### Initialization
 
 - copy initialization
 
@@ -52,7 +52,7 @@ string s("value");
 string s(4, 'c') //'cccc'
 ```
 
-## Dealing with Types
+### Dealing with Types
 
 ### decltype Type Specifier
 
@@ -69,6 +69,8 @@ decltype(s.size()) cnt = 0;
 
 Sometimes we need to process only a specific character, theses functions helps us change the characteristics of a character. These functions are defined in the `cctype` headers.
 
+:::tip notes
+
 - isalmun(c) : true if c is a letter or digit
 
 - isalph(c) : letter
@@ -77,3 +79,28 @@ Sometimes we need to process only a specific character, theses functions helps u
 
 - islower(c)/isupper(c), tolower(c)/toupper(c)
 
+- isspace(c): true if c is whitespace(a space, tab, vertical tab, return, newline or foemfeed)
+
+:::
+
+## Vector and Iterator
+
+## Using Iterators
+
+```cpp
+auto b = v.begin(), e = v.end()
+```
+
+*b* denotes the first element and *e* denotes one past the last element in v.
+
+The iterator returned by `end` is an iterator positioned "one past the end" of the associated container(or `string`)
+
+As with pointers, we can dereference an iterator to obtain the element denoted by an element. (see *code - c++ - iterator*)
+
+Iterators use the `++` operator to move from one element to the next, the effect is to **advance the iterator by one position**.
+
+:::tip Generic Programming
+C++ programmers use `!=` as a matter of habit, this coding style applies equally well to various kinds of containers provided by the library.
+
+All of the library containers have iterators that define the `==` and `!=` operators, most of those iterators do not have the `<` operator.
+:::
