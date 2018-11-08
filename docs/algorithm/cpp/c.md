@@ -79,3 +79,30 @@ int main(int argc, char const *argv[])
 }
 ```
 
+### Find in iterator
+
+Example(9.4): write a function that takes a pair of iterators to a vector and an int value. **Look for** the value in the range and return an iterator to the requested element:
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+auto contains(vector<int>::const_iterator first, vector<int>::const_iterator last, int value)
+{
+    for (; first != last; ++first)
+    {
+        if (*first == value)
+            return first;
+    }
+    return last;
+}
+
+int main(int argc, char const *argv[])
+{
+    vector<int> v{1, 2, 3, 4, 5, 7, 8, 9};
+    auto find_result = contains(v.begin(), v.end(), 9);
+    cout << *find_result << endl;
+    return 0;
+}
+```

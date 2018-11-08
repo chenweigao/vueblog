@@ -85,6 +85,17 @@ Sometimes we need to process only a specific character, theses functions helps u
 
 ## Vector and Iterator
 
+### Iterator Init
+
+```cpp
+vector<int> vec;    // vec is empty
+vector<int> vec(10);    // 0
+vector<int> vec(10, 1);  // 1
+vector<int> vec{ 1, 2, 3, 4, 5 }; // 1, 2, 3, 4, 5
+vector<int> vec(other_vec); // same as other_vec
+vector<int> vec(other_vec.begin(), other_vec.end()); // same as other_vec
+```
+
 ## Using Iterators
 
 ```cpp
@@ -95,6 +106,8 @@ auto b = v.begin(), e = v.end()
 
 The iterator returned by `end` is an iterator positioned "one past the end" of the associated container(or `string`)
 
+It is usually best to use a const type(such as `const_iterator`) when we need to **read** but do not need to **write** to an object, the new standard introduced two new functions named `cbegin()` and `cend()`.
+
 As with pointers, we can dereference an iterator to obtain the element denoted by an element. (see *code - c++ - iterator*)
 
 Iterators use the `++` operator to move from one element to the next, the effect is to **advance the iterator by one position**.
@@ -104,3 +117,17 @@ C++ programmers use `!=` as a matter of habit, this coding style applies equally
 
 All of the library containers have iterators that define the `==` and `!=` operators, most of those iterators do not have the `<` operator.
 :::
+
+## Sequential Containers
+
+### Overview
+
+|  Containers  | Overview                                         |
+| :----------: | ------------------------------------------------ |
+|    vector    | Flexible-size array; supports fast random access |
+|    deque     | double-end queue                                 |
+|     list     | doubly linked list                               |
+| forward_list | singly linked list                               |
+|    array     | fixed-size array, can not add or remove elements |
+|    string    | similar to vector                                |
+
