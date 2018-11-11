@@ -57,7 +57,7 @@ for( auto it = s.begin(); it != s.end() && !isspace(*it); ++it)
 
 Example: write a program to create a vector with ten int elements. Using an iterator, assign each element a value that is twice its current value. Test your program by printing the vector.
 
-```cpp
+``` cpp{13}
 #include <iostream>
 #include <iterator>
 #include <vector>

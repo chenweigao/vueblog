@@ -117,3 +117,5 @@
 [Nov 6]() String problem solved(1/2)
 
 [Nov 7]() Vector and extral string konwledge(2/2), iterator
+
+[Nov 8]() Iterator usage, sequential containers
