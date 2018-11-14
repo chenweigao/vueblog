@@ -123,3 +123,5 @@
 [Nov 12](https://github.com/eliben/code-for-blog/blob/master/2017/async-socket-server/sequential-server.c) Sample markdown editor, c++ sequential-server
 
 [Nov 13](https://github.com/chenweigao/LinuxConsoleApp/blob/master/ConsoleApplication4/kilo.c) A custom editor build with c. **phase 1**, init the project with VS, remote debug in subsystem, config the `sshd_config` allows the password authentication in `/etc/ssh`; Custom editor mode: *raw mode*; Using `sys/ioctl.h` to get the window size.
+
+[Nov 14](https://github.com/snaptoken/kilo-src/blob/home-end-simple/kilo.c) Editor key press, editorKey including 'WASD' and 'PAGEUP' 'PAGEDOWN'.
