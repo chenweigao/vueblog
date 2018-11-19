@@ -137,3 +137,20 @@ All of the library containers have iterators that define the `==` and `!=` opera
 ### sizeof
 
 The operand is either an identifier that is a unary-expression, or a type-cast expression (that is, a type specifier enclosed in parentheses). The unary-expression cannot represent a bit-field object, an incomplete type, or a function designator. The result is an *unsigned integral constant*. The standard header STDDEF.H defines this type as **size_t**.
+
+### snprintf
+
+`sprintf` 不能检查目标字符串的长度，故使用 `snprintf`
+
+```cpp
+// in stdio.h
+// Maximum chars of output to write in MAXLEN. 
+int snprintf ( char * s, size_t n, const char * format, ... );
+         
+//example: status bar
+char status[80];
+int len = snprintf(status, sizeof(status), "%.20s - %d lines");
+```
+
+If the resulting string would be longer than n-1 characters, the remaining characters are discarded and not stored, but counted for the value returned by the function(最大拷贝 n-1).
+A terminating null character is automatically appended after the content written.
