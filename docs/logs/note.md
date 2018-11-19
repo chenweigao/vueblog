@@ -28,3 +28,8 @@ while (1) {
     if (c == CTRL_KEY('q')) break;
 }
 ```
+
+`getline()` is useful for reading lines from a file when we don’t know how much memory to allocate for each line.
+
+- difference between `size_t` and `ssize_t`
+- To store mulitiple lines, make an array that will be a dynamicallu-allocated array

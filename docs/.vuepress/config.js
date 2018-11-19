@@ -104,7 +104,8 @@ module.exports = {
           title: 'Zen',
           collapsable: false,
           children: [
-            '/blog/zen/'
+            '/blog/zen/',
+            '/blog/zen/thoughts'
           ]
         },
         {
