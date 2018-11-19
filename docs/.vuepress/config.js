@@ -156,7 +156,8 @@ module.exports = {
       ],
       '/algorithm/cpp/': [
         '',
-        'c'
+        'c',
+        'b'
       ],
       '/algorithm/leetcode/': [
         '',
