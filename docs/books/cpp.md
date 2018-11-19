@@ -131,3 +131,9 @@ All of the library containers have iterators that define the `==` and `!=` opera
 |    array     | fixed-size array, can not add or remove elements |
 |    string    | similar to vector                                |
 
+
+## Some Notes
+
+### sizeof
+
+The operand is either an identifier that is a unary-expression, or a type-cast expression (that is, a type specifier enclosed in parentheses). The unary-expression cannot represent a bit-field object, an incomplete type, or a function designator. The result is an *unsigned integral constant*. The standard header STDDEF.H defines this type as **size_t**.
