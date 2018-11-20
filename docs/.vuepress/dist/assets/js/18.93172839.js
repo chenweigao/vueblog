@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[18],{330:function(t,e,n){"use strict";n.r(e);var o={props:["slot-key"]},s=n(12),l=Object(s.a)(o,function(){var t=this.$createElement,e=this._self._c||t;return e("ContentSlotsDistributor",{attrs:{"slot-key":this.slotKey}},[e("DateComponent")],1)},[],!1,null,null,null);l.options.__file="README.md";e.default=l.exports}}]);

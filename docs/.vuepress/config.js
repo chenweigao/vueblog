@@ -8,8 +8,7 @@ module.exports = {
       serviceWorker: true,
       updatePopup: true
     },
-    '@vuepress/last-updated': true,
-    '@vuepress/active-header-links': true
+    '@vuepress/last-updated': true
   },
   markdown: {
     lineNumbers: true

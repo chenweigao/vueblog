@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[14],{317:function(t,s,e){"use strict";e.r(s);var o={props:["slot-key"]},n=e(12),l=Object(n.a)(o,function(){var t=this.$createElement,s=this._self._c||t;return s("ContentSlotsDistributor",{attrs:{"slot-key":this.slotKey}},[s("Author")],1)},[],!1,null,null,null);l.options.__file="README.md";s.default=l.exports}}]);
