@@ -6,6 +6,61 @@ description: C++ prime book
 This is a reading note when I studying C++ basic grammar.
 <!-- more -->
 
+## Some Notes
+
+### sizeof
+
+The operand is either an identifier that is a unary-expression, or a type-cast expression (that is, a type specifier enclosed in parentheses). The unary-expression cannot represent a bit-field object, an incomplete type, or a function designator. The result is an *unsigned integral constant*. The standard header STDDEF.H defines this type as **size_t**.
+
+### snprintf
+
+`sprintf` 不能检查目标字符串的长度，故使用 `snprintf`
+
+```cpp
+// in stdio.h
+// Maximum chars of output to write in MAXLEN. 
+int snprintf ( char * s, size_t n, const char * format, ... );
+//example: status bar
+char status[80];
+int len = snprintf(status, sizeof(status), "%.20s - %d lines");
+```
+
+If the resulting string would be longer than n-1 characters, the remaining characters are discarded and not stored, but counted for the value returned by the function(最大拷贝 n-1).
+A terminating null character is automatically appended after the content written.
+
+## Variadic function
+
+可变参数的函数: [Example: average the number](https://github.com/chenweigao/_code/blob/master/cpp/variadic_function.cpp)
+
+To portably implement variadic functions in the C programming language, the standard `stdarg.h` header file is used. The older varargs.h header has been deprecated in favor of stdarg.h. In C++, the header file `cstdarg` is used.
+
+```c
+#include <stdarg.h>
+
+int VarArgFunc(int dwFixedArg, ...){
+    va_list pArgs = NULL;
+    va_start(pArgs, dwFixedArg);
+    int dwVarArg = va_arg(pArgs, int);
+    va_end(pArgs);
+}
+```
+
+Explanation:
+
+- 以固定参数的地址为起点依次确定各变参的内存起始地址(line 3)
+
+- 定义`va_list`类型的指针`pArgs`，用于存储参数地址(line 4)
+  
+- 初始化`pArgs`指针，使其指向第一个可变参数。该宏第二个参数是变参列表的前一个参数，即最后一个固定参数(line 5)
+
+- 该宏返回变参列表中的当前变参值并使`pArgs`指向列表中的下个变参。该宏第二个参数是要返回的当前变参类型(line 6)
+
+- 若函数有多个可变参数，则依次调用`va_arg`宏获取各个变参
+  
+- 将指针`pArgs`置为无效，结束变参的获取(line 7)
+  
+- 可在头文件中声明函数为`extern int VarArgFunc(int dwFixedArg, ...);`调用时用`VarArgFunc(FixedArg, VarArg);`
+
 ## Type
 
 ### Compound Types
@@ -131,26 +186,3 @@ All of the library containers have iterators that define the `==` and `!=` opera
 |    array     | fixed-size array, can not add or remove elements |
 |    string    | similar to vector                                |
 
-
-## Some Notes
-
-### sizeof
-
-The operand is either an identifier that is a unary-expression, or a type-cast expression (that is, a type specifier enclosed in parentheses). The unary-expression cannot represent a bit-field object, an incomplete type, or a function designator. The result is an *unsigned integral constant*. The standard header STDDEF.H defines this type as **size_t**.
-
-### snprintf
-
-`sprintf` 不能检查目标字符串的长度，故使用 `snprintf`
-
-```cpp
-// in stdio.h
-// Maximum chars of output to write in MAXLEN. 
-int snprintf ( char * s, size_t n, const char * format, ... );
-         
-//example: status bar
-char status[80];
-int len = snprintf(status, sizeof(status), "%.20s - %d lines");
-```
-
-If the resulting string would be longer than n-1 characters, the remaining characters are discarded and not stored, but counted for the value returned by the function(最大拷贝 n-1).
-A terminating null character is automatically appended after the content written.

@@ -1,6 +1,6 @@
 # JavaScript
 
-## Date Object
+## Date/Time
 
 [reference](http://www.runoob.com/jsref/jsref-obj-date.html)
 

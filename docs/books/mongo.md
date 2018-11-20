@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 ---
 title: MongoDB
 description: The Definitive Guide to MongoDB

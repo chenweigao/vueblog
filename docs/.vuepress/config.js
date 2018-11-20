@@ -8,9 +8,12 @@ module.exports = {
       serviceWorker: true,
       updatePopup: true
     },
-    '@vuepress/last-updated': true
+    '@vuepress/last-updated': true,
+    '@vuepress/active-header-links': true
   },
-
+  markdown: {
+    lineNumbers: true
+  },
   head: [
     ['link', {
       rel: 'icon',
@@ -51,7 +54,7 @@ module.exports = {
     }]
   ],
   themeConfig: {
-    sidebarDepth: 2,
+    sidebarDepth: 1,
     lastUpdated: 'Last Updated',
     nav: [{
         text: 'Home',

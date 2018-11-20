@@ -6,10 +6,10 @@
         <div v-for="post in posts" :key=post.title v-show=true class="animated">
             <!-- <p :class="['thin', 'color']"> {{ timestampToTime(post.lastUpdated) }} -->
             <h2>
-                <router-link :to="post.path"> {{ post.title }} : {{ post.frontmatter.description }}</router-link> 
+                <router-link :to="post.path"> {{ post.title }} : {{ post.frontmatter.description }}</router-link>
             </h2>
             <div v-html="post.excerpt"></div>
-            <p style="color: #C0C0C0; font-size:14px; text-align:right;">lastUpdated: {{ timestampToTime(post.lastUpdated) }}</p>
+            <p style="color: #C0C0C0; font-size:14px; text-align:right;">{{ post.lastUpdated | dateFormat }}</p>
         </div>
     </transition-group>
 </div>
@@ -34,6 +34,18 @@ export default {
             return this.$site.pages
                 .filter(x => x.path.startsWith("/books/") && !x.frontmatter.blog_index)
                 .sort((a, b) => b.lastUpdated - a.lastUpdated);
+        }
+    },
+    filters: {
+        dateFormat: function (dateStr) {
+            var dt = new Date(dateStr)
+            var y = dt.getFullYear()
+            var m = (dt.getMonth() + 1).toString().padStart(2, '0')
+            var d = dt.getDate().toString().padStart(2, '0')
+            var hh = dt.getHours().toString().padStart(2, '0')
+            var mm = dt.getMinutes().toString().padStart(2, '0')
+            var ss = dt.getSeconds().toString().padStart(2, '0')
+            return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
         }
     }
 };
@@ -64,5 +76,5 @@ export default {
     transition: all 0.6s ease;
 }
 
-@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
 </style>

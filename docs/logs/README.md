@@ -127,3 +127,5 @@
 [Nov 14](https://github.com/snaptoken/kilo-src/blob/home-end-simple/kilo.c) Editor key press, editorKey including 'WASD' and 'PAGEUP' 'PAGEDOWN'.
 
 [Nov 18]() New function: scorll
+
+[Nov 19](https://github.com/chenweigao/LinuxConsoleApp/commit/70f8034c0da2ca60dbc5748281dac9638d0a0c93) add render tab, add empty inverted color black status bar, add message bar, learn: variadic function

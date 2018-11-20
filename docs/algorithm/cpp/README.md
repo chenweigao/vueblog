@@ -4,7 +4,7 @@ Index of c++ code in github or this blog, easy for search and read.
 
 ## Important
 
-- Variadic function
+- Variadic function: [average the number](https://github.com/chenweigao/_code/blob/master/cpp/variadic_function.cpp)
 
 ## String
 
