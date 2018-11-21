@@ -131,3 +131,5 @@
 [Nov 19](https://github.com/chenweigao/LinuxConsoleApp/commit/70f8034c0da2ca60dbc5748281dac9638d0a0c93) add render tab, add empty inverted color black status bar, add message bar, learn: variadic function
 
 [Nov 20]() New function: insert chars and prevent inserting special characters; dirty flag for modified file, and quit confirmation.
+
+[Nov 21]() Fix bug: backspace invalid error, backsapcing at the start of a line.
