@@ -133,3 +133,5 @@
 [Nov 20]() New function: insert chars and prevent inserting special characters; dirty flag for modified file, and quit confirmation.
 
 [Nov 21]() Fix bug: backspace invalid error, backsapcing at the start of a line.
+
+[Nov 22]() finish the text editor basic functions.
