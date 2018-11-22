@@ -18,3 +18,7 @@ Index of c++ code in github or this blog, easy for search and read.
 ## C basic
 
 - [sizeof](https://github.com/chenweigao/_code/blob/master/cpp/sizeof.cpp)
+
+## STL
+
+- [count_if](https://github.com/chenweigao/_code/blob/f7670c996a/cpp/narcissistic_number.cpp) narcissistic number, find the common between two vectors
