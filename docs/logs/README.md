@@ -135,3 +135,5 @@
 [Nov 21]() Fix bug: backspace invalid error, backsapcing at the start of a line.
 
 [Nov 22]() finish the text editor basic functions.
+
+[Nov 26]() book reading

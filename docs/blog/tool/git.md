@@ -2,7 +2,7 @@
 
 ## ssh
 
-clone form server file using SSH:
+Clone form server file using SSH:
 
 ```bash
 git clone ssh://root@120.78.71.220:22/~/data
@@ -10,7 +10,7 @@ git clone ssh://root@120.78.71.220:22/~/data
 
 ## git config
 
- ```bash
+```bash
 git config --global user.name <username>
 git config --global user.email <useremail>
 
@@ -38,14 +38,13 @@ git config --global credential.helper store
 
 3. found the ip and update hosts as the follow example
 
-   ```bash
-   13.250.177.223 github.com
-   151.101.228.133 assets-cdn.github.com
-   151.101.73.194 github.global.ssl.fastly.net
-   ```
+ ```bash
+ 13.250.177.223 github.com
+ 151.101.228.133 assets-cdn.github.com
+ 151.101.73.194 github.global.ssl.fastly.net
+ ```
 
 ## Git basic
-
 
 ```bash
 
@@ -79,7 +78,6 @@ doc/**/*.pdf #忽略doc/目录下的所有.pdf文件
 
 除此之外，还可以参考[GitHub官方示例](https://github.com/github/gitignore)
 
-
 如果想知道具体的变更内容，而不像`git status` 那么宽泛，可以使用`git diff`
 
 ```bash
@@ -88,7 +86,7 @@ git diff --staged
 git diff --cached
 ```
 
-**移除文件** 
+移除文件
 
 ```bash
 rm <filename>
@@ -129,11 +127,11 @@ git add forgotten_file
 git commit --amend
 ```
 
-**撤销已暂存的文件**
+撤销已暂存的文件
 
 ```bash
 #之前的操作
-git add * 
+git add *
 git status
 
 On branch master
@@ -143,8 +141,10 @@ Your branch is ahead of 'origin/master' by 1 commit.
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
-	new file:   reset.md
-	
+  new file:   reset.md
+
+```
+
 #撤销操作
 git reset HEAD reset.md
 git status
@@ -162,7 +162,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 #这时候恢复到了已修改但未暂存的状态
 ```
 
-**撤销对文件的修改**
+撤销对文件的修改
 
 ```bash
 #舍弃对文件的更改

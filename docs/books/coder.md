@@ -1,6 +1,6 @@
 ---
 title: Coder Book
-description: Thread and Process
+description: Computer Basic Knowledges
 ---
 
 An application consists of one or more processes. A process, in the simplest terms, is an executing program. One or more threads run in the context of the process. A thread is the basic unit to which the operating system allocates processor time. A thread can execute any part of the process code, including parts currently being executed by another thread.
@@ -34,16 +34,6 @@ An application consists of one or more processes. A process, in the simplest ter
     - All threads of a process share the same address space and can access the process's global variables, which can simplify communication between threads.
     - All threads of a process can share open handles to resources, such as files and pipes.
 
-## TCP/IP Socket
-
-:::tips note
-- TCP是进程间通信，所以端点需要IP和Port
-- 进程号是动态的，服务器重启后发生改变，故使用Port
-- 客户端的端口号由操作系统自动分配
-:::
-
-
-
 - 线程的状态？
 - 锁和死锁
 
@@ -54,6 +44,17 @@ An application consists of one or more processes. A process, in the simplest ter
 - PCB: 进程控制块
 - MMU
 - 分页（程序的局部性原理）
+
+## TCP/IP Socket
+
+对于端口号的解释:
+
+1. TCP是**进程间通信**，所以需要Port,不使用进程号是因为进程号是**动态**的，服务器重启后发生改变，故使用Port
+2. 客户端的端口号由操作系统自动分配
+
+:::tip Socket的简单理解
+由于TCP协议十分复杂，程序员没有必要重复开发，操作系统需要抽象出一个概念，让上层应用去编程，这就是Socket
+:::
 
 ### TCP/IP
 
