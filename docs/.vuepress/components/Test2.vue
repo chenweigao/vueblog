@@ -1,5 +1,5 @@
 <template>
-    <marquee behavior="scroll" direction="right">
+    <marquee behavior="scroll" direction="left">
         梦里不知身是客，一晌贪欢。
     </marquee>
 </template>
