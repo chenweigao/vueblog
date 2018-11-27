@@ -13,36 +13,58 @@ git clone ssh://root@120.78.71.220:22/~/data
 ```bash
 git config --global user.name <username>
 git config --global user.email <useremail>
-
-#设置编辑器
 git config --global core.editor emacs
 
-#查看当前配置
 git config --list
 git config user.name
+```
 
-# for help
+```bash
+#for help
 git help <verb>
+```
 
-#把用户配置“凭据缓存”credential cache保存，以避免多次输入账号密码
+cache the config:
+
+```bash
 git config --global credential.helper cache
-#永久保存
 git config --global credential.helper store
- ```
+```
 
 ## GitHub accelerate
 
-1. update the host in `C:/Windows\System32\drivers\etc`
+1. Update the host in `C:\Windows\System32\drivers\etc`
 
-2. visit  [http://tool.chinaz.com/dns](http://tool.chinaz.com/dns)
+2. Visit  [http://tool.chinaz.com/dns](http://tool.chinaz.com/dns)
 
-3. found the ip and update hosts as the follow example
+3. Found the IP and update hosts as the follow example:
 
  ```bash
  13.250.177.223 github.com
  151.101.228.133 assets-cdn.github.com
  151.101.73.194 github.global.ssl.fastly.net
  ```
+
+## Tag
+
+show tags:
+
+```bash
+git tag
+git tag -l
+```
+
+add tags:
+
+```bash
+git tag -a v1.0 -m "my first version"
+```
+
+push tags to origin:
+
+```bash
+git push origin v1.0
+```
 
 ## Git basic
 
@@ -142,10 +164,9 @@ Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
   new file:   reset.md
-
 ```
 
-#撤销操作
+```
 git reset HEAD reset.md
 git status
 
@@ -156,10 +177,9 @@ Your branch is ahead of 'origin/master' by 1 commit.
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-	reset.md
+  reset.md
 
 nothing added to commit but untracked files present (use "git add" to track)
-#这时候恢复到了已修改但未暂存的状态
 ```
 
 撤销对文件的修改
@@ -206,17 +226,11 @@ git remote show origin
 **删除远程仓库**
 
 ```bash
+
 git remote rm <rep-name>
+
 ```
 
-### 标记
-
-``` bash
-# 列举标签
-git tag
-git tag -l "v1.8.5"
-#创建标签
-```
 
 ### Git别名
 

@@ -15,7 +15,7 @@ CRUD operations create, read, update, and create documents.
 - `db.collection.insertOne()` New in version 3.2
 - `db.collection.insertMany()` New in version 3.2
 
-```sh
+```bash
 db.collection.insertOne(
 	{
 		"name" : "aaa",
@@ -24,7 +24,7 @@ db.collection.insertOne(
 )
 ```
 
-```sh
+```bash
 db.collection.insertMany(
 	[
 		{ ... },
@@ -72,7 +72,7 @@ db.inventory.updateMany(
 ```
 Replace: 
 
-```sh
+```bash
 db.inventory.replaceOne(
 	# or updateOne() updateMany()
    { item: "paperpaper" },
