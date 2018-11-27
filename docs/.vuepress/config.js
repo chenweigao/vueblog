@@ -16,7 +16,6 @@ module.exports = {
       serviceWorker: true,
       updatePopup: true
     }],
-    ['@vuepress/i18n-ui'],
     [
       '@vuepress/last-updated', {
         transformer: (timestamp, lang) => {
