@@ -1,5 +1,4 @@
 <template>
-    <transition appear enter-active-class="fadeInUp">
         <el-tabs v-model="activeName" @tab-click="handleClick">
             <el-tab-pane label="Blog Index" name="first">
                 <el-collapse accordion>
@@ -69,7 +68,6 @@
             </el-tab-pane>
             <el-tab-pane label="To do" name="fourth"></el-tab-pane>
         </el-tabs>
-    </transition>
 </template>
 
 <script>

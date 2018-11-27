@@ -138,4 +138,4 @@
 
 [Nov 26]() book reading, [git tag](https://www.weigao.cc/blog/tool/git.html#tag)
 
-[Nov 27]() update the new version and format the time using moment
+[Nov 27]() update the new version and format the time using moment, add a function: marquee
