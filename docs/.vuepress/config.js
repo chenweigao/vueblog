@@ -2,14 +2,31 @@ module.exports = {
   title: 'WeiGao',
   description: 'Welcome, friend! ',
   // plugins: ['@vuepress/back-to-top'],
-  plugins: {
-    '@vuepress/back-to-top': true,
-    '@vuepress/pwa': {
+  // plugins: {
+  //   '@vuepress/back-to-top': true,
+  //   '@vuepress/pwa': {
+  //     serviceWorker: true,
+  //     updatePopup: true
+  //   },
+  //   '@vuepress/last-updated': true
+  // },
+  plugins: [
+    ['@vuepress/back-to-top', true],
+    ['@vuepress/pwa', {
       serviceWorker: true,
       updatePopup: true
-    },
-    '@vuepress/last-updated': true
-  },
+    }],
+    ['@vuepress/i18n-ui'],
+    [
+      '@vuepress/last-updated', {
+        transformer: (timestamp, lang) => {
+          const moment = require('moment')
+          moment.locale(lang)
+          return moment(timestamp).format('lll')
+        }
+      }
+    ]
+  ],
   markdown: {
     lineNumbers: true
   },

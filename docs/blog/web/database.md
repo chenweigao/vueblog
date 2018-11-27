@@ -91,10 +91,6 @@ MongoDb provides the followinng methods to delete documents of a collection:
 - `db.collection.deleteMany()`
 - `db.collection.remove()`
 
-
-
-
-
 Process in terminal:
 
 ```bash

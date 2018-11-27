@@ -5,7 +5,7 @@
     <transition-group appear enter-active-class="fadeInUp">
         <div v-for="post in posts" :key=post.title v-show=true class="animated">
             <hr>
-            <p :class="['thin', 'color']"> {{ timestampToTime(post.lastUpdated) }}
+            <p :class="['thin', 'color']"> {{ post.lastUpdated }}
                 <router-link :to="post.path"> >> {{ post.title }} </router-link>
             </p>
         </div>

@@ -8,6 +8,12 @@ Clone form server file using SSH:
 git clone ssh://root@120.78.71.220:22/~/data
 ```
 
+ssh key:
+
+```bash
+ssh-keygen
+```
+
 ## git config
 
 ```bash
@@ -68,28 +74,24 @@ git push origin v1.0
 
 ## Git basic
 
-```bash
+### Status
 
-#检查文件所处状态
+```bash
 git status
 git status -s
 # ??: untrack
-# M : 已修改
-# A : 已暂存的新文件
-
-#生成ssh文件
-ssh-keygen
-#ssh文件的位置
+# M : Modified
+# A : Modified new file
 ```
 
-如果并不希望某一类文件被GIT自动添加，在这种情况下，可以创建名为*.gitignore*的文件：
+### gitignore
 
 ```bash
 cat .gitignore
 *.[oa]
 *~
 
-#一些例子
+#Example
 *.a #忽略.a类型的文件
 !lib.a #仍然跟踪lib.a，即使上一行指令要忽略
 /TODO #忽略当前目录的todo文件
@@ -124,18 +126,10 @@ git mv README.md README
 
 ```bash
 git log
-#查看最近两次的提交，并显示每次提交所引入的差异
 git log -p -2
+
 # 查看简略信息
 git log --stat
-
-git log --pretty=oneline --graph
-
-#查看某个提交范围内的提交
-git log --since-2.weeks
-git log --author=<authorname>
-git log --grep
-git log -Sfunction_name
 ```
 
 ### 撤销操作
@@ -166,7 +160,7 @@ Changes to be committed:
   new file:   reset.md
 ```
 
-```
+```bash
 git reset HEAD reset.md
 git status
 
@@ -182,10 +176,9 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-撤销对文件的修改
+舍弃对文件的修改
 
 ```bash
-#舍弃对文件的更改
 git checkout -- <filename>
 git checkout -- .
 ```

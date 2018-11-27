@@ -108,17 +108,17 @@
 
 ## November
 
-[Nov 1]() basic webpack
+[Nov 01]() basic webpack
 
-[Nov 2]() basic css
+[Nov 02]() basic css
 
-[Nov 5](https://docs.microsoft.com/en-us/windows/desktop/procthread/creating-processes) new site header: Books, different between *Process* and *Thread*
+[Nov 05](https://docs.microsoft.com/en-us/windows/desktop/procthread/creating-processes) new site header: Books, different between *Process* and *Thread*
 
-[Nov 6]() String problem solved(1/2)
+[Nov 06]() String problem solved(1/2)
 
-[Nov 7]() Vector and extral string konwledge(2/2), iterator
+[Nov 07]() Vector and extral string konwledge(2/2), iterator
 
-[Nov 8]() Iterator usage, sequential containers
+[Nov 08]() Iterator usage, sequential containers
 
 [Nov 12](https://github.com/eliben/code-for-blog/blob/master/2017/async-socket-server/sequential-server.c) Sample markdown editor, c++ sequential-server
 
@@ -136,4 +136,6 @@
 
 [Nov 22]() finish the text editor basic functions.
 
-[Nov 26]() book reading
+[Nov 26]() book reading, [git tag](https://www.weigao.cc/blog/tool/git.html#tag)
+
+[Nov 27]() update the new version and format the time using moment

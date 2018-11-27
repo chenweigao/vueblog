@@ -9,7 +9,7 @@
                 <router-link :to="post.path"> {{ post.title }} : {{ post.frontmatter.description }}</router-link>
             </h2>
             <div v-html="post.excerpt"></div>
-            <p style="color: #C0C0C0; font-size:14px; text-align:right;">{{ post.lastUpdated | dateFormat }}</p>
+            <p style="color: #C0C0C0; font-size:14px; text-align:right;">{{ post.lastUpdated }}</p>
         </div>
     </transition-group>
 </div>

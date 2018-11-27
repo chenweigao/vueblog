@@ -67,3 +67,4 @@ An application consists of one or more processes. A process, in the simplest ter
 - 缓存（程序的局部性原理）
 - 流水线
   取指定 - 翻译指令 - 执行 - 把结果写回内存
+- 多cpu多线程
