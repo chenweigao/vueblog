@@ -44,13 +44,20 @@ export default {
             //   .toString()
             //   .padStart(2, "0");
             // return `${Y}-${M}-${D} ${hh}:${mm}:${ss}`;
+        },
+        timeStringFormater(timeString) {
+            let subString = timeString.slice(0,16).replace(/\//g,"").replace(" ","").replace(":","")
+            return subString
+        },
+        timeBlogFormater(timeString) {
+            return timeString.slice(0,10).replace(/\//g,"-")
         }
     },
     computed: {
         posts() {
             return this.$site.pages
                 .filter(x => x.path.startsWith("/blog/") && !x.frontmatter.blog_index)
-                .sort((a, b) => b.lastUpdated - a.lastUpdated);
+                .sort((a, b) => this.timeStringFormater(b.lastUpdated) - this.timeStringFormater(a.lastUpdated));
         }
     }
 };
