@@ -189,7 +189,8 @@ module.exports = {
       ],
       '/logs/': [
         '',
-        'note'
+        'note',
+				'log_nov_18'
       ],
       '/': [
         '',
