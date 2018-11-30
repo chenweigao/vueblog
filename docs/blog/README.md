@@ -1,3 +1,7 @@
-# Welcome & Index
+<Test3/>
 
-<BlogIndex/>
+This is index:
+
+<Tabs/>
+<!-- <Carousel/> -->
+<!-- <BlogIndex2/> -->
