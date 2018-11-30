@@ -5,10 +5,16 @@
       type="primary"
       @click="toBlog"
     >Blog</el-button>
+    <el-button
+      type="danger"
+      @click="toDocs"
+    >Docs</el-button>
   </el-row>
-  <el-row>
+  <!-- <el-row>
     <el-button type="success">Book</el-button>
-  </el-row>
+  </el-row> -->
+
+
   <!-- <el-button type="info">Discuss</el-button>
     <el-button type="warning">Docs</el-button>
     <el-button type="danger">Code</el-button>
@@ -34,6 +40,9 @@ export default {
     toBlog() {
       this.$router.push({ path: "/blog/" })
     },
+    toDocs() {
+      this.$router.push({ path: "/docs/" })
+    }
   }
 }
 </script>
