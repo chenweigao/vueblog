@@ -131,6 +131,7 @@ module.exports = {
           collapsable: true,
           children: [
             '/blog/web/',
+            '/blog/web/vue-cli',
             '/blog/web/vue',
             '/blog/web/database',
             '/blog/web/flask',

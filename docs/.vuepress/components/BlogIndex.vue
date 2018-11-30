@@ -57,7 +57,7 @@ export default {
         posts() {
             return this.$site.pages
                 .filter(x => x.path.startsWith("/blog/") && !x.frontmatter.blog_index)
-                .sort((a, b) => this.timeStringFormater(b.lastUpdated) - this.timeStringFormater(a.lastUpdated));
+                // .sort((a, b) => this.timeStringFormater(b.lastUpdated) - this.timeStringFormater(a.lastUpdated));
         }
     }
 };

@@ -93,32 +93,26 @@ export default {
         zen() {
             return this.$site.pages
                 .filter(x => x.path.startsWith("/blog/zen/") && !x.frontmatter.blog_index)
-                .sort((a, b) => this.timeStringFormater(b.lastUpdated) - this.timeStringFormater(a.lastUpdated));
         },
         python() {
             return this.$site.pages
                 .filter(x => x.path.startsWith("/blog/python/") && !x.frontmatter.blog_index)
-                .sort((a, b) => this.timeStringFormater(b.lastUpdated) - this.timeStringFormater(a.lastUpdated));
         },
         web() {
             return this.$site.pages
                 .filter(x => x.path.startsWith("/blog/web/") && !x.frontmatter.blog_index)
-                .sort((a, b) => this.timeStringFormater(b.lastUpdated) - this.timeStringFormater(a.lastUpdated));
         },
         tool() {
             return this.$site.pages
                 .filter(x => x.path.startsWith("/blog/tool/") && !x.frontmatter.blog_index)
-                .sort((a, b) => this.timeStringFormater(b.lastUpdated) - this.timeStringFormater(a.lastUpdated));
         },
         research() {
             return this.$site.pages
                 .filter(x => x.path.startsWith("/blog/research/") && !x.frontmatter.blog_index)
-                .sort((a, b) => this.timeStringFormater(b.lastUpdated) - this.timeStringFormater(a.lastUpdated));
         },
         book() {
             return this.$site.pages
                 .filter(x => x.path.startsWith("/books/") && !x.frontmatter.blog_index)
-                .sort((a, b) => this.timeStringFormater(b.lastUpdated) - this.timeStringFormater(a.lastUpdated));
         }
 
     }

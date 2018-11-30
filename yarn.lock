@@ -721,10 +721,6 @@
   dependencies:
     lodash.debounce "^4.0.8"
 
-"@vuepress/plugin-i18n-ui@^1.0.0-alpha.0":
-  version "1.0.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@vuepress/plugin-i18n-ui/-/plugin-i18n-ui-1.0.0-alpha.0.tgz#aff0d27196cd84280512dad8effdf2b324a8993d"
-
 "@vuepress/plugin-last-updated@^1.0.0-alpha.24":
   version "1.0.0-alpha.24"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-last-updated/-/plugin-last-updated-1.0.0-alpha.24.tgz#06463968dbfef9590d94ec7b1fb468c2b8f8a3c9"
