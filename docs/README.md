@@ -7,5 +7,3 @@ footer: MIT Licensed | Copyright © 2018-present Weigao Chen
 <!-- <Homepage/> -->
 <!-- <welcome/> -->
 <HomeIndex/>
-
-我懒得写了，只有前两个能点Orz
