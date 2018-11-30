@@ -6,7 +6,6 @@
 
 <script>
 import axios from 'axios'
-import data from './README.md'
 export default {
     data() {
         return {
