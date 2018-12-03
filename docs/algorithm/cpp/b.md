@@ -4,7 +4,7 @@
 
 ### memset()
 
-*memset()* is used to fill a block of memory with a particular value, in `<string.h>`.
+> *memset()* is used to fill a block of memory with a particular value, in `<string.h>`.
 
 Example 1: 将数组中每个元素设置为0
 
@@ -53,7 +53,7 @@ int main()
 
 ### strchr()
 
-Functions: It looks for the first occurrence of a character in a string, and returns a pointer to the matching character in the string. If the string doesn’t contain the character, `strchr()`returns `NULL`.
+> Functions: It looks for the first occurrence of a character in a string, and returns a pointer to the matching character in the string. If the string doesn’t contain the character, `strchr()`returns `NULL`.
 
 ```c
 int is_separator(int c) {
