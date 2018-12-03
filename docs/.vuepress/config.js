@@ -20,7 +20,7 @@ module.exports = {
       '@vuepress/last-updated', {
         transformer: (timestamp, lang) => {
           const moment = require('moment')
-          moment.locale(lang)
+          moment.locale("de")
           return moment(timestamp).format('YYYY/M/DD HH:mm, dddd')
         }
       }

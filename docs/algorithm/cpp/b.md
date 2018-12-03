@@ -23,7 +23,7 @@ int main()
 }
 ```
 
-:::warning
+:::warning bug avoiding
 注意可以将 `memset` 的第二个参数设置为 `0` 或 `-1`
 其他的可能不work
 :::
