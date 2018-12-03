@@ -21,7 +21,7 @@ module.exports = {
         transformer: (timestamp, lang) => {
           const moment = require('moment')
           moment.locale("de")
-          return moment(timestamp).format('YYYY/M/DD HH:mm, dddd')
+          return moment(timestamp).format('YYYY/M/DD HH:mm')
         }
       }
     ]
