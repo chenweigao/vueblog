@@ -63,7 +63,7 @@
 				var n = month[d.getMonth()]
 				var date = n.toLowerCase()
 				this.date = date
-				console.log(date);
+				// console.log(date);
 				// var date = this.value.toDateString().slice(4, 11).replace(/ /, '-')
 				// console.log(date);
 				// this.date = date

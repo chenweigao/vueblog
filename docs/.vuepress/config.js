@@ -69,7 +69,7 @@ module.exports = {
     }]
   ],
   themeConfig: {
-    sidebarDepth: 1,
+    sidebarDepth: 2,
     lastUpdated: 'Last Updated',
     nav: [{
         text: 'Home',
@@ -176,7 +176,8 @@ module.exports = {
       '/algorithm/cpp/': [
         '',
         'c',
-        'b'
+        'b',
+        'makefile'
       ],
       '/algorithm/leetcode/': [
         '',

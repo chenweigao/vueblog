@@ -13,16 +13,11 @@
         :key=post.title
         name="first"
       >
-        <hr />
-        <p style="font-size:120%;">
+        <p>
+          {{post.lastUpdated}} >>
           <router-link :to="post.path"> {{ post.title }} </router-link>
         </p>
-        <p
-          align="right"
-          style="color: gray; font-style:italic;"
-        >
-          {{ post.lastUpdated }}
-        </p>
+
       </div>
     </el-tab-pane>
     <el-tab-pane
@@ -33,16 +28,11 @@
         v-for="post in web"
         :key=post.title
       >
-        <hr />
-        <p style="font-size:120%;">
+
+        <p>{{post.lastUpdated}} >>
           <router-link :to="post.path"> {{ post.title }} </router-link>
         </p>
-        <p
-          align="right"
-          style="color: gray; font-style:italic;"
-        >
-          {{ post.lastUpdated }}
-        </p>
+
       </div>
     </el-tab-pane>
     <el-tab-pane
@@ -53,16 +43,11 @@
         v-for="post in python"
         :key=post.title
       >
-        <hr />
-        <p style="font-size:120%;">
+
+        <p>{{post.lastUpdated}} >>
           <router-link :to="post.path"> {{ post.title }} </router-link>
         </p>
-        <p
-          align="right"
-          style="color: gray; font-style:italic;"
-        >
-          {{ post.lastUpdated }}
-        </p>
+
       </div>
     </el-tab-pane>
     <el-tab-pane
@@ -74,16 +59,11 @@
         :key=post.title
         name="first"
       >
-        <hr />
-        <p style="font-size:120%;">
+
+        <p>{{post.lastUpdated}} >>
           <router-link :to="post.path"> {{ post.title }} </router-link>
         </p>
-        <p
-          align="right"
-          style="color: gray; font-style:italic;"
-        >
-          {{ post.lastUpdated }}
-        </p>
+
       </div>
     </el-tab-pane>
     <el-tab-pane
@@ -95,16 +75,11 @@
         :key=post.title
         name="research"
       >
-        <hr />
-        <p style="font-size:120%;">
+
+        <p>{{post.lastUpdated}} >>
           <router-link :to="post.path"> {{ post.title }} </router-link>
         </p>
-        <p
-          align="right"
-          style="color: gray; font-style:italic;"
-        >
-          {{ post.lastUpdated }}
-        </p>
+
       </div>
     </el-tab-pane>
 
@@ -120,32 +95,44 @@ export default {
   methods: {
     handleClick(tab, event) {
       //   console.log(tab, event);
+    },
+    toTimeString(time) {
+      return time.replace(/[^0-9]/ig, "")
     }
   },
   computed: {
     zen() {
       return this.$site.pages
         .filter(x => x.path.startsWith("/blog/zen/") && !x.frontmatter.blog_index)
+        .sort((a, b) => (this.toTimeString(b.lastUpdated) - this.toTimeString(a.lastUpdated)))
     },
     python() {
       return this.$site.pages
         .filter(x => x.path.startsWith("/blog/python/") && !x.frontmatter.blog_index)
+        .sort((a, b) => (this.toTimeString(b.lastUpdated) - this.toTimeString(a.lastUpdated)))
     },
     web() {
       return this.$site.pages
         .filter(x => x.path.startsWith("/blog/web/") && !x.frontmatter.blog_index)
+        .sort((a, b) => (this.toTimeString(b.lastUpdated) - this.toTimeString(a.lastUpdated)))
     },
     tool() {
       return this.$site.pages
         .filter(x => x.path.startsWith("/blog/tool/") && !x.frontmatter.blog_index)
+        .sort((a, b) => (this.toTimeString(b.lastUpdated) - this.toTimeString(a.lastUpdated)))
+
     },
     research() {
       return this.$site.pages
         .filter(x => x.path.startsWith("/blog/research/") && !x.frontmatter.blog_index)
+        .sort((a, b) => (this.toTimeString(b.lastUpdated) - this.toTimeString(a.lastUpdated)))
+
     },
     book() {
       return this.$site.pages
         .filter(x => x.path.startsWith("/books/") && !x.frontmatter.blog_index)
+        .sort((a, b) => (this.toTimeString(b.lastUpdated) - this.toTimeString(a.lastUpdated)))
+
     }
 
   }

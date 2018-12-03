@@ -41,7 +41,7 @@ export default {
       this.$router.push({ path: "/blog/" })
     },
     toDocs() {
-      this.$router.push({ path: "/docs/" })
+      this.$router.push({ path: "/logs/" })
     }
   }
 }

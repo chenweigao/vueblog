@@ -141,3 +141,7 @@
 [Nov 27]() update the new version and format the time using moment, add a function: marquee
 
 [Nov 28]() moment in js
+
+## December
+
+[Dec 03]() fix bug in vuepress; search function in kilo editor.

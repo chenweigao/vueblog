@@ -1,5 +1,66 @@
 # String
 
+## string.h
+
+### memset()
+
+*memset()* is used to fill a block of memory with a particular value, in `<string.h>`.
+
+Example 1: 将数组中每个元素设置为0
+
+```c
+// C program to demonstrate working of memset()
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    int n = 10;
+    int arr[n];
+
+    // Fill whole array with 0
+    memset(arr, 0, n*sizeof(arr[0]));
+}
+```
+
+:::warning
+注意可以将 `memset` 的第二个参数设置为 `0` 或 `-1`
+其他的可能不work
+:::
+
+Example 2: 字符串替换
+
+```c
+// C program to demonstrate working of memset()
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char str[50] = "GeeksForGeeks is for programming geeks.";
+    printf("\nBefore memset(): %s\n", str);
+
+    // Fill 8 characters starting from str[13] with '.'
+    memset(str + 13, '.', 8*sizeof(char));  
+
+    printf("After memset(): %s", str);
+    return 0;
+
+    //Before memset(): GeeksForGeeks is for programming geeks.
+    //After memset(): GeeksForGeeks........programming geeks.
+}
+```
+
+### strchr()
+
+Functions: It looks for the first occurrence of a character in a string, and returns a pointer to the matching character in the string. If the string doesn’t contain the character, `strchr()`returns `NULL`.
+
+```c
+int is_separator(int c) {
+  return isspace(c) || c == '\0' || strchr(",.()+-/*=~%<>[];", c) != NULL;
+}
+```
+
 ## Library string Type
 
 :::tip
@@ -82,7 +143,7 @@ Sometimes we need to process only a specific character, theses functions helps u
 This is an example to use function `toupper()`.
 Note that **If we want to change the value of the characters in a string, we must define the loop variable as a reference type**.
 
-```cpp
+```cpp {4}
 int main(int argc, char const *argv[])
 {
     string str("This is a string!");
