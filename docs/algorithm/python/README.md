@@ -1,5 +1,7 @@
 # Python
 
-Higher-order functions:
+## Higher-order functions
+
+### reduce()
 
 - reduce(): [gcd]()
