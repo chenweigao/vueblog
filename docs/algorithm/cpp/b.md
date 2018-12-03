@@ -41,7 +41,7 @@ int main()
     printf("\nBefore memset(): %s\n", str);
 
     // Fill 8 characters starting from str[13] with '.'
-    memset(str + 13, '.', 8*sizeof(char));  
+    memset(str + 13, '.', 8 * sizeof(char));  
 
     printf("After memset(): %s", str);
     return 0;
@@ -54,11 +54,19 @@ int main()
 ### strchr()
 
 > Functions: It looks for the first occurrence of a character in a string, and returns a pointer to the matching character in the string. If the string doesn’t contain the character, `strchr()`returns `NULL`.
+>
+> Prototype: `strchr (const char *__s, int __c)`
 
 ```c
 int is_separator(int c) {
   return isspace(c) || c == '\0' || strchr(",.()+-/*=~%<>[];", c) != NULL;
 }
+```
+
+Example 2: 检测文件类型
+
+```c
+char *ext = strchr(E.filename, '.');
 ```
 
 ## Library string Type

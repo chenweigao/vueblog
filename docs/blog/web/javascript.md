@@ -4,7 +4,7 @@
 
 js中的时间操作：
 
-1. [格式化成自己需要的时间格式 `padStart()` `$` 的运用](#example-1)
+1. [格式化成自己需要的时间格式](#example-1)
 2. [获取月份的英文](#example-2)
 3. [分割字符串](#example-3)
 4. [替换时间字符串中所有非数字](#example-4)
@@ -30,7 +30,6 @@ date.getMonth()
 date.getFullYear()
 //2018
 ```
-
 
 ### Example 1
 

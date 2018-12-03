@@ -7,7 +7,10 @@ footer: MIT Licensed | Copyright © 2018-present Weigao Chen
 <!-- <Homepage/> -->
 <!-- <welcome/> -->
 <HomeIndex/>
-
+------
+::: vue
+Hello and Welcome!
+:::
 -----
 
 2013.09 - Now:
@@ -22,13 +25,13 @@ int main() {
 
 2014.10 - Now:
 
-```cpp {6}
+```c {6}
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    cout <<"Hello and Welcome!"<< endl;
+    cout << "Hello and Welcome!" << endl;
     return 0;
 }
 ```
@@ -36,7 +39,7 @@ int main()
 2015.09 - Now:
 
 ```java {5}
-class HelloWorld
+class HelloAndWelcome
 {
   public static void main(String[] args)
   {
@@ -49,7 +52,7 @@ class HelloWorld
 
 ```bash {2}
 
-echo "Hello World"
+echo "Hello and Welcome!"
 ```
 
 2017.09 - Now:
