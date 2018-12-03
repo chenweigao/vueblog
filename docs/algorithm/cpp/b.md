@@ -8,7 +8,7 @@
 
 Example 1: 将数组中每个元素设置为0
 
-```c
+```c {11}
 // C program to demonstrate working of memset()
 #include <stdio.h>
 #include <string.h>
@@ -30,7 +30,7 @@ int main()
 
 Example 2: 字符串替换
 
-```c
+```c {11}
 // C program to demonstrate working of memset()
 #include <stdio.h>
 #include <string.h>
