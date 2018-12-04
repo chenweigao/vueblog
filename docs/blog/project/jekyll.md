@@ -15,7 +15,7 @@ Before we start build our Jekyll site, we should do as follows in GitHub:
 Take Ubuntu system as an example:
 
 ```bash
-# Install 
+# Install
 sudo apt-get install ruby jekyll
 ```
 

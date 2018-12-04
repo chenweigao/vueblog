@@ -145,3 +145,5 @@
 ## December
 
 [Dec 03]() fix bug in vuepress; search function in kilo editor; fix bug: [time local error](https://stackoverflow.com/questions/17493309/how-do-i-change-the-language-of-moment-js): `lang: zh-ch`
+
+[Dec 04]() update blog, add new label: project, and move python lable to code

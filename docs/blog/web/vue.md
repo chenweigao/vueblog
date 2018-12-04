@@ -326,26 +326,6 @@ This boilerplate has pre-configured CSS extraction for most popular CSS pre-proc
 npm install sass-loader node-sass --save-dev
 ```
 
-## Vuepress
 
-### Plugins
 
-update the `vuepress`:
 
-```bash
-yarn add vuepress@next -D
-yarn add @vuepress/plugin-back-to-top -D
-yarn add @vuepress/plugin-last-updated@next -D
-```
-
-and the add the `back-to-top` plugin to `config.js`:
-
-```js
-plugins: ['@vuepress/back-to-top']
-```
-
-### run
-
-```bash
-yarn dev:docs
-```

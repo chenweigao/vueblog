@@ -53,9 +53,10 @@ int main()
 
 ### strchr()
 
-> Functions: It looks for the first occurrence of a character in a string, and returns a pointer to the matching character in the string. If the string doesn’t contain the character, `strchr()`returns `NULL`.
+> Prototype: `const char * strchr ( const char * str, int character );`
 >
-> Prototype: `strchr (const char *__s, int __c)`
+Functions: It looks for **the first occurrence** of a character in a string, and returns a pointer to the matching character in the string. If the string doesn’t contain the character, `strchr()`returns `NULL`.
+
 
 ```c
 int is_separator(int c) {
@@ -63,10 +64,61 @@ int is_separator(int c) {
 }
 ```
 
-Example 2: 检测文件类型
+官方示例：
+
+```cpp
+/* strchr example */
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char str[] = "This is a sample string";
+    char *pch;
+    pch = strchr(str, 's');
+    while (pch != NULL)
+    {
+        printf("found at %d\n", pch - str + 1);
+        pch = strchr(pch + 1, 's');
+    }
+    return 0;
+}
+//Looking for the 's' character in "This is a sample string"...
+//found at 4
+//found at 7
+//found at 11
+//found at 18
+```
+
+### strrchr()
+
+> Prototype: `const char * strrchr ( const char * str, int character );`
+>
+Locate last occurrence of character in string, Returns a pointer to **the last occurrence** of character in the C string str.
+The terminating null-character is considered part of the C string. Therefore, it can also be located to retrieve a pointer to **the end of a string**.
+
+官方示例：
+
+```cpp
+/* strrchr example */
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char str[] = "This is a sample string";
+    char *pch;
+    pch = strrchr(str, 's');
+    printf("Last occurence of 's' found at %d \n", pch - str + 1);
+    return 0;
+}
+//Last occurrence of 's' found at 18
+```
+
+Example : 检测文件类型
 
 ```c
-char *ext = strchr(E.filename, '.');
+char *ext = strrchr(E.filename, '.');
 ```
 
 ### strncmp and strcmp
