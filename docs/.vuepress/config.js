@@ -140,13 +140,13 @@ module.exports = {
           ]
         },
         {
-          title: 'Python',
+          title: 'Project',
           collapsable: true,
           children: [
-            '/blog/python/',
-            '/blog/python/fileserver',
-            '/blog/python/qqbot',
-            '/blog/python/re',
+            '/blog/project/',
+            '/blog/project/kilo',
+            '/blog/project/qqbot',
+            '/blog/project/vueblog'
           ]
         },
         {
@@ -176,7 +176,7 @@ module.exports = {
       '/algorithm/cpp/': [
         '',
         'c',
-        'b',
+        'string',
         'makefile'
       ],
       '/algorithm/leetcode/': [
@@ -184,7 +184,8 @@ module.exports = {
       ],
       '/algorithm/python/': [
         '',
-        'urllib'
+        'functions',
+        'tools'
       ],
       '/algorithm/web/': [
         ''

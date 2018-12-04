@@ -36,11 +36,11 @@
       </div>
     </el-tab-pane>
     <el-tab-pane
-      label="Python"
+      label="Project"
       name="third"
     >
       <div
-        v-for="post in python"
+        v-for="post in project"
         :key=post.title
       >
 
@@ -106,9 +106,9 @@ export default {
         .filter(x => x.path.startsWith("/blog/zen/") && !x.frontmatter.blog_index)
         .sort((a, b) => (this.toTimeString(b.lastUpdated) - this.toTimeString(a.lastUpdated)))
     },
-    python() {
+    project() {
       return this.$site.pages
-        .filter(x => x.path.startsWith("/blog/python/") && !x.frontmatter.blog_index)
+        .filter(x => x.path.startsWith("/blog/project/") && !x.frontmatter.blog_index)
         .sort((a, b) => (this.toTimeString(b.lastUpdated) - this.toTimeString(a.lastUpdated)))
     },
     web() {

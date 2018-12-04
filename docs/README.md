@@ -51,7 +51,7 @@ class HelloAndWelcome
 2017.07 - Now:
 
 ```bash {2}
-
+#! /bin/bash
 echo "Hello and Welcome!"
 ```
 
@@ -62,26 +62,46 @@ echo "Hello and Welcome!"
 print('Hello and Welcome!')
 ```
 
+2018.09 - Now:
+
+```js {2}
+
+console.log("Hello and Welcome!");
+````
+
 2018.09 - Now
 
-```html {10}
+```html {8}
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hello and Welcome!</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
-    <h1>Hello and Welcome!</h1>
+    <div id="app">
+        <input type="text" v-model="msg" placeholder="edit meit">
+        <p>
+            {{ msg }}
+        </p>
+    </div>
 </body>
 </html>
 ```
 
 2018.10 - Now:
 
-```js {2}
-
-console.log("Hello and Welcome!");
-````
+```vue {5}
+<script>
+var vm = new Vue({
+    el: '#app',
+    data: {
+        msg: 'Hello and Welcome!';
+    }
+})
+</script>
+```
