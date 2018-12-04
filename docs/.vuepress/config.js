@@ -146,7 +146,8 @@ module.exports = {
             '/blog/project/',
             '/blog/project/kilo',
             '/blog/project/qqbot',
-            '/blog/project/vueblog'
+            '/blog/project/vueblog',
+            '/blog/project/jekyll'
           ]
         },
         {
@@ -156,8 +157,7 @@ module.exports = {
             '/blog/tool/',
             '/blog/tool/apt',
             '/blog/tool/git',
-            '/blog/tool/vim',
-            '/blog/tool/jekyll'
+            '/blog/tool/vim'
           ]
         },
         {

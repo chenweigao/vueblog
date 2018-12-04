@@ -88,8 +88,10 @@
 <script>
 export default {
   data() {
+    const moment = require('moment')
     return {
-      activeName2: 'second'
+      activeName2: 'second',
+      date: moment().format('YYYY/M/DD HH:mm')
     };
   },
   methods: {
@@ -97,6 +99,7 @@ export default {
       //   console.log(tab, event);
     },
     toTimeString(time) {
+      if(time == undefined) time = this.date
       return time.replace(/[^0-9]/ig, "")
     }
   },
