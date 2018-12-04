@@ -2,8 +2,6 @@
 
 Do you want to build your own site from scratch or generate one for your project? This guide could help you with **Jekyll** and **GitHub Pages**.
 
-## Jekyll
-
 ## GitHub Pages
 
 Before we start build our Jekyll site, we should do as follows in GitHub:
