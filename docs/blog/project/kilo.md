@@ -1,4 +1,4 @@
-# Kilo Text Editor
+# Kilo Text Editor <Badge text="1.0.0" type="tip"/>
 
 :::tip Abstract
 
@@ -9,6 +9,14 @@ This project is built by *C*. It’s about 1000 lines of C in a *single file* wi
 - [Tutorial by kilo](https://viewsourcecode.org/snaptoken/kilo/index.html)
 
 :::
+
+## Features
+
+1. Based in C, quick and effective
+
+2. Highlight
+
+3. Delete
 
 ## Key Concept
 
