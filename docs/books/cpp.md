@@ -2,11 +2,34 @@
 title: C++ Prime
 description: C++ prime book
 ---
+:::vue
+This is a reading note when I studying C++ basic grammar
 
-This is a reading note when I studying C++ basic grammar.
+some from book: 《C Primer》
+:::
 <!-- more -->
 
 ## Some Notes
+
+### 变量和初始化
+
+:::tip 赋值和初始化
+C++ 中，初始化的初值由定义的**位置**决定
+
+定义于任何函数体之外的变量被初始化为 0, 定义在函数体内部的内置类型变量将**不被初始化**（值是未定义的）
+:::
+
+### File Redirection
+
+使用文件重定向，允许我们将标准输入和标准输出与命名文件关联起来：
+
+```bash
+./pro <infile >outfile
+```
+
+### I/O
+
+指出文件结束： `ctrl -z` (windows), `ctrl - d` (linux)
 
 ### sizeof
 

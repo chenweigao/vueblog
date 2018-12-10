@@ -67,3 +67,26 @@ A basic tutorial: [zero-to-deploy-build-a-documentation-system-with-vue-and-vuep
 <Badge text="beta" type="warn"/>
 <Badge text="0.10.1+" type="tip"/>
 ```
+
+### code collapsing
+
+The `<details> <summary></summary> </details>` are from HTML5:
+
+<details>
+<summary>inline使用</summary>
+
+```cpp
+// code
+```
+
+</details>
+
+Source code is:
+
+```html
+<details><summary>inline 使用</summary> 
+
+//code block
+
+</details>
+```

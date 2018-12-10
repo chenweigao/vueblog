@@ -8,11 +8,43 @@ Clone form server file using SSH:
 git clone ssh://root@120.78.71.220:22/~/data
 ```
 
+Connect using ssh:
+
+```bash
+ssh root@174.137.62.75
+```
+
 ssh key:
 
 ```bash
 ssh-keygen
 ```
+
+<details><summary>inline 使用</summary> 
+
+```cpp
+// 声明1（加 inline，建议使用）
+inline int functionName(int first, int secend,...);
+
+// 声明2（不加 inline）
+int functionName(int first, int secend,...);
+
+// 定义
+inline int functionName(int first, int secend,...) {/****/};
+
+// 类内定义，隐式内联
+class A {
+    int doA() { return 0; }         // 隐式内联
+}
+
+// 类外定义，需要显式内联
+class A {
+    int doA();
+}
+inline int A::doA() { return 0; }   // 需要显式内联
+```
+
+</details>
 
 ## git config
 
