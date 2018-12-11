@@ -181,6 +181,7 @@ module.exports = {
       ],
       '/algorithm/leetcode/': [
         '',
+        'math'
       ],
       '/algorithm/python/': [
         '',

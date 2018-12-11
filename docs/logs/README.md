@@ -149,3 +149,5 @@
 [Dec 04]() update blog, add new label: project, and move python lable to code
 
 [Dec 05]() [Emailjs](https://www.emailjs.com/)
+
+[Dec 10]() VPS and BOOK: c++ primer # 2

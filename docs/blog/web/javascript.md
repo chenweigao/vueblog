@@ -2,7 +2,7 @@
 
 ## Date/Time
 
-js中的时间操作：
+JavaScript 中的时间操作：
 
 1. [格式化成自己需要的时间格式](#example-1)
 2. [获取月份的英文](#example-2)
@@ -83,6 +83,16 @@ toTimeString(time) {
       return time.replace(/[^0-9]/ig, "")
     }
 // 2018/11/20 10:36, Tuesday => 201811201036
+```
+
+## Performance
+
+性能分析：
+
+```js
+console.time("My operation")
+//code
+console.timeEnd("My operation")
 ```
 
 ## localStorage
