@@ -21,6 +21,7 @@ module.exports = {
         transformer: (timestamp, lang) => {
           const moment = require('moment')
           moment.locale("zh-cn")
+          lang = "zh-cn"
           return moment(timestamp).format('YYYY/M/DD HH:mm')
         }
       }
