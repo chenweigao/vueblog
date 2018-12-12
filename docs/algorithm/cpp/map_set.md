@@ -27,6 +27,16 @@ unordered_map<char, int> roman = {
 
 Example: [单词计数器](https://github.com/chenweigao/_code/blob/master/cpp/map_word_count.cpp)
 
+```cpp
+auto count()
+{
+    Map counts;
+    for (string w; cin >> w; ++counts[w])
+        ;
+    return counts;
+}
+```
+
 Using map's includes:
 
 ```cpp

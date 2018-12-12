@@ -1,4 +1,4 @@
-# Functions
+# Built-in Functions
 
 ## reduce()
 
@@ -76,3 +76,48 @@ True
         numbers.sort()
         return numbers[:n]
     ```
+
+## zip
+
+`zip(*iterators)`: returns a iterator of tuples.
+
+当最短的迭代器遍历完成以后，停止迭代。
+
+Example 1:
+
+```py
+str = ['hello', 'heo', 'helio']
+for _ in zip(*str):
+    print(list(_))
+
+>> [('h', 'h', 'h'), ('e', 'e', 'e'), ('l', 'o', 'l')]
+
+# zip('ABCD', 'xy') --> Ax By
+```
+
+## enumerate
+
+Example 2(接上 zip 的例子):
+
+[Leetcode 14. Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/)
+
+```py
+def longestCommonPrefix(strs):
+    if not strs:
+        return ""
+
+    for i, _ in enumerate(zip(*strs)):
+        if len(set(_)) > 1:
+            return strs[0][:i]
+    else:
+        return min(strs)
+
+test_strs = ["flower","flow","flight"]
+print(longestCommonPrefix(test_strs))
+```
+
+:::tip
+
+- `enumerate` 列举出来的下标从 0 开始，所以使用 `[:i]` 作为切片 而不是 `[:i-1]`
+
+:::
