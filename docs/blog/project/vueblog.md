@@ -84,7 +84,7 @@ The `<details> <summary></summary> </details>` are from HTML5:
 Source code is:
 
 ```html
-<details><summary>inline 使用</summary> 
+<details><summary>inline 使用</summary>
 
 //code block
 

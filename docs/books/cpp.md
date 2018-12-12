@@ -35,6 +35,29 @@ C++ 中，初始化的初值由定义的**位置**决定
 
 The operand is either an identifier that is a unary-expression, or a type-cast expression (that is, a type specifier enclosed in parentheses). The unary-expression cannot represent a bit-field object, an incomplete type, or a function designator. The result is an *unsigned integral constant*. The standard header STDDEF.H defines this type as **size_t**.
 
+### remove_if
+
+Included in `<algorithm>`
+
+```cpp
+auto strip(string& str) -> string const& {
+    for(auto& ch: str) tolower(ch);
+    str.erase(remove_if(str.begin(), str.end(), ispunct), str.end());
+    return str;
+}
+```
+
+该例子是一个 `remove_if` 搭配 `erase` 的典型应用， 移除 str 中 `ispunct` 返回 True 时的元素，迭代器指向末尾，删除后的长度不变，例如：
+
+```html
+1 2 3 4 5 6 7 8 9
+^
+2 4 6 8 ? ? ? ? ?
+^       ^
+```
+
+再调用 `erase` 删掉那些 `?` 元素, `erase` 的参数指定要删除的迭代器的开始和结束。
+
 ### snprintf
 
 `sprintf` 不能检查目标字符串的长度，故使用 `snprintf`

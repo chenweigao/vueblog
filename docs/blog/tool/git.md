@@ -20,32 +20,6 @@ ssh key:
 ssh-keygen
 ```
 
-<details><summary>inline 使用</summary> 
-
-```cpp
-// 声明1（加 inline，建议使用）
-inline int functionName(int first, int secend,...);
-
-// 声明2（不加 inline）
-int functionName(int first, int secend,...);
-
-// 定义
-inline int functionName(int first, int secend,...) {/****/};
-
-// 类内定义，隐式内联
-class A {
-    int doA() { return 0; }         // 隐式内联
-}
-
-// 类外定义，需要显式内联
-class A {
-    int doA();
-}
-inline int A::doA() { return 0; }   // 需要显式内联
-```
-
-</details>
-
 ## git config
 
 ```bash
@@ -236,26 +210,25 @@ git fetch [remote-name]
 # e.g. git fetch pb
 
 #将变更推送到远程仓库
-git push origin master 
+git push origin master
 ```
 
 需要注意的一点是，推送变更时需要拥有远程仓库的写权限，并且克隆后没有任何其他人向远程仓库推送过数据。如果别人和你都clone了这个仓库，而他先推送，你后推送，那么你的这次推送会直接被拒绝。你必须先拉取别人的变更，将其整合到你的工作成果中，然后才能推送。
 
-**检查远程仓库**
+检查远程仓库
 
 ``` bash
 #列出远程仓库的url地址以及每个分支的跟踪信息
 git remote show origin
 ```
 
-**删除远程仓库**
+删除远程仓库
 
 ```bash
 
 git remote rm <rep-name>
 
 ```
-
 
 ### Git别名
 
@@ -274,18 +247,18 @@ git config --global alias.unstage 'reset HEAD --'
 
 当你创建一个新分支的时候会发生什么？实际上，Git会创建一个可移动的新指针供你使用。
 
- **创建分支**
+创建分支
 
 ```bash
 git branch testing
 #列出所有分支
-git branch 
+git branch
 * master
   testing
 #查看各个分支当前所指向的对象
 ```
 
- **切换分支**
+切换分支
 
 `checkout`命令会改变HEAD指针，使其指向testing分支，在Git中，HEAD是一个指向当前所在的本地分支的指针
 
@@ -293,7 +266,7 @@ git branch
 git checkout testing
 ```
 
-**分支与合并**
+分支与合并
 
 ```bash
 #创建并切换到该分支
@@ -311,7 +284,7 @@ git branch -d testing
 
 注意到在merge的时候会有提示"fast-forward"，这由于当前的master分支所指向的提交是要并入的testing分支的直接上游，因为Git会将master分支指针向前移动。
 
-**合并冲突处理**
+合并冲突处理
 
 ```bash
 #配置合并工具
@@ -329,7 +302,7 @@ git branch --merged
 git branch --no-merged
 ```
 
-**远程分支**
+远程分支
 
 如果从Git服务器clone到本地，Git的clone命令会自动把这台服务器命名为origin，使用`git clone -o <yourname>`便可以修改远程仓库的默认名称为：your name/master。
 
@@ -342,7 +315,7 @@ git branch --no-merged
 git fetch origin
 ```
 
-**推送**
+推送
 
 ```bash
 git push origin serverfix
@@ -353,7 +326,7 @@ git push origin serverfix:serverfix
 #第一个为本地分支名，第二个为远程分支名，可把远程分支重命名
 ```
 
-**跟踪分支**
+跟踪分支
 
 当你克隆一个远程仓库时，Git默认情况下会自动地创建跟踪这远程origin/master分支的本地master分支。除此之外，你也可是设置成不跟踪master分支。
 
@@ -363,7 +336,7 @@ git push origin serverfix:serverfix
 
 完成上述命令以后，你的本地sf就会从origin/server上获取数据。
 
-**拉取**
+拉取
 
 `git fetch`命令会拉取本地没有的远程最新更改数据，但它只会从服务器上拉取数据，然后让你自己进行合并。
 
@@ -371,7 +344,7 @@ git push origin serverfix:serverfix
 
 一般来说，显示地直接使用fetch和merge命令比使用git pull要更好，因为git pull的机制常常使人迷惑。
 
-**删除远程分支**
+删除远程分支
 
 ```bash
 #删除远程服务器上的master分支

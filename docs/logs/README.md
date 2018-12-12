@@ -2,7 +2,6 @@
 
 <DateComponent/>
 
-
 ## July
 
 [Jul 17](https://www.weigao.cc/blog/2018/07/19/facerecog.html)  Darknet, YOLO, write the patent, new version.
@@ -25,8 +24,6 @@
 
 [Jul 30](https://www.weigao.cc/blog/2018/07/25/flask.html#flask_bootstrap) add new function into `bootstrap_test` branch; initialize the app by flask extend; `Flask-Moment` to show time format
 
-
-
 ## August
 
 [Aug  01]() Flask MongoDB initialization
@@ -42,8 +39,6 @@
 [Aug 30]() Flask PyMongo, bootstrap CSS, CDN, Jinja block
 
 [Aug 31](https://www.weigao.cc/blog/2018/08/31/charts.html) Charts, JavaScript used in Flask
-
-
 
 ## September
 
@@ -76,7 +71,6 @@
 [Sep 27]() Use Vue.js rebuild site’s frontend, start `Vue Cli3`, make the backend and frontend separated
 
 [Sep 28]() Deploy the radar device, apply for custom domain, server migration
-
 
 ## October
 
@@ -151,3 +145,5 @@
 [Dec 05]() [Emailjs](https://www.emailjs.com/)
 
 [Dec 10]() VPS and BOOK: c++ primer # 2
+
+[Dec 12]() map, unordered map, some cpp functions

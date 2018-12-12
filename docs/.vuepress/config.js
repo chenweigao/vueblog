@@ -178,8 +178,8 @@ module.exports = {
         '',
         'c',
         'string',
-        'makefile',
-        'datastruct'
+        'map_set',
+        'makefile'
       ],
       '/algorithm/leetcode/': [
         '',

@@ -14,6 +14,10 @@ Index of c++ code in github or this blog, easy for search and read.
 
 - [decimalism](https://github.com/chenweigao/_code/blob/master/cpp/string-decimalism.cpp) : 十六进制和十进制的转化
 
+## Map & Set
+
+- [word count](https://github.com/chenweigao/_code/blob/master/cpp/map_word_count.cpp): 统计一行中相同单词的出现次数，map 的经典应用
+
 ## C basic
 
 - [sizeof](https://github.com/chenweigao/_code/blob/master/cpp/sizeof.cpp)

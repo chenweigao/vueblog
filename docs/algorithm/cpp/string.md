@@ -57,7 +57,6 @@ int main()
 >
 Functions: It looks for **the first occurrence** of a character in a string, and returns a pointer to the matching character in the string. If the string doesn’t contain the character, `strchr()`returns `NULL`.
 
-
 ```c
 int is_separator(int c) {
   return isspace(c) || c == '\0' || strchr(",.()+-/*=~%<>[];", c) != NULL;
@@ -297,4 +296,3 @@ memcpy(b, a, sizeof(a))
 #include<string.h>
 memset(a, 0, sizeof(a))
 ```
-

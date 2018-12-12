@@ -25,9 +25,6 @@ export default {
 </script>
 
 <style>
-.route {
- 
-}
 .thin {
   font-weight: 350;
 }

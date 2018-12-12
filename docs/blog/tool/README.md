@@ -16,3 +16,12 @@ python -m http.server
 python -m http.server 80
 #in port 80
 ```
+
+## program status
+
+```bash
+echo $?
+
+echo %ERRORLEVEL%
+#windows
+```
