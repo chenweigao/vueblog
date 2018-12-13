@@ -145,6 +145,8 @@ int main() {
 
 ### string::size_type
 
+- `s.back` : (c++ 11) access last character.
+
 - `s.begin()`
 
 - `s.end()`
@@ -193,7 +195,7 @@ Sometimes we need to process only a specific character, theses functions helps u
 
 - isalmun(c) : true if c is a letter or digit
 
-- isalph(c) : letter
+- isalpha(c) : letter
 
 - isdigital(c) : digit
 

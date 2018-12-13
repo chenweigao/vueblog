@@ -183,7 +183,8 @@ module.exports = {
       ],
       '/algorithm/leetcode/': [
         '',
-        'math'
+        'math',
+        'stack'
       ],
       '/algorithm/python/': [
         '',

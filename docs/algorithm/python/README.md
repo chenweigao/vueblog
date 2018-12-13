@@ -11,3 +11,5 @@
 - [min_n](https://github.com/chenweigao/_code/blob/master/python/min_n.py): 升序排列list, 使用`sort()` and `deepcopy()`
 
 - [reverse number](https://github.com/chenweigao/_code/blob/master/python/reverse_number.py) : reverse a number, slice `[-1, 1][True]` returns `-1`, so we use `[-1, 1][x < 0]` to get x's sign; reverse a string using: `[::-1]`
+
+- [longest common prefix](https://github.com/chenweigao/_code/blob/master/python/longest_common_prefix.py) Python **string** operation.
