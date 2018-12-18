@@ -70,7 +70,7 @@ module.exports = {
     }]
   ],
   themeConfig: {
-    sidebarDepth: 2,
+    sidebarDepth: 1,
     lastUpdated: 'Last Updated',
     nav: [{
         text: 'Home',
@@ -177,6 +177,7 @@ module.exports = {
       '/algorithm/cpp/': [
         '',
         'c',
+        'pointer',
         'string',
         'map_set',
         'makefile'

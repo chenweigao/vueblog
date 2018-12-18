@@ -85,6 +85,16 @@ if(exclude.find(word) == exclude.end()) {
 }
 ```
 
+对比如果使用 vector 实现：
+
+```cpp
+vector<string> exclude = {"some", "words"};
+//code
+auto is_exclude = std::binary_search(exclude.cbegin(), exclude.cend(), word);
+//bool binary_search()
+auto reply = is_exclude ? "excluded" : "not excluded";
+```
+
 ## BST
 
 [Advantages of BST(Binary Search Tree) over Hash Table](https://www.geeksforgeeks.org/advantages-of-bst-over-hash-table/)

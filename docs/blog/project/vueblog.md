@@ -8,7 +8,7 @@ This site is built by [Vuepress](https://vuepress.vuejs.org/), [Vuepress GitHub]
 A basic tutorial: [zero-to-deploy-build-a-documentation-system-with-vue-and-vuepress](https://scotch.io/tutorials/zero-to-deploy-build-a-documentation-system-with-vue-and-vuepress)
 :::
 
-## Updtae
+## vuepress update
 
 1. update plugin and vuepress
 

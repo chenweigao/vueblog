@@ -22,10 +22,15 @@ Index of c++ code in github or this blog, easy for search and read.
 
 - [sizeof](https://github.com/chenweigao/_code/blob/master/cpp/sizeof.cpp)
 
+- [pointer-1](https://github.com/chenweigao/_code/blob/master/cpp/pointer_array_1.cpp): 从函数返回多个数据项
+
+- [pointer-2](https://github.com/chenweigao/_code/blob/master/cpp/pointer_array_2.cpp)：数组和指针之间的转化
+
+- [pointer-3](https://github.com/chenweigao/_code/blob/master/cpp/pointer_array_3.cpp)：对数据的拷贝，别名和复制
+
 ## Math
 
-- [Reverse Integer](https://leetcode.com/problems/reverse-integer/): Reference in [C++ Integer Limits](https://docs.microsoft.com/en-us/cpp/c-language/cpp-integer-limits?view=vs-2017) `INT_MIN` (-2^31-1) and `INT_MAX`(2^31), defined in `<limits.h>`.
-    Given a 32-bit signed integer, reverse digits of an integer.
+- [Reverse Integer](https://leetcode.com/problems/reverse-integer/): reverse digits of an integer. Reference in [C++ Integer Limits](https://docs.microsoft.com/en-us/cpp/c-language/cpp-integer-limits?view=vs-2017)
 
 ## STL
 
