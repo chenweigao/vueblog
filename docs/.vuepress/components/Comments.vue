@@ -1,8 +1,8 @@
 <template>
 <div>
-    <transition appear enter-active-class="fadeInUp">
     <div id="vcomments" class="animated"></div>
-    </transition>
+    <!-- <transition appear enter-active-class="fadeInUp">
+    </transition> -->
 </div>
     <!-- <div id="vcomments" class="animated"></div> -->
 </template>
