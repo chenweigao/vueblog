@@ -1,9 +1,6 @@
-# Blog Index
-
-## 2018
+---
+sidebar: false
+---
 
 <IndexOne/>
 
-## 2017
-
-<IndexTwo/>

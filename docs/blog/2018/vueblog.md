@@ -90,3 +90,31 @@ Source code is:
 
 </details>
 ```
+
+### markdown extend
+
+Install markdown-it-katex
+
+```bash
+yarn add markdown-it-katex -D
+```
+
+Modify your `config.js` in `.vuepress`
+
+```js
+module.exports = {
+  ...
+  markdown: {
+    extendMarkdown: md => {
+      md.use(require("markdown-it-katex"));
+      }
+  }
+};
+```
+
+Add Katex CSS into your theme or anywhere ( in exact markdown file you want to use Katex, in Layout.vue, ... )
+
+```md
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>
+```

@@ -1,10 +1,28 @@
-# Linux
+# Linux Bash
 
-## ssh
+## SSH
 
 ```bash
 sudo ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
 sudo service ssh start
+```
+
+```shell
+sudo apt-get install openssh-server
+#ssh config
+/etc/ssh/sshd_config
+```
+
+start server:
+
+```shell
+sudo service ssh restart/start
+```
+
+A bug:
+
+```shell
+sudo ssh-keygen -t rsa -f /etc/ssh/ssh_host_ed25519_key
 ```
 
 ## File server
@@ -26,14 +44,17 @@ echo %ERRORLEVEL%
 #windows
 ```
 
-## Shell
+---
+
+:::tip Shell
 
 This is a basic note about Linux shell, I have wrote plenty of bash shell,  which helps solve problem easily.
 
 Include **system information, SSH, read -p, shell array, sed, AWK**
 
+:::
 
-### System Information
+## System Information
 
 Sometimes, you may want to see the system kernel version, 2 ways are available :
 
@@ -56,29 +77,8 @@ echo test >> $(date -d "today" +"%Y%m%d_%H%M%S").txt
 git log -4 > log/$(date -d "today" +"%Y%m%d").txt
 ```
 
-### SSH
 
-```shell
-sudo apt-get install openssh-server
-#ssh config
-/etc/ssh/sshd_config
-```
-
-start server:
-
-```shell
-sudo service ssh restart/start
-```
-
-A bug:
-
-```shell
-sudo ssh-keygen -t rsa -f /etc/ssh/ssh_host_ed25519_key
-```
-
-
-
-## 2. Add Choice for User
+## Add Choice for User
 
 `read -p` is very useful for  this, for example:
 
@@ -101,7 +101,7 @@ esac
 - `-s` : this options will avoid displaying user *passwords* on the screen.
 - `-t 5`: overtime option, this means that user must complete the input within 5 seconds.
 
-## 3. Shell Array
+## Shell Array
 
 ```shell
 arrayName=(array_content)
@@ -111,7 +111,7 @@ echo ${arraryName[@]}
 echo ${#arrayName[*]}
 ```
 
-## 4. Sed
+## Sed
 
 ```shell
 current_plugins_version=$(dpkg -s picoscenes-plugins-demo-rxsbroadcaster-chronos | grep Version | sed 's/Version: //g')
@@ -139,7 +139,7 @@ sudo sed -i 's/GRUB_HIDDEN_TIMEOUT=0/#GRUB_HIDDEN_TIMEOUT=0/g'  /etc/default/
 
 This is an example that we do the CSI experiment, update the `~/etc/default/grub` make the new kernel version could be seen.
 
-### tr
+## tr
 
 `tr` 可以理解为`sed`的简化版本
 
@@ -151,83 +151,79 @@ Usage: `tr [OPTION]... SET1 SET2`
 
 - -s: replace each sequence of a repeated character, 删除所有重复出现字符序列，只保留第一个
 
-  ```shell
-  #将所有的the替换为my
-  tr -s 'the' 'my'
-  tr -s ' ' '\n'
-  
-  #删除所有的the
-  tr -d 'the'
-  
-  #小写变大写
-  tr [a-z] [A-Z]
-  
-  #删除连续的重复字母
-  tr -s [a-zA-Z]
-  ```
+```shell
+#将所有的the替换为my
+tr -s 'the' 'my'
+tr -s ' ' '\n'
 
+#删除所有的the
+tr -d 'the'
 
-## 5. AWK
+#小写变大写
+tr [a-z] [A-Z]
 
-### Basic
+#删除连续的重复字母
+tr -s [a-zA-Z]
+```
+
+## awk
 
 [AWK Tutorial](https://www.tutorialspoint.com/awk)
 
-```
-$ which awk
-usr/bin/awk
+```bash
+which awk
+$ usr/bin/awk
 ```
 
 display the complete content of the files using AWK:
 
-```
+```bash
 awk '{print}' xx.txt
 ```
 
-**AWK script:**
+AWK script:
 
 create a text file `command.awk` containing the AWK command:
 
-```
+```bash
 {print}
 ```
 
 the use it:
 
-```
-$ awk -f command.awk xx.txt
+```bash
+awk -f command.awk xx.txt
 ```
 
-### Options
+Options:
 
-```
+```bash
 # -v option
-$ awk -v name=Jerry 'BEGIN{printf "Name = %s\n", name}'
+awk -v name=Jerry 'BEGIN{printf "Name = %s\n", name}'
 
-$ awk --help
+awk --help
 ```
 
-### print column
+print column:
 
-```
-$ awk '{print $3 "\t" $4}' marks.txt
+```bash
+awk '{print $3 "\t" $4}' marks.txt
 
 # or in any order
-$ awk '{print $4 "\t" $3}' marks.txt
+awk '{print $4 "\t" $3}' marks.txt
 ```
 
 there we print the third and the fourth fields.
 
-```
-$ awk '/a/ {print $4 "\t" $3}' marks.txt
+```bash
+awk '/a/ {print $4 "\t" $3}' marks.txt
 ```
 
 the pattern, only print 4 lines:
 
-```
-$ awk '/a/{++cnt} END {print "Count = ", cnt}' marks.txt
+```bash
+awk '/a/{++cnt} END {print "Count = ", cnt}' marks.txt
 # Count = 4(where the marks.txt has 5 lines)
 ```
 
 > **$0** variable stores the entire line and in the absence of a body block, default action is taken, i.e., the print action.
-

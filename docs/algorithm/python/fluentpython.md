@@ -1,5 +1,5 @@
 
-# Fluent Python and Fundamentals of Python
+# Fluent Python
 
 Python’s simplicity lets you become productive quickly, but this often means you aren’t using everything it has to offer.  With this hands-on guide, you’ll learn how to write effective, idiomatic Python code by leveraging its best—and possibly most neglected—features. Author Luciano Ramalho takes you through Python’s core language features and libraries, and shows you how to make your code shorter, faster, and more readable at the same time.
 
@@ -7,7 +7,7 @@ Python’s simplicity lets you become productive quickly, but this often means y
 
 ### 1. Slicing
 
-- ##### basic slicing
+- basic slicing
 
 ```python
 >>> s = 'bicycle'
@@ -23,7 +23,7 @@ Python’s simplicity lets you become productive quickly, but this often means y
 
 If you want to *reverse a string*, the last example is a choice.
 
-- ##### assigning to slices
+- assigning to slices
 
 ```python
 >>> l = list(range(10))
@@ -39,7 +39,7 @@ If you want to *reverse a string*, the last example is a choice.
 what you can see is that **[2,3,4]** is replaced by **[20,30]**
 
 ### 2. List
-- #### list of list
+- list of list
 
   ```python
   >>> board = [['_'] * 3 for i in range(3)]
@@ -61,17 +61,17 @@ what you can see is that **[2,3,4]** is replaced by **[20,30]**
 
   ​
 
-- #### list.sort & sorted
+- list.sort & sorted
 
   The list.sort method sorts a list in-place, that is, without making a copy.
 
   In contrast, the built-in function sorted creates a new list and returns it.
 
-- #### make list a stack or queue
+- make list a stack or queue
 
   The .append and .pop methods make a list usable as a stack or a queue (if you use .append and .pop(0), you get LIFO, Last in First out, behavior). But inserting and removing from the left of a list (the 0-index end) is costly because the entire list must be shifted.
 
-- #### deques and queues
+- deques and queues
 
   ```python
   from collections import deque

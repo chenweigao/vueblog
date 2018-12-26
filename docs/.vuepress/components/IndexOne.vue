@@ -1,7 +1,17 @@
 <template>
 <div>
+    <h1>2018</h1>
     <transition-group appear enter-active-class="fadeInUp">
-        <div v-for="post in posts" :key=post.key v-show=true class="animated">
+        <div v-for="post in posts18" :key=post.key v-show=true class="animated">
+            <p :class="['thin', 'color']"> {{ post.lastUpdated }}
+                <router-link :to="post.path"> ### {{ post.title }} </router-link>
+            </p>
+        </div>
+    </transition-group>
+        <h1>2017</h1>
+    <transition-group appear enter-active-class="fadeInUp">
+
+        <div v-for="post in posts17" :key=post.key v-show=true class="animated">
             <p :class="['thin', 'color']"> {{ post.lastUpdated }}
                 <router-link :to="post.path"> ### {{ post.title }} </router-link>
             </p>
@@ -23,10 +33,16 @@ export default {
         }
     },
     computed: {
-        posts() {
+        posts18() {
             // console.log(this.$site.pages);
             return this.$site.pages
                 .filter(x => x.path.startsWith("/blog/2018/") && !x.frontmatter.blog_index)
+                .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated))
+        },
+        posts17() {
+            // console.log(this.$site.pages);
+            return this.$site.pages
+                .filter(x => x.path.startsWith("/blog/2017/") && !x.frontmatter.blog_index)
                 .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated))
         }
     }

@@ -1,4 +1,4 @@
-# RF-Pose: Through-Wall Human Pose Estimation Using Radio Signals
+# [RESEARCH] RF-Pose
 
 
 This paper, *[Through-wall Human Pose Estimation Using Radio Signals](http://openaccess.thecvf.com/content_cvpr_2018/papers/Zhao_Through-Wall_Human_Pose_CVPR_2018_paper.pdf)*, is extracted from a paper in CVPR2018 published by Dina Katabi, a famous team in the wireless communication field, and demonstrates accurate human pose estimation through walls and occlusions. 
@@ -64,11 +64,11 @@ RF-Pose系统是本文提出的一个基于无线信号处理的神经网络系�
 
 本系统的设计遵循teacher-student模型，图中最上面所示为teacher模型，提供交叉模型的监督方案。下面所示的为student模型，提供了RF信号的活动感知方案。
 
-### .1 交叉监督模型
+### 交叉监督模型
 
 通过RF无线信号感知人类活动的一个巨大挑战在于缺少已标记的数据集，由于RF无线信号的直接可读性很差，所以通过观察RF波形去为人类的活动制作标签是一件几乎不可能的事情。我们通过设定计算机视觉模型预测图片中的人类活动很好地解决了这个挑战。我们设计了一个基于teacher-student的交叉监督模型，该模型可以将视觉信息通过同步技术和无线信号对应起来。
 
-### .2 关键点检测
+### 关键点检测
 
 从RF信号作为输入，到得到人类活动的2D图像的过程就要依赖于student模型发挥其作用。像之前提到过的一样，人体可以反射出无线信号，但是，仅仅从单一的RF帧上面我们是无法判断出人类的姿态的，更加注意的一点就是之前提到的RF信号较低的空间分辨率。
 
@@ -76,14 +76,14 @@ RF-Pose系统是本文提出的一个基于无线信号处理的神经网络系�
 
  我们希望神经网络在时间和空间上的传播都保持稳定的不变性，以便于推广到穿墙的应用场景上来，因此我们使用了时空卷积技术作为student模型的基础模块。
 
-### .实现细节
+### 实现细节
 
 在实现细节上，我们采用了100帧的编码RF无线信号（大约3.3秒）数据作为输入，RF编码神经网络使用10层的9x5x5的时空间卷积，在每层空间维度的步长为1x2x2，在每一层的后面使用了正则化和ReLU激活函数。
 
 在此之后，我们将时空间卷积层用极少的步长卷积编码人的动作，编码层一共有4层，每层卷积的步长为1x1/2x1/2，而最后一层则单独使用1x1/4x1/4的步长，在该层之后，依旧使用ReLU激活函数。训练时采用24大小的batch-size。
 
 
-# New words
+## New words
 
 |      Words      |     Means      |
 | :-------------: | :------------: |

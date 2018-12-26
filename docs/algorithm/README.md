@@ -1,4 +1,7 @@
+---
+sidebar: false
+---
+
 # Algorithm
 
----
 <IndexAlgorithm/>

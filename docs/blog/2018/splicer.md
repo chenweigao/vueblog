@@ -1,4 +1,4 @@
-# Splicer 
+# [RESEARCH] Splicer 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
 
@@ -23,7 +23,7 @@ The paper classified that it is easy to get PDP from the CSI traces collected fr
 
 ## Bandwidth and Resolution
 
-Power delay profile has it resolution, which we can see form the picture, the time resolution($\tau$) of the derived PDP from CSI is limited by the bandwidth of the transmitted signal, in mathematic theory, is $$\bigtriangleup \tau = \frac{1}{B}$$, that's means the resolution is decided by the signal bandwidth, **wider bandwidth** leads to higher resolution.
+Power delay profile has it resolution, which we can see form the picture, the time resolution($\tau$) of the derived PDP from CSI is limited by the bandwidth of the transmitted signal, in mathematic theory, is $\bigtriangleup \tau = \frac{1}{B}$, that's means the resolution is decided by the signal bandwidth, **wider bandwidth** leads to higher resolution.
 
 However, channel bandwidth of commodity Wi-Fi is regulated by the 802.11 protocol, 20MHz in 802.11 a/g and 40MHz in 802.11n. Take 802.11n as an example, the power delay profile resolution is up to 50ns, which leads to 15m resolution in measuring the multipath lengths.
 
@@ -52,13 +52,10 @@ According to the wireless processing in the 802.11 NIC and the OFDM[^1], the CSI
 
 In mathematic theory, we express the equation:
 
-$$
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\varphi_k=\theta&space;_k&space;&plus;&space;k\cdot&space;(\lambda_o&space;&plus;&space;\lambda_b&space;)&space;&plus;&space;\beta" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\varphi_k=\theta&space;_k&space;&plus;&space;k\cdot&space;(\lambda_o&space;&plus;&space;\lambda_b&space;)&space;&plus;&space;\beta" title="\varphi_k=\theta _k + k\cdot (\lambda_o + \lambda_b ) + \beta" /></a>
 
-\varphi_k=\theta _k + k\cdot (\lambda_o + \lambda_b ) + \beta\
-
-$$
-
-where $\lambda_b$ and $\lambda_o$ are phase errors introduced by the packet boundary detection uncertainty and the sampling frequency offset, respectively,  $$\beta$$ is the phase error caused by the central frequency offset.
+where $\lambda_b$ and $\lambda_o$
+are phase errors introduced by the packet boundary detection uncertainty and the sampling frequency offset, respectively,  $\beta$ is the phase error caused by the central frequency offset.
 
 ### Amplitude error correction
 
