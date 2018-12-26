@@ -2,8 +2,8 @@
 <div>
     <h1>2018</h1>
     <transition-group appear enter-active-class="fadeInUp">
-        <div v-for="post in posts18" :key=post.key v-show=true class="animated">
-            <p :class="['thin', 'color']"> {{ post.lastUpdated }}
+        <div v-for="post in posts18" :key=post.title class="animated">
+            <p :class="['thin', 'color']" > {{ post.lastUpdated }}
                 <router-link :to="post.path"> ### {{ post.title }} </router-link>
             </p>
         </div>

@@ -26,7 +26,7 @@ export default {
         posts() {
             // console.log(this.$site.pages)
             return this.$site.pages
-                .filter(x => x.path.startsWith("/algorithm/"))
+                .filter(x => x.path.startsWith("/algorithm/") && !x.frontmatter.blogindex)
                 .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated))
         }
     }

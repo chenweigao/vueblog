@@ -1,15 +1,15 @@
-#  DP Heap sort, Swap 
+#  Algorithm: DP Heap sort, Swap
 
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>
 
 ## Loops and Recursive
-
 
 ### Asymptotic Growth
 
 ###  O-notation
 
-- O-notation(Bog-O), When we say “the running time is $O(n^2)$” we mean that the worst-case running time is $ O(n^2)$ – the best case might be better. (渐进上界)
+- O-notation(Bog-O), When we say “the running time is $O(n^2)$” we mean that the worst-case running time is $O(n^2)$ – the best case might be better. (渐进上界)
 - When we say “the running time is Ω(n2)” we mean that the best-case running time is $$Ω(n^2)$$ – the worst case might be worse.(渐进下界)
 
 
@@ -41,7 +41,7 @@ another example:
   - 
 ### Quick Sort
 
-{% highlight python linenos %}
+```py
 
 def partition(arr, first, last):
 ​    pivot = first
@@ -62,23 +62,22 @@ A = [534, 246, 933, 127, 277, 321, 454, 565, 220]
 qucik_sort(A, 0, len(A) - 1)
 print(A)
 
-{% endhighlight %}
+```
 
 - Worst-case running time $\Theta(n^2)$:
   - input sorted or reverse sorted, partition around min or max element.
   - one side of partition has no elements.
   - $T(n) = T(0) + T(n – 1) + cn$
 - Expected running time $O(nlgn)$
-  - If we are really lucky, partition splits the array evenly n/2 : n/2: $T(n) = 2T(n/2) + Θ(n) = Θ(n lg n)$
+  - If we are really lucky, partition splits the array evenly n/2 : $T(n)=2T(n/2)+Θ(n)=Θ(nlgn)$
 
 Divide and conquer: partition, pivot
 
 ##  Other Sort
 
-
 ###  Selection Sort
 
-{% highlight python linenos %}
+```py
 
 def selection_sort(arr):
 ​    for i in range(len(arr)):
@@ -93,9 +92,9 @@ A = [534, 246, 933, 127, 277, 321, 454, 565, 220]
 selection_sort(A)
 print(A)
 
-{% endhighlight %}
+```
 
-###  Counting-sort
+### Counting-sort
 
 ## Heap
 
@@ -114,5 +113,3 @@ Priority Queues
 
 - Optimal substructure
 - Overlapping subproblems
-
-

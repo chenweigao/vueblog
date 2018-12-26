@@ -1,5 +1,6 @@
 ---
 sidebar: false
+blogindex: true
 ---
 
 # Algorithm
