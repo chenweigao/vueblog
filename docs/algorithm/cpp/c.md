@@ -1,108 +1,154 @@
-# Vector and Iterator
+# C Basics - Swap, Struct
 
-## library vector type
 
-The `push_back()` operation takes a value and "pushes" and values as a new last element onto the "back" of the vector.
+<!--more-->
 
-Example: *Read* a sequence of words from cin and *store* the values a vector. After you've read all the words, process the vector and change each word to *uppercase*. *Print* the transformed elements, *eight* words to a line.
+## Define Struct
 
-```cpp
-int main(int argc, char const *argv[])
-{
-    vector<string> vec;
-    for (string word; cin >> word; vec.push_back(word))
-        ;
-    //standard store operation
-    for (auto &str : vec)
-        for (auto &c : str)
-            c = toupper(c);
+There are many ways to define *struct*, what we should do is that chose a best way to solve problem.
 
-    for (string::size_type i = 0; i != vec.size(); ++i)
-    {
-        if (i != 0 && i % 8 == 0)
-            cout << endl;
-        cout << vec[i] << " ";
+**Example 1**
+{% highlight c %}
+struct Point { double x, y; };
+double dist(struct Point a, struct Point b){
+​    return hypot(a.x-b.x, a.y-b.y);
+}
+{% endhighlight %}
+
+**Example2**
+
+{% highlight c %}
+typedef struct { double x, y; } Point;
+double dist(Point a, Point b){
+​    return hypot(a.x-b.x, a.y-b.y);
+}
+{% endhighlight %}
+
+As you can see from the comparison, **Example 2** is better, which use `typedef struct { define; }struct name; ` to define.
+
+## Add two numbers
+
+You are given two **non-empty** linked lists representing two non-negative integers. The digits are stored in **reverse order** and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
+
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
+**Example**
+
+```
+Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+Output: 7 -> 0 -> 8
+Explanation: 342 + 465 = 807.
+```
+
+**code**
+
+```c++
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        ListNode *dummyHead = new ListNode(0);
+        ListNode *p = l1, *q = l2, *curr = dummyHead;
+        int carry = 0;
+        while(p != nullptr || q != nullptr) {
+            int x = (p != nullptr)? p->val : 0;
+            int y = (q != nullptr)? q->val : 0;
+            int sum = carry + x + y;
+            carry = sum / 10;
+            curr -> next = new ListNode(sum % 10);
+            curr = curr->next;
+            if(p != nullptr)
+                p = p->next;
+            if(q != nullptr)
+                q = q->next;
+        }
+        if(carry > 0) {
+            curr->next = new ListNode(carry);
+        }
+        return dummyHead->next;
     }
-    cout << endl;
-    return 0;
-}
+};
 ```
 
-## Iterators
+##  Swap
 
-### toupper example
+1. 基本实现：
 
-Example: capitalize the first character of a *string* using an iterator of a subscript:
+   {% highlight c++ %}
 
-```cpp
-string s("some string");
-if (s.begin() != s.end()) //make sure s is empty
-{
-    auto it = s.begin();
-    *it = toupper(*it);
-}
-//Some string
-```
+   //引用实现
+   swap(int &x, int &y){
+   ​    int temp;
+   ​    temp = x;
+   ​    x= y;
+   ​    y =x;
+   }
+   swap(x, y);
 
-As with pointers, we can dereference an iterator to obtain the element denoted by an element.
 
-```cpp
-string s("some string");
-for( auto it = s.begin(); it != s.end() && !isspace(*it); ++it)
-    *it = toupper(*it);
-//SOME string
-```
 
-### twice iterator value
+   //指针实现
+   swap(int *x, int *y){
+​       int temp;
+​       temp = *x;
+​       *x = *y;
+​       *y = temp;
+   }
+   swap(&x, &y);
+   {% endhighlight %}
 
-Example: write a program to create a vector with ten int elements. Using an iterator, assign each element a value that is twice its current value. Test your program by printing the vector.
+2. 异或实现：
 
-``` cpp{13}
-#include <iostream>
-#include <iterator>
-#include <vector>
-using namespace std;
+   {% highlight c++ %}
 
-int main(int argc, char const *argv[])
-{
-    // vector<int> v{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    vector<int> v;
-    for (int i = 0; i < 10; i++)
-        v.push_back(i);
-    //2 ways to init a vector with ten int element
-    for (auto it = v.begin(); it != v.end(); ++it)
-        *it *= 2;
-    for (auto i : v)
-        cout << i << " ";
-    cout << endl;
-    return 0;
-}
-```
+   void swap(int &x, int &y){
+   ​    x ^= y;
+   ​    y ^= x;
+   ​    x ^= y;
+   }
+   swap(x, y);
 
-### Find in iterator
+   void swap(int *x, int *y){
+   ​    *x ^= *y;
+   ​    *y ^= *x;
+   ​    *x ^= *y;
+   }
+   swap(&x, &y);
+   {% endhighlight %}
 
-Example(9.4): write a function that takes a pair of iterators to a vector and an int value. **Look for** the value in the range and return an iterator to the requested element:
+3. 加减操作：
 
-```cpp
-#include <iostream>
-#include <vector>
-using namespace std;
+   {% highlight c++ %}
 
-auto contains(vector<int>::const_iterator first, vector<int>::const_iterator last, int value)
-{
-    for (; first != last; ++first)
-    {
-        if (*first == value)
-            return first;
-    }
-    return last;
-}
+   void swap(int &x, int &y){
+   ​    x = x + y;
+   ​    y = x - y;
+   ​    x = x - y;
+   }
+   swap(x, y);
 
-int main(int argc, char const *argv[])
-{
-    vector<int> v{1, 2, 3, 4, 5, 7, 8, 9};
-    auto find_result = contains(v.begin(), v.end(), 9);
-    cout << *find_result << endl;
-    return 0;
-}
-```
+   void swap(int *x, int *y){
+   ​    *x = *x + *y;
+   ​    *y = *x - *y;
+   ​    *x = *x - *y;
+   }
+   swap(&x, &y);
+   {% endhighlight %}
+
+4. 宏定义：
+
+   ```c++
+   #define swap(x, y) { x ^= y; y ^= x; x ^= y; }
+   #define swap(x, y) { x = x + y; y = x - y; x = x - y; }
+   swap(x, y);
+   ```
+
+
+

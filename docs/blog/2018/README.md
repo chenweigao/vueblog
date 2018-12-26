@@ -2,6 +2,6 @@
 
 This is index:
 
-<Tabs/>
+<!-- <Tabs/> -->
 <!-- <Carousel/> -->
 <!-- <BlogIndex2/> -->

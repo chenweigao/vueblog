@@ -1,0 +1,4 @@
+# Algorithm
+
+---
+<IndexAlgorithm/>
