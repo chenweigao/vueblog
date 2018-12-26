@@ -8,6 +8,7 @@ JavaScript 中的时间操作：
 2. [获取月份的英文](#example-2)
 3. [分割字符串](#example-3)
 4. [替换时间字符串中所有非数字](#example-4)
+5. [按照时间顺序排序](#example-5)
 
 ---
 
@@ -83,6 +84,20 @@ toTimeString(time) {
       return time.replace(/[^0-9]/ig, "")
     }
 // 2018/11/20 10:36, Tuesday => 201811201036
+```
+
+### Example 5
+
+对于时间进行排序：
+
+```js
+computed: {
+  posts() {
+      return this.$site.pages
+          .filter(x => x.path.startsWith("/algorithm/"))
+          .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated))
+  }
+}
 ```
 
 ## Performance

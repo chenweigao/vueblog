@@ -1,10 +1,7 @@
 <template>
 <div>
-    <!-- <input type="button" value="show the post" @click="toggle"> -->
-    <!-- <input type="button" value="toggle" @click="flag=!flag"> -->
     <transition-group appear enter-active-class="fadeInUp">
-        <div v-for="post in posts" :key=post.title v-show=true class="animated">
-            <!-- <hr> -->
+        <div v-for="post in posts" :key=post.key v-show=true class="animated">
             <p :class="['thin', 'color']"> {{ post.lastUpdated }}
                 <router-link :to="post.path"> ### {{ post.title }} </router-link>
             </p>
@@ -20,11 +17,17 @@ export default {
             flag: false
         }
     },
+    methods: {
+        getTimestamp: function (time) {
+            return time.replace(/[^0-9]/ig, "")
+        }
+    },
     computed: {
         posts() {
+            // console.log(this.$site.pages);
             return this.$site.pages
                 .filter(x => x.path.startsWith("/blog/2018/") && !x.frontmatter.blog_index)
-                .sort((a, b) => (b.lastUpdated - a.lastUpdated));
+                .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated))
         }
     }
 };
