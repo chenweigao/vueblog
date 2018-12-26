@@ -1,5 +1,10 @@
 # Splicer 
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>
+
+
 The paper named **Precise Power Delay Profiling with Commodity Wi-Fi** is written by Yaxiong Xie, Mo Li`s student in Nayang Technological University. This note is a recap in a easy-to-understand manner.
 
 Before we start the text, let us consider the following questions:
@@ -48,7 +53,9 @@ According to the wireless processing in the 802.11 NIC and the OFDM[^1], the CSI
 In mathematic theory, we express the equation:
 
 $$
+
 \varphi_k=\theta _k + k\cdot (\lambda_o + \lambda_b ) + \beta\
+
 $$
 
 where $\lambda_b$ and $\lambda_o$ are phase errors introduced by the packet boundary detection uncertainty and the sampling frequency offset, respectively,  $$\beta$$ is the phase error caused by the central frequency offset.

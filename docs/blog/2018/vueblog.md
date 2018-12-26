@@ -1,4 +1,4 @@
-# Vueblog <Badge text="2.10.1" type="tip"/>
+# Vueblog<Badge text="2.10.1" type="tip"/>
 
 ---
 

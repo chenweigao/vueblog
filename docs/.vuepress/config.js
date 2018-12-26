@@ -6,20 +6,22 @@ module.exports = {
     ['@vuepress/pwa', {
       serviceWorker: true,
       updatePopup: true
-    }], 
+    }],
     ['@vuepress/search', {
       searchMaxSuggestions: 10
     }],
-    ['@vuepress/last-updated'] 
+    ['@vuepress/last-updated']
   ],
-  markdown: {
-    lineNumbers: true
-  },
   themeConfig: {
     sidebar: 'auto',
-    nav: [
-      { text: 'Home', link: '/'},
-      { text: 'Algorithm', link: '/algorithm/'}
+    nav: [{
+        text: 'Home',
+        link: '/'
+      },
+      {
+        text: 'Algorithm',
+        link: '/algorithm/'
+      }
     ]
   },
   serviceWorker: {
@@ -28,6 +30,10 @@ module.exports = {
       message: "New content is available.",
       buttonText: "Refresh"
     }
+  },
+  markdown: {
+    // extendMarkdown: md => {
+    //   md.use(require("markdown-it-katex"));
+    //   }
   }
-
 }
