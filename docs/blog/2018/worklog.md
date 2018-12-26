@@ -149,3 +149,5 @@
 [Dec 12]() map, unordered map, some cpp functions
 
 [Dec 14 - Dec 18]() Small app in Wechat
+
+[Dec 26]() Make new version blog: remove categories, make blog simple.

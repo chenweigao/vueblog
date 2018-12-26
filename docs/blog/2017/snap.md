@@ -1,16 +1,15 @@
 
-# Snap - Easily Upgraded, Universal Linux Package
+# Snap
+
+Easily Upgraded, Universal Linux Package
 
 
 Snaps are containerised software packages that are simple to create and install. They auto-update and are safe to run. And because they bundle their dependencies, they work on all major Linux systems without modification.
 
-
-
 Snapcraft is a command line tool used to build snaps. This guide details the recommended steps to get ready to build snaps.The easiest way to package your code as a snap is to use Snapcraft, which supports building from source and from existing packages, integrates into your CI process and handles publishing your snaps to the world.
 
-## Snap
 
-### 1. Abstract
+## 1. Abstract
 
 Snapcraft builds on top of tools like autotools, make, and cmake to create snaps fro people to install on Linux.
 
@@ -21,7 +20,7 @@ Here are some snap advantages that will benefit many C/C++ projects:
 - Installation: `snap install myapp`
 - Directly control the delivery of automatic application updates
 
-### 2. DOSBox Snap
+## 2. DOSBox Snap
 
 Snaps are defined in a single yaml file placed in the root of your project. The DOSBox example shows the entire `snapcraft.yaml` for a existing project.
 
@@ -55,7 +54,7 @@ parts:
       - libasound2-dev
 ```
 
-#### Confinement
+### Confinement
 
 To get started, we won’t [confine](https://docs.snapcraft.io/reference/confinement) this application. Unconfined applications, specified with `devmode`, can only be released to the hidden “edge” channel where you and other developers can install them.
 
@@ -63,15 +62,15 @@ To get started, we won’t [confine](https://docs.snapcraft.io/reference/confine
 confinement: devmode
 ```
 
-#### Parts
+### Parts
 
 Parts define how to build your application.
 
 Before building the part, the dependencies listed as **build-package** are installed. More information of autotools plugin is given by command `snapcraft help autotools`.
 
-### 3.Basic about Snap
+## 3.Basic about Snap
 
-#### Install snap on Ubuntu
+### Install snap on Ubuntu
 
 Ubuntu includes Snap by default starting with the 16.04LTS release, for the older 14.04LTS release or any flavor, you have to install it form the archive:
 
@@ -79,7 +78,7 @@ Ubuntu includes Snap by default starting with the 16.04LTS release, for the olde
 sudo apt install snap
 ```
 
-#### Using the snap command
+### Using the snap command
 
 Login with [Ubuntu One Account](https://login.ubuntu.com/)
 
@@ -95,9 +94,9 @@ snap install hello-world
 snap list # view details about installed snap
 ```
 
-### 4.Snapcraft
+## 4.Snapcraft
 
-#### Setup LXD
+### Setup LXD
 
 LXD installation on Ubuntu is quite straightforward:
 
@@ -108,7 +107,7 @@ sudo usermod -g lxd ${USER}
 #LXD requires that your user is in the lxd group.
 ```
 
-#### Test a container build
+### Test a container build
 
 By now should be all set, we can test that everything is setup correctly with a few commands:
 
@@ -119,7 +118,7 @@ snapcraft init
 snapcraft cleanbuild
 ```
 
-#### Build first snap
+### Build first snap
 
 Snapcraft uses single text file to describe the entire build process for a snap:
 
@@ -149,7 +148,7 @@ parts:
 
 This is the only file needed in the directory, Snapcraft can use local source code or fetch everything needed to build the snap from remote sources.
 
-#### Run snapcraft
+### Run snapcraft
 
 You can now build a snap out of your `snapcraft.yaml` by running `snapcraft` in the project directory:
 
