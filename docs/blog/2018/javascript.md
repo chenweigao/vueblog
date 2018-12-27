@@ -110,6 +110,24 @@ console.time("My operation")
 console.timeEnd("My operation")
 ```
 
-## localStorage
-
 ## Var, Let and Const
+
+## JSON
+
+若现在有一个 JSON 对象的数组，可以使用的处理方法有：
+
+- JSON.stringify()
+
+  处理 JSON 对象成为字符串
+
+- JSON.parse()
+
+  处理字符串成为 JSON 对象数组
+
+- forEach()
+
+  ```js
+  array.forEach(function(obj, index){
+    // ...
+  })
+  ```

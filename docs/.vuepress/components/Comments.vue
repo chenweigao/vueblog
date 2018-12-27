@@ -26,7 +26,7 @@ export default {
       appId: "wJrq8Ck2MqeaFzOYUf0TcP6G-gzGzoHsz", // your appId
       appKey: "taRHm1fEce4nGp2lmNgkiW9U", // your appKey
       // notify: true,
-      avatar: 'wavatar',
+      avatar: 'hide',
       placeholder: "writing somrthing...",
       visitor: true,
       verfy: false,

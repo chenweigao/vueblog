@@ -2,8 +2,12 @@
 
 ## Animating State
 
+生命周期包括：
+
 - watch
+
 - keyup
+
 - computed
 
 
@@ -55,6 +59,87 @@ export default {
   },
 }
 ```
+
+## localStorage
+
+### example
+
+- [Client-Side Storage in Vue](https://vuejs.org/v2/cookbook/client-side-storage.html)
+
+- [Example in GitHub](https://github.com/chenweigao/vue-study/blob/master/v-sample/local_storage.html): base example, 使用了 `v-model` 双向绑定, 生命周期加载 localStorage 数据和 `watch()` 属性。
+
+- [A blog about localStorage](https://www.smashingmagazine.com/2010/10/local-storage-and-how-to-use-it/#top)
+
+---
+在 `mounted()` 生命周期中加载数据，而为了观察到值的变化，需要使用 `watch()` 来检测数据的变化。
+
+```js
+mounted() {
+    if (localStorage.name) {
+        this.name = localStorage.name
+    }
+},
+```
+
+### watch()
+
+注意在使用 `watch()` 的时候可以使用其提供的两个函数参数 `newVal` 和 `oldVal`, 也可单独使用某一个变量。
+
+```js
+watch: {
+    'name': function(newVal, oldVal) {
+        // this.person = this.name + ':' + this.age
+        this.person = newVal + ':' + this.age
+    },
+    'age': function(newVal) {
+        this.person = this.name + ':' + newVal
+    }
+}
+```
+
+:::tip watch() 的进阶用法
+注意到 watch() 使用参数!
+
+可以定义 `handler` 去监听，并且使用 `deep` 或者 `immediate`.
+:::
+
+### usage
+
+1. `setItem()`
+
+    ```js
+    localStorage.setItem('favoriteflavor','vanilla');
+    ```
+
+    `setItem()` set the **key** and **value** and you read the key, then get the value.
+
+2. `getItem()`
+
+    ```js
+    var taste = localStorage.getItem('favoriteflavor');
+    // -> "vanilla"
+    ```
+
+3. `removeItem()`
+
+    ```js
+    localStorage.removeItem('favoriteflavor');
+    var taste = localStorage.getItem('favoriteflavor');
+    // -> null
+    ```
+
+4. set an object:
+
+    如果存储的对象是一个 JSON 对象，那么就需要使用 `JSON.stringify()` 或者 `JSON.parse()` 加以处理：
+
+    ```js {5,6}
+    var car = {};
+    car.wheels = 4;
+    car.doors = 2;
+    car.sound = 'vroom';
+    localStorage.setItem('car', JSON.stringify(car) );
+    console.log( JSON.parse( localStorage.getItem('car')) )
+    ```
 
 ## Devtools
 
@@ -325,7 +410,4 @@ This boilerplate has pre-configured CSS extraction for most popular CSS pre-proc
 ```bash
 npm install sass-loader node-sass --save-dev
 ```
-
-
-
 
