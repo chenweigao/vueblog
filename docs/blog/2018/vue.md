@@ -212,6 +212,23 @@ usage:
 
 ## Directives
 
+### v-for
+
+使用 `v-for` 遍历数组，注意到 `v-for` 也可以作为 function 传入参数。
+
+在计算属性不适用的时候（一般情况下 `v-for` 的处理，比如排序，放置于 `computed` 属性中），可以使用一个 `method` 方法。
+
+```js
+methods: {
+  posts: function(n) {
+    var postDir = "/blog/" + n + "/";
+    return this.$site.pages
+      .filter(x => x.path.startsWith(postDir) && !x.frontmatter.blog_index)
+      .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated));
+  }
+}
+```
+
 ### v-cloak
 
 可以使用`v-cloak`取得变量：
