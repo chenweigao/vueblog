@@ -33,7 +33,7 @@ The IWL5300 provides 802.11n channel state information in a format that reports 
 
 将里面所有的内容替换成搜狐的软件源，具体可以参考[apt-source](https://www.weigao.cc/blog/2017/01/02/aptsource.html)上面说的。
 接下来：
-```shell
+```bash
 sudo apt-get install gcc make linux-headers-$(uname -r) git-core
 #这一步是安装csitool所需要的一些依赖
 
@@ -59,7 +59,7 @@ echo blacklist iwlwifi | sudo tee -a /etc/modprobe.d/csitool.conf
 `unzip csi-tool.zip`
 
 解压以后：
-```shell
+```bash
 #首先用cd命令进入到linux-80211n-csitool文件目录下
 cd linux-80211n-csitool
 
@@ -75,14 +75,14 @@ cd ..
 ```
 完成之后，会看到提示 *Can't read private key* 的提示，可以进行下一步：
 在 supplyment 文件夹外面执行：
-```shell
+```bash
 for file in /lib/firmware/iwlwifi-5000-*.ucode; do sudo mv $file $file.orig; done
 sudo cp linux-80211n-csitool-supplementary/firmware/iwlwifi-5000-2.ucode.sigcomm2010 /lib/firmware/
 sudo ln -s iwlwifi-5000-2.ucode.sigcomm2010 /lib/firmware/iwlwifi-5000-2.ucode
 make -C linux-80211n-csitool-supplementary/netlink
 ```
 执行完以后基本上就完成了，接下来是测试步骤：
-```shell
+```bash
 sudo modprobe -r iwlwifi mac80211
 #如果提示 "FATAL: Module iwlwifi is in use." ，执行下一步
 sudo modprobe -r iwldvm iwlwifi mac80211

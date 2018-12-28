@@ -65,7 +65,7 @@ NMS即非极大值抑制算法（non maximum suppression, NMS），这个算法�
 
 YOLO本身使用的是VOC的数据集，但是我们的实验中需要使用自定义数据集来训练YOLO网络的话，就需要在VOC数据集基础上进行改造，按照VOC数据集的结构和格式来构建所需的数据集。在本实验中使用的数据集是CelebA大规模名人人脸标注数据集，CelebA数据集中的图片命名格式为统一的000001.jpg—202599.jpg，BoundingBox的信息在list_bbox_celeba.txt中保存。 
 
-```shell
+```bash
 # list_bbox_celeba.txt
 line 1: The number of picture
 line 2: information
@@ -94,7 +94,7 @@ Darknet是一个开源的神经网络框架，其使用C和CUDA。
 
 #### 3.2.1 Installing Darknet
 
-```shell
+```bash
 git clone https://github.com/pjreddie/darknet.git
 cd darknet
 make
@@ -102,19 +102,19 @@ make
 
 执行上述代码安装，我们使用的是ubuntu 18.04LTS操作系统。
 
-```shell
+```bash
 wget https://pjreddie.com/media/files/yolov3.weights
 ```
 
 下载好提前训练好的参数，然后就可以运行detector了。
 
-```shell
+```bash
 ./darknet detect cfg/yolov3.cfg yolov3.weights data/horses.jpg
 ```
 
 运行后会产生如下的输出：
 
-```shell
+```bash
 layer     filters    size              input                output
     0 conv     32  3 x 3 / 1   416 x 416 x   3   ->   416 x 416 x  32  0.299 BFLOPs
     1 conv     64  3 x 3 / 2   416 x 416 x  32   ->   208 x 208 x  64  1.595 BFLOPs
@@ -145,7 +145,7 @@ bicycle: 99%
 
 5. 修改配置文件`./cfg/voc.data`中的内容 
 
-6. ```shell
+6. ```bash
    classes= 4
    train  = /home/user/darknet/scripts/homework_train.txt
    //valid  = /home/pjreddie/data/voc/homework_test.txt

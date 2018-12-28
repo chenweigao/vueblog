@@ -5,7 +5,6 @@
 
 Flask **variable, [blueprint](#blueprint)** and install from **[requirement.txt](#requirement.txt)**, some basic knowledge about **WSGI, Nginx and Django**.
 
-
 ## Reference
 
 | NAME           | URL                                                          | DESCRIPTION                                                  |
@@ -21,8 +20,6 @@ Flask **variable, [blueprint](#blueprint)** and install from **[requirement.txt]
 ```bash
 pip install flask-socketio
 ```
-
-
 
 ## Flask Structure
 
@@ -58,7 +55,7 @@ The constructor for this class takes two required arguments: **the blueprint nam
 
 ## Virtual environment
 
-### Installation
+### installation
 
 Take Linux system as example:
 
@@ -66,7 +63,7 @@ Take Linux system as example:
 pip install virtualenv
 ```
 
-### Usage 
+### usage
 
 ```python
 cd [project directory]
@@ -99,7 +96,7 @@ source ./venv/bin/activate
 (venv) xxx:~/xxx$ deactivate
 ```
 
-## Requirement.txt
+## requirement.txt
 
 Install from `requirement.txt`:
 
@@ -112,6 +109,26 @@ generate a `requirement.txt` from current project:
 ```bash
 pip freeze > requirement.txt
 ```
+
+## pipenv
+
+目前流行的取代 virtual envirment 的方式就是 [pipenv](https://pipenv.readthedocs.io/en/latest/install/)
+
+Install pipenv:
+
+```bash
+pip install pipenv
+```
+
+Usage:
+
+```bash
+cd myproject
+pipenv install package-name
+pipenv shell
+```
+
+退出可以使用 `exit` 或者 `Ctrl+D`.
 
 ## Video Streaming with Flask
 
@@ -151,7 +168,7 @@ Web Server Gateway Interface[^2], 为Python语言定义Web服务器和服务端�
 
 ### Nginx
 
-```shell
+```bash
 sudo apt-get install nginx
 sudo service nginx start/status/stop/restart
 ```
@@ -196,7 +213,7 @@ python3 manage.py startapp my_app
 
 完成之后目录结构类似于：
 
-```shell
+```bash
 my_project/
 	manage.py
 	my_project/

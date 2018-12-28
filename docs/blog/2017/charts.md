@@ -35,7 +35,7 @@ to test, run `node -v` and `npm -v`.
 
 update to the latest version, 
 
-```shell
+```bash
 npm install npm@latest -g
 ```
 

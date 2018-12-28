@@ -7,7 +7,7 @@ sudo ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
 sudo service ssh start
 ```
 
-```shell
+```bash
 sudo apt-get install openssh-server
 #ssh config
 /etc/ssh/sshd_config
@@ -15,13 +15,13 @@ sudo apt-get install openssh-server
 
 start server:
 
-```shell
+```bash
 sudo service ssh restart/start
 ```
 
 A bug:
 
-```shell
+```bash
 sudo ssh-keygen -t rsa -f /etc/ssh/ssh_host_ed25519_key
 ```
 
@@ -58,20 +58,20 @@ Include **system information, SSH, read -p, shell array, sed, AWK**
 
 Sometimes, you may want to see the system kernel version, 2 ways are available :
 
-```shell
+```bash
 lsb_release -a
 cat /etc/issue
 ```
 
 change password for a user:
 
-```shell
+```bash
 sudo passwd root
 ```
 
 echo current time as a file name:
 
-```shell
+```bash
 echo test >> $(date -d "today" +"%Y%m%d_%H%M%S").txt 
 # work log
 git log -4 > log/$(date -d "today" +"%Y%m%d").txt
@@ -82,7 +82,7 @@ git log -4 > log/$(date -d "today" +"%Y%m%d").txt
 
 `read -p` is very useful for  this, for example:
 
-```shell
+```bash
 read -n1 -p "What is your system version? 
 1: Ubuntu 16.04;
 2: Ubuntu 17.10;
@@ -103,7 +103,7 @@ esac
 
 ## Shell Array
 
-```shell
+```bash
 arrayName=(array_content)
 #get the content of arrary, or [*]
 echo ${arraryName[@]}
@@ -113,7 +113,7 @@ echo ${#arrayName[*]}
 
 ## Sed
 
-```shell
+```bash
 current_plugins_version=$(dpkg -s picoscenes-plugins-demo-rxsbroadcaster-chronos | grep Version | sed 's/Version: //g')
 ```
 
@@ -133,7 +133,7 @@ That means **replace** "Version:  " with **empty**.
 
 To replace the string in the file, use `-i`:
 
-```shell
+```bash
 sudo sed -i 's/GRUB_HIDDEN_TIMEOUT=0/#GRUB_HIDDEN_TIMEOUT=0/g'  /etc/default/
 ```
 
@@ -151,7 +151,7 @@ Usage: `tr [OPTION]... SET1 SET2`
 
 - -s: replace each sequence of a repeated character, 删除所有重复出现字符序列，只保留第一个
 
-```shell
+```bash
 #将所有的the替换为my
 tr -s 'the' 'my'
 tr -s ' ' '\n'

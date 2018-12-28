@@ -4,7 +4,7 @@
 
 ## 1. 配置shadowsocks客户端
 
-```shell
+```bash
 yum -y install epel-release
 yum -y install python-pip
 pip install shadowsocks
@@ -63,7 +63,7 @@ chrome上的插件Proxy SwitchyOmega使用方法为：
 
   [kcptun GitHub](https://github.com/kuoruan/shell-scripts)
 
-  ```shell
+  ```bash
   #查找shadowsocks端口，将8388替换为ss端口
   netstat -nl | grep 8388
   ss -nl | grep 8388
@@ -71,7 +71,7 @@ chrome上的插件Proxy SwitchyOmega使用方法为：
 
   参考[教程](https://blog.kuoruan.com/110.html)
 
-  ```shell
+  ```bash
   #使用脚本一键安装
   wget --no-check-certificate https://github.com/kuoruan/shell-scripts/raw/master/kcptun/kcptun.sh
   chmod +x ./kcptun.sh
@@ -101,7 +101,7 @@ chrome上的插件Proxy SwitchyOmega使用方法为：
 
   配置完以上步骤以后，启动ss客户端和KCPTun客户端配置管理工具，日志区产生记录，即成功
 
-  ```shell
+  ```bash
   #查看服务器日志
   ./kcptun.sh
   ```

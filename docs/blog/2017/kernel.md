@@ -17,7 +17,7 @@ tar -xzf linux-4.x.x.tar.gz
 
 把内核目录linux-4.x.x和补丁patch都复制到/usr/src，然后进入/usr/src
 
-```shell
+```bash
 cp linux-x.x /usr/src -rf
 cp patch-x.x /user/src
 cd /usr/src
@@ -25,7 +25,7 @@ cd /usr/src
 
 ## 2. 准备编译
 
-```shell
+```bash
 #复制当前内核的config文件到linux-x.x/下
 cp linux-headers-$(uname -r)/.config linux-x.x/
 cd linux-x.x/
@@ -36,7 +36,7 @@ make menuconfig
 
 ## 3. 开始编译
 
-```shell
+```bash
 # 编译启动映像，N表示CPU核数，单核为2.双核为4，以此类推
 make bzImage -jN
 #编译模块
@@ -49,7 +49,7 @@ make install
 
 ## 4. 更新grub
 
-```shell
+```bash
 # 4.5.0为版本号
 mkinitramfs 4.5.0 -o /boot/initrd.img-4.5.0
 update-grub2
@@ -74,7 +74,7 @@ depmod [-Ane]
 
 举例：如果我做好了一个网卡驱动程序，文件名为a.ko，则更新内核模块：
 
-```shell
+```bash
 cp a.ko /lib/modules/$(uname -r )/kernel/drivers/net
 depmod
 ```
@@ -83,7 +83,7 @@ depmod
 
 `lsmod`命令可查看已加载的模块，查看内核模块的信息，使用`modinfo`
 
-```shell
+```bash
 modinfo [-adln] [module_name|filename]
 -a: 仅列出作者名称
 -d: 仅description
@@ -99,7 +99,7 @@ e.g. 列出ath模块的路径：`modinfo -n ath`
 
 对于删除模块：
 
-```shell
+```bash
 rmmmod [-fw] module_name
 -f: 强势删除，无论是否被使用
 -w: 若该模块在使用，则等待该模块使用完后再删除
@@ -107,7 +107,7 @@ rmmmod [-fw] module_name
 
 但是通常情况下，不推荐使用`insmod`和`rmmod`命令，万一模块存在依赖属性的问题时，将无法直接加载或删除该模块，所以使用`modprobe`来处理加载模块的问题：
 
-```shell
+```bash
 modprobe [-lcfr] module_name
 -r: 删除某个模块
 ```

@@ -58,7 +58,7 @@ parts:
 
 To get started, we won’t [confine](https://docs.snapcraft.io/reference/confinement) this application. Unconfined applications, specified with `devmode`, can only be released to the hidden “edge” channel where you and other developers can install them.
 
-```
+```bash
 confinement: devmode
 ```
 
@@ -74,7 +74,7 @@ Before building the part, the dependencies listed as **build-package** are insta
 
 Ubuntu includes Snap by default starting with the 16.04LTS release, for the older 14.04LTS release or any flavor, you have to install it form the archive:
 
-```shell
+```bash
 sudo apt install snap
 ```
 
@@ -82,13 +82,13 @@ sudo apt install snap
 
 Login with [Ubuntu One Account](https://login.ubuntu.com/)
 
-``` shell
+```bash
 sudo snap login <youremail>
 ```
 
 When you are logged in, **find snaps** in the snap store, and then you can install it using the snap name.
 
-```shell
+```bash
 snap find hello
 snap install hello-world
 snap list # view details about installed snap
@@ -100,7 +100,7 @@ snap list # view details about installed snap
 
 LXD installation on Ubuntu is quite straightforward:
 
-```shell
+```bash
 snap install
 sudo lxd init
 sudo usermod -g lxd ${USER}
@@ -111,7 +111,7 @@ sudo usermod -g lxd ${USER}
 
 By now should be all set, we can test that everything is setup correctly with a few commands:
 
-```shell
+```bash
 mkdir test-snapcraft
 cd test-snapcraft
 snapcraft init
@@ -122,13 +122,13 @@ snapcraft cleanbuild
 
 Snapcraft uses single text file to describe the entire build process for a snap:
 
-```shell
+```bash
 vim test-snapcraft/snapcraft.yaml
 ```
 
 To get start with a template, you can run `snapcraft init`, it wll create a new directory *snap* with a file named *snapcraft.yaml* , the final file looks like this:
 
-```shell
+```bash
 name: hello
 version: "2.10"
 summary: GNU Hello, the "hello world" snap
@@ -152,13 +152,13 @@ This is the only file needed in the directory, Snapcraft can use local source co
 
 You can now build a snap out of your `snapcraft.yaml` by running `snapcraft` in the project directory:
 
-```shell
+```bash
 snapcraft
 ```
 
 After this process, the snap is now available in your directory.
 
-```shell
+```bash
 $ ls
 hello_2.10_amd64.snap  parts  snap  prime 
 $ sudo snap install hello_2.10_amd64.snap --dangerous
