@@ -8,21 +8,22 @@
 There are many ways to define *struct*, what we should do is that chose a best way to solve problem.
 
 **Example 1**
-{% highlight c %}
+
+```c
 struct Point { double x, y; };
 double dist(struct Point a, struct Point b){
 ​    return hypot(a.x-b.x, a.y-b.y);
 }
-{% endhighlight %}
+```
 
 **Example2**
 
-{% highlight c %}
+```c
 typedef struct { double x, y; } Point;
 double dist(Point a, Point b){
 ​    return hypot(a.x-b.x, a.y-b.y);
 }
-{% endhighlight %}
+```
 
 As you can see from the comparison, **Example 2** is better, which use `typedef struct { define; }struct name; ` to define.
 
@@ -42,7 +43,7 @@ Explanation: 342 + 465 = 807.
 
 **code**
 
-```c++
+```cpp
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -81,8 +82,7 @@ public:
 
 1. 基本实现：
 
-   {% highlight c++ %}
-
+```cpp
    //引用实现
    swap(int &x, int &y){
    ​    int temp;
@@ -93,7 +93,6 @@ public:
    swap(x, y);
 
 
-
    //指针实现
    swap(int *x, int *y){
 ​       int temp;
@@ -102,12 +101,11 @@ public:
 ​       *y = temp;
    }
    swap(&x, &y);
-   {% endhighlight %}
+```
 
 2. 异或实现：
 
-   {% highlight c++ %}
-
+```cpp
    void swap(int &x, int &y){
    ​    x ^= y;
    ​    y ^= x;
@@ -121,12 +119,11 @@ public:
    ​    *x ^= *y;
    }
    swap(&x, &y);
-   {% endhighlight %}
+```
 
 3. 加减操作：
 
-   {% highlight c++ %}
-
+```cpp
    void swap(int &x, int &y){
    ​    x = x + y;
    ​    y = x - y;
@@ -140,11 +137,11 @@ public:
    ​    *x = *x - *y;
    }
    swap(&x, &y);
-   {% endhighlight %}
+```
 
 4. 宏定义：
 
-   ```c++
+   ```cpp
    #define swap(x, y) { x ^= y; y ^= x; x ^= y; }
    #define swap(x, y) { x = x + y; y = x - y; x = x - y; }
    swap(x, y);

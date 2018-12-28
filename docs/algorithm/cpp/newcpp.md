@@ -1,16 +1,16 @@
-# C++ 11/14/17 and Its Usage
+# cpp 11/14/17 and Its Usage
 
-The goal of new c++ aims at:
+The goal of new cpp aims at:
 
-- Make c++ a better language for systems programming and library building
+- Make cpp a better language for systems programming and library building
 
-- Make c++ easier to teach and learn
+- Make cpp easier to teach and learn
 
 
 ## lvalue and rvalue
 
 
-```c++
+```cpp
 int x = 0;  //x is lvalue
 int* p = &++x;  //++x is lvalue, can use &
 ++x = 10;
@@ -21,7 +21,7 @@ lvalue can be assigned a value or use '&', rvalue can't.
 
 [more information about rvalue  reference](https://zh.wikipedia.org/wiki/%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8)
 
-```c++
+```cpp
 #include <iostream>
 #include <utility>
 
@@ -73,7 +73,7 @@ Q: What is different between difination and declaration?
 
 ### member initializer list
 
-```c++
+```cpp
 class Point {
 private:
 	const float x,y;
@@ -83,7 +83,7 @@ private:
 
 ### Sort in descending order
 
-```c++
+```cpp
 struct greater
 {
     template<class T>
@@ -94,7 +94,7 @@ std::sort(numbers.begin(), numbers.end(), greater());
 
 ### Templates
 
-```c++
+```cpp
 // function template
 #include <iostream>
 using namespace std;
@@ -122,7 +122,7 @@ int main () {
 
 the format for declaring function template with type parameters is:
 
-```c++
+```cpp
 template <class identifier> function_declaration;
 
 template <typename identifier> function_declaration;
