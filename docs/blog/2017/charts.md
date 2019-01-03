@@ -13,13 +13,9 @@ use the `chart.js` CDN: [https://cdnjs.com/libraries/Chart.js](https://cdnjs.com
 
 in Flask, import the `.js` using:
 
-```yaml
-{% raw %}
-{% block scripts %}
+```js
 <script src="/static/js/Chart.min.js"></script>
 <script src="cdn_url"></script>
-{% endblock %}
-{% endraw %}
 ```
 
 ## npm install
@@ -68,8 +64,6 @@ def charts():
 in `charts.html`:
 
 ```html
-{% raw %}
-{% block scripts %} {{ super() }}
 <script src="/static/js/Chart.min.js"></script>
 <script>
   // Global parameters:
@@ -116,18 +110,14 @@ in `charts.html`:
     data: chartData,
   });
 </script>
-{% endblock %}
-{% endraw %}
 ```
 
 in `charts.html`:
 
-```yaml
-{% raw %}
-{% block page_content %}
+```html
+
 <canvas id="myChart" width="500" height="400"></canvas>
-{% endblock %} 
-{% endraw %}
+
 ```
 
 There is an example: [https://gitlab.com/patkennedy79/flask_chartjs_example/tree/master](https://gitlab.com/patkennedy79/flask_chartjs_example/tree/master)
