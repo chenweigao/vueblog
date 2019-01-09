@@ -10,7 +10,6 @@
 
 - computed
 
-
 ## axios
 
 In the project, it is important to use AJAX. `Vue resource` and `axios` is very useful.
@@ -166,7 +165,6 @@ Vue.component('my-component-name', {
 })
 ```
 
-
 父子组件：
 
 ## Filters
@@ -228,6 +226,8 @@ methods: {
   }
 }
 ```
+
+`v-for` 涉及到三个参数 `(value, key, index)`, 要善于加以利用
 
 ### v-cloak
 
