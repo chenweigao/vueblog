@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'WeiGao',
-  description: 'simple but not simple',
+  title: 'Weigao Chen',
+  description: 'c\'est la vie',
   head: [
     ['link', {
       rel: 'icon',

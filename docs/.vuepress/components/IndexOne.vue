@@ -6,29 +6,37 @@
           :inline="true"
           class="demo-form-inline"
         >
+
           <el-form-item>
-            <el-select
-              v-model="value"
-              clearable
-              placeholder="Select Post Year"
+            <el-badge
+              value="new"
+              class="commentitem"
             >
-              <el-option
-                v-for="item in years"
-                :key="item.index"
-                :label="item"
-                :value="item"
+              <el-select
+                v-model="value"
+                clearable
+                placeholder="select a year"
               >
-              </el-option>
-            </el-select>
+                <el-option
+                  v-for="item in years"
+                  :key="item.index"
+                  :label="item"
+                  :value="item"
+                >
+                </el-option>
+              </el-select>
+            </el-badge>
           </el-form-item>
-        <!-- <SearchBox style="float:right" /> -->
+          <SearchBox style="float:right" />
         </el-form>
       </el-header>
+
       <el-main
         v-for="year in years"
         :key="year.index"
         v-show="value === year || value === ''"
       >
+
         <el-card
           class="box-card"
           shadow="hover"
@@ -41,9 +49,11 @@
               {{ year }}
             </span>
             <!-- <el-button
-              style="float: right; padding: 3px 0"
+              style="float: right; padding: 3px 0; color: #545454"
               type="text"
-            >操作按钮</el-button> -->
+              @click="hideCard(year.index)"
+            >Hide</el-button> -->
+
           </div>
           <transition-group
             appear
@@ -63,12 +73,26 @@
 
       <el-footer>
         
-        <a
-          href="discuss/"
+          <a
+            href="https://github.com/chenweigao"
+          >
+            <el-button>Follow in Github</el-button>
+          </a>
+
+        <el-badge
+          value="Reco"
+          type="primary"
+          class="commentitem"
           style="float:right"
-        ><el-button type="info">Leave a message to me </el-button></a>
-        
-        </el-footer>
+        >
+          <a
+            href="discuss/"
+            style="float:right"
+          >
+            <el-button>Comments</el-button>
+          </a>
+        </el-badge>
+      </el-footer>
     </el-container>
 
   </div>
@@ -99,21 +123,26 @@ export default {
   computed: {
   },
   filters: {
-     dateFormat: function (dateStr) {
-    var dt = new Date(Date.parse(dateStr))
-    var y = dt.getFullYear()
-    var m = (dt.getMonth() + 1).toString().padStart(2, '0')
-    var d = dt.getDate().toString().padStart(2, '0')
-    var hh = dt.getHours().toString().padStart(2, '0')
-    var mm = dt.getMinutes().toString().padStart(2, '0')
-    var ss = dt.getSeconds().toString().padStart(2, '0')
-    return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
-  }
+    dateFormat: function (dateStr) {
+      var dt = new Date(Date.parse(dateStr))
+      var y = dt.getFullYear()
+      var m = (dt.getMonth() + 1).toString().padStart(2, '0')
+      var d = dt.getDate().toString().padStart(2, '0')
+      var hh = dt.getHours().toString().padStart(2, '0')
+      var mm = dt.getMinutes().toString().padStart(2, '0')
+      var ss = dt.getSeconds().toString().padStart(2, '0')
+      var n = dt.toTimeString().slice(0, 5)
+      return `${m}/${d}/${y} ${n}`
+    }
   }
 };
 </script>
 
 <style>
+.commentitem {
+  margin-top: 10px;
+  margin-right: 40px;
+}
 .time {
   font-size: 14px;
   color: #999;
@@ -160,7 +189,6 @@ export default {
 .v-leave-active {
   transition: all 0.6s ease;
 }
-
 
 .el-col {
   border-radius: 4px;
