@@ -75,13 +75,12 @@
           <a
             href="https://github.com/chenweigao"
           >
-            <el-button>Follow in Github</el-button>
+            <el-button>Github</el-button>
           </a>
-
+         
         <el-badge
           value="Reco"
           type="primary"
-          class="commentitem"
           style="float:right"
         >
           <a
