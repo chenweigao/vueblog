@@ -1,33 +1,5 @@
 <template>
   <div>
-    <!-- <h1>2019</h1>
-    <transition-group appear enter-active-class="fadeInUp">
-      <div v-for="post in posts(2019)" :key="post.key" v-show="true" class="animated">
-        <p :class="['thin', 'color']">
-          {{ post.lastUpdated }}
-          <router-link :to="post.path">### {{ post.title }}</router-link>
-        </p>
-      </div>
-    </transition-group>
-    <h1>2018</h1>
-    <transition-group appear enter-active-class="fadeInUp">
-      <div v-for="post in posts(2018)" :key="post.title" class="animated">
-        <p :class="['thin', 'color']">
-          {{ post.lastUpdated }}
-          <router-link :to="post.path">### {{ post.title }}</router-link>
-        </p>
-      </div>
-    </transition-group>
-    <h1>2017</h1>
-    <transition-group appear enter-active-class="fadeInUp">
-      <div v-for="post in posts(2017)" :key="post.key" v-show="true" class="animated">
-        <p :class="['thin', 'color']">
-          {{ post.lastUpdated }}
-          <router-link :to="post.path">### {{ post.title }}</router-link>
-        </p>
-      </div>
-    </transition-group> -->
-
     <el-container>
       <el-header>
         <el-form
@@ -82,7 +54,7 @@
               :key="post.key"
               class="animated text item"
             >
-              <time class="time">{{ post.lastUpdated }}</time>
+              <time class="time">{{ post.lastUpdated | dateFormat }}</time>
               <router-link :to="post.path">### {{ post.title }}</router-link>
             </div>
           </transition-group>
@@ -125,6 +97,18 @@ export default {
     }
   },
   computed: {
+  },
+  filters: {
+     dateFormat: function (dateStr) {
+    var dt = new Date(Date.parse(dateStr))
+    var y = dt.getFullYear()
+    var m = (dt.getMonth() + 1).toString().padStart(2, '0')
+    var d = dt.getDate().toString().padStart(2, '0')
+    var hh = dt.getHours().toString().padStart(2, '0')
+    var mm = dt.getMinutes().toString().padStart(2, '0')
+    var ss = dt.getSeconds().toString().padStart(2, '0')
+    return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+  }
   }
 };
 </script>
@@ -177,12 +161,7 @@ export default {
   transition: all 0.6s ease;
 }
 
-.el-row {
-  margin-bottom: 20px;
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
+
 .el-col {
   border-radius: 4px;
 }

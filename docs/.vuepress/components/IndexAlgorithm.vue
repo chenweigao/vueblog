@@ -32,8 +32,8 @@
         >
             <div
                 v-for="post in posts"
-                :key="post"
-                class="text item"
+                :key="post.key"
+                class="text item animated"
             >
                 <router-link :to="post.path"> {{ post.title }} </router-link>
             </div>
@@ -90,6 +90,8 @@ export default {
 .v-leave-active {
   transition: all 0.6s ease;
 }
+
+
 
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
 </style>
