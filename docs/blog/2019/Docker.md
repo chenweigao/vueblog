@@ -102,7 +102,8 @@ sudo docker container stop 1fa4a...
 
 ## Services
 
-- 通过 `docker-compose.yml` 来配置，在其中引用已经 Published 的 image, 对于该配置文件的研究以后进行
+- 通过 `docker-compose.yml` 来配置，在其中引用已经 Published 的 image
+    > A `docker-compose.yml` file is a YAML file that defines how Docker containers should behave in production.
 
 - Run the new load-balanced app
 

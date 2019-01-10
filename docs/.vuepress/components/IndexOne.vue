@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>2019</h1>
+    <!-- <h1>2019</h1>
     <transition-group appear enter-active-class="fadeInUp">
       <div v-for="post in posts(2019)" :key="post.key" v-show="true" class="animated">
         <p :class="['thin', 'color']">
@@ -26,22 +26,98 @@
           <router-link :to="post.path">### {{ post.title }}</router-link>
         </p>
       </div>
-    </transition-group>
+    </transition-group> -->
+
+    <el-container>
+      <el-header>
+        <el-form
+          :inline="true"
+          class="demo-form-inline"
+        >
+          <el-form-item>
+            <el-select
+              v-model="value"
+              clearable
+              placeholder="Select Post Year"
+            >
+              <el-option
+                v-for="item in years"
+                :key="item.index"
+                :label="item"
+                :value="item"
+              >
+              </el-option>
+            </el-select>
+          </el-form-item>
+        <!-- <SearchBox style="float:right" /> -->
+        </el-form>
+      </el-header>
+      <el-main
+        v-for="year in years"
+        :key="year.index"
+        v-show="value === year || value === ''"
+      >
+        <el-card
+          class="box-card"
+          shadow="hover"
+        >
+          <div
+            slot="header"
+            class="clearfix"
+          >
+            <span>
+              {{ year }}
+            </span>
+            <!-- <el-button
+              style="float: right; padding: 3px 0"
+              type="text"
+            >操作按钮</el-button> -->
+          </div>
+          <transition-group
+            appear
+            enter-active-class="fadeInUp"
+          >
+            <div
+              v-for="post in posts(year)"
+              :key="post.key"
+              class="animated text item"
+            >
+              <time class="time">{{ post.lastUpdated }}</time>
+              <router-link :to="post.path">### {{ post.title }}</router-link>
+            </div>
+          </transition-group>
+        </el-card>
+      </el-main>
+
+      <el-footer>
+        
+        <a
+          href="discuss/"
+          style="float:right"
+        ><el-button type="info">Leave a message to me </el-button></a>
+        
+        </el-footer>
+    </el-container>
+
   </div>
 </template>
 
 <script>
+import SearchBox from '@SearchBox'
 export default {
-  data: function() {
+  components: { SearchBox },
+  data: function () {
     return {
-      flag: false
+      flag: false,
+      years: [2019, 2018, 2017],
+      value: ''
     };
   },
   methods: {
-    getTimestamp: function(time) {
+    getTimestamp: function (time) {
       return time.replace(/[^0-9]/gi, "");
     },
-    posts: function(n) {
+    posts: function (n) {
       var postDir = "/blog/" + n + "/";
       return this.$site.pages
         .filter(x => x.path.startsWith(postDir) && !x.frontmatter.blog_index)
@@ -54,6 +130,10 @@ export default {
 </script>
 
 <style>
+.time {
+  font-size: 14px;
+  color: #999;
+}
 .thin {
   font-weight: 300;
 }
@@ -67,6 +147,25 @@ export default {
   /* color: dodgerblue; */
 }
 
+.text {
+  font-size: 16px;
+}
+
+.item {
+  margin-bottom: 18px;
+}
+.box-card {
+  margin-bottom: 0;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+
 .v-enter,
 .v-leave-to {
   opacity: 0;
@@ -76,6 +175,21 @@ export default {
 .v-enter-active,
 .v-leave-active {
   transition: all 0.6s ease;
+}
+
+.el-row {
+  margin-bottom: 20px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.el-col {
+  border-radius: 4px;
+}
+
+.grid-content {
+  border-radius: 4px;
+  min-height: 36px;
 }
 
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
