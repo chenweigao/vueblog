@@ -38,7 +38,6 @@
       >
 
         <el-card
-          class="box-card"
           shadow="hover"
         >
           <div
@@ -147,18 +146,6 @@ export default {
   font-size: 14px;
   color: #999;
 }
-.thin {
-  font-weight: 300;
-}
-
-.size {
-  font-size: 0.83em;
-}
-
-.color {
-  color: black;
-  /* color: dodgerblue; */
-}
 
 .text {
   font-size: 16px;
@@ -167,8 +154,8 @@ export default {
 .item {
   margin-bottom: 18px;
 }
-.box-card {
-  margin-bottom: 0;
+/* .box-card {
+  width: 900px;
 }
 .clearfix:before,
 .clearfix:after {
@@ -177,7 +164,7 @@ export default {
 }
 .clearfix:after {
   clear: both;
-}
+} */
 
 .v-enter,
 .v-leave-to {
@@ -190,14 +177,7 @@ export default {
   transition: all 0.6s ease;
 }
 
-.el-col {
-  border-radius: 4px;
-}
 
-.grid-content {
-  border-radius: 4px;
-  min-height: 36px;
-}
 
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
 </style>
