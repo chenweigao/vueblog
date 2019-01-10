@@ -1,20 +1,5 @@
 <template>
     <div>
-        <!-- <transition-group
-            appear
-            enter-active-class="fadeInUp"
-        >
-            <div
-                v-for="post in posts"
-                :key=post.title
-                v-show=true
-                class="animated"
-            >
-                <p :class="['thin', 'color']"> {{ post.lastUpdated }}
-                    <router-link :to="post.path"> ### {{ post.title }} </router-link>
-                </p>
-            </div>
-        </transition-group> -->
         <el-card class="box-card" shadow="hover">
             <div
                 slot="header"
@@ -67,18 +52,6 @@ export default {
 </script>
 
 <style>
-.thin {
-  font-weight: 300;
-}
-
-.size {
-  font-size: 0.83em;
-}
-
-.color {
-  color: black;
-  /* color: dodgerblue; */
-}
 
 .v-enter,
 .v-leave-to {
@@ -90,7 +63,6 @@ export default {
 .v-leave-active {
   transition: all 0.6s ease;
 }
-
 
 
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
