@@ -6,10 +6,10 @@
           :inline="true"
           class="demo-form-inline"
         >
-          <el-form-item>
+          <!-- <el-form-item></el-form-item>
 
             <el-button type="info" plain @click="clickAlgorithm">Algorithm</el-button>
-          </el-form-item>
+          </el-form-item> -->
 
           <el-form-item>
 

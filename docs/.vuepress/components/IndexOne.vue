@@ -103,8 +103,8 @@ export default {
   data: function () {
     return {
       flag: false,
-      years: [2019, 2018, 2017],
-      value: ''
+      years: ['2019', '2018', '2017'],
+      value: '2019'
     };
   },
   methods: {
@@ -126,7 +126,7 @@ export default {
       var y = dt.getFullYear()
       var m = (dt.getMonth() + 1).toString().padStart(2, '0')
       var d = dt.getDate().toString().padStart(2, '0')
-      var hh = parseInt(dt.getUTCHours().toString().padStart(2, '0')) + 8
+      var hh = dt.getHours().toString().padStart(2, '0')
       var mm = dt.getMinutes().toString().padStart(2, '0')
       var ss = dt.getSeconds().toString().padStart(2, '0')
       var n = dt.toTimeString().slice(0, 5)
@@ -155,7 +155,7 @@ export default {
 }
 /* .box-card {
   width: 900px;
-}
+} */
 .clearfix:before,
 .clearfix:after {
   display: table;
@@ -163,7 +163,7 @@ export default {
 }
 .clearfix:after {
   clear: both;
-} */
+}
 
 .v-enter,
 .v-leave-to {
@@ -176,6 +176,18 @@ export default {
   transition: all 0.6s ease;
 }
 
+body > .el-container {
+    margin-bottom: 40px;
+  }
+  
+  .el-container:nth-child(5) .el-aside,
+  .el-container:nth-child(6) .el-aside {
+    line-height: 260px;
+  }
+  
+  .el-container:nth-child(7) .el-aside {
+    line-height: 320px;
+  }
 
 
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
