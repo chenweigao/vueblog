@@ -1,4 +1,4 @@
-# Vueblog<Badge text="2.10.1" type="tip"/>
+# vuepress blog<Badge text="2.10.1" type="tip"/>
 
 ---
 
@@ -105,15 +105,11 @@ Source code is:
 </details>
 ```
 
-### markdown extend
+### Markdown extend
 
-Install markdown-it-katex
+- Install markdown-it-katex: `yarn add markdown-it-katex -D`.
 
-```bash
-yarn add markdown-it-katex -D
-```
-
-Modify your `config.js` in `.vuepress`
+- Modify your `config.js` in `.vuepress`
 
 ```js
 module.exports = {
@@ -126,7 +122,7 @@ module.exports = {
 };
 ```
 
-Add Katex CSS into your theme or anywhere ( in exact markdown file you want to use Katex, in Layout.vue, ... )
+- Add Katex CSS into your theme or anywhere ( in exact markdown file you want to use Katex, in Layout.vue, ... )
 
 ```md
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">

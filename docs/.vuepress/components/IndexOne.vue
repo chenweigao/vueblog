@@ -105,7 +105,7 @@
       <el-footer>
 
         <a href="https://github.com/chenweigao">
-          <el-button icon="iconfont icon-github-fill"> Github</el-button>
+          <el-button icon="iconfont icon-github-fill"> GitHub</el-button>
         </a>
         <a href="mailto:mail@weigao.cc">
           <el-button icon="iconfont icon-mail"> Email</el-button>
