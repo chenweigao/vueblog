@@ -1,7 +1,16 @@
 <template>
   <div>
+
     <el-container>
+
       <el-header>
+
+        <!-- <el-row>
+          <el-button type="default" @click="showPost('')">All</el-button>
+          <el-button type="default" :autofocus="true" @click="showPost('2019')" >2019</el-button>
+          <el-button type="default" @click="showPost('2018')">2018</el-button>
+          <el-button type="default" @click="showPost('2017')">2017</el-button>
+        </el-row> -->
         <el-form
           :inline="true"
           class="demo-form-inline"
@@ -31,15 +40,43 @@
         </el-form>
       </el-header>
 
+      <el-main>
+        <el-card
+          shadow="hover"
+          class=""
+        >
+          <div
+            slot="header"
+            class="clearfix"
+          >
+            <span>
+              Recent Update
+            </span>
+            <el-input-number v-model="recent_update_number"  @change="recentUpdate" :min="3" :max="9" style="float:right"  size="mini"></el-input-number>
+          </div>
+          <transition-group
+            appear
+            enter-active-class="fadeInUp"
+          >
+            <div
+              v-for="post in recentUpdate()"
+              :key="post.key"
+              class="animated text item"
+            >
+              <time class="time">{{ post.lastUpdated | dateFormat }}</time>
+              <router-link :to="post.path">### {{ post.title }}</router-link>
+            </div>
+          </transition-group>
+        </el-card>
+
+      </el-main>
       <el-main
         v-for="year in years"
         :key="year.index"
         v-show="value === year || value === ''"
       >
 
-        <el-card
-          shadow="hover"
-        >
+        <el-card shadow="hover">
           <div
             slot="header"
             class="clearfix"
@@ -47,13 +84,8 @@
             <span>
               {{ year }}
             </span>
-            <!-- <el-button
-              style="float: right; padding: 3px 0; color: #545454"
-              type="text"
-              @click="hideCard(year.index)"
-            >Hide</el-button> -->
-
           </div>
+
           <transition-group
             appear
             enter-active-class="fadeInUp"
@@ -71,13 +103,13 @@
       </el-main>
 
       <el-footer>
-        
-          <a
-            href="https://github.com/chenweigao"
-          >
-            <el-button>Github</el-button>
-          </a>
-         
+
+        <a href="https://github.com/chenweigao">
+          <el-button icon="iconfont icon-github-fill"> Github</el-button>
+        </a>
+        <a href="mailto:mail@weigao.cc">
+          <el-button icon="iconfont icon-mail"> Email</el-button>
+        </a>
         <el-badge
           value="Reco"
           type="primary"
@@ -87,7 +119,7 @@
             href="discuss/"
             style="float:right"
           >
-            <el-button>Comments</el-button>
+            <el-button icon="iconfont icon-liuyan"> Comments</el-button>
           </a>
         </el-badge>
       </el-footer>
@@ -104,7 +136,8 @@ export default {
     return {
       flag: false,
       years: ['2019', '2018', '2017'],
-      value: '2019'
+      value: '2019',
+      recent_update_number: 3
     };
   },
   methods: {
@@ -114,9 +147,22 @@ export default {
     posts: function (n) {
       var postDir = "/blog/" + n + "/";
       return this.$site.pages
-        .filter(x => x.path.startsWith(postDir) && !x.frontmatter.blog_index)
+        .filter(x => x.path.startsWith(postDir) && !x.frontmatter.blogindex)
         .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated));
-    }
+    },
+    showPost: function (year) {
+      this.value = year
+    },
+    recentUpdate(n) {
+      return this.$site.pages
+        .filter(x => (x.path.startsWith("/blog/") || x.path.startsWith("/algorithm/")) && !x.frontmatter.blogindex)
+        .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated))
+        .slice(0, this.recent_update_number)
+      // console.log(recentUpdate);
+    },
+     handleChange(value) {
+        //
+      }
   },
   computed: {
   },
@@ -137,6 +183,10 @@ export default {
 </script>
 
 <style>
+.cardLastUpdate {
+  margin-bottom: 40px;
+}
+
 .commentitem {
   margin-top: 10px;
   margin-right: 40px;
@@ -177,18 +227,18 @@ export default {
 }
 
 body > .el-container {
-    margin-bottom: 40px;
-  }
-  
-  .el-container:nth-child(5) .el-aside,
-  .el-container:nth-child(6) .el-aside {
-    line-height: 260px;
-  }
-  
-  .el-container:nth-child(7) .el-aside {
-    line-height: 320px;
-  }
+  margin-bottom: 40px;
+}
 
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+  line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+  line-height: 320px;
+}
 
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
+@import "https://at.alicdn.com/t/font_1014632_gvoetekjt7m.css";
 </style>

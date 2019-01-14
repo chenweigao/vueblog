@@ -111,7 +111,7 @@ sudo service ps getstartedlab_web
 
 如果顺利的话，这时候可以看到 5 个 task: `getstartedlab_web.1` 至 `getstartedlab_web.5`, 原因是我们在  `docker-compose.yml` 文件中配置了 5 个 `replices`.
 
-## Swarm (集群)
+## Swarm
 
 :::vue
 swarm manager, workers, swarm clusters

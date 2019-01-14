@@ -38,6 +38,20 @@ A basic tutorial: [zero-to-deploy-build-a-documentation-system-with-vue-and-vuep
 
     modify the content of `package.json` and run `yarn`.
 
+## Icons
+
+Usng Aliyun icon in vueblog project:
+
+1. [iconfont links](https://www.iconfont.cn/home/index?spm=a313x.7781069.1998910419.2)
+
+2. 选择图表并加入购物车，生成项目
+
+3. 复制代码，引入 css.
+
+4. 新建 `<i class="iconfont icon_code"></i>`
+
+   如果是在 botton 中，则使用 `<el-button icon="iconfont icon-liuyan"> Comments</el-button>`.
+
 ## Theme config
 
 ### custom containers
@@ -61,7 +75,7 @@ A basic tutorial: [zero-to-deploy-build-a-documentation-system-with-vue-and-vuep
 :::
 ```
 
-### icons <Badge text="beta" type="warn"/> <Badge text="0.10.1+" type="tip"/>
+### tags <Badge text="beta" type="warn"/> <Badge text="0.10.1+" type="tip"/>
 
 ```html
 <Badge text="beta" type="warn"/>

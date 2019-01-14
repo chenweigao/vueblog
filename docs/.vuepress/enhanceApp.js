@@ -13,3 +13,4 @@ export default ({
     Vue.use(VueRouter)
     // Vue.use(SearchBox)
 }
+
