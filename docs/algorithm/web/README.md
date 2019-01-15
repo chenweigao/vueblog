@@ -1,5 +1,27 @@
 # JS code
 
+## Json String
+
+若现在有一个 JSON 对象的数组，可以使用的处理方法有：
+
+- `JSON.stringify()`
+
+  处理 JSON 对象成为字符串
+
+- `JSON.parse()`
+
+  处理字符串成为 JSON 对象
+
+## forEach()
+
+如果需要对数组的遍历：
+
+```js
+array.forEach(function(obj, index){
+// ...
+})
+```
+
 ## eval()
 
 计算某个字符串，并执行其中的JS代码

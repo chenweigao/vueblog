@@ -52,30 +52,23 @@ sudo docker container stop 1fa4a...
 
 1. Login
 
-    ```bash
-    sudo docker login
-    ```
-
 2. Tag the image
-
-    ```bash
-    sudo docker tag friendlyhello weigaochen/get-started:part2
-    # docker tag image username/respository:tag
-
-    sudo docker image ls
-    ```
 
 3. Push the image
 
-    ```bash
-    sudo docker push weigaochen/get-started:part2
-    ```
-
 4. Pull
 
-    ```bash
-    sudo docker run -p 4000:801 weigaochen/get-started:part2
-    ```
+```bash
+sudo docker login
+
+sudo docker tag friendlyhello weigaochen/get-started:part2
+# docker tag image username/respository:tag
+
+sudo docker image ls
+sudo docker push weigaochen/get-started:part2
+
+sudo docker run -p 4000:801 weigaochen/get-started:part2
+```
 
 ## Services
 
@@ -91,15 +84,11 @@ sudo docker container stop 1fa4a...
 
     注意到其中的 `getstartedlab` 是我们给 app 起的一个名字
 
-- 查看：
-
-    ```bash
-    sudo docker service ls
-    ```
+- 查看：`sudo docker service ls`
 
     注意到 `NAME` 属性的值为 `getstartedlab_web`.
 
-### task
+### Task
 
 > A single container running in a service is called a task.
 
@@ -111,8 +100,6 @@ sudo service ps getstartedlab_web
 
 如果顺利的话，这时候可以看到 5 个 task: `getstartedlab_web.1` 至 `getstartedlab_web.5`, 原因是我们在  `docker-compose.yml` 文件中配置了 5 个 `replices`.
 
-## Swarm
+## Swarms
 
-:::vue
-swarm manager, workers, swarm clusters
-:::
+**KEYWORDS**: swarm manager, workers, swarm clusters

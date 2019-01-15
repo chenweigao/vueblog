@@ -1,6 +1,6 @@
-# JavaScript
+# Date and Time
 
-## Date/Time
+## Content
 
 JavaScript 中的时间操作：
 
@@ -32,7 +32,9 @@ date.getFullYear()
 //2018
 ```
 
-### Example 1
+## Example
+
+### Formatting
 
 Vue.js **filter**: [v-sample-github](https://github.com/chenweigao/vue-study/blob/master/v-sample/list.html)
 
@@ -55,9 +57,9 @@ filters: {
 {{ time | dateFormat }}
 ```
 
-### Example 2
+### Month Full Name
 
-Vuepress blog, get the month's string:
+获取月份的完整拼写:
 
 ```js
 var date = new Date()
@@ -66,7 +68,7 @@ monthString = month[date.getMonth()]
 // October or any string
 ```
 
-### Example 3
+### Split Date
 
 split time string:
 
@@ -75,7 +77,7 @@ date.toDateString().slice(4, 11).replace(/ /, '-')
 //"Oct-25 "
 ```
 
-### Example 4
+### Timestamp
 
 tranform date string to timestamp (将日期字符串转化成时间戳)
 
@@ -86,7 +88,7 @@ toTimeString(time) {
 // 2018/11/20 10:36, Tuesday => 201811201036
 ```
 
-### Example 5
+### Sort Date
 
 对于时间进行排序：
 
@@ -111,23 +113,3 @@ console.timeEnd("My operation")
 ```
 
 ## Var, Let and Const
-
-## JSON
-
-若现在有一个 JSON 对象的数组，可以使用的处理方法有：
-
-- JSON.stringify()
-
-  处理 JSON 对象成为字符串
-
-- JSON.parse()
-
-  处理字符串成为 JSON 对象数组
-
-- forEach()
-
-  ```js
-  array.forEach(function(obj, index){
-    // ...
-  })
-  ```
