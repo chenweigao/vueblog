@@ -1,5 +1,5 @@
 
-# [RESEARCH] Object Tracking
+# Object Tracking<Badge text="Research" type="tip"/>
 
 ## YOLO3
 

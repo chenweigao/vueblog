@@ -1,4 +1,4 @@
-# [RESEARCH] ArrayTrack
+# <Badge text="Research" type="tip"/> ArrayTrack
 
 ## Abstract
 

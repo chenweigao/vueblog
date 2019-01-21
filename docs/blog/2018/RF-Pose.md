@@ -1,4 +1,4 @@
-# [RESEARCH] RF-Pose
+# <Badge text="Research" type="tip"/> RF-Pose
 
 
 This paper, *[Through-wall Human Pose Estimation Using Radio Signals](http://openaccess.thecvf.com/content_cvpr_2018/papers/Zhao_Through-Wall_Human_Pose_CVPR_2018_paper.pdf)*, is extracted from a paper in CVPR2018 published by Dina Katabi, a famous team in the wireless communication field, and demonstrates accurate human pose estimation through walls and occlusions. 
