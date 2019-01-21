@@ -52,7 +52,7 @@
             <span>
               Recent Update
             </span>
-            <el-input-number v-model="recent_update_number"  @change="recentUpdate" :min="3" :max="9" style="float:right"  size="mini"></el-input-number>
+            <!-- <el-input-number v-model="recent_update_number"  @change="recentUpdate" :min="3" :max="9" style="float:right"  size="mini"></el-input-number> -->
           </div>
           <transition-group
             appear
@@ -137,7 +137,7 @@ export default {
       flag: false,
       years: ['2019', '2018', '2017'],
       value: '2019',
-      recent_update_number: 3
+      recent_update_number: 4
     };
   },
   methods: {
