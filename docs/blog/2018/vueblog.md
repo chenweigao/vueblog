@@ -1,4 +1,4 @@
-# Vueprewss Blog<Badge text="2.10.1" type="tip"/>
+# Vuepress Blog<Badge text="2.10.1" type="tip"/>
 
 ---
 
