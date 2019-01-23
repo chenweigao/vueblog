@@ -6,9 +6,19 @@ The goal of new cpp aims at:
 
 - Make cpp easier to teach and learn
 
+## main()
+
+main() 函数的原型为：
+
+> `int main(int argc, char** argv)`
+
+or
+
+> `int main(int argc, char* argv[])`
+
+其中 `argc` 表示参数的数量，`argv` 数组为从下标 0 开始的数组，第 0 个参数一般为可运行的文件。
 
 ## lvalue and rvalue
-
 
 ```cpp
 int x = 0;  //x is lvalue
@@ -46,7 +56,7 @@ int main()
 
 A `CMakeLists.txt` file example:
 
-```cmake
+```bash
 # CMake 最低版本号要求
 cmake_minimum_required (VERSION 2.8)
 
@@ -67,8 +77,6 @@ add_executable(Demo main.cc)
 
 Q: What is different between difination and declaration?
 
-
-
 ## Usage
 
 ### member initializer list
@@ -76,7 +84,7 @@ Q: What is different between difination and declaration?
 ```cpp
 class Point {
 private:
-	const float x,y;
+    const float x,y;
     Point(float xa = 0.0, float ya =0.0) : y(ya), x(xa) {}
 };
 ```
