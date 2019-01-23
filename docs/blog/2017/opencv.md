@@ -1,13 +1,11 @@
-# OpenCV - Basic Operation whith CV2
+# OpenCV
 
 ---
 
-OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products. 
+OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products.
 Being a BSD-licensed product, OpenCV makes it easy for businesses to utilize and modify the code.
 
-## CV2 operation
-
-To use the camera to find the frame face
+<details><summary>To use the camera to find the frame face</summary>
 
 ```python
 video_capture = cv2.VideoCapture(0)
@@ -44,3 +42,48 @@ while True:
 video_capture.release()
 cv2.destroyAllWindows()
 ```
+
+</details>
+
+## Basic
+
+### Load and Display an Image
+
+> Then create a Mat object that will store the data of the loaded image.
+
+#### `imread()`
+
+- First argument is filename
+
+- Second argument specifies the format:
+    1. IMREAD_UNCHANGED (<0) loads the image as is (including the alpha channel if present)
+    2. IMREAD_GRAYSCALE ( 0) loads the image as an intensity one
+    3. IMREAD_COLOR (>0) loads the image in the **RGB format**
+
+#### `namedWindow()`
+
+- *WINDOW_AUTOSIZE*
+- *WINDOW_NORMAL*
+
+### Modify and Save an Image
+
+#### `cvtColor()`
+
+ > `cvtColor( image, gray_image, COLOR_BGR2GRAY );`
+
+#### `imwrite()`
+
+> `imwrite( "../../images/Gray_Image.jpg", gray_image );`
+
+Save your transformed image in a file on disk (using `cv::imwrite` )
+
+Write the Mat gray_image to a new file.
+
+## Core Module
+
+### Mat
+
+How OpenCV stores and handles images?
+
+- Mat
+- Mat is that you no longer need to manually allocate its memory and release it as soon as you do not need it
