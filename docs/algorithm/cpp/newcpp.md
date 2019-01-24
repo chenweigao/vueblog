@@ -90,6 +90,8 @@ private:
 
 ## Templates
 
+### Defination
+
 函数模板的例子：
 
 ```cpp {3,4}
@@ -119,3 +121,19 @@ template <typename identifier> function_declaration;
 ```
 
 its use is indistinct, so both expressions have exactly the same meaning.
+
+### Nontype Parameter
+
+:::warning 非类型参数
+
+1. 可以在模板中定义非类型参数，一个非类型参数表示一个值而非一个类型。
+
+2. 非类型参数必须是**常量表达式**，从而允许编译器在编译时实例化模板；当一个模板被实例化时，非类型参数被一个用户提供的或编译器推断出的值所代替。
+
+:::
+
+一个最典型的应用是 [处理任意大小数组的 print 函数](https://github.com/chenweigao/_code/blob/master/cpp/template_print_array.cpp):
+
+- 使用非类型模板
+
+- 参数为 `Arr const &arr` (Arr 类型的 arr 引用)

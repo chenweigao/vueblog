@@ -60,3 +60,17 @@ a_pointer = an_array;
 ```
 
 都是被允许的。
+
+## pointer and const
+
+:::tip
+与引用一样，也可以令指针指向常量或非常量；**指向常量的指针 pointer to const** 不能用于改变其所指对象的值。
+:::
+
+想要存放常量对象的地址，只能使用指向常量的指针：
+
+```cpp
+const double pi = 3.14;
+double *ptr = &pi; // wrong!
+const double *cptr = &pi; // right!
+```
