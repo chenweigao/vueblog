@@ -1,19 +1,18 @@
-#  Algorithm: DP Heap sort, Swap
+# Algorithm Analysis and Design
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>
 
 ## Loops and Recursive
 
-### Asymptotic Growth
+### 1. Asymptotic Growth
 
-###  O-notation
+### 2. O-notation
 
 - O-notation(Bog-O), When we say “the running time is $O(n^2)$” we mean that the worst-case running time is $O(n^2)$ – the best case might be better. (渐进上界)
 - When we say “the running time is Ω(n2)” we mean that the best-case running time is $$Ω(n^2)$$ – the worst case might be worse.(渐进下界)
 
-
-### Recurrences
+### 3. Recurrences
 
 - Substitution method
 - Recursion-tree method
@@ -29,7 +28,7 @@ Let $a \geq 1$ and $b > 1$ be constants and let $T(n)$ be the recurrence $T(n) =
 
 ## Divide-and-Conquer
 
-### Merge Sort 
+### 1. Merge Sort
 
 $T(n) = O(nlog_{2}n)$
 
@@ -38,74 +37,24 @@ another example:
 - Counting Inversions
 - Matrix Multiplication: 
   - Brute Force(暴力):  $O(n^3)$ arithmetic operations
-  - 
-### Quick Sort
 
-```py
-
-def partition(arr, first, last):
-​    pivot = first
-​    for pos in range(first, last):
-​        if arr[pos] < arr[last]:
-​            arr[pos], arr[pivot] = arr[pivot], arr[pos]
-​            pivot += 1
-​    arr[pivot], arr[last] = arr[last], arr[pivot]
-​    return pivot
-
-def qucik_sort(arr, first, last):
-​    if first < last:
-​        pi = partition(arr, first, last)
-​        qucik_sort(arr, first, pi-1)
-​        qucik_sort(arr, pi+1, last)
-
-A = [534, 246, 933, 127, 277, 321, 454, 565, 220]
-qucik_sort(A, 0, len(A) - 1)
-print(A)
-
-```
+### 2. Quick Sort
 
 - Worst-case running time $\Theta(n^2)$:
   - input sorted or reverse sorted, partition around min or max element.
   - one side of partition has no elements.
-  - $T(n) = T(0) + T(n – 1) + cn$
+  - $T(n) = T(0) + T(n–1) + cn$
 - Expected running time $O(nlgn)$
   - If we are really lucky, partition splits the array evenly n/2 : $T(n)=2T(n/2)+Θ(n)=Θ(nlgn)$
 
 Divide and conquer: partition, pivot
 
-##  Other Sort
-
-###  Selection Sort
-
-```py
-
-def selection_sort(arr):
-​    for i in range(len(arr)):
-​        minimum = i
-​        for j in range(i+1, len(arr)):
-​            if arr[j] < arr[minimum]:
-​                minimum = j
-​        arr[minimum], arr[i] = arr[i], arr[minimum]
-​    return arr
-
-A = [534, 246, 933, 127, 277, 321, 454, 565, 220]
-selection_sort(A)
-print(A)
-
-```
-
-### Counting-sort
-
-## Heap
-
-### MAX-Heap
+## Heapsort
 
 Action of build max-heap:
 
 1. 找到最后一个节点的父亲节点
 2. 
-
-### Heapsort
 
 Priority Queues
 

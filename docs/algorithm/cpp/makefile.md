@@ -1,5 +1,7 @@
 # Makefile
 
+## Example
+
 My Text editor `MAKEFILE`:
 
 ```makefile

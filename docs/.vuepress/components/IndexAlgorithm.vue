@@ -13,19 +13,19 @@
 
           <el-form-item>
 
-              <el-select
-                v-model="value"
-                clearable
-                placeholder="labels"
+            <el-select
+              v-model="value"
+              clearable
+              placeholder="labels"
+            >
+              <el-option
+                v-for="item in labels"
+                :key="item.index"
+                :label="item"
+                :value="item"
               >
-                <el-option
-                  v-for="item in labels"
-                  :key="item.index"
-                  :label="item"
-                  :value="item"
-                >
-                </el-option>
-              </el-select>
+              </el-option>
+            </el-select>
           </el-form-item>
           <!-- <SearchBox style="float:right" /> -->
         </el-form>
@@ -37,9 +37,7 @@
         v-show="value === label || value === ''"
       >
 
-        <el-card
-          shadow="hover"
-        >
+        <el-card shadow="hover">
           <div
             slot="header"
             class="clearfix"
@@ -78,7 +76,7 @@ export default {
   data: function () {
     return {
       flag: false,
-      labels: ['python', 'cpp', 'web','leetcode'],
+      labels: ['python', 'web', 'cpp', 'leetcode', 'zen'],
       value: ''
     };
   },
@@ -93,7 +91,7 @@ export default {
         .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated));
     },
     clickAlgorithm() {
-        this.$message('This is label selector of ALGORITHM!');
+      this.$message('This is label selector of ALGORITHM!');
     }
   }
 };
@@ -127,8 +125,6 @@ export default {
 .v-leave-active {
   transition: all 0.6s ease;
 }
-
-
 
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
 </style>
