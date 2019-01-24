@@ -87,3 +87,5 @@ How OpenCV stores and handles images?
 
 - Mat
 - Mat is that you no longer need to manually allocate its memory and release it as soon as you do not need it
+
+`uchar* cv::Mat::ptr(int i)`: Returns a pointer to the specified matrix row.
