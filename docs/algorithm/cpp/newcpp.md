@@ -92,13 +92,16 @@ private:
 
 函数模板的例子：
 
-```cpp
+```cpp {3,4}
 // 方便阅读，其实可以写成一行
 // template <typename T> int compare(const T &v1, const T &v2)
 template <typename T>
 int compare(const T &v1, const T &v2)
 {
-    // code
+    // 使用 less<T> 似的类型无关和可移植
+    if (less<T> (v1, v2)) return -1;
+    if (less<T> (v2, v1)) return -1;
+    return 0;
 }
 
 // compare(0, 1)

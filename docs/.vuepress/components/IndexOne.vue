@@ -136,7 +136,7 @@ export default {
     return {
       flag: false,
       years: ['2019', '2018', '2017'],
-      value: '2019',
+      value: '',
       recent_update_number: 4
     };
   },
