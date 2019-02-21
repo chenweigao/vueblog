@@ -4,6 +4,8 @@
 
 ## 1. 配置shadowsocks客户端
 
+[GitHub of shadowsocks](https://github.com/shadowsocks/shadowsocks/tree/master)
+
 ```bash
 yum -y install epel-release
 yum -y install python-pip

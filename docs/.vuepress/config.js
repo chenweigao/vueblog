@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'nullptr',
-  description: 'this person is lazy, nothing left...',
+  title: 'weigao',
+  description: '不忘初心跟党走',
   head: [
     ['link', {
       rel: 'icon',
