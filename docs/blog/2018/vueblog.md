@@ -20,13 +20,23 @@ yarn add @vuepress/plugin-back-to-top -D
 yarn add @vuepress/plugin-last-updated@next -D
 ```
 
+也可以在 `package.json` 中的 `scripts` 下添加自定义的更新命令。
+
+```js
+"scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "docs:upgrade": "yarn upgrade @next"
+}
+```
+
 Add the `back-to-top` plugin to `config.js`:
 
 ```js
 plugins: ['@vuepress/back-to-top']
 ```
 
-### Run Command
+Run Command:
 
 ```bash
 yarn dev:docs # dev model

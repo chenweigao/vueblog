@@ -49,7 +49,9 @@ module.exports = {
     ['@vuepress/search', {
       searchMaxSuggestions: 10
     }],
-    ['@vuepress/last-updated']
+    ['@vuepress/last-updated'],
+    ['@vuepress/medium-zoom']
+
   ],
   themeConfig: {
     sidebar: 'auto',

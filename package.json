@@ -1,12 +1,15 @@
 {
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:dev": "vuepress dev docs --open",
+    "docs:build": "vuepress build docs",
+    "docs:update": "yarn add vuepress@next @vuepress/plugin-back-to-top@next @vuepress/plugin-last-updated@next @vuepress/plugin-pwa@next @vuepress/plugin-medium-zoom@next -D",
+    "docs:upgrade": "yarn upgrade @next"
   },
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.0.0-alpha.32",
+    "@vuepress/plugin-back-to-top": "^1.0.0-alpha.39",
     "@vuepress/plugin-last-updated": "^1.0.0-alpha.39",
-    "@vuepress/plugin-pwa": "^1.0.0-alpha.32",
+    "@vuepress/plugin-medium-zoom": "^1.0.0-alpha.39",
+    "@vuepress/plugin-pwa": "^1.0.0-alpha.39",
     "element-ui": "^2.4.11",
     "leancloud-storage": "^3.11.0",
     "markdown-it-simplemath": "^1.0.0",
