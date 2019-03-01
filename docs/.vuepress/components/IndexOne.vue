@@ -18,7 +18,6 @@
 
           <el-form-item>
             <el-badge
-              value="new"
               class="commentitem"
             >
               <el-select
@@ -34,6 +33,19 @@
                 >
                 </el-option>
               </el-select>
+            </el-badge>
+          </el-form-item>
+          <el-form-item>
+            <el-badge
+              value="new"
+              class="commentitem"
+            >
+              <a
+            href="/blog/2019/resume.html"
+            style="float:right"
+          >
+            <el-button icon="iconfont icon-resume" type="success"> Resume</el-button>
+          </a>
             </el-badge>
           </el-form-item>
           <SearchBox style="float:right" />
@@ -240,5 +252,5 @@ body > .el-container {
 }
 
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
-@import "https://at.alicdn.com/t/font_1014632_gvoetekjt7m.css";
+@import "https:////at.alicdn.com/t/font_1014632_8btj1lgimlo.css";
 </style>
