@@ -124,6 +124,7 @@
 
 ### 深度学习：人脸签到系统
 
+
 项目介绍：为实验室开发，考勤用。使用 Tensorflow + CNN + OpenCV，实现了人脸的检测、识别，使用 YOLO 算法确保其实时性。
 
 - [技术博客地址-人脸识别](https://www.weigao.cc/blog/2017/face_recognition.html#_1-abstract)
@@ -175,4 +176,4 @@ Indoor Positioning via 24GHz Radio Frequency.
 
 ## 致谢
 
-感谢您花时间阅读我的简历，期待能有机会和您共事。
+感谢您花时间阅读我的简历，期待能有机会和您共事。您也可以登录 [该网页查看我的简历](https://www.weigao.cc/blog/2019/resume.html)，Thanks♪(･ω･)ﾉ
