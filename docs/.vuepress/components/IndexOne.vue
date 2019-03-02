@@ -129,11 +129,9 @@
         <el-badge
           value="Reco"
           type="primary"
+          style="float:right"
         >
-          <a
-            href="discuss/"
-            style="float:right"
-          >
+          <a href="discuss/">
             <el-button icon="iconfont icon-liuyan"> Comments</el-button>
           </a>
         </el-badge>
@@ -230,10 +228,9 @@ export default {
   .myselector {
     display: none;
   }
-  .myresume{
+  .myresume {
     margin-left: -10px;
   }
-  
 }
 
 /* .box-card {
