@@ -199,7 +199,7 @@ class Solution:
 
 ## High-level Function
 
-### 1. count() 
+### 1. count()
 
 用于统计字符串里某个字符出现的次数count()方法，语法：
 
@@ -219,20 +219,19 @@ str.count(sub, start= 0,end=len(string))
 
 **思考**：理解下面这行代码所实现的功能
 
-{% highlight python linenos %}
+```py
 
 return sum(map(S.count, J))
 return not sum(map(({'R': 1, 'L': -1, 'U': 1j, 'D': -1j}).get, moves))
 
-{% endhighlight %}
+```
 
 第一行代码实现了两个字符串中共同字符的计数。
 
 第二行代码实现了一个计算坐标的方法。
 
-### 2. map() 
+### 2. map()
 
-**Define**
 1. **描述**
 
    **map()** 会根据提供的函数对指定序列做映射。
@@ -243,7 +242,7 @@ return not sum(map(({'R': 1, 'L': -1, 'U': 1j, 'D': -1j}).get, moves))
 
    map() 函数语法：
 
-   ```
+   ```py
    map(function, iterable, ...)
    ```
 
@@ -267,6 +266,22 @@ for number in oldList:
 
 ```python
 map(str, oldList)
+```
+
+### int2list and list2int
+
+- int2list
+
+```py
+def int2list(intNum):
+    return list(map(int, str(intNum)))
+```
+
+- list2int
+
+```py
+def list2int(aList):
+    return int(''.join(list(map(str, aList))))
 ```
 
 

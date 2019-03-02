@@ -1,5 +1,37 @@
 # Built-in Functions
 
+## map
+
+### int2list and list2int
+
+- int2list
+
+```py
+def int2list(intNum):
+    return list(map(int, str(intNum)))
+```
+
+解析：
+
+```py
+>>> str(123) --> '123'
+>>> map(int, str(123)) --> <map object> # python3 以后 map 返回迭代器
+>>> list(map(int, str(123))) --> [1,2,3]
+```
+
+- list2int
+
+```py
+def list2int(aList):
+    return int(''.join(list(map(str, aList))))
+```
+
+解析：
+
+```py
+>>> ''.join(['1','2']) --> '12'
+```
+
 ## reduce()
 
 ```py {2}

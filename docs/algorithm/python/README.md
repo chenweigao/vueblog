@@ -13,3 +13,4 @@
 - [reverse number](https://github.com/chenweigao/_code/blob/master/python/reverse_number.py) : reverse a number, slice `[-1, 1][True]` returns `-1`, so we use `[-1, 1][x < 0]` to get x's sign; reverse a string using: `[::-1]`
 
 - [longest common prefix](https://github.com/chenweigao/_code/blob/master/python/longest_common_prefix.py) Python **string** operation.
+

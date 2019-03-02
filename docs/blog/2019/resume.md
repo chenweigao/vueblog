@@ -1,5 +1,7 @@
 # Resume
 
+[网页版链接](https://www.weigao.cc/blog/2019/resume.html)
+
 ## 联系方式
 
 :::tip 陈惟高 | 男 | 24岁 | 陕西西安 | 2020届硕士研究生
