@@ -17,13 +17,12 @@
         >
 
           <el-form-item>
-            <el-badge
-              class="commentitem"
-            >
+            <el-badge>
               <el-select
                 v-model="value"
                 clearable
                 placeholder="select a year"
+                class="myselector"
               >
                 <el-option
                   v-for="item in years"
@@ -35,20 +34,22 @@
               </el-select>
             </el-badge>
           </el-form-item>
-          <el-form-item>
-            <el-badge
-              value="new"
-              class="commentitem"
-            >
-              <a
-            href="/blog/2019/resume.html"
-            style="float:right"
+          <el-badge
+            value="new"
+            class="myresume"
           >
-            <el-button icon="iconfont icon-resume" type="success"> Resume</el-button>
-          </a>
-            </el-badge>
-          </el-form-item>
-          <SearchBox style="float:right" />
+            <a href="/blog/2019/resume.html">
+              <el-button
+                icon="iconfont icon-resume"
+                type=""
+                plain
+              > Resume</el-button>
+            </a>
+          </el-badge>
+          <SearchBox
+            class="mysearch"
+            style="float:right"
+          />
         </el-form>
       </el-header>
 
@@ -120,12 +121,14 @@
           <el-button icon="iconfont icon-github-fill"> GitHub</el-button>
         </a>
         <a href="mailto:mail@weigao.cc">
-          <el-button icon="iconfont icon-mail"> Email</el-button>
+          <el-button
+            icon="iconfont icon-mail"
+            class="myemail"
+          > Email</el-button>
         </a>
         <el-badge
           value="Reco"
           type="primary"
-          style="float:right"
         >
           <a
             href="discuss/"
@@ -172,9 +175,9 @@ export default {
         .slice(0, this.recent_update_number)
       // console.log(recentUpdate);
     },
-     handleChange(value) {
-        //
-      }
+    handleChange(value) {
+      //
+    }
   },
   computed: {
   },
@@ -215,6 +218,24 @@ export default {
 .item {
   margin-bottom: 18px;
 }
+
+@media screen and (max-width: 750px) {
+  /* 手机端CSS代码 */
+  .myemail {
+    display: none;
+  }
+  .mysearch {
+    display: none;
+  }
+  .myselector {
+    display: none;
+  }
+  .myresume{
+    margin-left: -10px;
+  }
+  
+}
+
 /* .box-card {
   width: 900px;
 } */
