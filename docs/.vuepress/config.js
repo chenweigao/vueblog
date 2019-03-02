@@ -62,6 +62,10 @@ module.exports = {
       {
         text: 'Algorithm',
         link: '/algorithm/'
+      },
+      {
+        text: 'About',
+        link: '/blog/2019/resume'
       }
     ]
   },
