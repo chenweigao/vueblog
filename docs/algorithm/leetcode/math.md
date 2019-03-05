@@ -1,5 +1,8 @@
 # Math
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>
+
 ## Bit operation
 
 Example: 求 12 的二进制
@@ -73,3 +76,16 @@ while(x) {
 ```
 
 而 Python 只需要使用 `str(x)[::-1]`.
+
+## 向上、下取整
+
+1. 使用 $\frac {(A+B-1)} {B}$ 计算
+
+2. 使用 `math.ceil()` 和 `math.floor()`:
+
+```py
+imprt math
+math.ceil(7/4) # 2
+math.floor(7/4) # 1
+round(2.6) # 3 四舍五入
+```

@@ -16,3 +16,6 @@ m, n = [int(_) for _ in str_in.split()]
 ```py
 n, m = input(), list(map(int, input().split()))
 ```
+
+## Binary Search in Python
+
