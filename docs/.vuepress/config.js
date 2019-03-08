@@ -49,7 +49,13 @@ module.exports = {
     ['@vuepress/search', {
       searchMaxSuggestions: 10
     }],
-    ['@vuepress/last-updated'],
+    ['@vuepress/last-updated', {
+      transformer: (timestamp, lang) => {
+        // Don't forget to install moment yourself
+        const moment = require('moment')
+        moment.locale('zh-cn')
+      }
+    }],
     ['@vuepress/medium-zoom']
 
   ],
