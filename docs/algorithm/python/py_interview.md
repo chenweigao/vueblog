@@ -6,16 +6,26 @@
 
   输入 m, n 两个数：
 
-   ```py
-   str_in = input()
-   m, n = [int(_) for _ in str_in.split()]
-   ```
+```py
+str_in = input()
+m, n = [int(_) for _ in str_in.split()]
+```
 
   多组输入，第一行 n 表示数的数量，第二行输入这 n 个数：
 
-   ```py
-   n, m = input(), list(map(int, input().split()))
-   ```
+ ```py
+n, m = input(), list(map(int, input().split()))
+```
+
+   输入有多组数据：
+
+```py
+import sys
+
+s = sys.stdin.readline().strip()
+if not s:
+    break
+```
 
 ### What is GIL
 
@@ -73,10 +83,3 @@ def fib_imp(n):
         a, b = b, a + b
     return b
 ```
-
-## Python Sort
-
-### Merge Sort
-
-
-
