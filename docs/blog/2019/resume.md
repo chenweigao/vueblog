@@ -26,13 +26,8 @@
 
 ## 专业技能
 
-- 熟练掌握 Python 语言，具有 Python Web 项目开发经验，熟悉 Flask 框架，了解 Tensorflow, OpenCV, Numpy 等 Python 库
-- 熟悉 Git, Vim 等开发工具，熟悉 Pycharm, Visual Studio 等, 熟练掌握 VSCode
-- 熟悉 Linux bash shell, 具有 Linux C/C++ 程序开发 和 Linux 内核驱动开发经验
-- 熟悉 JavaScript 语言，并熟练掌握 Vue.js 框架，了解 webpack, bootstrap, 有微信小程序开发经验
-- 了解 MySQL, MongoDB 等常用数据库
-- 了解 OpenCV C++/Python 库，并开发过简单的人脸签到系统
-- 熟练使用各个平台的云服务器
+- 熟练掌握 Python 和 C 语言
+- 熟悉 Git, Vim, VS Code 等开发工具
 
 ## 项目经历
 
@@ -52,7 +47,7 @@
 
 第二阶段使用当下流行的前端框架 **Vue.js** 作为前端，并在 element-vue 的 UI 下进行二次开发，最终实现了单一界面的前端 APP，实现了前后端分离。
 
-后端使用新的 UDP 通信向前端发送雷达坐标数据，避免了在云服务器上的数据库存储读取开销，前端通过 [axios](https://www.weigao.cc/blog/2018/vue.html#axios0) (AJAX) 和 socketio 实现通信，使得地图数据实时刷新，并且舍弃原有臃肿的 Python Flask 后端，使用 nginx 在满足需求的同时，提升了服务器的访问效率，ng 只负责 web 服务的相关功能，而其他的数据处理存储用 Python 或者 C++ 通过不同的进程实现。
+后端使用新的 UDP 通信向前端发送雷达坐标数据，避免了在云服务器上的数据库存储读取开销，前端通过 [axios](https://www.weigao.cc/blog/2018/vue.html#axios0) (AJAX) 通信，使得地图数据实时刷新，并且舍弃原有臃肿的 Python Flask 后端，使用 nginx 在满足需求的同时，提升了服务器的访问效率，ng 只负责 web 服务的相关功能，而其他的数据处理存储用 Python 或者 C++ 通过不同的进程实现。
 
 考虑到项目有时候的跨平台和离线的需求，故需要开发本地客户端，使用 **electron-vue** 打包上个版本的项目，并使用和 Vue.js 框架匹配的 **element-ui** 作为 UI 库，开发出离线的本地客户端，实现了跨平台打包和发布。
 
