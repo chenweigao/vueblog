@@ -62,11 +62,11 @@ module.exports = {
       {
         text: 'Algorithm',
         link: '/algorithm/'
-      },
-      {
-        text: 'About',
-        link: '/blog/2019/resume'
       }
+      // {
+      //   text: 'About',
+      //   link: '/blog/2019/resume'
+      // }
     ]
   },
   serviceWorker: {
