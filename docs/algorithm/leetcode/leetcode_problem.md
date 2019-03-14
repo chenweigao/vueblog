@@ -75,7 +75,7 @@ class Solution:
 
 （参考《编程之美》的动态规划思路）
 
-对于某序列 nums 而言, 得出其动态规划状态转移方程：
+对于某序列 A 而言, 得出其动态规划状态转移方程：
 
 `dp(A, i) = (dp(A, i - 1) > 0 ? dp(A, i - 1) : 0)+ A[i]`
 
@@ -83,4 +83,21 @@ class Solution:
 
 `dp[i] = dp[i - 1] > 0 ? dp[i - 1] : 0  + A[i]`
 
-简化后方便书写代码，但是不好理解。
+简化后方便书写代码，但是不好理解，代码如下：
+
+```py
+def maxSubArrayDP(self, nums):
+
+    dp = [0 for _ in range(len(nums))]
+    dp[0] = nums[0]
+    max = dp[0]
+
+    for i in range(1, len(nums)):
+        if dp[i - 1] < 0:
+            dp[i] += nums[i]
+        else:
+            dp[i] = dp[i - 1] + nums[i]
+        if max < dp[i]:
+            max = dp[i]
+    return max
+```
