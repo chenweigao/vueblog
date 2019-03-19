@@ -7,9 +7,9 @@
 
 ## DP
 
-## Maximum Subarray -53
+### Maximum Subarray - LC53
 
-### Solution of slide window
+#### Solution of slide window
 
 [LeetCode 53: Maximun Subarray](https://leetcode.com/problems/maximum-subarray/)
 
@@ -69,7 +69,7 @@ class Solution:
 
 :::
 
-### Solution of dp
+#### Solution of dp
 
 这个题目的动态规划求解可能没有上述求解方法时间复杂度低，但是为了更深理解 dp 思想，故在此探索动态规划答案。
 
@@ -82,6 +82,10 @@ class Solution:
 并且可以进一步简化为：
 
 `dp[i] = dp[i - 1] > 0 ? dp[i - 1] : 0  + A[i]`
+
+或者可以最终简化为：
+
+`dp[i] = max(dp[i - 1] + A[i], A[i])`
 
 简化后方便书写代码，但是不好理解，代码如下：
 
@@ -101,3 +105,178 @@ def maxSubArrayDP(self, nums):
             max = dp[i]
     return max
 ```
+
+## Binary Tree
+
+### Level Order Traversal
+
+[LC102 - Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
+
+代码实现如下：
+
+[Code GitHub - binary_tree](https://github.com/chenweigao/_code/blob/master/python/binary_tree.py)
+
+```py
+def levelOrder(root):
+    '''
+    二叉树的层次遍历
+    '''
+    if not root:
+        return []
+
+    result = [[root.data]]  # 存储层次遍历的结果
+    current = [root]  # 存储当前层次内的节点，在循环里面更新
+
+    while True:
+        node_list = []  # 临时存储节点
+        for node in current:  # 循环内遍历
+            if node.left:
+                node_list.append(node.left)
+            if node.right:
+                node_list.append(node.right)
+        if node_list == []:
+            break
+        vals = [node.data for node in node_list]  # 拿出当前层次的节点的值
+        result.append(vals)
+        current = node_list  # 更新层次
+    return result
+```
+
+这是目前可以写出的比较高效的一个算法，应当牢记。
+
+## Linked List
+
+### reverse linked list
+
+- Iterative method
+
+```py
+def reverseList(self, head):
+
+    preNode = None
+    curNode = head
+
+    while curNode is not None:
+        next = curNode.next
+        curNode.next = preNode
+        preNode = curNode
+        curNode = next
+
+    return preNode
+```
+
+- Recursive method
+
+ 1) Divide the list in two parts - first node and rest of the linked list.
+ 2) Call reverse for the rest of the linked list.
+ 3) Link rest to first.
+ 4) Fix head pointer
+
+由于迭代较快，故建议经常使用迭代法。
+
+### intersection of linked list
+
+判断两个链表是否有交叉(Intersection), LC160.
+
+实现思路有：
+
+- 根据链表是否有环判断
+
+先遍历一个链表找到其尾部，然后将尾部的 next 指针指向另一个链表，这样子两个链表就合成了一个链表，判断原来的两个链表是否有交叉也就变成了判断一个**单链表是否有环**。
+
+找出交点的方法是，遍历两个链表，长度较长的链表指针向后移动 |len1 - len2| 个单位，然后开始遍历两个链表，判断节点是否相等（节点的地址）。
+
+- 根据总结的规律判断
+
+该方法比较巧妙，代码如下：
+
+```py
+def getIntersectionNode(self, headA, headB):
+    if headA is None or headB is None:
+        return None
+
+    pa = headA
+    pb = headB
+
+    while pa is not pb:
+        pa = headB if pa is None else pa.next
+        pb = headA if pb is None else pb.next
+
+    return pa
+```
+
+核心思路在于，同时遍历两个链表，如果到链表结束，则将指针指向另一个链表，遍历直到两个移动的指针相等。
+
+:::tip 判断单链表是否有环
+
+一般判断单链表是否有环的方法是设置一块一慢两个指针，看其是否会相等。
+
+:::
+
+## HashMap in Python
+
+### Counter object
+
+```py
+from collections import Counter
+```
+
+在腾讯面试的过程中，被问到了一个题目，要求找出一个数组中第一个单独出现的数字，例如 [2, 4, 2, 3, 1, 3], 则结果应该是 4.
+
+题目如果用 hashmap 去求解的话只需要：
+
+```py
+
+from collections import Counter
+nums = [2, 4, 2, 3, 1, 3]
+
+nums_counter = Counter(nums)
+
+res = min(nums_counter, key = nums_counter.get)
+
+```
+
+`Counter` 为 Python 内置的 hashmap, 具体可以查询 [Counter](https://docs.python.org/3/library/collections.html#collections.Counter), 对于那个排序而言，`key` 会指定一个函数用于元素的比较，`nums_counter.get()` 方法用于得到某个 key 的 value 值。
+
+## String
+
+### get all substring
+
+对于字符串运算中，获得所有的子串并进行操作是很常见的问题，故将代码总结如下：
+
+```py
+def getAllSubstring(s):
+    n = len(s)
+    return [s[i:j + 1] for i in range(n) for j in range(i, n)]
+```
+
+generator 版本：
+
+```py
+def getAllSubstring(s):
+    length = len(s)
+    for i in range(length):
+        for j in range(i + 1, length + 1):
+            yield(s[i:j])
+
+print([_ for _ in getAllSubstring('aaab')])
+```
+
+### is palindromic substrings
+
+比较常用的方法为动态规划判定法：
+
+```py {5}
+def longestPalindrome(s):
+    dp = [[0 for _ in range(len(s))] for _ in range(len(s))]
+    for i in range(n - 1, -1, -1):
+        for j in range(i, n):
+            dp[i][j] = s[i] == s[j] and (j - i < 3 or dp[i + 1][j - 1])
+
+            if dp[i][j] and (res == '' or j - i + 1 > len(res)):
+                res = s[i:j+1]
+
+    return res
+```
+
+上述代码为求最长回文子串的代码，核心状态转移公式为第 5 行重点部分，如果是会问子串的话，则 S_ij, 对应的 `dp[i][j]` 的值为 1.
