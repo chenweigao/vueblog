@@ -62,7 +62,7 @@ Index of c++ code in github or this blog, easy for search and read.
 
 - [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/): 求链表的重复交叉
 
-- [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)： reverse a list
+- [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)：[reverse a list](https://github.com/chenweigao/_code/blob/011815d34a18cc7b1f35f845795eb740e88098b0/python/linked_list_reverse.py)
 
 - [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/): 按序合并两个链表，使用递归
 
