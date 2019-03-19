@@ -279,4 +279,19 @@ def longestPalindrome(s):
     return res
 ```
 
-上述代码为求最长回文子串的代码，核心状态转移公式为第 5 行重点部分，如果是会问子串的话，则 S_ij, 对应的 `dp[i][j]` 的值为 1.
+上述代码为求最长回文子串的代码，核心状态转移公式为第 5 行重点部分，如果是会问子串的话，则 $S_{ij}$ , 对应的 `dp[i][j]` 的值为 1.
+
+:::warning formula
+
+dp(i, j) = true, if $S_{ij}$ 是回文串。
+
+dp(i, j) = false, otherwise.
+
+=> dp(i, j) = { dp(i + 1, j - 1) and $S_i$ == $S_j$ }
+
+so,
+
+dp(i, j) = true
+
+dp(i, i + 1) = ($S_i$ == $S_{i+1}$)
+:::
