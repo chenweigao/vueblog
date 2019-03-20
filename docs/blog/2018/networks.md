@@ -70,13 +70,21 @@ Urgent Pointer 表示 U 状态位打开的话，该字段用于表示优先级�
 
 以上就是报头的信息，报头后面也可以提供若干选项，例如:
 
-1. MSS(Maximum Segment Size), 发送端通知另一端数据段的最大值，IPV4 指定的是 1460 字节(bytes).
+1. MSS(Maximum Segment Size)
 
-2. Selective Acknowledgment (SACK), SACK 用于传输过程中大量丢包的情况，这样会导致吞吐率下降，利用这种方式通知发送端。
+   发送端通知另一端数据段的最大值，IPV4 指定的是 1460 字节(bytes).
 
-3. Window Scale：发送端和接收端都包含此字段，则成倍增加滑动窗口大小，有利于容量较大的数据的传输。
+2. Selective Acknowledgment (SACK)
 
-4. Timestamps：在 TCP 数据段添加一个时间戳，用于计算每一个 ACK 的 RTT, 也可以用来计算 TCP 的超时重传。
+   SACK 用于传输过程中大量丢包的情况，这样会导致吞吐率下降，利用这种方式通知发送端。
+
+3. Window Scale
+
+   发送端和接收端都包含此字段，则成倍增加滑动窗口大小，有利于容量较大的数据的传输。
+
+4. Timestamps
+
+   在 TCP 数据段添加一个时间戳，用于计算每一个 ACK 的 RTT, 也可以用来计算 TCP 的超时重传。
 
 ### TCP Handshake
 
@@ -112,11 +120,17 @@ SEQ 表示 sequence number, 握手时发送的为自己的 ISN 内容。
 
 3. 为了确认服务端的 SYN, 客户端将自己的 ISN + 1 作为返回的 ACK.
 
+### TCP Data Flow
+
+**TCB**: In short, the TCP has to keep track of the sequences of data it has sent and received acknowledgments for. To achieve this, a data structure called the *Transmission Control Block*(TCB) is initialized for every opened connection. [see there](http://www.saminiir.com/lets-code-tcp-ip-stack-4-tcp-data-flow-socket-api/)
+
+TCB 是每个连接的 own records.
+
 ### 流量控制
 
 TCP(Transmission Control Protocol) 使用滑动窗口来进行流量控制
 
-```md
+```txt
             Left window edge             Right window edge
                        |                             |
                        |                             |
