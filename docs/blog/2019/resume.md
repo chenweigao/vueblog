@@ -1,48 +1,49 @@
 # Resume
 
-[网页版链接 - https://www.weigao.cc](https://www.weigao.cc/blog/2019/resume.html)
-
-## 联系方式
 
 :::tip 陈惟高 | 男 | 24岁 | 陕西西安 | 2020届硕士研究生
 
 - 电话：13201750172
 - 邮箱： [mail@weigao.cc](mailto:mail@weigao.cc)
-- QQ/微信：297859260
+- GitHub：[https://github.com/chenweigao](https://github.com/chenweigao)
 - 个人博客：[https//:www.weigao.cc](https//:www.weigao.cc)
-- GitHub： [https://github.com/chenweigao](https://github.com/chenweigao)
+- QQ/微信：297859260
 - 地址：陕西省西安市雁塔区太白南路2号西安电子科技大学
 :::
 
+[网页版简历链接 - https://www.weigao.cc/blog/2019/resume.html](https://www.weigao.cc/blog/2019/resume.html)
+
 ## 教育背景
 
-2013.09 - 2017.07：
+**​西安电子科技大学** <Badge text="2013.09 - 2017.07" type="tip"/> 软件学院 软件工程 本科
 
-**​西安电子科技大学 软件学院** 软件工程 本科
-
-2017.09 - 今：
-
-**​西安电子科技大学 计算机学院** 软件工程 工学硕士(智能感知，移动计算与物联网)
+**​西安电子科技大学** <Badge text="2017.09 - 2020.07" type="tip"/> 计算机学院 软件工程 工学硕士(智能感知，移动计算与物联网)
 
 ## 专业技能
 
-- 熟练掌握 Python 和 C 语言
-- 熟悉 Git, Vim, VS Code 等开发工具
+- 熟练掌握 Python
+- 熟悉 Python Flask 框架和 MongoDB 数据库
+- 熟悉 Git, Vim 等基本操作，熟悉 Visual Studio, VS Code 等开发工具
+- 熟悉 Linux 和 Linux bash shell 基本操作
+- 了解 TCP/IP
+- 了解 C, C++, JavaScript, Vue.js
 
 ## 项目经历
 
 ### 室内定位系统 <Badge text="2017.09 - today" type="tip"/>
 
-项目介绍：使用雷达检测人体位置，并跟踪显示每个人的移动轨迹。受室内环境对电磁波传播的影响，雷达定位极易出现误差，​造成目标丢失，系统使用滤波算法对定位坐标进行修正，使用聚类算法区分目标进而构建多目标运动轨迹。
+**核心技术：Python, Flask, Vue.js**
+
+**项目职责：后台开发，前端开发**
 
 项目单位：中国电子科技集团第二十研究所
 
+项目介绍：中电二十所熠星大赛前 5 名创业孵化项目。使用雷达检测人体位置，并跟踪显示每个人的移动轨迹。受室内环境对电磁波传播的影响，雷达定位极易出现误差，​造成目标丢失，系统使用滤波算法对定位坐标进行修正，使用聚类算法区分目标进而构建多目标运动轨迹。使用 web 技术展示轨迹，进行安防、监控等实际应用。
+
 - [项目 GitHub](https://github.com/chenweigao/smarttrack)
-- [项目技术博客 - Flask](https://www.weigao.cc/blog/2017/flask.html), [项目技术博客 - Flask MongoDB](https://www.weigao.cc/blog/2018/database.html#flask-pymongo), [项目技术博客 - vue.js](https://www.weigao.cc/blog/2018/vue.html)
+- [项目技术博客 - Flask框架](https://www.weigao.cc/blog/2017/flask.html), [项目技术博客 - Flask MongoDB](https://www.weigao.cc/blog/2018/database.html#flask-pymongo), [项目技术博客 - Vue.js](https://www.weigao.cc/blog/2018/vue.html)
 
-核心技术：**Python, Flask, Vue.js**
-
-项目职责：
+个人项目贡献：
 使用 Python **Flask** Web 框架，结合 **JinJa2** 模板引擎配合 Bootstrap 使用，使用 **MongoDB** 作为雷达坐标信息数据存储，使用 SqlLite3存储用户数据，并部署在腾讯云服务器上，使用配置 Python 脚本一键部署(**pipenv**)。
 
 第二阶段使用当下流行的前端框架 **Vue.js** 作为前端，并在 element-vue 的 UI 下进行二次开发，最终实现了单一界面的前端 APP，实现了前后端分离。
@@ -55,12 +56,15 @@
 
 ### WiFi 人体活动感知 <Badge text="2017.08 - 2017.12" type="tip"/>
 
+核心技术：**Deeplearning, WiFi Sensor**
+
+项目单位：西安电子科技大学 Mobisys 实验室
+
 项目介绍：实验室项目，分析收到人体反射影响的 WiFi 信号， 判断人体的肢体动作。系统使用 Matlab + Python 开发，使用 AlexNet 对数据进行深度学习训练和分类。 用户在 WiFi 路由器和网卡所在的信号范围内执行行走、坐下、起立等动作，系统即可对动作类型进行判别。
 
 - [项目技术博客 - CSI-TOOL](https://www.weigao.cc/blog/2017/csitool.html#_1-1-%E9%A2%84%E5%A4%87%E5%B7%A5%E4%BD%9C)
 
-核心技术：**Deeplearning, WiFi Sensor**
-项目职责：将 802.11 物理层信号进行可视化，选择有效特征作为深度神经网络的输入，经过训练之后分类，去的模型并加以应用。
+项目职责：将 802.11 物理层信号进行可视化，选择有效特征作为深度神经网络的输入，经过训练之后分类的模型并加以应用。
 
 ---
 
@@ -75,13 +79,11 @@
 
 <br />
 
-## 开源项目和成果
+## 个人开源项目和成果
 
 ### 个人博客 <Badge text="2018.02 - Today" type="tip"/>
 
-- [项目地址 - Current Version](https://github.com/chenweigao/chenweigao.github.io)
-- [项目技术博客-1: Jekyll](http://localhost:8080/blog/2017/jekyll.html#github-pages)
-- [项目技术博客-2: Vuepress](http://localhost:8080/blog/2018/vueblog.html)
+核心技术：**Jekyll, GitHub Pages, Vuepress, Netify**
 
 项目介绍：
 
@@ -91,33 +93,35 @@
 2. 使用基于 Vue.js 的 Vuepress 博客框架，后端使用 Netify 和 GitHub 保持同步，使用 Letsentrypts 进行 Https 加密，申请使用域名([weigao.cc](https://www.weigao.cc))。[项目地址](https://github.com/chenweigao/vueblog)
 3. 基于第2阶段的开发，使用 element-ui 在 Vuepress 上自定义主题，自定义分类、时间管理、留言管理以及界面美化等工作。
 
-核心技术：**Jekyll, GitHub Pages, Vuepress, Netify**
+- [项目地址 - Current Version](https://github.com/chenweigao/chenweigao.github.io)
+- [项目技术博客-1: Jekyll](http://localhost:8080/blog/2017/jekyll.html#github-pages)
+- [项目技术博客-2: Vuepress](http://localhost:8080/blog/2018/vueblog.html)
 
 ### Kilo 文本编辑器
+
+核心技术: **C**
 
 项目介绍：使用 C/C++ 进行开发，熟悉并强化语言基础知识，实现了类似于 Vim 编辑器的轻量级文本编辑器。主要的功能有：插入、删除、查找、关键词高亮、文件编辑、行列提示等。
 
 - [项目地址](https://github.com/chenweigao/LinuxConsoleApp/blob/master/ConsoleApplication4/kilo.c)
 
-核心技术: **C**
-
 ### 人脸签到系统
+
+核心技术：**CNN, TensorFlow, Python**
 
 项目介绍：为实验室开发，考勤用。使用 Tensorflow + CNN + OpenCV，实现了人脸的检测、识别，使用 YOLO 算法确保其实时性。
 
 - [技术博客地址-人脸识别](https://www.weigao.cc/blog/2017/face_recognition.html#_1-abstract)
 
-核心技术：**CNN, TensorFlow, Python**
-
 ### 睡眠健康小程序
+
+核心技术：**JavaScript**
 
 项目介绍：微信小程序项目，使用微信开发者工具和 vant UI，实现了一个简单的微信小程序，主要包括功能：用户登录，睡眠监测（可监测整天睡眠，包括午休、打盹等情景），总睡眠时长分析，云端睡眠数据同步等功能。
 
 - [项目地址](https://github.com/chenweigao/wechat_applet)
 
-核心技术：**JavaScript**
-
-## 论文专利等成果
+## 论文专利以及竞赛等成果
 
 ### 论文
 
