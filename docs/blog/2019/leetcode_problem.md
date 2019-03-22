@@ -240,7 +240,7 @@ res = min(nums_counter, key = nums_counter.get)
 
 ## String
 
-### get all substring
+### Get All Substring
 
 对于字符串运算中，获得所有的子串并进行操作是很常见的问题，故将代码总结如下：
 
@@ -262,7 +262,7 @@ def getAllSubstring(s):
 print([_ for _ in getAllSubstring('aaab')])
 ```
 
-### is palindromic substrings
+### Is Palindromic Substrings
 
 比较常用的方法为动态规划判定法：
 
@@ -295,3 +295,25 @@ dp(i, j) = true
 
 dp(i, i + 1) = ($S_i$ == $S_{i+1}$)
 :::
+
+### longest Palindrome
+
+经过优化后，有一种简单的 Python 解法：
+
+```py
+class Solution:
+    def longestPalindrome(self, s):
+        res = ''
+        for i in range(len(s)):
+            res = max(self.helper(s, i, i), self.helper(
+                s, i, i + 1), res, key=len)
+        return res
+
+    def helper(self, s, l, r):
+        while l >= 0 and r < len(s) and s[l] == s[r]:
+            l -= 1
+            r += 1
+        return s[l + 1:r]
+
+print(Solution().longestPalindrome('cbbd'))
+```
