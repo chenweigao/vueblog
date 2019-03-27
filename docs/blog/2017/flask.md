@@ -118,15 +118,15 @@ Install pipenv:
 
 ```bash
 pip install pipenv
-```
 
-Usage:
-
-```bash
-cd myproject
-pipenv install package-name
 pipenv shell
+
+pipenv install package-name
+
+# if you want lock the environment
+pipenv lock
 ```
+
 
 退出可以使用 `exit` 或者 `Ctrl+D`.
 

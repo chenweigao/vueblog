@@ -28,12 +28,16 @@
 
 ## OS
 
+1. 熟悉哪些 Linux 指令
+
 
 ## Networks
 
 1. 报文和帧的区别
 
 2. ipv4 和 ipv6 的区别
+
+3. TCP/IP 模型
 
 ## IQ Test
 
