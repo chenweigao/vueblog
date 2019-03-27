@@ -1,14 +1,10 @@
 # Resume
 
+:::tip 陈惟高 | 男
 
-:::tip 陈惟高 | 男 | 24岁 | 陕西西安 | 2020届硕士研究生
-
-- 电话：13201750172
 - 邮箱： [mail@weigao.cc](mailto:mail@weigao.cc)
 - GitHub：[https://github.com/chenweigao](https://github.com/chenweigao)
 - 个人博客：[https//:www.weigao.cc](https//:www.weigao.cc)
-- QQ/微信：297859260
-- 地址：陕西省西安市雁塔区太白南路2号西安电子科技大学
 :::
 
 [网页版简历链接 - https://www.weigao.cc/blog/2019/resume.html](https://www.weigao.cc/blog/2019/resume.html)
