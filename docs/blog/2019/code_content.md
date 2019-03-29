@@ -19,7 +19,9 @@ Index of c++ code in github or this blog, easy for search and read.
 
 - [House Robber](https://leetcode.com/problems/house-robber/): 动态规划问题，3个版本
 
+## BFS
 
+- [Jump array](https://leetcode.com/problems/jump-game-ii/): 最少的步数调到数组结尾
 
 ## String
 
