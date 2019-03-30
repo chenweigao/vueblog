@@ -360,6 +360,12 @@ FTP uses multiple TCP connections:
 
 ## HTTP
 
+### HTTP 和 HTTPS
+
+**HTTP + 加密 + 认证 + 完整性保护 = HTTPS**
+
+
+
 ### Request and Response
 
 Request:

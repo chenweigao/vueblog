@@ -17,12 +17,12 @@
 
 ## 专业技能
 
-- 熟练掌握 Python
-- 熟悉 Python Flask 框架和 MongoDB 数据库
+- 熟悉 Python
 - 熟悉 Git, Vim 等基本操作，熟悉 Visual Studio, VS Code 等开发工具
-- 熟悉 Linux 和 Linux bash shell 基本操作
+- 了解 Linux 和 Linux bash shell 基本操作
+- 了解 Python Flask 框架和 MongoDB 数据库
 - 了解 TCP/IP
-- 了解 C, C++, JavaScript, Vue.js
+- 了解 C, C++, JavaScript, Vue.js等
 
 ## 项目经历
 
