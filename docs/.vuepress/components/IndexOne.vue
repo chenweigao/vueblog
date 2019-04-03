@@ -134,6 +134,7 @@
           <a href="discuss/">
             <el-button icon="iconfont icon-liuyan"> Comments</el-button>
           </a>
+          
         </el-badge>
       </el-footer>
     </el-container>

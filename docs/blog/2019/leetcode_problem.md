@@ -317,3 +317,38 @@ class Solution:
 
 print(Solution().longestPalindrome('cbbd'))
 ```
+
+### Reverse String
+
+将一个字符串翻转，可以实现的方法有：
+
+1. 递归实现
+
+2. 前后双指针交换，该方法速度较快
+
+```cpp
+void helper(int index, string str)
+{
+    if (index >= str.length())
+    {
+        return;
+    }
+    helper(index + 1, str);
+    putchar(str[index]);
+}
+void printReverse(string str)
+{
+    helper(0, str);
+}
+
+void reverseStringInplace(vector<char> &s)
+{
+    int start = 0, end = s.size() - 1;
+    while (start < end)
+    {
+        swap(s[start++], s[end--]);
+    }
+}
+```
+
+代码详情可以[参考这里](https://github.com/chenweigao/_code/blob/b23fb3b74e/cpp/recursion_reverse_string.cpp)

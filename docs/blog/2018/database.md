@@ -1,10 +1,22 @@
-# MongoDB
+# MongoDB Database
 
 Common RDB(Relational Database): PostgreSQL, MySQL, Orcal, MS SQL Server and SQLite.
 
 `database` –`collection` – `document`– `field` – `index`.
 
 [Install in LInux](http://www.runoob.com/mongodb/mongodb-linux-install.html)
+
+:::tip mongoDB _id
+_id 类型为 ObjectId, 是一个 **12 字节** 的 BSON 类型字符串，按照字节顺序，依次代表：
+
+4字节：时间戳
+
+3字节：机器 ID
+
+2字节：进程 ID
+
+3字节：计数器
+:::
 
 ## CRUD
 
@@ -70,7 +82,7 @@ db.inventory.updateMany(
    }
 )
 ```
-Replace: 
+Replace:
 
 ```bash
 db.inventory.replaceOne(
