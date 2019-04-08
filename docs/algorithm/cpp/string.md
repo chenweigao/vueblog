@@ -193,7 +193,7 @@ int main(int argc, char const *argv[])
 :::tip note
 Sometimes we need to process only a specific character, theses functions helps us change the characteristics of a character. These functions are defined in the `cctype` headers.
 
-- isalmun(c) : true if c is a letter or digit
+- isalnum(c) : true if c is a letter or digit
 
 - isalpha(c) : letter
 
