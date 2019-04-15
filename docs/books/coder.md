@@ -8,6 +8,26 @@ An application consists of one or more processes. A process, in the simplest ter
 
 ## Thread and Process
 
+回答面试中进程和线程的问题：
+
+1. 进程
+
+    进程是程序的一次执行过程，是一个动态概念，是程序在执行过程中分配和管理资源的基本单位，每一个进程都有自己的一个地址空间，至少有 5 种基本状态，他们分别是：初始态，就绪态，执行态，等待态，终止态。
+
+2. 线程
+
+    线程是 CPU 调度和分派的基本单位，它可以与同属一个进程的其他线程共享进程所拥有的全部资源。
+
+3. 联系
+
+    线程是进程的一部分，一个线程只能属于一个进程，而一个进程可以有多个线程，但至少有一个线程。
+
+4. 区别
+
+    根本区别：进程是操作系统资源分配的基本单位，而线程是任务调度和执行的基本单位
+
+MSDN 上的总结如下：
+
 1. What is *process*?
 
     A *process*, in simplest terms, is an executing program.
