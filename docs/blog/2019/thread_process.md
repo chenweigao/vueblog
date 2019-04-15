@@ -88,7 +88,7 @@ Linux 下查看僵尸进程使用 `top` 命令，其中的 `zombie` 前的数量
 
 `fgets(readbuf, 80, fp)` 读取命名管道，相应的，可以使用 `fputs()` 写入命名管道。
 
-## IPC 消息
+### IPC 消息
 
 用到 `sys/ipc.h`, `sys/msg.h` 等头文件。
 
@@ -108,7 +108,7 @@ Linux 下查看僵尸进程使用 `top` 命令，其中的 `zombie` 前的数量
 
 - `msgsnd(msgid, data, BUFSIZE, 0)`: 返回 -1 则失败，否则发送消息。
 
-## 共享内存
+### 共享内存
 
 用到 `sys/ipc.h`, `sys/shm.h` 头文件。
 
