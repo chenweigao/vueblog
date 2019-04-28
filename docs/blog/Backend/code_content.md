@@ -35,7 +35,6 @@ Index of c++ code in github or this blog, easy for search and read.
 
 - [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/): 求一个字符串的所有回文子串
 
-- [Longest Substring Without Repeating Characters]()
 
 
 ## Map & Set

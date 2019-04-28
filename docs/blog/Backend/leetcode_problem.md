@@ -106,6 +106,20 @@ def maxSubArrayDP(self, nums):
     return max
 ```
 
+### 0/1 Knapsack
+
+[LC416 partition equal subset sum](https://leetcode.com/problems/partition-equal-subset-sum/)
+
+题目要求大概是给定一个只存在正数的数组，能否把该数组拆分成两个子数组，使得两个子数组之和相等？
+
+这是一个典型的 0/1 背包问题，问题可以转化为：**从该数组中取若干个元素，使得这些元素的和为数组总和的一半**
+
+对于每一个元素而言，我们有两种选择：pick or not pick. 所以可以使用一个 bool 类型的 dp 数组：$dp(i, j)$ 的含义是**是否可以由前 i 个元素得到 j**，可以得到以下的递推公式：
+
+- $dp(i, j) = dp(i - 1, j)$  选择不 pick 第 i 个元素
+
+- $dp(i, j) = dp(i - 1, j - nums[i - 1])$  选择 pick 第 i 个元素，表示 j 由当前的 nums[i - 1] 组成，而之前的里面不包括 nums[i - 1]
+
 ## Binary Tree
 
 ### Level Order Traversal

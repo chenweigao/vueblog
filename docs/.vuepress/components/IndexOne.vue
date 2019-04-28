@@ -21,7 +21,7 @@
               <el-select
                 v-model="value"
                 clearable
-                placeholder="select a year"
+                placeholder="Categories"
                 class="myselector"
               >
                 <el-option
@@ -134,7 +134,7 @@
           <a href="discuss/">
             <el-button icon="iconfont icon-liuyan"> Comments</el-button>
           </a>
-          
+
         </el-badge>
       </el-footer>
     </el-container>
@@ -149,7 +149,8 @@ export default {
   data: function () {
     return {
       flag: false,
-      years: ['2019', '2018', '2017'],
+      // years: ['2019', '2018', '2017'],
+      years: ['Backend', 'Frontend', 'Projects', 'Tools', 'Research', 'Deeplearning', 'Others'],
       value: '',
       recent_update_number: 4
     };
