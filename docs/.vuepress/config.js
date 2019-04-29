@@ -1,6 +1,6 @@
 module.exports = {
   title: 'weigao',
-  description: 'keep fighting and coding',
+  description: '学而时习之，不亦说乎？',
   head: [
     ['link', {
       rel: 'icon',
