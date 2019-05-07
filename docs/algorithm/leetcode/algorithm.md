@@ -104,5 +104,20 @@ function binary_search(A, n, T):
     return unsuccessful
 ```
 
+二分查找有序序列中某个元素的位置，如果没找到，则返回其需要插入的位置(LC 035):
+
+```py
+def binarySearch(nums, target):
+    l, r = 0, len(nums) - 1
+
+    while l <= r:
+        mid = (l + r) // 2
+        if nums[mid] < target:
+            l = mid + 1
+        else:
+            r = mid - 1
+    return l
+```
+
 ## LCS 最长公共子序列
 
