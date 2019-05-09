@@ -247,6 +247,6 @@ body > .el-container {
   line-height: 320px;
 }
 
-@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
+/* @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"; */
 @import "https:////at.alicdn.com/t/font_1014632_8btj1lgimlo.css";
 </style>
