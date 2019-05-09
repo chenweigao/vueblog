@@ -201,17 +201,6 @@ export default {
 
 <style>
 
-.navbar {
-  opacity: 0.8;
-}
-.titles {
-  font-weight: 600;
-  /* color: #f66; */
-}
-.description {
-  /* visibility: hidden; */
-  display: none;
-}
 .cardLastUpdate {
   margin-bottom: 40px;
 }
@@ -233,33 +222,6 @@ export default {
   margin-bottom: 18px;
 }
 
-@media screen and (max-width: 750px) {
-  /* 手机端CSS代码 */
-  .myemail {
-    display: none;
-  }
-  .mysearch {
-    display: none;
-  }
-  .myselector {
-    display: none;
-  }
-  .myresume {
-    margin-left: -10px;
-  }
-}
-
-/* .box-card {
-  width: 900px;
-} */
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: "";
-}
-.clearfix:after {
-  clear: both;
-}
 
 .v-enter,
 .v-leave-to {

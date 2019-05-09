@@ -1,5 +1,6 @@
 import ElementUI from "element-ui";
 import 'element-ui/lib/theme-chalk/index.css'
+import './styles/mycss.css'
 import VueRouter from "vue-router";
 // import SearchBox from "@vuepress/plugin-search"
 

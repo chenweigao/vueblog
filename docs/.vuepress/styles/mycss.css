@@ -1,0 +1,32 @@
+.navbar {
+    opacity: 0.8;
+}
+
+.titles {
+    font-weight: 600;
+    /* color: #f66; */
+}
+
+.description {
+    /* visibility: hidden; */
+    display: none;
+}
+
+@media screen and (max-width: 750px) {
+    /* 手机端CSS代码 */
+    .myemail {
+        display: none;
+    }
+    .mysearch {
+        display: none;
+    }
+    .myselector {
+        display: none;
+    }
+    .myresume {
+        display: none
+    }
+    .el-divider {
+        display: none;
+    }
+}
