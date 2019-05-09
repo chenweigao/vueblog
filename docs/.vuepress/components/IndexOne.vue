@@ -200,6 +200,7 @@ export default {
 </script>
 
 <style>
+
 .navbar {
   opacity: 0.8;
 }

@@ -25,7 +25,9 @@
                 </el-timeline-item>
 
             </el-timeline>
-        <el-divider>我是有底线的</el-divider>
+      <el-divider><i class="el-icon-loading"></i></el-divider>
+        <h2>Latest Comments</h2>
+
 
     </div>
 
