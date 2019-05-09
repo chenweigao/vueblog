@@ -200,11 +200,17 @@ export default {
 </script>
 
 <style>
+.navbar {
+  opacity: 0.8;
+}
 .titles {
   font-weight: 600;
   /* color: #f66; */
 }
-
+.description {
+  /* visibility: hidden; */
+  display: none;
+}
 .cardLastUpdate {
   margin-bottom: 40px;
 }

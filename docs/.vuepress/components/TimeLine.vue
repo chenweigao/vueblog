@@ -78,19 +78,18 @@ export default {
 }
 </script>
 <style>
-header {
-    visibility: hidden;
-    display: none
-}
-body {
+/* body {
   margin: 0;
-}
+} */
 #demo {
   font-family: "Helvetica", Arial, sans-serif;
 }
 .message {
   font-size: 16px;
   color: #545454;
+}
+.page-edit{
+    display: none;
 }
 .author,
 .date {
