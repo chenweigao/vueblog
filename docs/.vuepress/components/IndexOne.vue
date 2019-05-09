@@ -52,7 +52,7 @@
           />
         </el-form>
       </el-header>
-      <el-divider><i class="el-icon-loading"></i></el-divider>
+      <!-- <el-divider><i class="el-icon-loading"></i></el-divider> -->
 
       <el-main v-show="value == null">
         <el-card shadow="hover">
@@ -136,7 +136,7 @@
       </el-footer>
     </el-container>
 
-    <el-divider>我是有底线的</el-divider>
+    <!-- <el-divider>我是有底线的</el-divider> -->
   </div>
 
 </template>
