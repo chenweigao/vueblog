@@ -1,7 +1,9 @@
 <template>
     <div>
         <h2>Latest Blog Commits</h2>
-        <el-timeline v-for="record in commits">
+        <el-timeline
+            v-for="record in commits"
+        >
             <el-timeline-item
                 :timestamp="formatDates(record.commit.author.date)"
                 placement="top"
@@ -25,11 +27,12 @@
         <!-- <el-divider>
             <el-button @click="loadMore"><i class="el-icon-loading"></i> Load More</el-button>
         </el-divider> -->
+        <el-button @click="loadMore()" style="float:right"> <i class="el-icon-loading"></i> Load More</el-button>
     </div>
 
 </template>
 <script>
-var apiURL = 'https://api.github.com/repos/chenweigao/vueblog/commits?per_page=5&sha='
+var apiURL = 'https://api.github.com/repos/chenweigao/vueblog/commits?per_page=5&sha=master'
 import axios from 'axios'
 export default {
 
@@ -38,7 +41,8 @@ export default {
             branches: ['master', 'dev'],
             currentBranch: 'master',
             commits: null,
-            loadNum: 5
+            loadNum: 10,
+            loading: true
             // timestamp: record.commit.author.date
         }
     },
@@ -59,26 +63,14 @@ export default {
     },
     methods: {
         fetchData: function () {
-            // var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest
-            // var xhr = new XMLHttpRequest()
-            // var self = this
-            // xhr.open('GET', apiURL + self.currentBranch)
-
-            // xhr.onload = function () {
-            //     self.commits = JSON.parse(xhr.responseText)
-            //     console.log(self.commits[0].html_url)
-            // }
-            // xhr.send()
             var self = this
             axios.get(apiURL)
-                .then(function (response)
-                {
+                .then(function (response) {
+                    console.log(response)
                     self.commits = JSON.parse(response.request.responseText)
-                    // console.log(response.request.responseText)
-                    console.log(this.commits)
+
                 })
-                .catch(function (error)
-                {
+                .catch(function (error) {
                     console.log(error)
                 })
         },
@@ -86,14 +78,16 @@ export default {
             return v.replace(/T|Z/g, ' ')
         },
         loadMore() {
-            let apiURLNew = 'https://api.github.com/repos/chenweigao/vueblog/commits?per_page='
+            var self = this
+            this.loadNum += 5
+            let apiURLNew = 'https://api.github.com/repos/chenweigao/vueblog/commits?per_page=' + this.loadNum + '&sha=' + "master"
+            console.log(apiURLNew)
             axios.get(apiURLNew)
-                .then(function (response)
-                {
-                    console.log(response)
+                .then(function (response) {
+                    self.commits = JSON.parse(response.request.responseText)
+                    console.log(self.commits)
                 })
-                .catch(function (error)
-                {
+                .catch(function (error) {
                     console.log(error)
                 })
         }

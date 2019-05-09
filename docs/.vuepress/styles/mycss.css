@@ -1,3 +1,7 @@
+body {
+    font-family:  Consolas, "Microsoft YaHei"
+}
+
 .navbar {
     opacity: 0.8;
 }
