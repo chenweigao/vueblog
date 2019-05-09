@@ -4,5 +4,3 @@ sidebar: false
 ---
 
 <TimeLine/>
-
-<Comments/>

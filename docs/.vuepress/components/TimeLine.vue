@@ -1,34 +1,31 @@
 <template>
     <div>
         <h2>Latest Blog Commits</h2>
-        
-            <el-timeline
-                v-for="record in commits"
+
+        <el-timeline v-for="record in commits">
+            <el-timeline-item
+                :timestamp="formatDates(record.commit.author.date)"
+                placement="top"
             >
-                <el-timeline-item
-                    :timestamp="formatDates(record.commit.author.date)"
-                    placement="top"
-                >
-                    <el-card shadow="hover">
-                        <span class="message">{{ record.commit.message | truncate }}</span>
-                        <p><span class="author"><a
-                                    :href="record.author.html_url"
-                                    target="_blank"
-                                >{{ record.commit.author.name }}</a></span>
-                            commit at
-                            <a
-                                :href="record.html_url"
+                <el-card shadow="hover">
+                    <span class="message">{{ record.commit.message | truncate }}</span>
+                    <p><span class="author"><a
+                                :href="record.author.html_url"
                                 target="_blank"
-                                class="commit"
-                            >{{ record.sha.slice(0, 7) }}</a></p>
-                    </el-card>
-                </el-timeline-item>
+                            >{{ record.commit.author.name }}</a></span>
+                        commit at
+                        <a
+                            :href="record.html_url"
+                            target="_blank"
+                            class="commit"
+                        >{{ record.sha.slice(0, 7) }}</a></p>
+                </el-card>
+            </el-timeline-item>
 
-            </el-timeline>
-      <el-divider><i class="el-icon-loading"></i></el-divider>
-        <h2>Latest Comments</h2>
-
-
+        </el-timeline>
+        <el-divider>
+            <el-button @click="loadMore"><i class="el-icon-loading"></i> Load More</el-button>
+        </el-divider>
     </div>
 
 </template>
@@ -39,7 +36,8 @@ export default {
         return {
             branches: ['master', 'dev'],
             currentBranch: 'master',
-            commits: null
+            commits: null,
+            loadNum: 5
             // timestamp: record.commit.author.date
         }
     },
@@ -73,8 +71,18 @@ export default {
         formatDates: function (v) {
             return v.replace(/T|Z/g, ' ')
         },
-        endLoading: function () {
-            return loading.close()
+        loadMore: function () {
+            let apiURLNew = 'https://api.github.com/repos/chenweigao/vueblog/commits?per_page='
+
+            var xhr = new XMLHttpRequest()
+            var self = this
+            this.loadNum += 5
+            xhr.open('GET', apiURLNew + this.loadNum + '&sha=' + self.currentBranch)
+            xhr.onload = function () {
+                self.commits = JSON.parse(xhr.responseText)
+                console.log(self.commits[0].html_url)
+            }
+            xhr.send()
         }
     }
 }
@@ -90,8 +98,8 @@ export default {
   font-size: 16px;
   color: #545454;
 }
-.page-edit{
-    display: none;
+.page-edit {
+  display: none;
 }
 .author,
 .date {
