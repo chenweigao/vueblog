@@ -76,7 +76,7 @@ TCP header 中保存着在流中的 index,  这使得流可以分割为若干个
 
 ### TCP Header
 
-```txt
+```html
         0                            15                              31
        -----------------------------------------------------------------
        |          source port          |       destination port        |
@@ -169,7 +169,7 @@ FIN 一般是应用层主动关闭的结果，TCP 不背锅。
 
 3. 为了确认服务端的 SYN, 客户端将自己的 ISN + 1 作为返回的 ACK.
 
-```txt
+```html
         TCP A                                                TCP B
 
 1.  CLOSED                                               LISTEN
@@ -353,7 +353,7 @@ TCB 一个用于保存 TCP 连接的 ISN, SEQ, ACK 等的数据结构，一般�
 
 TCP(Transmission Control Protocol) 使用滑动窗口来进行流量控制
 
-```txt
+```html
             Left window edge             Right window edge
                        |                             |
                        |                             |
