@@ -1,6 +1,6 @@
 module.exports = {
   title: 'weigao',
-  description: '学而时习之，不亦说乎？',
+  description: '...',
   head: [
     ['link', {
       rel: 'icon',
@@ -62,6 +62,10 @@ module.exports = {
       {
         text: 'Algorithm',
         link: '/algorithm/'
+      },
+      {
+        text: 'Commits',
+        link: '/commits/'
       }
       // {
       //   text: 'About',

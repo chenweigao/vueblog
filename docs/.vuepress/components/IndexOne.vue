@@ -22,13 +22,12 @@
               <el-select
                 v-model="value"
                 clearable
-                placeholder="Categories"
-                class="myselector"
+                placeholder="Show Categories"
               >
                 <el-option
                   v-for="item in years"
                   :key="item.index"
-                  :label="item"
+                  :label="item.index"
                   :value="item"
                 >
                 </el-option>
@@ -39,7 +38,7 @@
             value="new"
             class="myresume"
           >
-            <a href="/blog/2019/resume.html">
+            <a href="/blog/others/resume.html">
               <el-button
                 icon="iconfont icon-resume"
                 type=""
@@ -53,20 +52,17 @@
           />
         </el-form>
       </el-header>
+      <el-divider><i class="el-icon-loading"></i></el-divider>
 
-      <el-main>
-        <el-card
-          shadow="hover"
-          class=""
-        >
+      <el-main v-show="value == null">
+        <el-card shadow="hover">
           <div
             slot="header"
             class="clearfix"
           >
-            <span>
+            <span class="titles">
               Recent Update
             </span>
-            <!-- <el-input-number v-model="recent_update_number"  @change="recentUpdate" :min="3" :max="9" style="float:right"  size="mini"></el-input-number> -->
           </div>
           <transition-group
             appear
@@ -87,7 +83,7 @@
       <el-main
         v-for="year in years"
         :key="year.index"
-        v-show="value === year || value === ''"
+        v-show="value === year || value === null"
       >
 
         <el-card shadow="hover">
@@ -95,7 +91,7 @@
             slot="header"
             class="clearfix"
           >
-            <span>
+            <span class="titles">
               {{ year }}
             </span>
           </div>
@@ -140,7 +136,9 @@
       </el-footer>
     </el-container>
 
+    <el-divider>我是有底线的</el-divider>
   </div>
+
 </template>
 
 <script>
@@ -152,7 +150,7 @@ export default {
       flag: false,
       // years: ['2019', '2018', '2017'],
       years: ['Backend', 'Frontend', 'Projects', 'Tools', 'Research', 'Deeplearning', 'Others'],
-      value: '',
+      value: null,
       recent_update_number: 3
     };
   },
@@ -202,6 +200,11 @@ export default {
 </script>
 
 <style>
+.titles {
+  font-weight: 600;
+  /* color: #f66; */
+}
+
 .cardLastUpdate {
   margin-bottom: 40px;
 }
