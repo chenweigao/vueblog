@@ -58,7 +58,7 @@
         <el-card shadow="hover">
           <div
             slot="header"
-            class="clearfix"
+            class="animated pulse"
           >
             <span class="titles">
               Recent Update
@@ -89,7 +89,7 @@
         <el-card shadow="hover">
           <div
             slot="header"
-            class="clearfix"
+            class="animated pulse"
           >
             <span class="titles">
               {{ year }}
@@ -193,7 +193,7 @@ export default {
       var mm = dt.getMinutes().toString().padStart(2, '0')
       var ss = dt.getSeconds().toString().padStart(2, '0')
       var n = dt.toTimeString().slice(0, 5)
-      return `${m}/${d} ${hh}:${mm}`
+      return `${hh}:${mm} ${m}/${d} ${y}`
     }
   }
 };
@@ -212,6 +212,7 @@ export default {
 .time {
   font-size: 14px;
   color: #999;
+  float: right;
 }
 
 .text {
@@ -247,6 +248,5 @@ body > .el-container {
   line-height: 320px;
 }
 
-/* @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"; */
 @import "https:////at.alicdn.com/t/font_1014632_8btj1lgimlo.css";
 </style>
