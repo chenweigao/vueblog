@@ -1,5 +1,45 @@
 # Git
 
+## git reset
+
+在某次提交后如果发现自己忘记添加某些文件，或者写错了提交信息，可以使用`--amend`选项
+
+```bash
+#一个使用 --amend 的例子
+git commit -m "initial commit"
+git add forgotten_file
+git commit --amend
+```
+
+撤销已暂存的文件
+
+```bash
+git reset HEAD reset.md
+```
+
+舍弃对文件的修改
+
+```bash
+git checkout -- <filename>
+git checkout -- .
+```
+
+！但是要主要到，`git checkout`是一条非常危险的命令，执行该命令以后，任何对文件作出的修改都会丢失，因为上述命令用之前版本的文件做了覆盖。
+
+回到远程仓库的状态
+
+```bash
+git fetch --all && git rest --hard origin/master
+```
+
+放弃所有更改
+
+```bash
+git checkout .
+```
+
+
+
 ## ssh
 
 Clone form server file using SSH:
@@ -51,11 +91,11 @@ git config --global credential.helper store
 
 3. Found the IP and update hosts as the follow example:
 
- ```bash
- 13.250.177.223 github.com
- 151.101.228.133 assets-cdn.github.com
- 151.101.73.194 github.global.ssl.fastly.net
- ```
+```bash
+13.250.177.223 github.com
+151.101.228.133 assets-cdn.github.com
+151.101.73.194 github.global.ssl.fastly.net
+```
 
 ## Tag
 
@@ -138,58 +178,7 @@ git log -p -2
 git log --stat
 ```
 
-### 撤销操作
 
-在某次提交后如果发现自己忘记添加某些文件，或者写错了提交信息，可以使用`--amend`选项
-
-```bash
-#一个使用 --amend 的例子
-git commit -m "initial commit"
-git add forgotten_file
-git commit --amend
-```
-
-撤销已暂存的文件
-
-```bash
-#之前的操作
-git add *
-git status
-
-On branch master
-Your branch is ahead of 'origin/master' by 1 commit.
-  (use "git push" to publish your local commits)
-
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
-  new file:   reset.md
-```
-
-```bash
-git reset HEAD reset.md
-git status
-
-On branch master
-Your branch is ahead of 'origin/master' by 1 commit.
-  (use "git push" to publish your local commits)
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-  reset.md
-
-nothing added to commit but untracked files present (use "git add" to track)
-```
-
-舍弃对文件的修改
-
-```bash
-git checkout -- <filename>
-git checkout -- .
-```
-
-！但是要主要到，`git checkout`是一条非常危险的命令，执行该命令以后，任何对文件作出的修改都会丢失，因为上述命令用之前版本的文件做了覆盖。
 
 ### 远程仓库的使用
 
