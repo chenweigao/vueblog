@@ -1,8 +1,8 @@
 <template>
 <div>
+    <transition appear enter-active-class="bounce">
     <div id="vcomments" class="animated"></div>
-    <!-- <transition appear enter-active-class="fadeInUp">
-    </transition> -->
+    </transition>
 </div>
     <!-- <div id="vcomments" class="animated"></div> -->
 </template>
@@ -25,13 +25,13 @@ export default {
       el: "#vcomments",
       appId: "wJrq8Ck2MqeaFzOYUf0TcP6G-gzGzoHsz", // your appId
       appKey: "taRHm1fEce4nGp2lmNgkiW9U", // your appKey
-      // notify: true,
+      notify: true,
       avatar: 'hide',
-      placeholder: "writing somrthing...",
+      placeholder: "既然来了就说点什么吧...",
       visitor: true,
-      verfy: false,
-      lang: 'en',
-      meta: ['nick', 'mail']
+      verfy: true,
+      lang: 'zh-cn',
+      meta: ['nick']
     });
   }
 };
@@ -47,12 +47,15 @@ export default {
 .color {
   color: black;
 }
+
 .v-enter,
 .v-leave-to {
   opacity: 0;
   transform: translateX(50px);
 }
-
+.last-updated {
+  display: none
+}
 .v-enter-active,
 .v-leave-active {
   transition: all 0.6s ease;

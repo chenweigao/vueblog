@@ -58,7 +58,7 @@
         <el-card shadow="hover">
           <div
             slot="header"
-            class="animated pulse"
+            class="animated bounce"
           >
             <span class="titles">
               Recent Update
@@ -89,7 +89,7 @@
         <el-card shadow="hover">
           <div
             slot="header"
-            class="animated pulse"
+            class="animated bounce"
           >
             <span class="titles">
               {{ year }}
@@ -128,11 +128,16 @@
           type="primary"
           style="float:right"
         >
-          <a href="discuss/">
-            <el-button icon="iconfont icon-liuyan"> Comments</el-button>
-          </a>
+           <a href="discuss/">
+            <el-button icon="iconfont icon-liuyan" > Comments</el-button>
 
+          </a>
+            <!-- <el-button icon="iconfont icon-liuyan" @click="showComments"> Comments</el-button> -->
+        <br/>
         </el-badge>
+            <!-- <div v-show="show_comments" class="animated pulse slow">
+              <Comments></Comments>
+            </div> -->
       </el-footer>
     </el-container>
 
@@ -143,6 +148,7 @@
 
 <script>
 import SearchBox from '@SearchBox'
+import Comments from './Comments.vue'
 export default {
   components: { SearchBox },
   data: function () {
@@ -151,7 +157,8 @@ export default {
       // years: ['2019', '2018', '2017'],
       years: ['Backend', 'Frontend', 'Projects', 'Tools', 'Research', 'Deeplearning', 'Others'],
       value: null,
-      recent_update_number: 3
+      recent_update_number: 3,
+      show_comments: false
     };
   },
   methods: {
@@ -179,6 +186,9 @@ export default {
     },
     getFileCreatedTime(filespc) {
       return filespc.lastModifiedDate();
+    },
+    showComments: function() {
+      this.show_comments = !this.show_comments
     }
   },
   computed: {

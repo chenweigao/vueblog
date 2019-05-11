@@ -1,14 +1,15 @@
 <template>
     <div>
         <h2>Latest Blog Commits</h2>
-        <el-timeline
-            v-for="record in commits"
-        >
+        <el-timeline v-for="record in commits">
             <el-timeline-item
                 :timestamp="formatDates(record.commit.author.date)"
                 placement="top"
             >
-                <el-card shadow="hover">
+                <el-card
+                    shadow="hover"
+                    class="animated bounceInRight"
+                >
                     <span class="message">{{ record.commit.message | truncate }}</span>
                     <p><span class="author"><a
                                 :href="record.author.html_url"
@@ -27,7 +28,10 @@
         <!-- <el-divider>
             <el-button @click="loadMore"><i class="el-icon-loading"></i> Load More</el-button>
         </el-divider> -->
-        <el-button @click="loadMore()" style="float:right"> <i class="el-icon-loading"></i> Load More</el-button>
+        <el-button
+            @click="loadMore()"
+            style="float:right"
+        > <i class="el-icon-loading"></i> Load More</el-button>
     </div>
 
 </template>
@@ -46,7 +50,7 @@ export default {
             // timestamp: record.commit.author.date
         }
     },
-    created: function () {
+    created() {
         this.fetchData()
     },
     watch: {
