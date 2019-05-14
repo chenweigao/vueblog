@@ -25,11 +25,11 @@ export default {
       el: "#vcomments",
       appId: "wJrq8Ck2MqeaFzOYUf0TcP6G-gzGzoHsz", // your appId
       appKey: "taRHm1fEce4nGp2lmNgkiW9U", // your appKey
-      notify: true,
+      // notify: true,
       avatar: 'hide',
       placeholder: "既然来了就说点什么吧...",
       visitor: true,
-      verfy: true,
+      // verfy: true,
       lang: 'zh-cn',
       meta: ['nick']
     });

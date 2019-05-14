@@ -38,8 +38,6 @@ git fetch --all && git rest --hard origin/master
 git checkout .
 ```
 
-
-
 ## ssh
 
 Clone form server file using SSH:
@@ -97,6 +95,14 @@ git config --global credential.helper store
 151.101.73.194 github.global.ssl.fastly.net
 ```
 
+## git clone
+
+克隆较慢时使用：
+
+```bash
+git clone --depth=1 ulr
+```
+
 ## Tag
 
 show tags:
@@ -116,6 +122,12 @@ push tags to origin:
 
 ```bash
 git push origin v1.0
+```
+
+强制推送使用：
+
+```bash
+git push -f origin branch_name
 ```
 
 ## Git basic
@@ -144,6 +156,14 @@ cat .gitignore
 build/ #忽略build/目录下的所有文件
 doc/*.txt #忽略doc/notes.txt，而不忽略doc/server/arch.txt
 doc/**/*.pdf #忽略doc/目录下的所有.pdf文件
+```
+
+如果改动文件不生效的话，使用：
+
+```bash
+git rm -r --cached .
+git add .
+git commit -m 'update .gitignore'
 ```
 
 除此之外，还可以参考[GitHub官方示例](https://github.com/github/gitignore)
@@ -177,8 +197,6 @@ git log -p -2
 # 查看简略信息
 git log --stat
 ```
-
-
 
 ### 远程仓库的使用
 
@@ -217,6 +235,12 @@ git remote show origin
 
 git remote rm <rep-name>
 
+```
+
+添加远程仓库
+
+```bash
+git remote add <remote_name> <url>
 ```
 
 ### Git别名
