@@ -52,7 +52,8 @@ module.exports = {
     ['@vuepress/last-updated'],
     ['@vuepress/medium-zoom'],
     ['@vuepress/nprogress'],
-    ['vuepress-plugin-reading-time']
+    ['vuepress-plugin-reading-time'],
+    // ['git-log']
 
   ],
   themeConfig: {

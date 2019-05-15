@@ -22,6 +22,7 @@
     "sass-loader": "^7.1.0",
     "valine": "^1.3.6",
     "vuepress": "^1.0.0-alpha.48",
+    "vuepress-plugin-git-log": "^1.0.1",
     "vuepress-plugin-reading-time": "^0.1.1",
     "xmlhttprequest": "^1.8.0"
   },
