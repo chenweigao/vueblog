@@ -98,7 +98,7 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
 /* body {
   margin: 0;
 } */
@@ -109,9 +109,7 @@ export default {
   font-size: 16px;
   color: #545454;
 }
-.page-edit {
-  display: none;
-}
+
 .author,
 .date {
   font-weight: bold;
