@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[27],{489:function(t,e,n){"use strict";n.r(e);n(277);var r={data:function(){return{items:[]}}},i=n(5),s=Object(i.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("marquee",{attrs:{behavior:"scroll",direction:"left"}},[this._v("\n    梦里不知身是客，一晌贪欢。\n")])},[],!1,null,null,null);e.default=s.exports}}]);
