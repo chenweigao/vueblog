@@ -105,8 +105,9 @@
               :key="post.key"
               class="animated text item"
             >
-              <time class="time">{{ post.lastUpdated | dateFormat }}</time>
-              <router-link :to="post.path">### {{ post.title }}</router-link>
+              <!-- <time class="time"> {{ post.readingTime.words }} words, {{ post.readingTime.text }} {{ post.lastUpdated | dateFormat }}</time> -->
+              <time class="time"> {{ post.readingTime.words }} words, {{ post.readingTime.text }} </time>
+              <router-link :to="post.path">### {{ post.title }} </router-link>
             </div>
           </transition-group>
         </el-card>
