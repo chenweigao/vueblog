@@ -9,6 +9,7 @@ $textColor = #2b2b2b
 // $codeBgColor = 	#2570a1
 // $codeBgColor = 	#2b2b2b
 $nprogressColor = #00c4b6
+// $arrowBgColor = #00c4b6
 // $codeBgColor = 	#545454
 // $arrowBgColor = red
 // body {
@@ -59,8 +60,8 @@ $nprogressColor = #00c4b6
 $codeBgColor =#F8F8FF
 
 
-$theme-color = #2b2b2b
-$theme-paginator-color = #2b2b2b
+$theme-color = #00c4b6
+$theme-paginator-color = #00c4b6
 $theme-button-hover-color = #FF7242
 $theme-text-selection-color = #00c4b6
 $theme-meta-color = #858585
@@ -128,10 +129,10 @@ transition()
   transition()
   &:hover
     background $theme-button-hover-color
-// a
-//   color $theme-link-color
-//   &:hover
-//     color $theme-color
+a
+  color $theme-link-color
+  &:hover
+    color $theme-color
 
 *::selection
   background $theme-text-selection-color
@@ -153,12 +154,12 @@ transition()
 //   border-right 0
 //   box-shadow -0.25rem 0 0.25rem rgba(232,237,250,.6) inset
 
-// a.sidebar-link
-//   &:hover
-//     color $theme-text-selection-color
-//   &.active
-//     border-left-color $theme-text-selection-color
-//     color $theme-text-selection-color
+a.sidebar-link
+  // &:hover
+  //   color $theme-text-selection-color
+  &.active
+    border-left-color $theme-text-selection-color
+    color $theme-text-selection-color
 
 // .sidebar-sub-headers
 //   a.sidebar-link
