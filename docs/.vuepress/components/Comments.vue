@@ -53,9 +53,9 @@ export default {
   opacity: 0;
   transform: translateX(50px);
 }
-.last-updated {
+/* .last-updated {
   display: none
-}
+} */
 .v-enter-active,
 .v-leave-active {
   transition: all 0.6s ease;
