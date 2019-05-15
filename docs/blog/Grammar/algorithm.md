@@ -226,6 +226,36 @@ round(2.6) # 3 四舍五入
 
 一般而言，我们在快速排序或者二分查找中如果要计算 mid, 则可以使用 `mid = left + (right - left)/2` 来计算，可以参考[二分查找 python 代码](https://github.com/chenweigao/_code/blob/master/python/binary_search.py)
 
+## DFS and BFS
+
+### Problems content
+
+- [number of island: LC200](https://leetcode.com/problems/number-of-islands/)
+
+- [Target Sum: LC494](https://leetcode.com/problems/target-sum/)
+
+### Recursion of Memoization
+
+Memoization of Fibonacci:
+
+The Python code is:
+
+```py
+def fib(N):
+    cache = {}
+    def recur_fib(N):
+        if N in cache:
+            return cache[N]
+        if N < 2:
+            result = N
+        else:
+            result = recur_fib(N - 1) + recur_fib(N - 2)
+
+        cache[N] = result
+        return result
+    return recur_fib(N)
+```
+
 ## Bit operation
 
 Example: 求 12 的二进制

@@ -42,7 +42,7 @@ The goal of new cpp aims at:
   
     - 手工内存：涉及到 `malloc` 和 `free` 函数；程序员痛苦的根源；可以在**运行时设置数组长度**，可以**改变长度**，不能使用 `sizeof` 计算数组长度。
 
-### pointer and array
+### Pointer and Array
 
 意识到数组和指针其密不可分的关系，参考[示例代码2](https://github.com/chenweigao/_code/blob/master/cpp/pointer_array_2.cpp).
 
@@ -69,7 +69,7 @@ a_pointer = an_array;
 
 都是被允许的。
 
-### pointer and const
+### Pointer and Const
 
 :::tip
 与引用一样，也可以令指针指向常量或非常量；**指向常量的指针 pointer to const** 不能用于改变其所指对象的值。
@@ -115,7 +115,7 @@ double dist(Point a, Point b){
 
 As you can see from the comparison, **Example 2** is better, which use `typedef struct { define; }struct name;` to define.
 
-## lvalue and rvalue
+## Lvalue and Rvalue
 
 ```cpp
 int x = 0;  //x is lvalue
@@ -514,7 +514,7 @@ memcpy(b, a, sizeof(a))
 memset(a, 0, sizeof(a))
 ```
 
-## Vector and Iterator
+## Vector
 
 ### library vector type
 

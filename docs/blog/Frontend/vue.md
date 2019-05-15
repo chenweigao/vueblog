@@ -428,3 +428,22 @@ This boilerplate has pre-configured CSS extraction for most popular CSS pre-proc
 npm install sass-loader node-sass --save-dev
 ```
 
+## Vue CLI
+
+Install:
+
+```bash
+yarn global add @vue/cli
+```
+
+create a project:
+
+```bash
+vue create hello-world
+```
+
+Lint the project:
+
+```bash
+yarn lint
+```

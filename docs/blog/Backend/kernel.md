@@ -111,6 +111,3 @@ rmmmod [-fw] module_name
 modprobe [-lcfr] module_name
 -r: 删除某个模块
 ```
-
-### 内核模块的额外参数
-
