@@ -155,7 +155,7 @@ export default {
     return {
       flag: false,
       // years: ['2019', '2018', '2017'],
-      years: ['Backend', 'Frontend', 'Projects', 'Tools', 'Research', 'Deeplearning', 'Others'],
+      years: ['Backend', 'Frontend', 'Projects', 'Tools', 'Research', 'Deeplearning', 'Grammar', 'Others'],
       value: null,
       recent_update_number: 3,
       show_comments: false

@@ -3,3 +3,4 @@ node_modules/
 docs/.vuepress/dist
 # *.lock
 .temp/
+docs/.vuepress/books

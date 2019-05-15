@@ -18,9 +18,18 @@ This is a tutorial may help you:
     yarn docs:dev
     ```
 
-There, everything is done!
+    then you can see the site run at: localhost:8080, you can visit it.
 
-You can deploy this site via **Netlify**: This is a [tutorial](https://v1.vuepress.vuejs.org/guide/deploy.html#netlify)
+4. in `docs/.vuepress/config.js`, modify the title to yours, comment out lin 63 - lin 66(or you could register valine and modify the `Comments.vue`'s config)
+
+5. in `docs/.vuepress/blog`, **delete** all of my post and put your post here(do not delete the directory).
+
+6. in `docs/.vuepress/blog/Others/resume.md`, replace it by your own resume.
+
+
+There, everything about your blog is done!
+
+You can deploy this site via **Netlify**: This is a [tutorial](https://v1.vuepress.vuejs.org/guide/deploy.html#netlify), or you follow this:
 
 1. create a new repo in GitHub and push the code the this repo
 
@@ -39,3 +48,4 @@ You can deploy this site via **Netlify**: This is a [tutorial](https://v1.vuepre
 5. wait... when the build success, then click **Domain settings** and custom you domains.
 
 More config information could be found at my blog's post [Vuepress Blog](https://www.weigao.cc/blog/Projects/vueblog.html#vuepress-update)
+

@@ -61,8 +61,8 @@ module.exports = {
         link: '/'
       },
       {
-        text: 'Algorithm',
-        link: '/algorithm/'
+        text: 'Discuss',
+        link: '/discuss/'
       },
       {
         text: 'Commits',
