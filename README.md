@@ -10,11 +10,14 @@ This is a tutorial may help you:
     git clone https://github.com/chenweigao/vueblog.git
     ```
 
+    or fork it, and clone form you repo.
+
 2. install the `yarn`: [https://yarnpkg.com/lang/zh-hans/docs/install/#windows-stable](https://yarnpkg.com/lang/zh-hans/docs/install/#windows-stable)
 
 3. run the command:
 
     ```bash
+    yarn
     yarn docs:dev
     ```
 
@@ -26,12 +29,11 @@ This is a tutorial may help you:
 
 6. in `docs/.vuepress/blog/Others/resume.md`, replace it by your own resume.
 
-
 There, everything about your blog is done!
 
 You can deploy this site via **Netlify**: This is a [tutorial](https://v1.vuepress.vuejs.org/guide/deploy.html#netlify), or you follow this:
 
-1. create a new repo in GitHub and push the code the this repo
+1. fork this repo, or push your clones repo to your GitHub.
 
 2. visit [https://app.netlify.com](https://app.netlify.com)
 
