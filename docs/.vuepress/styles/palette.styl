@@ -64,7 +64,7 @@ $theme-paginator-color = #00c4b6
 $theme-button-hover-color = #FF7242
 $theme-text-selection-color = #00c4b6
 $theme-meta-color = #858585
-$theme-link-color = $textColor
+$theme-link-color = #2b2b2b
 $theme-hr-color = #A4D8FA
 $pale-blue = $theme-hr-color
 $light-blue = $theme-color
@@ -100,8 +100,8 @@ $code-background = rgba(27, 31, 35, 0.05)
 $blockquote-color = #6a737d
 $blockquote-padding-color = #dfe2e5
 
-// $highlight-background = #F6F8FA
-$highlight-background = white
+$highlight-background = #F6F8FA
+// $highlight-background = white
 $highlight-current-line = #00346e
 $highlight-selection = #80CBC440
 $highlight-foreground = #696969
@@ -128,10 +128,10 @@ transition()
   transition()
   &:hover
     background $theme-button-hover-color
-a
-  color $theme-link-color
-  &:hover
-    color $theme-color
+// a
+//   color $theme-link-color
+//   &:hover
+//     color $theme-color
 
 *::selection
   background $theme-text-selection-color
