@@ -1,8 +1,6 @@
-# Linux Bash
+# Operating System
 
 ## Thread and Process
-
-回答面试中进程和线程的问题：
 
 1. 进程
 
@@ -56,13 +54,13 @@ Linux 下查看僵尸进程使用 `top` 命令，其中的 `zombie` 前的数量
 
 多进程相比于多线程而言更加健壮，因为多线程程序只要有一个线程奔溃，整个进程也会奔溃，而一个进程奔溃并不会对另一个进程造成影响，因为进程拥有自己的地址空间。
 
-### 进程间通信
+## 进程间通信
 
 进程间通信（IPC）的方式包括：信号，管道，共享内存，消息队列，信号量，封装的有 TCP/IP 套接字。
 
 [代码实现可以参考 GitHub](https://github.com/chenweigao/multi_thread_and_process)
 
-#### 命名管道 FIFO
+### 命名管道 FIFO
 
 用到 `sys/stat.h`, `unistd.h`, `linux/stat.h` 等头文件。
 
@@ -90,7 +88,7 @@ Linux 下查看僵尸进程使用 `top` 命令，其中的 `zombie` 前的数量
 
 `fgets(readbuf, 80, fp)` 读取命名管道，相应的，可以使用 `fputs()` 写入命名管道。
 
-#### IPC 消息
+### IPC 消息
 
 用到 `sys/ipc.h`, `sys/msg.h` 等头文件。
 
@@ -110,7 +108,7 @@ Linux 下查看僵尸进程使用 `top` 命令，其中的 `zombie` 前的数量
 
 - `msgsnd(msgid, data, BUFSIZE, 0)`: 返回 -1 则失败，否则发送消息。
 
-#### 共享内存
+### 共享内存
 
 用到 `sys/ipc.h`, `sys/shm.h` 头文件。
 
@@ -155,7 +153,7 @@ A bug:
 sudo ssh-keygen -t rsa -f /etc/ssh/ssh_host_ed25519_key
 ```
 
-## File server
+## Python File Server
 
 ```bash
 python -m http.server
@@ -165,7 +163,7 @@ python -m http.server 80
 #in port 80
 ```
 
-## program status
+## Program Status
 
 ```bash
 echo $?
@@ -207,8 +205,7 @@ echo test >> $(date -d "today" +"%Y%m%d_%H%M%S").txt
 git log -4 > log/$(date -d "today" +"%Y%m%d").txt
 ```
 
-
-## Add Choice for User
+## Add Choice for User - Read -p
 
 `read -p` is very useful for  this, for example:
 
@@ -247,7 +244,7 @@ echo ${#arrayName[*]}
 current_plugins_version=$(dpkg -s picoscenes-plugins-demo-rxsbroadcaster-chronos | grep Version | sed 's/Version: //g')
 ```
 
-This is a basic use of sed, `sed 's/Version: //g'` means that a select : 
+This is a basic use of sed, `sed 's/Version: //g'` means that a select:
 
 ``` shell
 Version: 18.0406.2333
@@ -269,7 +266,7 @@ sudo sed -i 's/GRUB_HIDDEN_TIMEOUT=0/#GRUB_HIDDEN_TIMEOUT=0/g'  /etc/default/
 
 This is an example that we do the CSI experiment, update the `~/etc/default/grub` make the new kernel version could be seen.
 
-## tr
+## tr and awk
 
 `tr` 可以理解为`sed`的简化版本
 
@@ -295,8 +292,6 @@ tr [a-z] [A-Z]
 #删除连续的重复字母
 tr -s [a-zA-Z]
 ```
-
-## awk
 
 [AWK Tutorial](https://www.tutorialspoint.com/awk)
 
