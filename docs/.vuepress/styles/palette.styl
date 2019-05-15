@@ -1,5 +1,5 @@
 // $accentColor = #228fbd
-$accentColor = #545454
+$accentColor = #00c4b6
 // $textColor = #2c3e50
 $textColor = #2b2b2b
 // $borderColor = #afdfe4
@@ -7,8 +7,8 @@ $textColor = #2b2b2b
 // $codeBgColor = #1b315e
 // $codeBgColor = 	#2585a6
 // $codeBgColor = 	#2570a1
-$codeBgColor = 	#2b2b2b
-$nprogressColor = #409EFF
+// $codeBgColor = 	#2b2b2b
+$nprogressColor = #00c4b6
 // $codeBgColor = 	#545454
 // $arrowBgColor = red
 // body {
@@ -53,3 +53,194 @@ $nprogressColor = #409EFF
         display: none;
     }
 }
+
+// $codeBgColor = #F6F8FA
+// $codeBgColor = #F8F8F8
+$codeBgColor =#F8F8FF
+
+
+$theme-color = #00c4b6
+$theme-paginator-color = #00c4b6
+$theme-button-hover-color = #FF7242
+$theme-text-selection-color = #00c4b6
+$theme-meta-color = #858585
+$theme-link-color = $textColor
+$theme-hr-color = #A4D8FA
+$pale-blue = $theme-hr-color
+$light-blue = $theme-color
+$blue = #1B9EF3
+$dark-blue = #0790E8
+$orange = #F1BE48
+$pale-green = #B4E1C1
+$light-green = #69C282
+$green = #44B363
+$dark-green = #379F54
+$pale-cyan = #D1F4F2
+$light-cyan = #8CE4DE
+$cyan = $theme-paginator-color
+$pale-red = #F9b9b3
+$light-red = #F47466
+$red = #F15140
+$dark-red = #E63E2C
+$ruby = $theme-button-hover-color
+$light-black = #3B3A3A
+$black = #2E2E2E
+$dark-black = #000000
+$pale-grey = #F7F7F7
+$light-grey = #EEEEEE
+$grey = $theme-meta-color
+$white = #FFFFFF
+$dark-white = #F9F9F9
+$font-black = #4C4948
+$selection = $theme-text-selection-color
+$font-color = #1F2D3D
+// code highlight
+$code-foreground = $font-color
+$code-background = rgba(27, 31, 35, 0.05)
+$blockquote-color = #6a737d
+$blockquote-padding-color = #dfe2e5
+
+// $highlight-background = #F6F8FA
+$highlight-background = white
+$highlight-current-line = #00346e
+$highlight-selection = #80CBC440
+$highlight-foreground = #696969
+$highlight-comment = #A9A9A9
+$highlight-red = #E53935
+$highlight-orange = #F76D47
+$highlight-yellow = #FFB62C
+$highlight-green = #91B859
+$highlight-aqua = #39ADB5
+$highlight-blue = #6182B8
+$highlight-purple = #7C4DFF
+$highlight-deletion = #fdd
+$highlight-addition = #dfd
+
+transition()
+  transition all .2s ease-in-out
+
+// styles
+// -------------
+.home .hero .action-button
+  background $theme-color
+  border-bottom $theme-color
+  text-decoration none
+  transition()
+  &:hover
+    background $theme-button-hover-color
+a
+  color $theme-link-color
+  &:hover
+    color $theme-color
+
+*::selection
+  background $theme-text-selection-color
+  color: #f7f7f7
+
+// nav-bar theme
+// -------------
+.navbar
+  box-shadow 0 5px 6px -5px rgba(133,133,133,.2)
+  border-bottom 0
+  background rgba(255,255,255,.8)
+  .links
+    background transparent
+
+// sidebar theme
+// -------------
+// .sidebar
+//   background $highlight-background
+//   border-right 0
+//   box-shadow -0.25rem 0 0.25rem rgba(232,237,250,.6) inset
+
+// a.sidebar-link
+//   &:hover
+//     color $theme-text-selection-color
+//   &.active
+//     border-left-color $theme-text-selection-color
+//     color $theme-text-selection-color
+
+// .sidebar-sub-headers
+//   a.sidebar-link
+//     transition()
+//     &.active
+//       border-right 3px solid #009d92
+//       border-right-color: #009d92
+//       background: $theme-text-selection-color
+//       color: #fff
+
+// code highlight
+// -------------
+:not(pre) > code[class*="language-"],
+pre[class*="language-"]
+  background: $highlight-background
+
+.content pre code,
+.content pre[class*="language-"] code
+  color $highlight-foreground
+  font-family consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace, Helvetica Neue For Number
+
+#app.content
+  pre, pre[class*="language-"]
+    color $highlight-foreground
+
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata
+  color: $highlight-comment
+
+.token.punctuation
+  color: $highlight-foreground
+
+
+.token.namespace,
+.token.tag
+  color $highlight-red
+.token.attr-name
+  color $highlight-purple
+
+.token.deleted
+  color: #fdd
+.token.inserted
+  color: #dfd
+
+
+.token.function-name
+  color: $highlight-blue
+
+.token.string,
+.token.number
+  color: $highlight-green
+
+.token.boolean,
+.token.property,
+.token.constant,
+.token.symbol,
+.token.regex,
+.token.important.boolean
+  color: $highlight-orange
+
+.token.function,
+.token.class-name
+  color $highlight-yellow
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin
+  color: $highlight-aqua
+
+
+.token.char,
+.token.attr-value,
+.token.variable
+  color: $highlight-green
+
+.token.operator,
+.token.entity,
+.token.url
+  color: $highlight-aqua

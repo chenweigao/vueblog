@@ -3,7 +3,6 @@ import 'element-ui/lib/theme-chalk/index.css'
 // import './styles/mycss.css'
 import animated from 'animate.css'
 import VueRouter from "vue-router";
-import moment from "moment"
 // import SearchBox from "@vuepress/plugin-search"
 
 export default ({
@@ -14,8 +13,7 @@ export default ({
 }) => {
     Vue.use(ElementUI),
     Vue.use(VueRouter),
-        Vue.use(animated),
-        Vue.use(mement)
+        Vue.use(animated)
     // Vue.use(SearchBox)
 }
 

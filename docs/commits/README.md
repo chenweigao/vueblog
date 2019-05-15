@@ -1,7 +1,6 @@
 ---
-home: true
+home: false
 sidebar: false
-pageClass: timeline
 ---
 
 <TimeLine/>
