@@ -256,13 +256,28 @@ def fib(N):
     return recur_fib(N)
 ```
 
-## Bit operation
+## Math
+
+### xor
+
+Python 中的异或为 `^`, 其基本应用是**线性时间内求解一个数组中只出现过一次的元素**[LC136](https://leetcode.com/problems/single-number/)。
+
+```py
+2 ^ 2 = 0
+0 ^ 3 = 3
+```
+
+任何数字异或自己都等于 0, `0` 异或某个整数，其结果是该整数。
+
+进阶的题目：[LC260](https://leetcode.com/problems/single-number-iii/): 线性时间内求解一个数组中出现过一次的**两个**元素。
+
+### Bit operation
 
 Example: 求 12 的二进制
 
 假设所求得的二进制串为 32 位，求一个 10 进制数的某一位可以用如下方法：
 
-```python {2}
+```python
 # 12 的二进制第 0 位是 0
 12 >> 0 & 1
 0

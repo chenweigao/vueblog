@@ -129,14 +129,14 @@
           type="primary"
           style="float:right"
         >
-           <a href="discuss/">
-            <el-button icon="iconfont icon-liuyan" > Comments</el-button>
+          <a href="discuss/">
+            <el-button icon="iconfont icon-liuyan"> Comments</el-button>
 
           </a>
-            <!-- <el-button icon="iconfont icon-liuyan" @click="showComments"> Comments</el-button> -->
-        <br/>
+          <!-- <el-button icon="iconfont icon-liuyan" @click="showComments"> Comments</el-button> -->
+          <br />
         </el-badge>
-            <!-- <div v-show="show_comments" class="animated pulse slow">
+        <!-- <div v-show="show_comments" class="animated pulse slow">
               <Comments></Comments>
             </div> -->
       </el-footer>
@@ -156,7 +156,7 @@ export default {
     return {
       flag: false,
       // years: ['2019', '2018', '2017'],
-      years: ['Backend', 'Frontend', 'Projects', 'Tools', 'Research', 'Deeplearning', 'Grammar', 'Others'],
+      years: ['Backend', 'Frontend', 'Projects', 'Grammar', 'Tools', 'Research', 'Deeplearning', 'Others'],
       value: null,
       recent_update_number: 3,
       show_comments: false
@@ -188,7 +188,7 @@ export default {
     getFileCreatedTime(filespc) {
       return filespc.lastModifiedDate();
     },
-    showComments: function() {
+    showComments: function () {
       this.show_comments = !this.show_comments
     }
   },
@@ -211,7 +211,6 @@ export default {
 </script>
 
 <style>
-
 .cardLastUpdate {
   margin-bottom: 40px;
 }
@@ -233,7 +232,6 @@ export default {
 .item {
   margin-bottom: 18px;
 }
-
 
 .v-enter,
 .v-leave-to {
