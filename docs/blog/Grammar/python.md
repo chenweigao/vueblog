@@ -261,6 +261,61 @@ def list2int(aList):
     return int(''.join(list(map(str, aList))))
 ```
 
+### isinstance()
+
+Python 中判断类型的方法
+
+```py
+>>> isinstance(1, int)
+True
+
+>>> isinstance([1, 2, 3], list)
+True
+```
+
+### zip()
+
+`zip(*iterators)`: returns a iterator of tuples.
+
+当最短的迭代器遍历完成以后，停止迭代。
+
+Example 1:
+
+```py
+str = ['hello', 'heo', 'helio']
+for _ in zip(*str):
+    print(list(_))
+
+>> [('h', 'h', 'h'), ('e', 'e', 'e'), ('l', 'o', 'l')]
+
+# zip('ABCD', 'xy') --> Ax By
+```
+
+### enumerate()
+
+Example 2(接上 zip 的例子):
+
+[Leetcode 14. Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/)
+
+```py
+def longestCommonPrefix(strs):
+    if not strs:
+        return ""
+
+    for i, _ in enumerate(zip(*strs)):
+        if len(set(_)) > 1:
+            return strs[0][:i]
+    else:
+        return min(strs)
+
+test_strs = ["flower","flow","flight"]
+print(longestCommonPrefix(test_strs))
+```
+
+:::tip
+`enumerate()` 列举出来的下标从 0 开始，所以使用 `[:i]` 作为切片 而不是 `[:i-1]`
+:::
+
 ### reduce(), lcd and gcd
 
 `functools.reduce` 可以应用带有两个参数的函数来将一个可迭代的对象的项转化为单个的值，而干函数的两个参数是下一项和前一次应用该函数的结果。
@@ -486,60 +541,6 @@ def sort_priority(values, group):
 
 在这个例子中的错误示例中，使用 `append` 把所有的结果都放在列表里面，如果输入量非常大的话，会导致程序消耗尽内存而奔溃。
 
-## isinstance()
-
-Python 中判断类型的方法
-
-```py
->>> isinstance(1, int)
-True
-
->>> isinstance([1, 2, 3], list)
-True
-```
-
-## zip()
-
-`zip(*iterators)`: returns a iterator of tuples.
-
-当最短的迭代器遍历完成以后，停止迭代。
-
-Example 1:
-
-```py
-str = ['hello', 'heo', 'helio']
-for _ in zip(*str):
-    print(list(_))
-
->> [('h', 'h', 'h'), ('e', 'e', 'e'), ('l', 'o', 'l')]
-
-# zip('ABCD', 'xy') --> Ax By
-```
-
-## enumerate()
-
-Example 2(接上 zip 的例子):
-
-[Leetcode 14. Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/)
-
-```py
-def longestCommonPrefix(strs):
-    if not strs:
-        return ""
-
-    for i, _ in enumerate(zip(*strs)):
-        if len(set(_)) > 1:
-            return strs[0][:i]
-    else:
-        return min(strs)
-
-test_strs = ["flower","flow","flight"]
-print(longestCommonPrefix(test_strs))
-```
-
-:::tip
-`enumerate()` 列举出来的下标从 0 开始，所以使用 `[:i]` 作为切片 而不是 `[:i-1]`
-:::
 
 ## urllib
 
@@ -586,3 +587,133 @@ python -m http.server
 python -m http.server 80
 #in port 80
 ```
+
+## String in Python
+
+### Get All Substring
+
+对于字符串运算中，获得所有的子串并进行操作是很常见的问题，故将代码总结如下：
+
+```py
+def getAllSubstring(s):
+    n = len(s)
+    return [s[i:j + 1] for i in range(n) for j in range(i, n)]
+```
+
+generator 版本：
+
+```py
+def getAllSubstring(s):
+    length = len(s)
+    for i in range(length):
+        for j in range(i + 1, length + 1):
+            yield(s[i:j])
+
+print([_ for _ in getAllSubstring('aaab')])
+```
+
+### Is Palindromic Substrings
+
+比较常用的方法为动态规划判定法：
+
+```py {5}
+def longestPalindrome(s):
+    dp = [[0 for _ in range(len(s))] for _ in range(len(s))]
+    for i in range(n - 1, -1, -1):
+        for j in range(i, n):
+            dp[i][j] = s[i] == s[j] and (j - i < 3 or dp[i + 1][j - 1])
+
+            if dp[i][j] and (res == '' or j - i + 1 > len(res)):
+                res = s[i:j+1]
+
+    return res
+```
+
+上述代码为求最长回文子串的代码，核心状态转移公式为第 5 行重点部分，如果是会问子串的话，则 $S_{ij}$ , 对应的 `dp[i][j]` 的值为 1.
+
+:::warning formula
+
+dp(i, j) = true, if $S_{ij}$ 是回文串。
+
+dp(i, j) = false, otherwise.
+
+=> dp(i, j) = { dp(i + 1, j - 1) and $S_i$ == $S_j$ }
+
+so,
+
+dp(i, j) = true
+
+dp(i, i + 1) = ($S_i$ == $S_{i+1}$)
+:::
+
+### longest Palindrome
+
+经过优化后，有一种简单的 Python 解法：
+
+```py
+class Solution:
+    def longestPalindrome(self, s):
+        res = ''
+        for i in range(len(s)):
+            res = max(self.helper(s, i, i), self.helper(
+                s, i, i + 1), res, key=len)
+        return res
+
+    def helper(self, s, l, r):
+        while l >= 0 and r < len(s) and s[l] == s[r]:
+            l -= 1
+            r += 1
+        return s[l + 1:r]
+
+print(Solution().longestPalindrome('cbbd'))
+```
+
+### Reverse Numebr
+
+逆序一个数，一般的 C++ 操作为：
+
+```cpp
+int sum = 0;
+while(x) {
+    sum = sum  * 10 + x % 10;
+    x /= 10;
+}
+// sum is reversed x
+```
+
+而 Python 只需要使用 `str(x)[::-1]`.
+
+### Reverse String
+
+将一个字符串翻转，可以实现的方法有：
+
+1. 递归实现
+
+2. 前后双指针交换，该方法速度较快
+
+```cpp
+void helper(int index, string str)
+{
+    if (index >= str.length())
+    {
+        return;
+    }
+    helper(index + 1, str);
+    putchar(str[index]);
+}
+void printReverse(string str)
+{
+    helper(0, str);
+}
+
+void reverseStringInplace(vector<char> &s)
+{
+    int start = 0, end = s.size() - 1;
+    while (start < end)
+    {
+        swap(s[start++], s[end--]);
+    }
+}
+```
+
+代码详情可以[参考这里](https://github.com/chenweigao/_code/blob/b23fb3b74e/cpp/recursion_reverse_string.cpp)

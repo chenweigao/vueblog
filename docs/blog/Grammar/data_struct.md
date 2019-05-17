@@ -43,10 +43,32 @@ Explaination:
 - 我们遍历字符串 s, 遇到左括号则入栈，遇到右括号 (keys) 则弹出栈顶元素进行比较（在栈非空的前提下）
 - 最终返回值：栈空则合法，等价于 `return stack==[]`
 
-
 ## Map and Set
 
 Map 和 Set 都是关联容器，关联容器支持普通容器的操作，但不支持顺序容器位置相关的操作  (`push_back` or `push_front`)
+
+### HashMap in Python - Counter
+
+```py
+from collections import Counter
+```
+
+在腾讯面试的过程中，被问到了一个题目，要求找出一个数组中第一个单独出现的数字，例如 [2, 4, 2, 3, 1, 3], 则结果应该是 4.
+
+题目如果用 hashmap 去求解的话只需要：
+
+```py
+
+from collections import Counter
+nums = [2, 4, 2, 3, 1, 3]
+
+nums_counter = Counter(nums)
+
+res = min(nums_counter, key = nums_counter.get)
+
+```
+
+`Counter` 为 Python 内置的 hashmap, 具体可以查询 [Counter](https://docs.python.org/3/library/collections.html#collections.Counter), 对于那个排序而言，`key` 会指定一个函数用于元素的比较，`nums_counter.get()` 方法用于得到某个 key 的 value 值。
 
 ### unordered_map
 
@@ -123,7 +145,7 @@ for(auto &kv : my_map)
 
 Example: 忽略常见单词，只对不在集合中的单词统计出现次数：
 
-```cpp {3}
+```cpp
 set<string> exclude = {"some", "words"};
 //code
 if(exclude.find(word) == exclude.end()) {
@@ -140,6 +162,123 @@ auto is_exclude = std::binary_search(exclude.cbegin(), exclude.cend(), word);
 //bool binary_search()
 auto reply = is_exclude ? "excluded" : "not excluded";
 ```
+
+## Linked List
+
+### Reverse Linked List
+
+- Iterative method
+
+```py
+def reverseList(self, head):
+
+    preNode = None
+    curNode = head
+
+    while curNode is not None:
+        next = curNode.next
+        curNode.next = preNode
+        preNode = curNode
+        curNode = next
+
+    return preNode
+```
+
+- Recursive method
+
+ 1) Divide the list in two parts - first node and rest of the linked list.
+ 2) Call reverse for the rest of the linked list.
+ 3) Link rest to first.
+ 4) Fix head pointer
+
+由于迭代较快，故建议经常使用迭代法。
+
+### Intersection of Linked List
+
+判断两个链表是否有交叉(Intersection), LC160.
+
+实现思路有：
+
+- 根据链表是否有环判断
+
+先遍历一个链表找到其尾部，然后将尾部的 next 指针指向另一个链表，这样子两个链表就合成了一个链表，判断原来的两个链表是否有交叉也就变成了判断一个**单链表是否有环**。
+
+找出交点的方法是，遍历两个链表，长度较长的链表指针向后移动 |len1 - len2| 个单位，然后开始遍历两个链表，判断节点是否相等（节点的地址）。
+
+- 根据总结的规律判断
+
+该方法比较巧妙，代码如下：
+
+```py
+def getIntersectionNode(self, headA, headB):
+    if headA is None or headB is None:
+        return None
+
+    pa = headA
+    pb = headB
+
+    while pa is not pb:
+        pa = headB if pa is None else pa.next
+        pb = headA if pb is None else pb.next
+
+    return pa
+```
+
+核心思路在于，同时遍历两个链表，如果到链表结束，则将指针指向另一个链表，遍历直到两个移动的指针相等。
+
+:::tip 判断单链表是否有环
+
+一般判断单链表是否有环的方法是设置一块一慢两个指针，看其是否会相等。
+
+:::
+
+### Implement LRU
+
+LRU 为最近最少使用算法，常常用于缓存技术中，其实现方式为**循环双向链表**，实现思想为：
+
+将 chche 的所有位置都用双向链表链接起来，当一个位置被命中以后，将该位置指向链表头的位置，新加入的 chche 直接加到链表头中。
+
+这样，在多次进行 cache 操作后，最近被命中的，就会被向链表头方向移动，而没被命中的向链表后面移动。
+
+缓存已满的时候新加入的数据节点插入链表头部，而删除链表的尾节点。
+
+## Binary Tree
+
+### Level Order Traversal
+
+[LC102 - Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
+
+代码实现如下：
+
+[Code GitHub - binary_tree](https://github.com/chenweigao/_code/blob/master/python/binary_tree.py)
+
+```py
+def levelOrder(root):
+    '''
+    二叉树的层次遍历
+    '''
+    if not root:
+        return []
+
+    result = [[root.data]]  # 存储层次遍历的结果
+    current = [root]  # 存储当前层次内的节点，在循环里面更新
+
+    while True:
+        node_list = []  # 临时存储节点
+        for node in current:  # 循环内遍历
+            if node.left:
+                node_list.append(node.left)
+            if node.right:
+                node_list.append(node.right)
+        if node_list == []:
+            break
+        vals = [node.data for node in node_list]  # 拿出当前层次的节点的值
+        result.append(vals)
+        current = node_list  # 更新层次
+    return result
+```
+
+这是目前可以写出的比较高效的一个算法，应当牢记。
 
 ## BST
 
