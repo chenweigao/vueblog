@@ -1,14 +1,12 @@
 # Algorithm Analysis and Design
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>
-
 ## Asymptotic Growth
 
 ### O-notation
 
 - O-notation(Bog-O), When we say “the running time is $O(n^2)$” we mean that the worst-case running time is $O(n^2)$ – the best case might be better. (渐进上界)
-- When we say “the running time is Ω(n2)” we mean that the best-case running time is $$Ω(n^2)$$ – the worst case might be worse.(渐进下界)
+
+- When we say the running time is $\Omega (n^2)$ we mean that the best-case running time is $\Omega (n^2)$ – the worst case might be worse.(渐进下界)
 
 - Substitution method
 - Recursion-tree method
@@ -46,7 +44,7 @@ another example:
   - one side of partition has no elements.
   - $T(n) = T(0) + T(n–1) + cn$
 - Expected running time $O(nlgn)$
-  - If we are really lucky, partition splits the array evenly n/2 : $T(n)=2T(n/2)+Θ(n)=Θ(nlgn)$
+  - If we are really lucky, partition splits the array evenly $\frac{2}{n}$ : $T(n)=2T(n/2)+Θ(n)=Θ(nlgn)$
 
 ```py
 def qsort(arr):
@@ -224,7 +222,7 @@ math.floor(7/4) # 1 or 7//4
 round(2.6) # 3 四舍五入
 ```
 
-一般而言，我们在快速排序或者二分查找中如果要计算 mid, 则可以使用 `mid = left + (right - left)/2` 来计算，可以参考[二分查找 python 代码](https://github.com/chenweigao/_code/blob/master/python/binary_search.py)
+一般而言，我们在快速排序或者二分查找中如果要计算 mid, 则可以使用 $$mid = left + \frac{right - left}{2}$$ 来计算，可以参考[二分查找 python 代码](https://github.com/chenweigao/_code/blob/master/python/binary_search.py)
 
 ## DFS and BFS
 

@@ -53,6 +53,13 @@ module.exports = {
     ['@vuepress/medium-zoom'],
     ['@vuepress/nprogress'],
     ['vuepress-plugin-reading-time'],
+    ['mathjax', {
+      target: 'svg',
+      macros: {
+        '*': '\\times',
+      },
+      showError: true
+    }]
     // ['git-log']
 
   ],
