@@ -405,20 +405,21 @@ int main(int argc, char const *argv[])
 //6 punctuation characters insome string!!!@#!
 ```
 
-:::tip note
+### Charater Type
+
 Sometimes we need to process only a specific character, theses functions helps us change the characteristics of a character. These functions are defined in the `cctype` headers.
 
-- isalnum(c) : true if c is a letter or digit
+- `isalnum(c)`: true if c is a letter or digit
 
-- isalpha(c) : letter
+- `isalpha(c)`: letter
 
-- isdigital(c) : digit
+- `isdigital(c)`: digit
 
-- islower(c)/isupper(c), tolower(c)/toupper(c)
+- `islower(c)/isupper(c)`, tolower(c)/toupper(c)
 
-- isspace(c): true if c is whitespace(a space, tab, vertical tab, return, newline or foemfeed)
+- `isspace(c)`: true if c is whitespace(a space, tab, vertical tab, return, newline or formfeed)
 
-:::
+[This is Python String functions](https://www.runoob.com/python3/python3-string.html)
 
 ### toupper()
 
@@ -513,6 +514,176 @@ memcpy(b, a, sizeof(a))
 #include<string.h>
 memset(a, 0, sizeof(a))
 ```
+
+## String in Leetcode
+
+### Get All Substring
+
+对于字符串运算中，获得所有的子串并进行操作是很常见的问题，故将代码总结如下：
+
+```py
+def getAllSubstring(s):
+    n = len(s)
+    return [s[i:j + 1] for i in range(n) for j in range(i, n)]
+```
+
+generator 版本：
+
+```py
+def getAllSubstring(s):
+    length = len(s)
+    for i in range(length):
+        for j in range(i + 1, length + 1):
+            yield(s[i:j])
+
+print([_ for _ in getAllSubstring('aaab')])
+```
+
+### Longest Palindrome
+
+判断一个字符串是否为回文串，比较常用的方法为动态规划判定法：
+
+```py
+def longestPalindrome(s):
+    dp = [[0 for _ in range(len(s))] for _ in range(len(s))]
+    for i in range(n - 1, -1, -1):
+        for j in range(i, n):
+            dp[i][j] = s[i] == s[j] and (j - i < 3 or dp[i + 1][j - 1])
+
+            if dp[i][j] and (res == '' or j - i + 1 > len(res)):
+                res = s[i:j+1]
+
+    return res
+```
+
+上述代码为求最长回文子串的代码，核心状态转移公式为第 5 行重点部分，如果是会问子串的话，则 $S_{ij}$ 对应的 `dp[i][j]` 的值为 1.
+
+:::warning formula
+
+$dp(i, j) = true$, if $S_ {ij}$ 是回文串。
+
+$dp(i, j) = false$, otherwise.
+
+=> $dp(i, j)$ = { $dp(i + 1, j - 1)$ and $S_i == S_j$ }
+
+so,
+
+$dp(i, j) = true$
+
+$dp(i, i + 1)$ = ($S_i$ == $S_ {i+1}$)
+:::
+
+经过优化后，有一种简单的 Python 解法：
+
+```py
+class Solution:
+    def longestPalindrome(self, s):
+        res = ''
+        for i in range(len(s)):
+            res = max(self.helper(s, i, i), self.helper(
+                s, i, i + 1), res, key=len)
+        return res
+
+    def helper(self, s, l, r):
+        while l >= 0 and r < len(s) and s[l] == s[r]:
+            l -= 1
+            r += 1
+        return s[l + 1:r]
+
+print(Solution().longestPalindrome('cbbd'))
+```
+
+### Is Palindrome
+
+又比如 [LC125](https://leetcode.com/problems/valid-palindrome/) 需要验证一个字符串是否为回文串，给出的字符串中存在空格和下划线等非字母字符，也存在大小写，但是不区分大小写，空字符串也是回文串。
+
+我们的解决思路是，使用双指针分别从字符的开头和结尾处开始遍历整个字符串，相同则继续寻找，不相同直接返回 `false`.
+
+注意到使用的内置 Python String 函数有：
+
+- `lower()`: 转化字符串中的所有大写为小写，对应的为 `upper()`
+
+- `isalnum()`: 判断是否字符或数字
+
+- `replace(old, new, [,max])`: 替换字符串，如果 max 指定，则最多不超过 max 次
+
+我们也可以使用 Python 中自带的 `translate()` 方法构造一个字典，该方法速度较快，具体的解析可以参考 [POST Python: str.maketrans()](./python.html#high-level-function)
+
+```py
+def isPalindrome(self, s: str) -> bool:
+    s = s.translate(str.maketrans('', '', string.punctuation))
+    s = s.lower()
+    s = s.replace(' ', '')
+    return (s == s[::-1])
+```
+
+也可以使用正则表达式：
+
+```py
+import re
+s = re.sub(r'[^0-9a-z]','', s.lower())
+```
+
+或者使用 `filter()`:
+
+```py
+s = filter(s.isalnum(), s.lower())
+# return a filter object, we could convert it to list
+```
+
+### Palindrome Partitioning
+
+这道题目是 [LC 131](https://leetcode.com/problems/palindrome-partitioning/), 给定一个字符串，要求分割该字符串，使得分割出来的子串都是回文串，返回所有可能的分割方案。
+
+### Reverse Numebr
+
+逆序一个数，一般的 C++ 操作为：
+
+```cpp
+int sum = 0;
+while(x) {
+    sum = sum  * 10 + x % 10;
+    x /= 10;
+}
+// sum is reversed x
+```
+
+而 Python 只需要使用 `str(x)[::-1]`.
+
+### Reverse String
+
+将一个字符串翻转，可以实现的方法有：
+
+1. 递归实现
+
+2. 前后双指针交换，该方法速度较快
+
+```cpp
+void helper(int index, string str)
+{
+    if (index >= str.length())
+    {
+        return;
+    }
+    helper(index + 1, str);
+    putchar(str[index]);
+}
+void printReverse(string str)
+{
+    helper(0, str);
+}
+
+void reverseStringInplace(vector<char> &s)
+{
+    int start = 0, end = s.size() - 1;
+    while (start < end)
+    {
+        swap(s[start++], s[end--]);
+    }
+}
+```
+
+代码详情可以[参考这里](https://github.com/chenweigao/_code/blob/b23fb3b74e/cpp/recursion_reverse_string.cpp)
 
 ## Vector
 

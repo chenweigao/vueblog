@@ -1,5 +1,5 @@
 
-# Fluent Python
+# Python Note: Everything in Python
 
 > Python’s simplicity lets you become productive quickly, but this often means you aren’t using everything it has to offer.  With this hands-on guide, you’ll learn how to write        effective, idiomatic Python code by leveraging its best—and possibly most neglected—features. Author Luciano Ramalho takes you through Python’s core language features and            libraries, and shows you how to make your code shorter, faster, and more readable at the same time.
 
@@ -181,6 +181,34 @@ class Solution:
 上述代码实现了一个求解某序列是否在键盘的同一行的操作，通过求交集看是否结果等于自身就可以很方便地求解出结果。
 
 ## High-level Function
+
+### str.maketrans()
+
+用于创建字符映射的转换表，接收两个字符串参数，第一个参数表示需要转化的字符，第二个参数表示转换的目标。
+
+```py
+in_tab = 'aeiou'
+out_tab = '12345'
+tran_tab = str.maketrans(in_tab, out_tab)
+# tran_tab: {97: 49, 101: 50, 105: 51, 111: 52, 117: 53}
+
+str_test = "this is string example....wow!!!"
+str_test.translate(tran_tab)
+# th3s 3s str3ng 2x1mpl2....w4w!!!
+```
+
+注意到 `str.maketrans()` 可以存在第三个参数，其必须为一个字符串，比如 `string.punctuation`(表示所有的标点符号), 在指定了第三个参数以后，第三个字符串中所有的字符(对应为其 ASCII 码 `ord()`)都会在 tran_tab 字典中被映射为 `None`, 实现的作用为在 `translate()` 时可以去掉字符串中所有的标点(结果会变成 `'th3s 3s 1n 2x1mpl2w4w'`)
+
+### Python import string
+
+```py
+import string
+dir(string)
+```
+
+可以查看 string 的所有参数，然后使用它：
+
+`string.punctuation`: 所有的标点符号...等使用方法。
 
 ### count()
 
@@ -587,133 +615,3 @@ python -m http.server
 python -m http.server 80
 #in port 80
 ```
-
-## String in Python
-
-### Get All Substring
-
-对于字符串运算中，获得所有的子串并进行操作是很常见的问题，故将代码总结如下：
-
-```py
-def getAllSubstring(s):
-    n = len(s)
-    return [s[i:j + 1] for i in range(n) for j in range(i, n)]
-```
-
-generator 版本：
-
-```py
-def getAllSubstring(s):
-    length = len(s)
-    for i in range(length):
-        for j in range(i + 1, length + 1):
-            yield(s[i:j])
-
-print([_ for _ in getAllSubstring('aaab')])
-```
-
-### Is Palindromic Substrings
-
-比较常用的方法为动态规划判定法：
-
-```py {5}
-def longestPalindrome(s):
-    dp = [[0 for _ in range(len(s))] for _ in range(len(s))]
-    for i in range(n - 1, -1, -1):
-        for j in range(i, n):
-            dp[i][j] = s[i] == s[j] and (j - i < 3 or dp[i + 1][j - 1])
-
-            if dp[i][j] and (res == '' or j - i + 1 > len(res)):
-                res = s[i:j+1]
-
-    return res
-```
-
-上述代码为求最长回文子串的代码，核心状态转移公式为第 5 行重点部分，如果是会问子串的话，则 $S_{ij}$ , 对应的 `dp[i][j]` 的值为 1.
-
-:::warning formula
-
-dp(i, j) = true, if $S_{ij}$ 是回文串。
-
-dp(i, j) = false, otherwise.
-
-=> dp(i, j) = { dp(i + 1, j - 1) and $S_i$ == $S_j$ }
-
-so,
-
-dp(i, j) = true
-
-dp(i, i + 1) = ($S_i$ == $S_{i+1}$)
-:::
-
-### longest Palindrome
-
-经过优化后，有一种简单的 Python 解法：
-
-```py
-class Solution:
-    def longestPalindrome(self, s):
-        res = ''
-        for i in range(len(s)):
-            res = max(self.helper(s, i, i), self.helper(
-                s, i, i + 1), res, key=len)
-        return res
-
-    def helper(self, s, l, r):
-        while l >= 0 and r < len(s) and s[l] == s[r]:
-            l -= 1
-            r += 1
-        return s[l + 1:r]
-
-print(Solution().longestPalindrome('cbbd'))
-```
-
-### Reverse Numebr
-
-逆序一个数，一般的 C++ 操作为：
-
-```cpp
-int sum = 0;
-while(x) {
-    sum = sum  * 10 + x % 10;
-    x /= 10;
-}
-// sum is reversed x
-```
-
-而 Python 只需要使用 `str(x)[::-1]`.
-
-### Reverse String
-
-将一个字符串翻转，可以实现的方法有：
-
-1. 递归实现
-
-2. 前后双指针交换，该方法速度较快
-
-```cpp
-void helper(int index, string str)
-{
-    if (index >= str.length())
-    {
-        return;
-    }
-    helper(index + 1, str);
-    putchar(str[index]);
-}
-void printReverse(string str)
-{
-    helper(0, str);
-}
-
-void reverseStringInplace(vector<char> &s)
-{
-    int start = 0, end = s.size() - 1;
-    while (start < end)
-    {
-        swap(s[start++], s[end--]);
-    }
-}
-```
-
-代码详情可以[参考这里](https://github.com/chenweigao/_code/blob/b23fb3b74e/cpp/recursion_reverse_string.cpp)
