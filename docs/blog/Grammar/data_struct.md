@@ -242,7 +242,7 @@ LRU 为最近最少使用算法，常常用于缓存技术中，其实现方式�
 
 缓存已满的时候新加入的数据节点插入链表头部，而删除链表的尾节点。
 
-具体的实现代码可以[参考这里](https://github.com/chenweigao/_code/blob/30551f4e92dab06e127be316cd2f3950eda099ef/LeetCode/LC146_LRU_cache_double_linked_list.py)
+具体的实现代码可以[参考 GitHub](https://github.com/chenweigao/_code/blob/30551f4e92dab06e127be316cd2f3950eda099ef/LeetCode/LC146_LRU_cache_double_linked_list.py)
 
 ```py
 class LRUCache:
@@ -260,6 +260,23 @@ class LRUCache:
 - `key`: LRUCache 中的 key
 
 - `value`: 一个 `Node` 类型的节点，存储其 `prev` 和 `next` 信息以及最关键的 `value`
+
+其 `put()` 方法为：
+
+```py
+def put(self, key: int, value: int) -> None:
+    if key in self.dic:
+        self._remove(dic[key])
+    n = Node(key, value)
+    self._add(n)
+    self.dic[key] = n
+    if len(self.dic) > self.capacity:
+        first_node = self.head.next
+        self._remove(first_node)
+        del self.dic[first_node.key]
+```
+
+然后使用双向链表的操作进行插入（尾插）和删除（第一个节点）
 
 也可以使用 Python 中的 `collection.OrderedDict` 来进行存储，使用其 `move_to_end()` 和 `popitem()` 方法，具体代码可以[参考这里](https://github.com/chenweigao/_code/blob/30551f4e92dab06e127be316cd2f3950eda099ef/LeetCode/LC146_LRU_ordereddic.py)
 

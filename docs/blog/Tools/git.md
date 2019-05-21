@@ -81,7 +81,7 @@ git config --global credential.helper cache
 git config --global credential.helper store
 ```
 
-## GitHub accelerate
+## GitHub Accelerate
 
 1. Update the host in `C:\Windows\System32\drivers\etc`
 
@@ -200,7 +200,7 @@ git log -p -2
 git log --stat
 ```
 
-### Remote
+## Remote
 
 列出远程仓库的简短名称:
 
