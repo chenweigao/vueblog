@@ -242,6 +242,27 @@ LRU 为最近最少使用算法，常常用于缓存技术中，其实现方式�
 
 缓存已满的时候新加入的数据节点插入链表头部，而删除链表的尾节点。
 
+具体的实现代码可以[参考这里](https://github.com/chenweigao/_code/blob/30551f4e92dab06e127be316cd2f3950eda099ef/LeetCode/LC146_LRU_cache_double_linked_list.py)
+
+```py
+class LRUCache:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        seld.dic = {}
+        self.head = Node(0, 0)
+        self.tail = Node(0, 0)
+        self.head.next = self.tail
+        self.tail.prev = self.head
+```
+
+思路是初始化一个 `dict` 用于存储，对双向链表进行操作的同时对这个 `dict` 进行赋值操作，`dict` 的结构为：
+
+- `key`: LRUCache 中的 key
+
+- `value`: 一个 `Node` 类型的节点，存储其 `prev` 和 `next` 信息以及最关键的 `value`
+
+也可以使用 Python 中的 `collection.OrderedDict` 来进行存储，使用其 `move_to_end()` 和 `popitem()` 方法，具体代码可以[参考这里](https://github.com/chenweigao/_code/blob/30551f4e92dab06e127be316cd2f3950eda099ef/LeetCode/LC146_LRU_ordereddic.py)
+
 ## Binary Tree
 
 ### Level Order Traversal

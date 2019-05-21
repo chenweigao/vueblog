@@ -493,6 +493,23 @@ Someone else called me! my name is test
 Someone else called me! my name is test
 ```
 
+## Collections
+
+### OrderedDict
+
+```py
+from collections import OrderedDict
+```
+
+`OrderedDict` 是一个可以记录其插入次序的字典，可以结合排序，构造一个排序的字典。
+
+> If the value of a certain key is changed, the position of the key remains unchanged in OrderedDict.
+> Deleting and re-inserting the same key will push it to the back as OrderedDict however maintains the order of insertion.
+
+- `move_to_end()`: 将该元素放置于字典的尾部
+
+- `popitem(last=True)`: pop 元素使其成为先进先出队列
+
 ## decorators
 
 ### @property
