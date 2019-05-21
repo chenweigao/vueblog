@@ -257,9 +257,9 @@ class LRUCache:
 
 思路是初始化一个 `dict` 用于存储，对双向链表进行操作的同时对这个 `dict` 进行赋值操作，`dict` 的结构为：
 
-- `key`: LRUCache 中的 key
+- key: LRUCache 中的 key
 
-- `value`: 一个 `Node` 类型的节点，存储其 `prev` 和 `next` 信息以及最关键的 `value`
+- value: 一个 `Node` 类型的节点，存储其 `prev` 和 `next` 信息以及最关键的 `value`
 
 其 `put()` 方法为：
 
