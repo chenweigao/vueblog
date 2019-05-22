@@ -199,6 +199,8 @@ str_test.translate(tran_tab)
 
 注意到 `str.maketrans()` 可以存在第三个参数，其必须为一个字符串，比如 `string.punctuation`(表示所有的标点符号), 在指定了第三个参数以后，第三个字符串中所有的字符(对应为其 ASCII 码 `ord()`)都会在 tran_tab 字典中被映射为 `None`, 实现的作用为在 `translate()` 时可以去掉字符串中所有的标点(结果会变成 `'th3s 3s 1n 2x1mpl2w4w'`)
 
+LeetCode 上有题目可以使用该方法求解回文子串，具体可以参考[代码](https://github.com/chenweigao/_code/blob/master/LeetCode/LC125_valid_palindrome.py)
+
 ### Python import string
 
 ```py
@@ -208,7 +210,11 @@ dir(string)
 
 可以查看 string 的所有参数，然后使用它：
 
-`string.punctuation`: 所有的标点符号...等使用方法。
+- `string.punctuation`: 所有的标点符号...等使用方法;
+
+- `string.ascii_letters`: 所有的大小写字母；
+
+- `string.digits`: 所有的数字。
 
 ### count()
 
@@ -493,6 +499,18 @@ Someone else called me! my name is test
 Someone else called me! my name is test
 ```
 
+### random()
+
+```py
+import random
+import string
+src = string.digits + string.ascii_letters
+password = random.sample(src, 4)
+print(''.join(password))
+```
+
+利用 `random.sample()` 生成 4 位随机密码。
+
 ## Collections
 
 ### OrderedDict
@@ -556,6 +574,22 @@ str = input("please input: ")
 print("your input is: ", str)
 ```
 
+In **Newcoder** programming test, somethings we need custom input, there are some ways for us to reference:
+
+- Mutil input and output
+
+例如第一行表示接下来要输入的行数，接下来若干行输入，并且涉及多组输入输出时：
+
+```py
+while True:
+    try:
+        n = int(input())
+        lists = [int(input()) for _ in range(n)]
+        # the code
+    except:
+        break
+```
+
 ## Effective Python
 
 ### Function Closure
@@ -586,7 +620,6 @@ def sort_priority(values, group):
 
 在这个例子中的错误示例中，使用 `append` 把所有的结果都放在列表里面，如果输入量非常大的话，会导致程序消耗尽内存而奔溃。
 
-
 ## urllib
 
 ### Reading json file from URL
@@ -602,6 +635,21 @@ with request.urlopen('http://118.24.241.17/path.json') as f:
 
 `data_json` is the json file we need.
 
+## Regular Expression - re
+
+[参考这篇教程](https://deerchao.net/tutorials/regex/regex.htm)
+
+在 Python 中，如果想使用正则表达式：
+
+```py
+import re
+re.match(r'^[1-9]\d{4,11}$', nums)
+
+pattern = re.compile(r'some regular expression')
+re.findall(pattern, sentence)
+# find all matched of pattern in sentence
+```
+
 ## Python Tools
 
 ### IPython
@@ -609,6 +657,16 @@ with request.urlopen('http://118.24.241.17/path.json') as f:
 ```bash
 pip install jupyter
 jupyter notebook
+```
+
+### %timeit
+
+In `IPython`, we could use `%timeit` to calculate the time consume of a command:
+
+```py
+In [1]: %timeit [1, 2, 3, 4, 5]
+
+In [2]: %timeit (1, 2, 3, 4, 5)
 ```
 
 ### Personalized
