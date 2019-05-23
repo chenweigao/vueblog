@@ -528,6 +528,8 @@ from collections import OrderedDict
 
 - `popitem(last=True)`: pop 元素使其成为先进先出队列
 
+[这是一道华为的笔试题，用于处理一些文件日志功能](https://github.com/chenweigao/_code/blob/f43526c616e0d3799bbc6d1e2f703ebc2e9ad355/interview/huawei2016_2.py)
+
 ## decorators
 
 ### @property
@@ -542,6 +544,46 @@ where, `fget` is function to get value of the attribute, `fset` is function to s
 
 To better understand this, [see this blog](https://www.programiz.com/python-programming/property).
 
+一般情况下，我们在定义一个类的时候可能会涉及到访问这个类中的私有元素，一般情况下我们会使用一个函数来返回它，但是 Python 中可以使用 `@property` 装饰器来优雅地实现这个功能。
+
+```py
+class ClassName(object):
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        self._name = value
+
+# use the value of 'name'
+c = ClassName()
+c.name
+# return the self._name's value
+c.name = 'weigao'
+# ok
+```
+
+还有一个例子可以参考这里 [Thread code](https://github.com/chenweigao/multi_thread_and_process/blob/master/threading_Thread.py)
+
+```py
+class Screen(object):
+    @property
+    def width(self):
+        return self._width
+
+    @width.setter
+    def width(self, value):
+        self._width = value
+
+    @property
+    def resolution(self):
+        return self._width * 1024
+```
+
+在上述例子中，`width` 为可读写的，而 `resolution` 为只读属性。
+
 ## Python3 I/O
 
 ### Format Output
@@ -555,6 +597,9 @@ print('{0} and {1}'.format('Google', 'Baidu'))
 >>> Google and Baidu
 print('{1} and {0}'.format('Google', 'Baidu'))
 >>> Baidu and Google
+
+print(f'some string')
+# raw string
 
 print('{0:2d} {1:3f}'.format(1,2))
 # specifies the length of the placeholder
@@ -690,3 +735,31 @@ python -m http.server
 python -m http.server 80
 #in port 80
 ```
+
+## Networks and Interprocess Communication
+
+### Coroutines-协程
+
+> 协程通过 `async/await` 语法进行声明，是编写异步应用的推荐方式。[官方教程](https://docs.python.org/zh-cn/3/library/asyncio-task.html)
+
+协程有两个紧密关联的概念：
+
+1. 协程函数：定义形式为 `asyncio def` 的函数
+
+2. 协程对象：调用协程函数所返回的对象
+
+在 Python 中，**单线程 + 异步 I/O** 的编程模型被称为协程，有了协程的支持，就可以基于事件驱动编写高效的多任务程序。
+
+### asyncio
+
+```py
+import asyncio
+```
+
+- 运行一个协程使用 `asyncio.run()`, 该函数用于函数运行的入口
+
+- 等待一个协程使用 `asyncio.sleep(1)`
+
+- 使用协程并发处理多任务使用 `asyncio.gather()`
+
+记住协程是 `await` 对象！[基础的用法可以参考代码](https://github.com/chenweigao/multi_thread_and_process/blob/master/asyncio_coroutines.py)
