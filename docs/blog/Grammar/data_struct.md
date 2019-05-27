@@ -43,6 +43,27 @@ Explaination:
 - 我们遍历字符串 s, 遇到左括号则入栈，遇到右括号 (keys) 则弹出栈顶元素进行比较（在栈非空的前提下）
 - 最终返回值：栈空则合法，等价于 `return stack==[]`
 
+### Validate Stack Sequence
+
+给定入栈和出栈序列，判断是否合法：
+
+```py
+def validateStackSequences(pushed: 'List[int]', popped: 'List[int]') -> bool:
+    i = 0
+    stack = []
+    for x in pushed:
+        stack.append(x)
+        while stack and i < len(popped) and stack[-1] == popped[i]:
+            stack.pop()
+            i += 1
+    return stack == []
+    # returen i == len(poped)
+```
+
+注意到我们不改变 `pushed` 和 `poped`, 而是使用一个 `stack = []` 作为辅助操作。
+
+当没有找到与 `stack` 栈顶元素相等的元素时，不停地往 `stack` 中添加元素，
+
 ## Map and Set
 
 Map 和 Set 都是关联容器，关联容器支持普通容器的操作，但不支持顺序容器位置相关的操作  (`push_back` or `push_front`)

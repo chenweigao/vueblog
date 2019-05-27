@@ -349,11 +349,51 @@ print(count) #2
 
 上述代码中 `n &= (n-1)` 等价的效果是**去掉 n 二进制数的最后一位 1**, 以 33 为例， 33 的二进制表示为 `0b100001`, 在运行时候会变成 `0b100000`(32), 相当于去掉了最后一位的 1.
 
+[LC-338 使用动态规划求解 0-n 之间每个数分别对应多少个 1](https://leetcode.com/problems/counting-bits/)
+
+> Given a non negative integer number num. For every numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in their binary representation and return them as an array.
+
+代码如下：
+
+```py
+def countBits(num: int) -> 'List[int]':
+    dp = [0 for _ in range(num + 1)]
+    dp[0] = 0
+
+    for i in range(1, num + 1):
+        dp[i] = dp[i & (i - 1)] + 1
+    return dp
+```
+
+|   dp   | 0    | 1                             | 2                              | 3                         |
+| :----: | ---- | ----------------------------- | ------------------------------ | ------------------------- |
+| result | 0    | dp[1 & 0] + 1 = dp[0] + 1 = 1 | dp[2 & 1]  + 1 = dp[0] + 1 = 1 | dp[3 & 2] = dp[2] + 1 = 2 |
+
+我们已经知道，**一个数 & 比自己小 1 的数的结果相当于 drop 掉这个数中的一个 1**，那么 dp[0] = 0, 依次计算就可以得到结果。
+
+
 :::warning 位操作小 TIP
 对于位操作而言，一个数 N：`N / 8` equals `N >> 3`, `N % 8` equals `N & 7`.
 
 只要满足是 2 的整次幂：`99 / 32 == 99 >> 5`, `99 % 32 == 99 & 31`.
 :::
+
+十进制数转化为十六进制：
+
+```py
+def toHex(self, num: int) -> str:
+    dic = '0123456789abcdef'
+
+    if num == 0:
+        return "0"
+    res = ''
+
+    while num != 0 and len(res) < 8:
+        res = dic[(num & 15)] + res  # num & 15 == num % 16
+        # 把 res 加到后面，不然要进行 reverse
+        num = num >> 4 # num / 16 == num >> 4
+    return res
+```
 
 是否 4 的倍数：
 
@@ -525,3 +565,78 @@ def maxSubArrayDP(self, nums):
 - $dp(i, j) = dp(i - 1, j)$  选择不 pick 第 i 个元素
 
 - $dp(i, j) = dp(i - 1, j - nums[i - 1])$  选择 pick 第 i 个元素，表示 j 由当前的 nums[i - 1] 组成，而之前的里面不包括 nums[i - 1]
+
+### Climbing Stairs
+
+[可以参考这个文章对于该问题的讲解](https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&mid=2247484350&idx=1&sn=fc88aa125f5a5269575b4c4d83774f41&chksm=fa0e6c3fcd79e5297257a05b8c75898b4059b1193956c702ff5ef3f2d8d46432bb7484bf6428&token=110841213&lang=zh_CN#rd)
+
+[Leetcode 70](https://leetcode.com/problems/climbing-stairs/)
+
+使用动态规划的思想，思路可以是：
+
+可以根据第一步的走法把所有走法分为两类：
+
+1. 第一类是第一步走了 1 个台阶
+
+2. 第二类是第二步走了 2 个台阶
+
+所以 n 个台阶的走法就等于先走 1 阶后， n-1 个台阶的走法，然后加上先走 2 阶后， n-2 个台阶的走法，用公式表示就是：
+
+$f(n) = f(n - 1) + f(n - 2)$
+
+很容易知道，当有一个台阶的时候 `f(1) = 1`, 两个台阶的时候 `f(2) = 2`.
+
+所以可以写出代码：
+
+```py
+def climbStairs(n: int) -> int:
+    if n == 1:
+        return 1
+    if n == 2:
+        return 2
+    return climbStairs(n - 1) + climbStairs(n - 2)
+```
+
+该算法算法计算相当于计算了一个高为 N-1 的二叉树，所以其时间复杂度近似看做 $O(2^N)$
+
+但是这样的递归写法很容易产生重复计算，我们可以采用自底向上的写法避免这种情况：
+
+| 台阶数 |  1   |  2   |    3     |     4     |     5     |
+| :----: | :--: | :--: | :------: | :-------: | :-------: |
+| 走法数 |  1   |  2   | 1+ 2 = 3 | 2 + 3 = 5 | 3 + 5 = 8 |
+
+从表格中可以看出，由前往后计算只需要一次计算，然后返回最后一个值就可以了，代码实现如下：
+
+```py
+def climbStairs(n):
+    if n == 1:
+        return 1
+    dp = [0 for _ in range(n)]
+    dp[1] = 1
+    dp[2] = 2
+    for i in range(3, n + 1):
+        dp[i] = dp[i - 1] + dp[i - 2]
+    return dp[n]
+```
+
+该方法的时间复杂度为 $O(n)$, 空间复杂度为 $O(1)$.
+
+进而会有一个更深层次的问题为，假设上每一层楼都有消耗，而消耗完之后可以选择上 1 阶或者 2 阶，现在需要求解爬上楼顶的最少消耗，下标从 0 开始，爬上楼顶意味着需要经过 n-1 层到达 n 层以后。
+
+代码实现为：
+
+```py
+def minCostClimbingStairs(cost: List[int]) -> int:
+    n = len(cost)
+    dp = [0 for _ in range(n)]
+    dp[0] = cost[0]
+    dp[1] = cost[1]
+
+    for i in range(2, n):
+        dp[i] = cost[i] + min(dp[i - 1], dp[i - 2])
+
+
+    return min(dp[n - 1], dp[n - 2])
+```
+
+对比代码好好理解其动态规划的思想。
