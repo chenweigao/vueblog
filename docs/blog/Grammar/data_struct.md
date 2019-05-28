@@ -21,17 +21,15 @@
 Implementation:
 
 ```py
-def isValid(s):
+def isValid(self, s: str) -> bool:
+    pairs = { '[' : ']', '{' : '}', '(' : ')' }
     stack = []
-    mapping = {"]":"[", "}":"{", ")":"("}
 
     for char in s:
-        if char in mapping.keys():
-            top_element = stack.pop() if stack else '#'
-            if mapping[char] != top_element:
-                return False
-        else:
+        if char in pairs:
             stack.append(char)
+        elif len(stack) == 0 or pairs[stack.pop()] != char:
+            return False
     return not stack
 # s = "()"
 ```
@@ -63,6 +61,45 @@ def validateStackSequences(pushed: 'List[int]', popped: 'List[int]') -> bool:
 注意到我们不改变 `pushed` 和 `poped`, 而是使用一个 `stack = []` 作为辅助操作。
 
 当没有找到与 `stack` 栈顶元素相等的元素时，不停地往 `stack` 中添加元素，
+
+### Next Greater Element
+
+[https://leetcode.com/problems/next-greater-element-i/](https://leetcode.com/problems/next-greater-element-i/)
+
+这道题目的大意是给定两个 List, 比如：
+
+`find_nums`: [4, 1, 2], `nums`:      [1, 3, 4, 2]
+
+需要找出 `nums` 中 `find_nums` 对应的下一个比它大的元素，未找到就返回 -1, 在这个例子中的结果是：
+
+`res`:       [-1, 3, -1]
+
+```py
+def nextGreaterElement(find_nums, nums):
+    # [4, 1, 2]
+    # [1, 3, 4, 2]
+    # [-1, 3, -1]
+
+    stack = []
+    dic = {}
+
+    for num in nums:
+        while stack != [] and stack[-1] < num:
+            dic[stack[-1]] = num
+            stack.pop()
+        stack.append(num)
+
+    res = []
+    for find_num in find_nums:
+        res.append(dic.get(find_num, -1))
+    return res
+```
+
+当栈顶元素小于 `num` 时，在字典中添加栈顶元素, `num` 表示栈顶元素的 next greater element 是 `num`
+
+`stack` 在上述例子中的顺序变化为：[1] -> [3] -> [4] -> [4, 2]
+
+`dic` 为 {1: 3, 3: 4}
 
 ## Map and Set
 
