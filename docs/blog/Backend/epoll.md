@@ -47,7 +47,15 @@ struct sockinfo
 {
     int fd;
     struct sockaddr_in addr;
-}
+}sockInfo;
+
+sockInfo* sinfo = (sockInfo*)malloc(sizeof(sockInfo));
+sinfo->fd = lfd;
+sinfo->sock = serv_addr;
+
+struct epoll_event ev;
+// *ptr
+cv.data.ptr = sinfo'
 ```
 
 令 ptr 指向这个结构体，传入 `epoll_ctl()` 即可。
@@ -72,6 +80,8 @@ epoll_ctl 的 op 操作：
 
 2. 边沿触发模式 - ET
 
+    - `ev.events = EPOLLIN | EPOLLET`
+
     - fd - 默认阻塞属性
 
     - 客户端给 server 发数据：发一次数据 server 的 `epoll_wait` 返回一次；
@@ -84,7 +94,7 @@ epoll_ctl 的 op 操作：
 
         `while(recv())` 数据读完之后 `recv` 会阻塞，需要**设置 fd 非阻塞**，也就是边沿非阻塞触发模式。
 
-3. 边沿非阻塞触发模式[代码实现]()
+3. 边沿非阻塞触发模式- [代码实现](https://github.com/chenweigao/socket-epoll/blob/master/cpp_webserver/nonblock_et_epoll.c)
 
    - 效率最高
 
@@ -101,16 +111,14 @@ epoll_ctl 的 op 操作：
             fcntl(fd, F_SETFL, flag);
             ```
 
-   - 将缓冲区的数据全读出
+   - 将缓冲区的数据全读出，特别是针对缓冲区大小不够的情况
 
         ```cpp
         while ((len = recv(fd, buf, sizeof(buf), 0)) > 0)
-                    {
-                        write(STDOUT_FILENO, buf, len);
-
-                        send(fd, buf, len, 0);
-                    }
-
+        {
+            write(STDOUT_FILENO, buf, len);
+            send(fd, buf, len, 0);
+        }
         ```
 
 ## 突破文件描述符上限
