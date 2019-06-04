@@ -179,6 +179,12 @@ std::sort(numbers.begin(), numbers.end(), greater());
 
 wiki 伪代码：
 
+:::tip 记住口诀
+**mid 在前，先小后大，先左后右**
+
+解析：mid 总是在比较的左边：mid < target; 先写 mid 小于，对应左边 l = mid + 1; 再写 mid 大于，对应右边。
+:::
+
 ```c
 function binary_search(A, n, T):
     L := 0
@@ -224,7 +230,7 @@ def isPerfectSquare(self, num: int) -> bool:
         elif mid * mid < num:
             l = mid + 1
         else:
-            r = mid + 1
+            r = mid - 1
     return False
 ```
 
