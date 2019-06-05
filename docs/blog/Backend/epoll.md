@@ -55,10 +55,25 @@ sinfo->sock = serv_addr;
 
 struct epoll_event ev;
 // *ptr
-cv.data.ptr = sinfo'
+cv.data.ptr = sinfo
 ```
 
 令 ptr 指向这个结构体，传入 `epoll_ctl()` 即可。
+
+更复杂的带回调的 `epoll_data_t` 例子：
+
+```cpp
+struct myevent_s {
+    int fd; // 要监听的文件描述符
+    int events; // 对应的监听事件
+    void *arg; // 指向 myevent_s 的函数指针
+    void(*call_back)(int fd, int events, void *arg); // 回调函数
+    int status; // 1：在红黑树上监听；0：不监听
+    char buf[BUFLEN];
+    int len;
+    long last_active; // time(NULL) 记录每次加入红黑树 g_efd 的时间值
+}
+```
 
 epoll_ctl 的 op 操作：
 
@@ -76,7 +91,9 @@ epoll_ctl 的 op 操作：
 
    - 返回的次数和发送数据的次数没有关系；
 
-   - `epoll_wait` 调用次数越多，系统开销越大。
+   - `epoll_wait` 调用次数越多，系统开销越大；
+
+   - 在 EPOLL_OUT 中，`epoll_wait` 会一直返回，缓冲区能写数据，该函数会返回，缓冲区满的时候，不返回。**本质上是检测写缓冲区是否可以写。**
 
 2. 边沿触发模式 - ET
 
@@ -93,6 +110,8 @@ epoll_ctl 的 op 操作：
     - 如果数据读不完，如何全部读出来？
 
         `while(recv())` 数据读完之后 `recv` 会阻塞，需要**设置 fd 非阻塞**，也就是边沿非阻塞触发模式。
+
+    - EPOLL_OUT 中，第一次设置的时候 `epoll_wait` 会返回一次，然后就不返回了，除非满缓冲区被读，从 满 -> 不满的时候再返回一次，然后不再返回。
 
 3. 边沿非阻塞触发模式- [代码实现](https://github.com/chenweigao/socket-epoll/blob/master/cpp_webserver/nonblock_et_epoll.c)
 
@@ -144,3 +163,20 @@ vi /etc/security/limits.conf
 # temp setting
 ulimit -n 2000
 ```
+
+## Libevent Abstract
+
+1. 事件的底层处理框架
+   1. 一个函数
+
+2. 消息循环
+   1. 一个函数
+
+3. **创建事件**
+   1. 不带缓冲区 - event
+      1. 几个函数
+   2. 带缓冲区 - bufferevent
+      1. 几个函数
+
+4. 资源的释放
+   1. 几个函数
