@@ -166,6 +166,38 @@ ulimit -n 2000
 
 ## Libevent Abstract
 
+:::tip 简介
+libevent 封装了 socket 通信、IO 多路转接；精简，专注于网络，性能高；跨平台；**事件驱动**。
+:::
+
+安装：
+
+```sh
+# 检测安装环境，生成 makefile
+./configure
+make
+sudo make install
+```
+
+`make install` 会将数据拷贝到对应的目录，如果目录不存在，则创建该目录。
+
+默认目录是：
+
+- `/usr/local/include`
+
+- `/usr/local/bin`
+
+- `/usr/local/lib`
+
+验证是否安装成功：
+
+```sh
+cd sample/
+gcc hello-world.c -o hello-world -l event
+./hello-world
+nc localhost 9995
+```
+
 1. 事件的底层处理框架
    1. 一个函数
 
@@ -180,3 +212,6 @@ ulimit -n 2000
 
 4. 资源的释放
    1. 几个函数
+
+## 安装 libevent
+
