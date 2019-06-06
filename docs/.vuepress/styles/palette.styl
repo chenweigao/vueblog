@@ -176,9 +176,11 @@ a.sidebar-link
 
 // code highlight
 // -------------
+
 :not(pre) > code[class*="language-"],
 pre[class*="language-"]
   background: $highlight-background
+  color: black !important
 
 .content pre code,
 .content pre[class*="language-"] code
@@ -189,6 +191,10 @@ pre[class*="language-"]
   pre, pre[class*="language-"]
     color $highlight-foreground
 
+
+.theme-default-content pre code, .theme-default-content pre[class*="language-"] code {
+    color $highlight-foreground !important
+}
 
 .token.comment,
 .token.block-comment,
@@ -243,7 +249,7 @@ pre[class*="language-"]
 .token.char,
 .token.attr-value,
 .token.variable
-  color: $highlight-green
+  color: $highlight-green !important
 
 .token.operator,
 .token.entity,
