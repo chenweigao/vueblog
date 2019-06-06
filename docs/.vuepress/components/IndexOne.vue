@@ -1,6 +1,6 @@
 <template>
-
   <div>
+  <h1 class="h1title" :style="randomRgb()"> WEIGAO CHEN</h1>
 
     <el-container>
 
@@ -73,9 +73,9 @@
               :key="post.key"
               class="animated text item"
             >
-              <time class="time">{{ post.lastUpdated | dateFormat }}</time>
-              <router-link :to="post.path">
-                <font :style="randomRgb()">### {{ post.title }}</font>
+              <time class="time">{{ post.lastUpdated | dateFormat2 }}</time>
+              <router-link :to="post.path" :style="randomRgb()">
+                ### {{ post.title }}
               </router-link>
             </div>
           </transition-group>
@@ -108,9 +108,9 @@
               class="animated text item"
             >
               <!-- <time class="time"> {{ post.readingTime.words }} words, {{ post.readingTime.text }} {{ post.lastUpdated | dateFormat }}</time> -->
-              <time class="time"> <font :style="randomRgb()">{{ post.readingTime.words }} </font> words, {{ post.readingTime.text }} </time>
+              <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}</time>
               <router-link :to="post.path">
-              <font :style="randomRgb()">### </font>{{ post.title }}
+              <a :style="randomRgb()">### </a>  {{ post.title }}
               </router-link>
             </div>
           </transition-group>
@@ -293,6 +293,19 @@ filters: {
     var mm = dt.getMinutes().toString().padStart(2, '0')
     var ss = dt.getSeconds().toString().padStart(2, '0')
     var n = dt.toTimeString().slice(0, 5)
+    return `${m}/${d}`
+    // return `${hh}:${mm} ${m}/${d} ${y}`
+  },  
+  dateFormat2: function (dateStr) {
+    var dt = new Date(Date.parse(dateStr))
+    var y = dt.getFullYear()
+    var m = (dt.getMonth() + 1).toString().padStart(2, '0')
+    var d = dt.getDate().toString().padStart(2, '0')
+    var hh = dt.getHours().toString().padStart(2, '0')
+    var mm = dt.getMinutes().toString().padStart(2, '0')
+    var ss = dt.getSeconds().toString().padStart(2, '0')
+    var n = dt.toTimeString().slice(0, 5)
+    // return `${m}/${d}`
     return `${hh}:${mm} ${m}/${d} ${y}`
   }
 }
@@ -348,5 +361,10 @@ body > .el-container {
 .labels {
   padding: 5px;
 }
+
+.h1title{
+  text-align: center;
+}
+
 @import "https:////at.alicdn.com/t/font_1014632_8btj1lgimlo.css";
 </style>
