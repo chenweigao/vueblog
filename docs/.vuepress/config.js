@@ -70,12 +70,20 @@ module.exports = {
         link: '/'
       },
       {
+        text: 'Tags',
+        link: '/Tags.html'
+      },
+      {
         text: 'Discuss',
         link: '/discuss/'
       },
       {
         text: 'Commits',
         link: '/commits/'
+      },
+      {
+        text: 'About',
+        link: '/blog/others/resume.html'
       }
       // {
       //   text: 'About',

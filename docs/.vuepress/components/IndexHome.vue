@@ -1,40 +1,19 @@
 <template>
   <div>
-  <h1 class="h1title" :style="randomRgb()"> WEIGAO CHEN</h1>
+    <h1
+      class="h1title"
+      :style="randomRgb()"
+    > WEIGAO CHEN</h1>
 
     <el-container>
 
       <el-header>
-      
-        <!-- <el-row>
-          <el-button type="default" @click="showPost('')">All</el-button>
-          <el-button type="default" :autofocus="true" @click="showPost('2019')" >2019</el-button>
-          <el-button type="default" @click="showPost('2018')">2018</el-button>
-          <el-button type="default" @click="showPost('2017')">2017</el-button>
-        </el-row> -->
         <el-form
           :inline="true"
           class="demo-form-inline"
         >
 
-          <el-form-item>
-            <el-badge>
-              <el-select
-                v-model="value"
-                clearable
-                placeholder="Show Categories"
-              >
-                <el-option
-                  v-for="item in years"
-                  :key="item.index"
-                  :label="item.index"
-                  :value="item"
-                >
-                </el-option>
-              </el-select>
-            </el-badge>
-          </el-form-item>
-          <el-badge
+          <!-- <el-badge
             value="new"
             class="myresume"
           >
@@ -45,7 +24,7 @@
                 plain
               > Resume</el-button>
             </a>
-          </el-badge>
+          </el-badge> -->
           <SearchBox
             class="mysearch"
             style="float:right"
@@ -73,48 +52,76 @@
               :key="post.key"
               class="animated text item"
             >
-              <time class="time">{{ post.lastUpdated | dateFormat2 }}</time>
-              <router-link :to="post.path" :style="randomRgb()">
+              <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}</time>
+
+              <!-- <time class="time">{{ post.lastUpdated | dateFormat2 }}</time> -->
+              <router-link :to="post.path">
                 ### {{ post.title }}
               </router-link>
+              <br />
+              <Mybadge
+                :title="post.regularPath | badgeFormat"
+                style="float:right;"
+              ></Mybadge>
+              <el-divider></el-divider>
+
             </div>
           </transition-group>
         </el-card>
-
       </el-main>
-      <el-main
-        v-for="year in years"
-        :key="year.index"
-        v-show="value === year || value === null"
-      >
 
-        <el-card shadow="hover">
+      <el-divider><i class="el-icon-loading"> + <i class="el-icon-reading"></i></i> </el-divider>
+
+
+      <el-main>
+        <el-card
+          class="box-card"
+          shadow="hover"
+        >
           <div
             slot="header"
-            class="animated bounce"
+            class="clearfix"
           >
-            <span class="titles">
-              {{ year }}
-            </span>
-          </div>
 
+            <span class="titles">All Posts</span>
+            <el-button
+              style="float: right; padding: 3px 0"
+              type="text"
+              @click="show3 = !show3"
+            >Show All Posts</el-button>
+            <!-- <SearchBox
+            class="mysearch"
+          /> -->
+          </div>
           <transition-group
-            appear
-            enter-active-class="fadeInUp"
+            enter-active-class="slideInUp"
+            leave-active-class="zoomOutUp"
           >
             <div
-              v-for="post in posts(year)"
+              v-for="post in posts()"
               :key="post.key"
               class="animated text item"
+              v-show="show3"
             >
-              <!-- <time class="time"> {{ post.readingTime.words }} words, {{ post.readingTime.text }} {{ post.lastUpdated | dateFormat }}</time> -->
+              <!-- <time class="time">{{ post.lastUpdated | dateFormat2 }}</time> -->
+
               <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}</time>
+              <!-- <Mybadge :title="post.regularPath | badgeFormat"></Mybadge> -->
               <router-link :to="post.path">
-              <a :style="randomRgb()">### </a>  {{ post.title }}
+                ### {{ post.title }}
               </router-link>
+              <br />
+              <Mybadge
+                :title="post.regularPath | badgeFormat"
+                style="float:right;"
+              ></Mybadge>
+              <el-divider></el-divider>
+
             </div>
           </transition-group>
         </el-card>
+      </el-main>
+
       </el-main>
 
       <el-footer>
@@ -140,9 +147,7 @@
           <!-- <el-button icon="iconfont icon-liuyan" @click="showComments"> Comments</el-button> -->
           <br />
         </el-badge>
-        <!-- <div v-show="show_comments" class="animated pulse slow">
-              <Comments></Comments>
-            </div> -->
+
       </el-footer>
     </el-container>
 
@@ -154,6 +159,7 @@
 <script>
 import SearchBox from '@SearchBox'
 import Comments from './Comments.vue'
+import Mybadge from './Mybadge.vue'
 export default {
   components: { SearchBox },
   data: function () {
@@ -162,9 +168,10 @@ export default {
       // years: ['2019', '2018', '2017'],
       years: ['Backend', 'Frontend', 'Projects', 'Grammar', 'Tools', 'Research', 'Deeplearning', 'Others'],
       value: null,
-      recent_update_number: 3,
+      recent_update_number: 10,
       show_comments: false,
-      hslArray: []
+      hslArray: [],
+      show3: false
     };
   },
   created: function () {
@@ -175,7 +182,13 @@ export default {
       return time.replace(/[^0-9]/gi, "");
     },
     posts: function (n) {
-      var postDir = "/blog/" + n + "/";
+      var postDir;
+      if (n == null) {
+        postDir = "/blog";
+      }
+      else {
+        postDir = "/blog/" + n + "/";
+      }
       return this.$site.pages
         .filter(x => x.path.startsWith(postDir) && !x.frontmatter.blogindex)
         .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated));
@@ -209,7 +222,7 @@ export default {
       // let item = toString(this.rgbArray[i])
       // console.log(this.rgbArray[i].style);
       // return this.rgbArray[i].style
-      
+
     },
     hslToRgb: function (H, S, L) {
       var R, G, B;
@@ -264,51 +277,57 @@ export default {
         HSL.push(ret);
       }
       return HSL;
+    },
+    getBadge(post) {
+      return post;
     }
-},
-computed: {
-  rgbArray: function () {
-    var self = this;
-    if (!self.hslArray.length) return [];
+  },
+  computed: {
+    rgbArray: function () {
+      var self = this;
+      if (!self.hslArray.length) return [];
 
-    var rgbArray = self.hslArray.map(function (item) {
-      return self.hslToRgb.apply(this, item);
-    });
+      var rgbArray = self.hslArray.map(function (item) {
+        return self.hslToRgb.apply(this, item);
+      });
 
-    return rgbArray.map(function (item) {
-      return {
-        value: item,
-        style: { color: 'rgb(' + item.toString() + ')' }
-      }
-    });
+      return rgbArray.map(function (item) {
+        return {
+          value: item,
+          style: { color: 'rgb(' + item.toString() + ')' }
+        }
+      });
+    }
+  },
+  filters: {
+    dateFormat: function (dateStr) {
+      var dt = new Date(Date.parse(dateStr))
+      var y = dt.getFullYear()
+      var m = (dt.getMonth() + 1).toString().padStart(2, '0')
+      var d = dt.getDate().toString().padStart(2, '0')
+      var hh = dt.getHours().toString().padStart(2, '0')
+      var mm = dt.getMinutes().toString().padStart(2, '0')
+      var ss = dt.getSeconds().toString().padStart(2, '0')
+      var n = dt.toTimeString().slice(0, 5)
+      return `${m}/${d}`
+      // return `${hh}:${mm} ${m}/${d} ${y}`
+    },
+    dateFormat2: function (dateStr) {
+      var dt = new Date(Date.parse(dateStr))
+      var y = dt.getFullYear()
+      var m = (dt.getMonth() + 1).toString().padStart(2, '0')
+      var d = dt.getDate().toString().padStart(2, '0')
+      var hh = dt.getHours().toString().padStart(2, '0')
+      var mm = dt.getMinutes().toString().padStart(2, '0')
+      var ss = dt.getSeconds().toString().padStart(2, '0')
+      var n = dt.toTimeString().slice(0, 5)
+      // return `${m}/${d}`
+      return `${hh}:${mm} ${m}/${d} ${y}`
+    },
+    badgeFormat: function (str) {
+      return str.split('/')[2]
+    }
   }
-},
-filters: {
-  dateFormat: function (dateStr) {
-    var dt = new Date(Date.parse(dateStr))
-    var y = dt.getFullYear()
-    var m = (dt.getMonth() + 1).toString().padStart(2, '0')
-    var d = dt.getDate().toString().padStart(2, '0')
-    var hh = dt.getHours().toString().padStart(2, '0')
-    var mm = dt.getMinutes().toString().padStart(2, '0')
-    var ss = dt.getSeconds().toString().padStart(2, '0')
-    var n = dt.toTimeString().slice(0, 5)
-    return `${m}/${d}`
-    // return `${hh}:${mm} ${m}/${d} ${y}`
-  },  
-  dateFormat2: function (dateStr) {
-    var dt = new Date(Date.parse(dateStr))
-    var y = dt.getFullYear()
-    var m = (dt.getMonth() + 1).toString().padStart(2, '0')
-    var d = dt.getDate().toString().padStart(2, '0')
-    var hh = dt.getHours().toString().padStart(2, '0')
-    var mm = dt.getMinutes().toString().padStart(2, '0')
-    var ss = dt.getSeconds().toString().padStart(2, '0')
-    var n = dt.toTimeString().slice(0, 5)
-    // return `${m}/${d}`
-    return `${hh}:${mm} ${m}/${d} ${y}`
-  }
-}
 };
 </script>
 
@@ -362,7 +381,7 @@ body > .el-container {
   padding: 5px;
 }
 
-.h1title{
+.h1title {
   text-align: center;
 }
 
