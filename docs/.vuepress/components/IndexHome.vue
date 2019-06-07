@@ -68,15 +68,11 @@
             </div>
           </transition-group>
         </el-card>
-      </el-main>
 
-      <el-divider><i class="el-icon-loading"> + <i class="el-icon-reading"></i></i> </el-divider>
-
-
-      <el-main>
         <el-card
           class="box-card"
           shadow="hover"
+          style="margin-top: 40px;"
         >
           <div
             slot="header"
@@ -121,6 +117,9 @@
           </transition-group>
         </el-card>
       </el-main>
+
+      <el-divider><i class="el-icon-loading"> + <i class="el-icon-reading"></i></i> </el-divider>
+
 
       </el-main>
 

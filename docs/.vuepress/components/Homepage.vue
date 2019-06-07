@@ -47,7 +47,7 @@
                 <div v-for="post in book" :key=post.title>
                     <p>
                         <router-link :to="post.path">
-                            《{{ post.title }}》
+                            {{ post.title }}》
                         </router-link>
                     </p>
                 </div>
