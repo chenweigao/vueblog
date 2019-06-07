@@ -34,10 +34,12 @@
       <!-- <el-divider><i class="el-icon-loading"></i></el-divider> -->
 
       <el-main v-show="value == null">
+
         <el-card shadow="hover">
           <div
             slot="header"
             class="animated bounce"
+            @click="showRecent = ! showRecent"
           >
             <span class="titles">
               Recent Update
@@ -46,11 +48,13 @@
           <transition-group
             appear
             enter-active-class="fadeInUp"
+            leave-active-class="zoomOutUp"
           >
             <div
               v-for="post in recentUpdate()"
               :key="post.key"
               class="animated text item"
+              v-show="showRecent"
             >
               <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}</time>
 
@@ -68,55 +72,66 @@
             </div>
           </transition-group>
         </el-card>
-      <el-divider><i class="el-icon-loading"> + <i class="el-icon-reading"></i></i> </el-divider>
 
-        <el-button class="showmore" type="default" @click="show3 = !show3">Show All Posts</el-button>
-        <el-card
-          shadow="hover"
-          style="margin-top: 30px;"
+        <el-divider><i class="el-icon-loading"> + <i class="el-icon-reading"></i></i> </el-divider>
+
+        <!-- <el-button class="showmore" type="default" @click="show3 = !show3">Show All Posts</el-button> -->
+        <el-tooltip
+          class="item"
+          content="Click to see all"
+          placement="right-start"
+          effect="light"
         >
-          <div
-            slot="header"
-            class="clearfix"
-          >
 
-            <span class="titles">All Posts</span>
-            <!-- <el-button
+          <el-card
+            shadow="hover"
+            style="margin-top: 40px;"
+            @click="show3 = !show3"
+          >
+            <div
+              slot="header"
+              class="clearfix"
+              @click="show3 = !show3"
+            >
+
+              <span class="titles">All Posts</span>
+              <!-- <el-button
               style="float: right; padding: 3px 0"
               type="text"
               @click="show3 = !show3"
             >Show All Posts</el-button> -->
-            <!-- <SearchBox
+              <!-- <SearchBox
             class="mysearch"
           /> -->
-          </div>
-          <transition-group
-            enter-active-class="slideInUp"
-            leave-active-class="zoomOutUp"
-          >
-            <div
-              v-for="post in posts()"
-              :key="post.key"
-              class="animated text item"
-              v-show="show3"
-            >
-              <!-- <time class="time">{{ post.lastUpdated | dateFormat2 }}</time> -->
-
-              <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}</time>
-              <!-- <Mybadge :title="post.regularPath | badgeFormat"></Mybadge> -->
-              <router-link :to="post.path">
-                ### {{ post.title }}
-              </router-link>
-              <br />
-              <Mybadge
-                :title="post.regularPath | badgeFormat"
-                style="float:right;"
-              ></Mybadge>
-              <el-divider></el-divider>
-
             </div>
-          </transition-group>
-        </el-card>
+            <transition-group
+              enter-active-class="slideInUp"
+              leave-active-class="zoomOutUp"
+            >
+              <div
+                v-for="post in posts()"
+                :key="post.key"
+                class="animated text item"
+                v-show="show3"
+              >
+                <!-- <time class="time">{{ post.lastUpdated | dateFormat2 }}</time> -->
+
+                <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}</time>
+                <!-- <Mybadge :title="post.regularPath | badgeFormat"></Mybadge> -->
+                <router-link :to="post.path">
+                  ### {{ post.title }}
+                </router-link>
+                <br />
+                <Mybadge
+                  :title="post.regularPath | badgeFormat"
+                  style="float:right;"
+                ></Mybadge>
+                <el-divider></el-divider>
+
+              </div>
+            </transition-group>
+          </el-card>
+        </el-tooltip>
       </el-main>
 
       <el-footer>
@@ -166,7 +181,10 @@ export default {
       recent_update_number: 10,
       show_comments: false,
       hslArray: [],
-      show3: false
+      show3: false,
+      showRecent: true,
+      delay1: 100,
+      after1: 50
     };
   },
   created: function () {
@@ -379,7 +397,7 @@ body > .el-container {
 .h1title {
   text-align: center;
 }
-.showmore{
+.showmore {
   margin-top: 20px;
   margin-left: 43%;
 }
