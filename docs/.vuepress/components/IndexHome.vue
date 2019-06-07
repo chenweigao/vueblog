@@ -68,11 +68,12 @@
             </div>
           </transition-group>
         </el-card>
+      <el-divider><i class="el-icon-loading"> + <i class="el-icon-reading"></i></i> </el-divider>
 
+        <el-button class="showmore" type="default" @click="show3 = !show3">Show All Posts</el-button>
         <el-card
-          class="box-card"
           shadow="hover"
-          style="margin-top: 40px;"
+          style="margin-top: 30px;"
         >
           <div
             slot="header"
@@ -80,11 +81,11 @@
           >
 
             <span class="titles">All Posts</span>
-            <el-button
+            <!-- <el-button
               style="float: right; padding: 3px 0"
               type="text"
               @click="show3 = !show3"
-            >Show All Posts</el-button>
+            >Show All Posts</el-button> -->
             <!-- <SearchBox
             class="mysearch"
           /> -->
@@ -116,11 +117,6 @@
             </div>
           </transition-group>
         </el-card>
-      </el-main>
-
-      <el-divider><i class="el-icon-loading"> + <i class="el-icon-reading"></i></i> </el-divider>
-
-
       </el-main>
 
       <el-footer>
@@ -383,6 +379,9 @@ body > .el-container {
 .h1title {
   text-align: center;
 }
-
+.showmore{
+  margin-top: 20px;
+  margin-left: 43%;
+}
 @import "https:////at.alicdn.com/t/font_1014632_8btj1lgimlo.css";
 </style>
