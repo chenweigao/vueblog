@@ -194,6 +194,7 @@ sudo make install
 ```sh
 cd sample/
 gcc hello-world.c -o hello-world -l event
+
 ./hello-world
 nc localhost 9995
 ```
@@ -213,5 +214,48 @@ nc localhost 9995
 4. 资源的释放
    1. 几个函数
 
-## 安装 libevent
+总结其使用方法是：[参考程序 bufferevent_server.c](https://github.com/chenweigao/socket-epoll/blob/master/cpp_webserver/bufferevent_server.c)
 
+1. 创建一个事件处理框架：`struct event_base* base = event_base_new();` （流水线或设备初始化完成）
+
+2. 创建一个事件，并将事件添加到框架上：
+
+   - （服务端）使用 **链接监听器** 直接创建: `struct evconnlistener* listen =  evconnlistener_new_bind();`, 函数中要求实现 `listen_cb` 函数回调；
+
+   - 使用 `struct event* ev = event_new()` and `event_add()`, [参考这里的 40 - 44 行](https://github.com/chenweigao/socket-epoll/blob/master/cpp_webserver/libevent_read_fifo.c)
+
+    如果要使用终端标准输入，可以使用 stdin 的文件描述符创建一个事件：`struct events* ev_in = event_new(base, STDIN_FILENO, EV_READ | EV_PERSIST, read_terminal, NULL);`
+
+3. 开始事件循环: `event_base_dispatch(base);`
+
+4. 释放资源: `evconnlistener_free(listen);`, `event_base_free(base);` and `event_free();`
+
+## bufferevent
+
+`bufferevent` 相比于 `event` 是创建带缓冲区的事件，包括读缓冲区和写缓冲区，参考[libevent 官网示例](https://github.com/libevent/libevent/blob/master/sample/hello-world.c)：
+
+- 读：只要缓冲区有数据，就会被通知；
+
+- 写：一般用不掉，自动发送并且返回回调。
+
+`listen_cb` 回调中：
+
+1. 创建一个带缓冲区的事件：`struct bufferevent* bev = bufferevent_socket_new(base, fd, BEV_OPT_CLOSE_ON_FREE);`
+
+2. 然后 `bufferevent_setcb(bev, read_cb, write_cb, event_cb, NULL);`
+
+3. 然后分别实现三个回调:
+
+   - 以 `read_cb()` 为例，读写回调函数原型为：`typedef void (*bufferevent_data_cb)(struct bufferevent *bev, void *ctx);`
+
+   - 事件回调函数原型为：`typedef void (*bufferevent_event_cb)(struct bufferevent *bev, short what, void *ctx);` `what` 包括的有: `BEV_EVENT_*`;
+
+4. 释放资源：使用 `bufferent_free()`.
+
+:::warning bug avoid
+在初始化 `listen_cb` 的回调函数中，会使用读缓冲区和写缓冲区，bufferevent 默认读缓冲区是不可用的；
+
+一般情况下，我们将这两个缓冲区都 `bufferevent_enable()`, 防止出现段异常
+:::
+
+在套接字通信中，客户端连接服务器使用：`int bufferevent_socket_connect(struct bufferevent *, const struct sockaddr *, int);`
