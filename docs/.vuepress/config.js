@@ -70,6 +70,10 @@ module.exports = {
         link: '/'
       },
       {
+        text: 'Tags',
+        link: '/Tags.html'
+      },
+      {
         text: 'Discuss',
         link: '/discuss/'
       },

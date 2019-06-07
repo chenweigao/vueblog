@@ -1,11 +1,14 @@
 <template>
   <div>
-  <h1 class="h1title" :style="randomRgb()"> WEIGAO CHEN</h1>
+    <h1
+      class="h1title"
+      :style="randomRgb()"
+    > WEIGAO CHEN</h1>
 
     <el-container>
 
       <el-header>
-      
+
         <!-- <el-row>
           <el-button type="default" @click="showPost('')">All</el-button>
           <el-button type="default" :autofocus="true" @click="showPost('2019')" >2019</el-button>
@@ -34,54 +37,11 @@
               </el-select>
             </el-badge>
           </el-form-item>
-          <el-badge
-            value="new"
-            class="myresume"
-          >
-            <a href="/blog/others/resume.html">
-              <el-button
-                icon="iconfont icon-resume"
-                type=""
-                plain
-              > Resume</el-button>
-            </a>
-          </el-badge>
-          <SearchBox
-            class="mysearch"
-            style="float:right"
-          />
         </el-form>
       </el-header>
       <!-- <el-divider><i class="el-icon-loading"></i></el-divider> -->
 
-      <el-main v-show="value == null">
-        <el-card shadow="hover">
-          <div
-            slot="header"
-            class="animated bounce"
-          >
-            <span class="titles">
-              Recent Update
-            </span>
-          </div>
-          <transition-group
-            appear
-            enter-active-class="fadeInUp"
-          >
-            <div
-              v-for="post in recentUpdate()"
-              :key="post.key"
-              class="animated text item"
-            >
-              <time class="time">{{ post.lastUpdated | dateFormat2 }}</time>
-              <router-link :to="post.path" :style="randomRgb()">
-                ### {{ post.title }}
-              </router-link>
-            </div>
-          </transition-group>
-        </el-card>
 
-      </el-main>
       <el-main
         v-for="year in years"
         :key="year.index"
@@ -109,40 +69,21 @@
             >
               <!-- <time class="time"> {{ post.readingTime.words }} words, {{ post.readingTime.text }} {{ post.lastUpdated | dateFormat }}</time> -->
               <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}</time>
+              <!-- <Mybadge :title="post.regularPath | badgeFormat"></Mybadge> -->
               <router-link :to="post.path">
-              <a :style="randomRgb()">### </a>  {{ post.title }}
+              <a :style="randomRgb()">###</a> {{ post.title }}
               </router-link>
+              <br />
+
             </div>
           </transition-group>
         </el-card>
       </el-main>
+      
+
 
       <el-footer>
 
-        <a href="https://github.com/chenweigao">
-          <el-button icon="iconfont icon-github-fill"> GitHub</el-button>
-        </a>
-        <a href="mailto:mail@weigao.cc">
-          <el-button
-            icon="iconfont icon-mail"
-            class="myemail"
-          > Email</el-button>
-        </a>
-        <el-badge
-          value="Reco"
-          type="primary"
-          style="float:right"
-        >
-          <a href="discuss/">
-            <el-button icon="iconfont icon-liuyan"> Comments</el-button>
-
-          </a>
-          <!-- <el-button icon="iconfont icon-liuyan" @click="showComments"> Comments</el-button> -->
-          <br />
-        </el-badge>
-        <!-- <div v-show="show_comments" class="animated pulse slow">
-              <Comments></Comments>
-            </div> -->
       </el-footer>
     </el-container>
 
@@ -154,6 +95,7 @@
 <script>
 import SearchBox from '@SearchBox'
 import Comments from './Comments.vue'
+import Mybadge from './Mybadge.vue'
 export default {
   components: { SearchBox },
   data: function () {
@@ -175,7 +117,13 @@ export default {
       return time.replace(/[^0-9]/gi, "");
     },
     posts: function (n) {
-      var postDir = "/blog/" + n + "/";
+      var postDir;
+      if (n == null) {
+        postDir = "/blog";
+      }
+      else {
+        postDir = "/blog/" + n + "/";
+      }
       return this.$site.pages
         .filter(x => x.path.startsWith(postDir) && !x.frontmatter.blogindex)
         .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated));
@@ -209,7 +157,7 @@ export default {
       // let item = toString(this.rgbArray[i])
       // console.log(this.rgbArray[i].style);
       // return this.rgbArray[i].style
-      
+
     },
     hslToRgb: function (H, S, L) {
       var R, G, B;
@@ -264,51 +212,57 @@ export default {
         HSL.push(ret);
       }
       return HSL;
+    },
+    getBadge(post) {
+      return post;
     }
-},
-computed: {
-  rgbArray: function () {
-    var self = this;
-    if (!self.hslArray.length) return [];
+  },
+  computed: {
+    rgbArray: function () {
+      var self = this;
+      if (!self.hslArray.length) return [];
 
-    var rgbArray = self.hslArray.map(function (item) {
-      return self.hslToRgb.apply(this, item);
-    });
+      var rgbArray = self.hslArray.map(function (item) {
+        return self.hslToRgb.apply(this, item);
+      });
 
-    return rgbArray.map(function (item) {
-      return {
-        value: item,
-        style: { color: 'rgb(' + item.toString() + ')' }
-      }
-    });
+      return rgbArray.map(function (item) {
+        return {
+          value: item,
+          style: { color: 'rgb(' + item.toString() + ')' }
+        }
+      });
+    }
+  },
+  filters: {
+    dateFormat: function (dateStr) {
+      var dt = new Date(Date.parse(dateStr))
+      var y = dt.getFullYear()
+      var m = (dt.getMonth() + 1).toString().padStart(2, '0')
+      var d = dt.getDate().toString().padStart(2, '0')
+      var hh = dt.getHours().toString().padStart(2, '0')
+      var mm = dt.getMinutes().toString().padStart(2, '0')
+      var ss = dt.getSeconds().toString().padStart(2, '0')
+      var n = dt.toTimeString().slice(0, 5)
+      return `${m}/${d}`
+      // return `${hh}:${mm} ${m}/${d} ${y}`
+    },
+    dateFormat2: function (dateStr) {
+      var dt = new Date(Date.parse(dateStr))
+      var y = dt.getFullYear()
+      var m = (dt.getMonth() + 1).toString().padStart(2, '0')
+      var d = dt.getDate().toString().padStart(2, '0')
+      var hh = dt.getHours().toString().padStart(2, '0')
+      var mm = dt.getMinutes().toString().padStart(2, '0')
+      var ss = dt.getSeconds().toString().padStart(2, '0')
+      var n = dt.toTimeString().slice(0, 5)
+      // return `${m}/${d}`
+      return `${hh}:${mm} ${m}/${d} ${y}`
+    },
+    badgeFormat: function (str) {
+      return str.split('/')[2]
+    }
   }
-},
-filters: {
-  dateFormat: function (dateStr) {
-    var dt = new Date(Date.parse(dateStr))
-    var y = dt.getFullYear()
-    var m = (dt.getMonth() + 1).toString().padStart(2, '0')
-    var d = dt.getDate().toString().padStart(2, '0')
-    var hh = dt.getHours().toString().padStart(2, '0')
-    var mm = dt.getMinutes().toString().padStart(2, '0')
-    var ss = dt.getSeconds().toString().padStart(2, '0')
-    var n = dt.toTimeString().slice(0, 5)
-    return `${m}/${d}`
-    // return `${hh}:${mm} ${m}/${d} ${y}`
-  },  
-  dateFormat2: function (dateStr) {
-    var dt = new Date(Date.parse(dateStr))
-    var y = dt.getFullYear()
-    var m = (dt.getMonth() + 1).toString().padStart(2, '0')
-    var d = dt.getDate().toString().padStart(2, '0')
-    var hh = dt.getHours().toString().padStart(2, '0')
-    var mm = dt.getMinutes().toString().padStart(2, '0')
-    var ss = dt.getSeconds().toString().padStart(2, '0')
-    var n = dt.toTimeString().slice(0, 5)
-    // return `${m}/${d}`
-    return `${hh}:${mm} ${m}/${d} ${y}`
-  }
-}
 };
 </script>
 
@@ -362,7 +316,7 @@ body > .el-container {
   padding: 5px;
 }
 
-.h1title{
+.h1title {
   text-align: center;
 }
 
