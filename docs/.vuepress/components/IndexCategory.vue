@@ -53,8 +53,9 @@
             slot="header"
             class="animated bounce"
           >
-            <span class="titles">
-              {{ year }}
+            <span class="titles" :style="randomRgb()">
+              {{ year }}<br/>
+              <!-- <Mybadge :title="year" ></Mybadge> -->
             </span>
           </div>
 
@@ -87,7 +88,7 @@
       </el-footer>
     </el-container>
 
-    <!-- <el-divider>我是有底线的</el-divider> -->
+    <el-divider>我是有底线的</el-divider>
   </div>
 
 </template>

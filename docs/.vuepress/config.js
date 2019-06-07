@@ -80,6 +80,10 @@ module.exports = {
       {
         text: 'Commits',
         link: '/commits/'
+      },
+      {
+        text: 'About',
+        link: '/blog/others/resume.html'
       }
       // {
       //   text: 'About',

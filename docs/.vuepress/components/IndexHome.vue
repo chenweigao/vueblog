@@ -13,24 +13,7 @@
           class="demo-form-inline"
         >
 
-          <el-form-item>
-            <el-badge>
-              <el-select
-                v-model="value"
-                clearable
-                placeholder="Show Categories"
-              >
-                <el-option
-                  v-for="item in years"
-                  :key="item.index"
-                  :label="item.index"
-                  :value="item"
-                >
-                </el-option>
-              </el-select>
-            </el-badge>
-          </el-form-item>
-          <el-badge
+          <!-- <el-badge
             value="new"
             class="myresume"
           >
@@ -41,7 +24,7 @@
                 plain
               > Resume</el-button>
             </a>
-          </el-badge>
+          </el-badge> -->
           <SearchBox
             class="mysearch"
             style="float:right"
@@ -72,14 +55,24 @@
               <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}</time>
 
               <!-- <time class="time">{{ post.lastUpdated | dateFormat2 }}</time> -->
-              <Mybadge :title="post.regularPath | badgeFormat"></Mybadge>
               <router-link :to="post.path">
                 ### {{ post.title }}
               </router-link>
+              <br />
+              <Mybadge
+                :title="post.regularPath | badgeFormat"
+                style="float:right;"
+              ></Mybadge>
+              <el-divider></el-divider>
+
             </div>
           </transition-group>
         </el-card>
       </el-main>
+
+      <el-divider><i class="el-icon-loading"> + <i class="el-icon-reading"></i></i> </el-divider>
+
+
       <el-main>
         <el-card
           class="box-card"
@@ -89,12 +82,16 @@
             slot="header"
             class="clearfix"
           >
+
             <span class="titles">All Posts</span>
             <el-button
               style="float: right; padding: 3px 0"
               type="text"
               @click="show3 = !show3"
-            >Show All</el-button>
+            >Show All Posts</el-button>
+            <!-- <SearchBox
+            class="mysearch"
+          /> -->
           </div>
           <transition-group
             enter-active-class="slideInUp"
@@ -109,10 +106,17 @@
               <!-- <time class="time">{{ post.lastUpdated | dateFormat2 }}</time> -->
 
               <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}</time>
-              <Mybadge :title="post.regularPath | badgeFormat"></Mybadge>
+              <!-- <Mybadge :title="post.regularPath | badgeFormat"></Mybadge> -->
               <router-link :to="post.path">
                 ### {{ post.title }}
               </router-link>
+              <br />
+              <Mybadge
+                :title="post.regularPath | badgeFormat"
+                style="float:right;"
+              ></Mybadge>
+              <el-divider></el-divider>
+
             </div>
           </transition-group>
         </el-card>
