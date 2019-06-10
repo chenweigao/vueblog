@@ -59,32 +59,44 @@ module.exports = {
         '*': '\\times',
       },
       showError: true
-    }]
+    }],
+    [
+      'vuepress-plugin-baidu-autopush', {
+      }
+    ],
+    [
+      'reading-progress', {
+        readingDir: 'blog',
+      }
+    ],
+    [
+      'vuepress-plugin-element-tabs'
+    ]
     // ['git-log']
 
   ],
   themeConfig: {
     sidebar: 'auto',
     nav: [{
-        text: 'Home',
-        link: '/'
-      },
-      {
-        text: 'Tags',
-        link: '/Tags.html'
-      },
-      {
-        text: 'Discuss',
-        link: '/discuss/'
-      },
-      {
-        text: 'Commits',
-        link: '/commits/'
-      },
-      {
-        text: 'About',
-        link: '/blog/others/resume.html'
-      }
+      text: 'Home',
+      link: '/'
+    },
+    {
+      text: 'Tags',
+      link: '/Tags.html'
+    },
+    {
+      text: 'Discuss',
+      link: '/discuss/'
+    },
+    {
+      text: 'Commits',
+      link: '/commits/'
+    },
+    {
+      text: 'About',
+      link: '/blog/others/resume.html'
+    }
       // {
       //   text: 'About',
       //   link: '/blog/2019/resume'
@@ -101,6 +113,6 @@ module.exports = {
   markdown: {
     extendMarkdown: md => {
       md.use(require("markdown-it-katex"));
-      }
+    }
   }
 }
