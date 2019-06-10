@@ -140,7 +140,7 @@ epoll_ctl 的 op 操作：
         }
         ```
 
-## 突破文件描述符上限
+### 突破文件描述符上限
 
 查看受计算机限制的文件描述符上限：
 
@@ -164,13 +164,13 @@ vi /etc/security/limits.conf
 ulimit -n 2000
 ```
 
-## Libevent Abstract
+## Libevent Install
 
 :::tip 简介
 libevent 封装了 socket 通信、IO 多路转接；精简，专注于网络，性能高；跨平台；**事件驱动**。
 :::
 
-安装：
+### Linux Install
 
 ```sh
 # 检测安装环境，生成 makefile
@@ -198,6 +198,24 @@ gcc hello-world.c -o hello-world -l event
 ./hello-world
 nc localhost 9995
 ```
+
+### Window Install
+
+使用 VS 的开发者命令行，然后输入：
+
+```sh
+nmake /f Makefile.nmake
+```
+
+编译完成后会看到三个 lib 文件，在 VS 的设置中，添加附加依赖项和附加包含项即可，分别包含这三个 lib 文件和 include 文件。
+
+在运行时，会产生一些错误：
+
+1. `#define _CRT_SECURE_NO_WARNINGS` 添加这行，对应 window 下的 `strerror` 错误；
+
+2. `#pragma comment(lib, "ws2_32.lib")` 对应 winsock相关的问题。
+
+## Libevent 框架概述
 
 1. 事件的底层处理框架
    1. 一个函数
