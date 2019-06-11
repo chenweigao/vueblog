@@ -556,7 +556,9 @@ def longestPalindrome(s):
     return res
 ```
 
-上述代码为求最长回文子串的代码，核心状态转移公式为第 5 行重点部分，如果是会问子串的话，则 $S_{ij}$ 对应的 `dp[i][j]` 的值为 1.
+上述代码为求最长回文子串的代码，核心状态转移公式为第 5 行重点部分，如果是回文子串的话，则 $S_{ij}$ 对应的 `dp[i][j]` 的值为 1.
+
+考虑 $ababa$ 这个示例: 如果我们已经知道 $bab$ 是回文，那么很明显，$ababa$ 一定是回文，因为它的左首字母和右尾字母是相同的。
 
 :::warning formula
 
@@ -564,7 +566,7 @@ $dp(i, j) = true$, if $S_ {ij}$ 是回文串。
 
 $dp(i, j) = false$, otherwise.
 
-=> $dp(i, j)$ = { $dp(i + 1, j - 1)$ and $S_i == S_j$ }
+=> $dp(i, j)$ = { $dp(i + 1, j - 1)$ and $S_i = S_j$ }
 
 so,
 
