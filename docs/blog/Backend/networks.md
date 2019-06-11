@@ -488,14 +488,22 @@ Request:
 
 ```html
 GET /hello.txt HTTP/1.1
-Content-Type: text/plain;charset=utf-8
-Content-Length: -1
 Host: www.mysite.com
 Accept-Language: en
-Connection: keep-alive
 ```
 
 Response:
+
+响应消息包括四部分：**状态行，消息报头，空行，响应正文**
+
+```html
+HTTP/1.1 200 OK
+Content-Type: text/plain;charset=utf-8
+
+--content here--
+```
+
+状态码包括：
 
 - 1xx: 指示信息：表示请求已经接受，继续处理
 - 2xx：成功消息
