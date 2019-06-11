@@ -488,11 +488,20 @@ Request:
 
 ```html
 GET /hello.txt HTTP/1.1
+Content-Type: text/plain;charset=utf-8
+Content-Length: -1
 Host: www.mysite.com
 Accept-Language: en
+Connection: keep-alive
 ```
 
 Response:
+
+- 1xx: 指示信息：表示请求已经接受，继续处理
+- 2xx：成功消息
+- 3xx：重定向
+- 4xx：客户端错误：请求有语法错误或请求无法实现
+- 5xx：服务器端错误
 
 ### TCP socket
 
