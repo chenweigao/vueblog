@@ -494,6 +494,23 @@ Accept-Language: en
 
 Response:
 
+响应消息包括四部分：**状态行，消息报头，空行，响应正文**
+
+```html
+HTTP/1.1 200 OK
+Content-Type: text/plain;charset=utf-8
+
+--content here--
+```
+
+状态码包括：
+
+- 1xx: 指示信息：表示请求已经接受，继续处理
+- 2xx：成功消息
+- 3xx：重定向
+- 4xx：客户端错误：请求有语法错误或请求无法实现
+- 5xx：服务器端错误
+
 ### TCP socket
 
 [Code in Github](https://github.com/chenweigao/python_web/tree/master/socket)

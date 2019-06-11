@@ -386,4 +386,34 @@ def levelOrder(root):
 - ...
 - Hash table supports following operations in Θ(1) time: **search insert and delete**, BST is O(logn) for these operation.
 
-## Red-Black Tree
+### Inorder Traveersal BST
+
+[解法参考代码](https://github.com/chenweigao/_code/blob/master/data_struct/BST_inorder.py):
+
+:::: tabs type:card
+
+::: tab Recursive
+
+```py
+class Solution:
+    def inorderTraversal(self, root):
+        res = []
+        self.inorder(root, res)
+        return res
+
+    def inorder(self, root, res):
+        if not root:
+            return
+        if root.left:
+            self.inorder(root.left, res)
+        res.append(root.val)
+        if root.right:
+            self.inorder(root.right, res)
+```
+
+:::
+
+::: tab Iteratively
+this is a tab
+:::
+::::

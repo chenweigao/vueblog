@@ -457,6 +457,31 @@ for i in range(len(str1) - 1, -1, -1):
         res[i + j + 1] = (x * y + res[i + j + 1]) % 10
 ```
 
+### 求众数(Mode)
+
+要求一个数的众数，有如下思路：[参考代码](https://github.com/chenweigao/_code/blob/master/LeetCode/LC169_majority_element.py)
+
+1. 使用一个 dict 来统计每个数出现的次数，返回出现次数最多的那个数；
+
+    ```py
+    def majorityElement(self, nums: 'List[int]') -> int:
+        counts = collections.Counter(nums)
+        return max(counts, key=counts.get)
+    ```
+
+2. 使用一个堆栈：
+
+    ```py
+    stack = []
+
+    for num in nums:
+        if stack == [] or stack[-1] == num:
+            stack.append(num)
+        else:
+            stack.pop()
+    return stack[-1]
+    ```
+
 ## DP
 
 ### Maximum Subarray - LC53

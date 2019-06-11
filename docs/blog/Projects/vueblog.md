@@ -188,6 +188,23 @@ Source code is:
 :::
 ```
 
+### vuepress-plugin-tabs
+
+[参考这个教程](https://superbiger.github.io/vuepress-plugin-tabs/#usage)
+
+:::: tabs type:card
+::: tab MyTitle
+```py
+def a:
+    return 0
+```
+:::
+
+::: tab MyTitle2
+this is a tab
+:::
+::::
+
 ### Asset Handing/image
 
 将图片放置于 `.vuepress/public` 目录下，然后引用 `![Image](/imagename.type)`.
