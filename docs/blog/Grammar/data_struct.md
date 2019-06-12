@@ -390,9 +390,7 @@ def levelOrder(root):
 
 [解法参考代码](https://github.com/chenweigao/_code/blob/master/data_struct/BST_inorder.py):
 
-:::: tabs type:card
-
-::: tab Recursive
+Recursive
 
 ```py
 class Solution:
@@ -410,10 +408,3 @@ class Solution:
         if root.right:
             self.inorder(root.right, res)
 ```
-
-:::
-
-::: tab Iteratively
-this is a tab
-:::
-::::
