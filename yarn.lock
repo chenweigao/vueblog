@@ -5271,7 +5271,7 @@ node-releases@^1.1.19:
   dependencies:
     semver "^5.3.0"
 
-node-sass@^4.10.0:
+node-sass@^4.10.0, node-sass@^4.11.0:
   version "4.12.0"
   resolved "https://registry.npm.taobao.org/node-sass/download/node-sass-4.12.0.tgz#0914f531932380114a30cc5fa4fa63233a25f017"
   integrity sha1-CRT1MZMjgBFKMMxfpPpjIzol8Bc=
@@ -6618,7 +6618,7 @@ reselect@^3.0.1:
   resolved "https://registry.npm.taobao.org/reselect/download/reselect-3.0.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freselect%2Fdownload%2Freselect-3.0.1.tgz#efdaa98ea7451324d092b2b2163a6a1d7a9a2147"
   integrity sha1-79qpjqdFEyTQkrKyFjpqHXqaIUc=
 
-resize-observer-polyfill@^1.5.0:
+resize-observer-polyfill@^1.5.0, resize-observer-polyfill@^1.5.1:
   version "1.5.1"
   resolved "https://registry.npm.taobao.org/resize-observer-polyfill/download/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
   integrity sha1-DpAg3T0hAkRY1OvSfiPkAmmBBGQ=
@@ -7942,6 +7942,15 @@ vuepress-plugin-container@^2.0.0:
   integrity sha1-sg75fdkfE3yL4RlGCSfF/9ZOD3c=
   dependencies:
     markdown-it-container "^2.0.0"
+
+vuepress-plugin-element-tabs@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.npm.taobao.org/vuepress-plugin-element-tabs/download/vuepress-plugin-element-tabs-0.1.7.tgz#f8960a175b5305333bb386e55bd45331fd137994"
+  integrity sha1-+JYKF1tTBTM7s4blW9RTMf0TeZQ=
+  dependencies:
+    node-sass "^4.11.0"
+    resize-observer-polyfill "^1.5.1"
+    sass-loader "^7.1.0"
 
 vuepress-plugin-mathjax@^1.2.4:
   version "1.2.4"
