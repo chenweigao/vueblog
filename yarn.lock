@@ -7952,6 +7952,11 @@ vuepress-plugin-mathjax@^1.2.4:
     mathjax3 "^3.0.0-beta.3"
     vuepress-mergeable "^1.0.0"
 
+vuepress-plugin-reading-progress@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.npm.taobao.org/vuepress-plugin-reading-progress/download/vuepress-plugin-reading-progress-1.0.7.tgz#9a278866b5280e447226579945eded3055ba48ce"
+  integrity sha1-mieIZrUoDkRyJleZRe3tMFW6SM4=
+
 vuepress-plugin-reading-time@^0.1.1:
   version "0.1.1"
   resolved "https://registry.npm.taobao.org/vuepress-plugin-reading-time/download/vuepress-plugin-reading-time-0.1.1.tgz#3ea3dcded424a00c1d5175a50af8d5694899f1ea"

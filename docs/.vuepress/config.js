@@ -59,15 +59,13 @@ module.exports = {
         '*': '\\times',
       },
       showError: true
-    }]
+    }],
     // [
     //   'vuepress-plugin-baidu-autopush'
     // ],
-    // [
-    //   'reading-progress', {
-    //     readingDir: 'blog',
-    //   }
-    // ],
+    [
+      'reading-progress'
+    ],
     // [
     //   'vuepress-plugin-element-tabs'
     // ]
