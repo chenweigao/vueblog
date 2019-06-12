@@ -60,17 +60,15 @@ module.exports = {
       },
       showError: true
     }],
+    // [
+    //   'vuepress-plugin-baidu-autopush'
+    // ],
     [
-      'vuepress-plugin-baidu-autopush'
+      'reading-progress'
     ],
-    [
-      'reading-progress', {
-        readingDir: 'blog',
-      }
-    ],
-    [
-      'vuepress-plugin-element-tabs'
-    ]
+    // [
+    //   'vuepress-plugin-element-tabs'
+    // ]
     // ['git-log']
 
   ],
