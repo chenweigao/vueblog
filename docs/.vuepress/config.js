@@ -66,9 +66,9 @@ module.exports = {
     [
       'reading-progress'
     ],
-    [
-      'vuepress-plugin-element-tabs'
-    ]
+    // [
+    //   'vuepress-plugin-element-tabs'
+    // ]
     // ['git-log']
 
   ],
