@@ -61,8 +61,7 @@ module.exports = {
       showError: true
     }],
     [
-      'vuepress-plugin-baidu-autopush', {
-      }
+      'vuepress-plugin-baidu-autopush'
     ],
     [
       'reading-progress', {
