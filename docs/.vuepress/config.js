@@ -12,7 +12,7 @@ module.exports = {
     }],
     ['meta', {
       name: 'theme-color',
-      content: '#3eaf7c'
+      // content: '#3eaf7c'
     }],
     ['meta', {
       name: 'apple-mobile-web-app-capable',
@@ -29,7 +29,7 @@ module.exports = {
     ['link', {
       rel: 'mask-icon',
       href: '/icons/safari-pinned-tab.svg',
-      color: '#3eaf7c'
+      // color: '#3eaf7c'
     }],
     ['meta', {
       name: 'msapplication-TileImage',
