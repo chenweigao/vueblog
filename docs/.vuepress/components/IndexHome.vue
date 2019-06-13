@@ -346,7 +346,7 @@ export default {
 
 <style>
 a{
-  color: black;
+  color: black !important;
 }
 .cardLastUpdate {
   margin-bottom: 40px;
