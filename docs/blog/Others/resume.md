@@ -1,6 +1,12 @@
+---
+{
+  "title": "Resume",
+}
+---
+
 <Titles title="Resume"></Titles>
 
-# 陈惟高
+## 陈惟高
 
 :::tip 24 岁 | 男
 
