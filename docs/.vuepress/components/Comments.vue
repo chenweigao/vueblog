@@ -2,7 +2,7 @@
 
   <div>
 
-    <Titles title="Message Board"></Titles>
+    <Titles title="MESSAGE BOARD"></Titles>
     <transition
       appear
       enter-active-class="bounce"

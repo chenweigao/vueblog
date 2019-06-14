@@ -263,7 +263,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+a{
+  color: black;
+}
 .cardLastUpdate {
   margin-bottom: 40px;
 }

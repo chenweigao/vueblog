@@ -1,6 +1,6 @@
 <template>
     <div>
-    <Titles title="Blog Changelog"></Titles>
+    <Titles title="BLOG CHANGELOG"></Titles>
 
         <el-timeline v-for="record in commits">
             <el-timeline-item

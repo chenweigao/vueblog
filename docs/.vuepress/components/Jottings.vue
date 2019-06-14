@@ -58,7 +58,7 @@ export default {
     components: { SearchBox },
     data: function () {
         return {
-            title: "Jottings"
+            title: "JOTTINGS"
         };
     },
 

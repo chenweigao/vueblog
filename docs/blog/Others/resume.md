@@ -4,7 +4,7 @@
 }
 ---
 
-<Titles title="Resume"></Titles>
+<Titles title="RESUME"></Titles>
 
 ## 陈惟高
 
