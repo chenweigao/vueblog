@@ -6,9 +6,11 @@
             :style="randomRgb()"
         > Jottings</h1>
         <el-container>
-            <el-main v-for="post in posts()"
-            class="animated flipInX">
-               
+            <el-main
+                v-for="post in posts()"
+                class="animated flipInX"
+            >
+
                 <el-card
                     shadow="hover"
                     style="margin-top: 40px;"
@@ -17,7 +19,6 @@
                     <div
                         slot="header"
                         class="clearfix"
-
                     >
                         <span class="titles">
                             <router-link :to="post.path">

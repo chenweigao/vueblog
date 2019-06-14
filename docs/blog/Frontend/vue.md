@@ -447,3 +447,28 @@ Lint the project:
 ```bash
 yarn lint
 ```
+
+## Animate.css
+
+[https://daneden.github.io/animate.css/](https://daneden.github.io/animate.css/)
+
+使用方法：
+
+```html
+<el-main
+ v-for="post in posts()"
+ class="animated flipInX"
+>
+ <el-card
+   :key=post.key
+ >
+ <!-- html file -->
+ </el-card>
+</el-main>
+```
+
+注意两点：
+
+1. 循环出来的元素必须绑定 `key`
+
+2. 直接给循环上层增加 animated 类
