@@ -1,6 +1,8 @@
-# Resume
+<Titles title="Resume"></Titles>
 
-:::tip 陈惟高 | 男
+# 陈惟高
+
+:::tip 24 岁 | 男
 
 - 邮箱： [mail@weigao.cc](mailto:mail@weigao.cc)
 - GitHub：[https://github.com/chenweigao](https://github.com/chenweigao)

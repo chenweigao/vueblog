@@ -1,10 +1,11 @@
 <template>
     <div>
 
-        <h1
+        <!-- <h1
             class="h1title"
             :style="randomRgb()"
-        > Jottings</h1>
+        > Jottings</h1> -->
+        <Titles :title="title"></Titles>
         <el-container>
             <el-main
                 v-for="post in posts()"
@@ -54,10 +55,12 @@
 import SearchBox from '@SearchBox'
 import Comments from './Comments.vue'
 import Mybadge from './Mybadge.vue'
+import Titles from './Titles.vue'
 export default {
     components: { SearchBox },
     data: function () {
         return {
+            title: "Jottings"
         };
     },
 
@@ -145,9 +148,6 @@ body > .el-container {
   padding: 5px;
 }
 
-.h1title {
-  text-align: center;
-}
 .showmore {
   margin-top: 20px;
   margin-left: 43%;

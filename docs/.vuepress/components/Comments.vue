@@ -1,32 +1,35 @@
 <template>
-   
 
-<div>
-   <h1
-      class="h1title"
-      :style="randomRgb()"
-    >Message Board</h1>
-    <transition appear enter-active-class="bounce">
-    <div id="vcomments" class="animated"></div>
+  <div>
+
+    <Titles title="Message Board"></Titles>
+    <transition
+      appear
+      enter-active-class="bounce"
+    >
+      <div
+        id="vcomments"
+        class="animated"
+      ></div>
     </transition>
-</div>
-    <!-- <div id="vcomments" class="animated"></div> -->
+  </div>
+  <!-- <div id="vcomments" class="animated"></div> -->
 </template>
 
 <script>
 export default {
-  data: function() {
+  data: function () {
     return {};
   },
   methods: {
-     randomRgb: function () {
+    randomRgb: function () {
       var R = Math.floor(Math.random() * 255);
       var G = Math.floor(Math.random() * 255);
       var B = Math.floor(Math.random() * 255);
       return { color: 'rgb(' + R + ',' + G + ',' + B + ')' };
     }
   },
-  mounted: function() {
+  mounted: function () {
     // require window
     const Valine = require("valine");
     if (typeof window !== "undefined") {

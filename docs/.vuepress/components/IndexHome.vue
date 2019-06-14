@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1
+    <!-- <h1
       class="h1title"
       :style="randomRgb()"
-    > WEIGAO CHEN</h1>
-
+    > WEIGAO CHEN</h1> -->
+  <Titles></Titles>
     <el-container>
 
       <el-header>
@@ -170,6 +170,8 @@
 import SearchBox from '@SearchBox'
 import Comments from './Comments.vue'
 import Mybadge from './Mybadge.vue'
+import Titles from './Titles.vue'
+
 export default {
   components: { SearchBox },
   data: function () {

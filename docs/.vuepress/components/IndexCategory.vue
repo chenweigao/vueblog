@@ -1,10 +1,6 @@
 <template>
   <div>
-    <h1
-      class="h1title"
-      :style="randomRgb()"
-    > TAGS</h1>
-
+    <Titles title="TAGS"></Titles>
     <el-container>
 
       <el-header>

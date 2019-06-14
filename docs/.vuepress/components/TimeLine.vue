@@ -1,9 +1,7 @@
 <template>
     <div>
-        <h1
-            class="h1title"
-            :style="randomRgb()"
-        >Blog Changelog</h1>
+    <Titles title="Blog Changelog"></Titles>
+
         <el-timeline v-for="record in commits">
             <el-timeline-item
                 :timestamp="formatDates(record.commit.author.date)"
