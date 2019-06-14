@@ -69,7 +69,6 @@ export default {
             return time.replace(/[^0-9]/gi, "");
         },
         posts: function () {
-            console.log(this.$site.pages);
             return this.$site.pages
                 .filter(x => x.path.startsWith("/jottings/") && !x.frontmatter.show)
                 .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated));
