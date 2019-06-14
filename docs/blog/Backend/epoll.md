@@ -1,4 +1,73 @@
-# Epoll and Libevent
+# Socket, Epoll and Libevent
+
+## Socket
+
+### Data Struct
+
+地址转化函数：`inet_pton(AF_INET, "127.0.0.1", &serv.sin_addr.s_addr);` 和 `inet_ntop`. 其中 p 表示**表达(presentation)**, n 表示**数值(numeric)**.
+
+```c
+struct sockaddr_in addr;
+char str[INET_ADDRSTRLEN];
+inet_ntop(AF_INET, &addr.sin_addr, str, sizeof(str));
+```
+
+套接字结构体为：
+
+```c
+struct sockaddr_in {
+    uint_8  sin_len;
+    sa_family_t sin_family;
+    in_port_t   sin_port; // 16-bit
+
+    struct in_addr sin_addr;
+
+    char sin_zero[8];
+}
+
+struct in_addr {
+    in_addr_t   s_addr; // 32-bit IPV4
+}
+```
+
+### 值-结果参数
+
+问题：
+
+```c
+#include <sys/socket.h>
+int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
+```
+
+为什么 addrlen 要以指针的方式传递？
+
+- 因为 addrlen 是**值-结果参数**: 套接字地址结构从**内核到进程**方向的传递。
+
+1. 从进程到内核传递套接字地址结构的函数有 3 个：bind, connect 和 sendto; 这些函数的一个参数是指向某个套接字地址结构的指针，另一个参数是该结构的整数大小。
+
+    ```c
+    struct sockaddr_in serv;
+    // fill in serv
+    connect(sockfd, (SA *) &serv, sizeof(serv));
+    ```
+
+2. 从内核到进程传递套接字地址结构的函数有 4 个：accept, recvfrom, getsockname 和 getpeername; 这些函数的其中两个参数是指向某个套接字地址结构的指针和指向表示该结构大小的整数变量的指针。
+
+    ```c
+    struct sockaddr_un cli;
+    socklen_t len;
+
+    len = sizeof(len);
+    getpeername(unixfd, (SA *) &cli, &len);
+    ```
+
+    ![value-result](/value-result.jpg)
+
+    如图中所示，当函数被调用时，结构大小是一个**值(value)**, 它告诉内核该结构的大小，这样内核在写该结构时不至于越界；当函数返回时，结构大小又是一个**结果(result)**, 它告诉内核在该结构中究竟存储了多少信息。这种类型的参数称为**value-result**参数。
+
+> 所有的套接字函数都是内核中的系统调用。
+
+除了系统调用之外，操作系统还可以通过异常(如缺页异常)和中断(如0x80)从用户态切换到内核态。
 
 ## select, poll and epoll
 
@@ -44,7 +113,7 @@ events 包括：
 
 判断是否已连接的客户端：`!all[i] & EPOLLIN`
 
-判断是否新连接： `fd == lfd`
+判断是否新连接： `fd == lfd`, 有新连接时，调用 accept() 接受该连接请求。
 
 ```cpp
 typedef union epoll_data

@@ -7,13 +7,11 @@
         > Jottings</h1> -->
         <Titles :title="title"></Titles>
         <el-container>
-            <el-main
-                v-for="post in posts()"
-                class="animated flipInX"
-            >
-
+            <el-main>
                 <el-card
                     shadow="hover"
+                    v-for="post in posts()"
+                    class="animated fadeIn"
                     style="margin-top: 40px;"
                     :key=post.key
                 >

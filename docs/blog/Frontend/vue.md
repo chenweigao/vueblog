@@ -456,11 +456,13 @@ yarn lint
 
 ```html
 <el-main
- v-for="post in posts()"
- class="animated flipInX"
 >
  <el-card
-   :key=post.key
+  shadow="hover"
+  v-for="post in posts()"
+  class="animated flipInX"
+  style="margin-top: 40px;"
+  :key=post.key
  >
  <!-- html file -->
  </el-card>
@@ -471,4 +473,4 @@ yarn lint
 
 1. 循环出来的元素必须绑定 `key`
 
-2. 直接给循环上层增加 animated 类
+2. 直接给循环增加 animated 类

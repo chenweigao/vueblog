@@ -4,7 +4,7 @@
       class="h1title"
       :style="randomRgb()"
     > WEIGAO CHEN</h1> -->
-  <Titles></Titles>
+  <Titles title="All POSTS"></Titles>
     <el-container>
 
       <el-header>

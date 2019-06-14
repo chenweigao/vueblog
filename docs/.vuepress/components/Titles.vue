@@ -1,6 +1,6 @@
 <template>
     <h1
-        class="h1title"
+        class="h1title animated flipInX"
         :style="randomRgb()"
     >
         {{title}}
