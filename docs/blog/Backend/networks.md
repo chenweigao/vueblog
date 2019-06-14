@@ -240,8 +240,8 @@ seq1 - seq2 = 1111 1111 - 0000 0001 = 1111 1110, 由于结果被强制类型转�
 
 ### TCP 状态机
 
-<!-- ![TCP STATE](/tcp.jpg) -->
-![TCP state](https://upload-images.jianshu.io/upload_images/4010128-b83e0e722007f62a.jpg)
+![TCP STATE](/tcp.jpg)
+<!-- ![TCP state](https://upload-images.jianshu.io/upload_images/4010128-b83e0e722007f62a.jpg) -->
 
 连接：
 
