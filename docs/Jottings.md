@@ -1,6 +1,6 @@
 ---
+home: true
 sidebar: false
 ---
-## Message Board
 
 <Jottings/>

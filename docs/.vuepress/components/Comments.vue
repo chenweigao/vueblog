@@ -1,5 +1,11 @@
 <template>
+   
+
 <div>
+   <h1
+      class="h1title"
+      :style="randomRgb()"
+    >Message Board</h1>
     <transition appear enter-active-class="bounce">
     <div id="vcomments" class="animated"></div>
     </transition>
@@ -12,7 +18,14 @@ export default {
   data: function() {
     return {};
   },
-  methods: {},
+  methods: {
+     randomRgb: function () {
+      var R = Math.floor(Math.random() * 255);
+      var G = Math.floor(Math.random() * 255);
+      var B = Math.floor(Math.random() * 255);
+      return { color: 'rgb(' + R + ',' + G + ',' + B + ')' };
+    }
+  },
   mounted: function() {
     // require window
     const Valine = require("valine");
@@ -38,6 +51,9 @@ export default {
 </script>
 
 <style>
+.h1title {
+  text-align: center;
+}
 .thin {
   font-weight: 350;
 }
@@ -59,6 +75,9 @@ export default {
 .v-enter-active,
 .v-leave-active {
   transition: all 0.6s ease;
+}
+.h1title {
+  text-align: center;
 }
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
 </style>

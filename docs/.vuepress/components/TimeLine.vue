@@ -1,6 +1,9 @@
 <template>
     <div>
-        <h2>Latest Blog Commits</h2>
+        <h1
+            class="h1title"
+            :style="randomRgb()"
+        >Blog Changelog</h1>
         <el-timeline v-for="record in commits">
             <el-timeline-item
                 :timestamp="formatDates(record.commit.author.date)"
@@ -80,6 +83,12 @@ export default {
         },
         formatDates: function (v) {
             return v.replace(/T|Z/g, ' ')
+        },
+        randomRgb: function () {
+            var R = Math.floor(Math.random() * 255);
+            var G = Math.floor(Math.random() * 255);
+            var B = Math.floor(Math.random() * 255);
+            return { color: 'rgb(' + R + ',' + G + ',' + B + ')' };
         },
         loadMore() {
             var self = this

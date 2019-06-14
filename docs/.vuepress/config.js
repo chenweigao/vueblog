@@ -83,9 +83,14 @@ module.exports = {
       link: '/Tags.html'
     },
     {
+      text: 'Jottings',
+      link: '/Jottings/'
+    },
+    {
       text: 'Discuss',
       link: '/discuss/'
     },
+
     {
       text: 'Commits',
       link: '/commits/'
@@ -93,6 +98,10 @@ module.exports = {
     {
       text: 'About',
       link: '/blog/others/resume.html'
+    },
+    {
+      text: 'GitHub',
+      link: 'https://github.com/chenweigao'
     }
       // {
       //   text: 'About',

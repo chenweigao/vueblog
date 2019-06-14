@@ -3,7 +3,7 @@
     <h1
       class="h1title"
       :style="randomRgb()"
-    > WEIGAO CHEN</h1>
+    > TAGS</h1>
 
     <el-container>
 
