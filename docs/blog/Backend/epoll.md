@@ -4,7 +4,7 @@
 
 ### Data Struct
 
-地址转化函数：`inet_pton(AF_INET, "127.0.0.1", &serv.sin_addr.s_addr);` 和 `inet_ntop`. 其中 p 表示**表达(presentation)**, n 表示**数值(numeric)**.
+地址转化函数：`inet_pton(AF_INET, "127.0.0.1", &serv.sin_addr.s_addr);` 和 `inet_ntop`。 其中 p 表示**表达(presentation)**, n 表示 **数值(numeric)**
 
 ```c
 struct sockaddr_in addr;
@@ -63,11 +63,34 @@ int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
 
     ![value-result](/value-result.jpg)
 
-    如图中所示，当函数被调用时，结构大小是一个**值(value)**, 它告诉内核该结构的大小，这样内核在写该结构时不至于越界；当函数返回时，结构大小又是一个**结果(result)**, 它告诉内核在该结构中究竟存储了多少信息。这种类型的参数称为**value-result**参数。
+    如图中所示，当函数被调用时，结构大小是一个 **值(value)** , 它告诉内核该结构的大小，这样内核在写该结构时不至于越界；当函数返回时，结构大小又是一个 **结果(result)** , 它告诉内核在该结构中究竟存储了多少信息。这种类型的参数称为 **value-result** 参数。
 
 > 所有的套接字函数都是内核中的系统调用。
 
 除了系统调用之外，操作系统还可以通过异常(如缺页异常)和中断(如0x80)从用户态切换到内核态。
+
+### listen()
+
+```c
+#include <sys/socket.h>
+int listen(int sockfd, int backlog);
+```
+
+当 socket 函数创建了一个套接字时，它被假设为一个 **主动套接字**，也就是说，它是一个将调用 connect() 发起连接的客户端套接字。listen() 函数把一个未连接的套接字转化为 **被动套接字**。指示内核应该接受指向该套接字的连接请求。
+
+> 本函数通常在调用 socket 和 bind 这两个函数之后，并在调用 accept 函数之前调用。
+
+第二个参数规定了内核应该为相应套接字排队的最大连接个数，比如 36。对于这个参数 *backlog*, 内核为任何一个给定的套接字维护[两个队列](./networks.html#连接队列)：
+
+1. 未完成连接队列(incomplete connection queue): SYN 分节已由某个客户端发出并到达服务器，而服务器正在等待完成相应的 TCP 三路握手过程；这些套接字处于 SYN_RCVD 状态；
+   在三路握手正常完成的前提下，未完成连接队列中的任何一项在其中的存留时间就是一个 RTT, RTT 的取值取决于特定的客户与服务器。
+
+2. 已完成连接的队列(completed connection queue): 每个已完成 TCP 三路握手的客户端对应1其中的一项；这些套接字处于 ESTABLISHED 状态。
+
+两队列之和不超过 backlog.
+
+当进程调用 accept 函数之后，已完成连接队列中的对头项将返回给进程，或者如果该队列为空，那么进程将被投入休眠，直到 TCP 在该队列放入一项才唤醒它。
+
 
 ## select, poll and epoll
 
