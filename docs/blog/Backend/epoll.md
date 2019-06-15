@@ -91,6 +91,17 @@ int listen(int sockfd, int backlog);
 
 当进程调用 accept 函数之后，已完成连接队列中的对头项将返回给进程，或者如果该队列为空，那么进程将被投入休眠，直到 TCP 在该队列放入一项才唤醒它。
 
+### accept()
+
+```c
+int accept(int sockfd, struct sockaddr *cliaddr, socklen_t *addrlen);
+```
+
+在 accept() 函数中，我们称它的第一个参数为**监听套接字(listening socket)**描述符，称它的第二个参数为**已连接套接字(connected socket)**描述符。
+
+监听套接字由 socket 创建，随后用于 bind 和 listen 的第一个参数。一个服务器通常仅仅创建一个监听套接字，它在该服务器的生命周期内一直存在。
+
+已连接套接字由内核为每个服务器进程接受的客户端创建，当服务器完成对某个客户的服务时，相应的已连接套接字就被关闭。
 
 ## select, poll and epoll
 
