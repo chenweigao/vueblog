@@ -51,3 +51,4 @@ You can deploy this site via **Netlify**: This is a [tutorial](https://v1.vuepre
 
 More config information could be found at my blog's post [Vuepress Blog](https://www.weigao.cc/blog/Projects/vueblog.html#vuepress-update)
 
+Thank you!
