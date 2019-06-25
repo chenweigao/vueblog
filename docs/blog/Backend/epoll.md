@@ -97,7 +97,7 @@ int listen(int sockfd, int backlog);
 int accept(int sockfd, struct sockaddr *cliaddr, socklen_t *addrlen);
 ```
 
-在 accept() 函数中，我们称它的第一个参数为**监听套接字(listening socket)**描述符，称它的第二个参数为**已连接套接字(connected socket)**描述符。
+在 accept() 函数中，我们称它的第一个参数为 **监听套接字(listening socket)** 描述符，称它的第二个参数为 **已连接套接字(connected socket)** 描述符。
 
 监听套接字由 socket 创建，随后用于 bind 和 listen 的第一个参数。一个服务器通常仅仅创建一个监听套接字，它在该服务器的生命周期内一直存在。
 
