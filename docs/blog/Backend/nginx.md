@@ -1,9 +1,3 @@
----
-{
-  "title": "Nginx",
-  "tags": ["backend","Cloud"],
-}
----
 # Nginx
 
 [Beginner's Guide](http://nginx.org/en/docs/beginners_guide.html)
