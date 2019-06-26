@@ -52,7 +52,8 @@ kong stop
 `POST` 添加一个 service:
 
 ```sh
-curl -i -X POST --url http://localhost:8001/service --data "host=weigao.cc" --data "name=weigao"
+curl -i -X POST --url http://localhost:8001/service \
+--data "host=weigao.cc" --data "name=weigao"
 ```
 
 host(添加时必须指定 host 为必选项) 为 weigao.cc, name 为 weigao 的 service, 我们可以在 postgres 数据库中的 services 表单中查询到它，或者使用 `GET` 方法获取：
@@ -68,7 +69,9 @@ curl -i -X GET --url http://localhost:8001/service/weigao
 使用 `PATCH` 更新 service 的信息，这里使用了 id 访问，然后更新其名字为 weigao.
 
 ```sh
-curl -i -X PATCH --url http://localhost:8001/services/1158ae81-fcef-4e59-bd8b-480b3e175fff --data "name=weigao"
+curl -i -X PATCH \
+--url http://localhost:8001/services/1158ae81-fcef-4e59-bd8b-480b3e175fff \
+--data "name=weigao"
 ```
 
 使用 `DELETE` 删除 service：
@@ -82,7 +85,8 @@ curl -i -X DELETE --url http://localhost:8001/services/weigao
 使用 `PUT` 添加或更新：
 
 ```sh
-curl -i -X PUT --url http://localhost:8001/services/weigao --data "host=weigao.cc"
+curl -i -X PUT --url http://localhost:8001/services/weigao \
+--data "host=weigao.cc"
 ```
 
 以上是针对 service 的例子，同样适用于 Route, Consumer, Plugins, Tags 等。
