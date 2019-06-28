@@ -26,6 +26,17 @@ Let $T(n)$ be the recurrence $T(n) = aT(\frac{n}{b}) + cn^k$, defined for $n \ge
 
 [GitHub Sort code](https://github.com/chenweigao/_code/tree/master/sort)
 
+### Insertion Sort
+
+直接使用 bisect 模块，可以直接插入某个元素，返回排序好的元素：
+
+```py
+import bisect
+nums = [1, 3, 4]
+bisect.insort(nums, 2)
+print(nums)  # [1, 2, 3, 4]
+```
+
 ### Merge Sort
 
 $T(n) = O(nlog_{2}n)$
@@ -214,6 +225,17 @@ def binarySearch(nums, target):
             r = mid - 1
     return l
 ```
+
+或者使用 Python 自带的 **bisect**:
+
+```py
+import bisect
+nums = [1, 3, 4, 4, 6, 7]
+print(bisect.bisect(nums, 4))
+print(bisect.bisect_left(nums, 4))
+```
+
+注意到，`bisect()` 默认会查找元素需要插入的位置，如果是重复的元素，则会返回其最右侧可以插入的位置，使用 `bisect_left()` 可以返回其左侧位置。
 
 使用二分查找判断某个数是否完全平方数：
 
