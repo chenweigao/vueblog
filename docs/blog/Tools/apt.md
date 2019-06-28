@@ -33,6 +33,24 @@ Finally:
 pip install pythonModuleName -i https://pypi.douban.com/simple
 ```
 
+永久指定 pip source:
+
+- windows: 在 c:/windows/user/your-name/pip/ 下，新建文件 `pip.ini`:
+
+```conf
+[global] 
+trusted-host=mirrors.tools.huawei.com
+index-url=http://mirrors.tools.huawei.com/pypi/simple/ 
+```
+
+- linux: 在 ~/.pip/ 下创建 `pip.conf`:
+
+```conf
+[global] 
+trusted-host=mirrors.tools.huawei.com
+index-url=http://mirrors.tools.huawei.com/pypi/simple/ 
+```
+
 ## gem source
 
 [gem source](https://ruby.taobao.org/):
