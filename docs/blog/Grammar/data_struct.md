@@ -20,18 +20,44 @@
 
 Implementation:
 
+简单版本：
+
 ```py
 def isValid(self, s: str) -> bool:
-    pairs = { '[' : ']', '{' : '}', '(' : ')' }
     stack = []
+    for ch in s:
+        if ch in ['(', '[', '{']:
+            stack.append(ch)
+        else:
+            # for the case "]"
+            if stack == []:
+                return False
+            if ch == ')' and stack[-1] != '(':
+                return False
+            if ch == ']' and stack[-1] != '[':
+                return False
+            if ch == '}' and stack[-1] != '{':
+                return False
+            stack.pop()
+    return stack == []
+```
 
-    for char in s:
-        if char in pairs:
-            stack.append(char)
-        elif len(stack) == 0 or pairs[stack.pop()] != char:
-            return False
-    return not stack
-# s = "()"
+优化版本，基本思路一致：
+
+```py
+def isValid(self, s: str) -> bool:
+    stack = []
+    mapping = {"]":"[", "}":"{", ")":"("}
+
+    for ch in s:
+        if ch in mapping.keys(): # 右括号，进行判断
+            if stack == []:
+                return False
+            if stack.pop() != mapping[ch]:
+                return False
+        else:
+            stack.append(ch) # 左括号，入栈
+    return stack == []
 ```
 
 [Solution of C++](https://github.com/chenweigao/_code/blob/master/cpp/stack_valid_parenttheses.cpp)
