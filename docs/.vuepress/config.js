@@ -83,25 +83,36 @@ module.exports = {
       link: '/Tags.html'
     },
     {
-      text: 'Jottings',
-      link: '/Jottings/'
-    },
-    {
       text: 'Discuss',
       link: '/discuss/'
-    },
-
-    {
-      text: 'Commits',
-      link: '/commits/'
     },
     {
       text: 'About',
       link: '/blog/others/resume.html'
     },
+
     {
-      text: 'GitHub',
-      link: 'https://github.com/chenweigao'
+      text: 'More',
+      items: [
+        {
+          text: 'Jottings',
+          link: '/Jottings.html'
+        },
+        {
+          text: 'Git',
+          items:
+            [
+              {
+                text: 'Commits',
+                link: '/commits/'
+              },
+              {
+                text: 'GitHub',
+                link: 'https://github.com/chenweigao'
+              },
+            ]
+        }
+      ]
     }
       // {
       //   text: 'About',
