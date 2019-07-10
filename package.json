@@ -2,7 +2,7 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "docs:update": "yarn add vuepress@next @vuepress/plugin-back-to-top@next @vuepress/plugin-last-updated@next @vuepress/plugin-pwa@next @vuepress/plugin-medium-zoom@next yarn add -D @vuepress/plugin-nprogress@next -D",
+    "docs:update": "yarn add vuepress @vuepress/plugin-back-to-top @vuepress/plugin-last-updated @vuepress/plugin-pwa @vuepress/plugin-medium-zoom yarn add -D @vuepress/plugin-nprogress -D",
     "docs:upgrade": "yarn upgrade @next"
   },
   "devDependencies": {
