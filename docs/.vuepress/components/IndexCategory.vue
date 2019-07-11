@@ -4,7 +4,8 @@
     <Titles :title="tags"></Titles>
     <el-container>
 
-      <el-header>
+      <el-header
+      class="elheader">
         <el-badge
           v-for="year in years"
           :key="year.index"
@@ -23,6 +24,8 @@
         v-for="year in years"
         :key="year.index"
         v-show="value === year"
+        class="elmain"
+        style="margin-top:25px;"
       >
         <el-card shadow="hover">
           <div
