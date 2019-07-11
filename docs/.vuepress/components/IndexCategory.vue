@@ -5,37 +5,17 @@
     <el-container>
 
       <el-header>
-        <el-button
+        <el-badge
           v-for="year in years"
           :key="year.index"
           v-show="isShow"
-          :type="btnType"
-          @click="showPost(year)"
-        >{{year}}</el-button>
-
-        <!-- <el-form
-          :inline="true"
-          class="demo-form-inline"
+          style="margin-right:18px;"
+          :value="getPostNum(year)"
+          class="item"
+          type="info"
         >
-
-          <el-form-item>
-            <el-badge>
-              <el-select
-                v-model="value"
-                clearable
-                placeholder="Show Categories"
-              >
-                <el-option
-                  v-for="item in years"
-                  :key="item.index"
-                  :label="item.index"
-                  :value="item"
-                >
-                </el-option>
-              </el-select>
-            </el-badge>
-          </el-form-item>
-        </el-form> -->
+          <el-button @click="showPost(year)">{{year}}</el-button>
+        </el-badge>
       </el-header>
       <!-- <el-divider><i class="el-icon-loading"></i></el-divider> -->
 
@@ -131,6 +111,16 @@ export default {
     },
     getTimestamp: function (time) {
       return time.replace(/[^0-9]/gi, "");
+    },
+    getPostNum: function (n) {
+      var postDir;
+      if (n == null) {
+        postDir = "/blog";
+      }
+      else {
+        postDir = "/blog/" + n + "/";
+      }
+      return this.$site.pages.filter(x => x.path.startsWith(postDir)).length
     },
     posts: function (n) {
       var postDir;
@@ -296,8 +286,12 @@ export default {
   font-size: 16px;
 }
 
-.item {
+/* .item {
   margin-bottom: 18px;
+} */
+.item {
+  margin-top: 25px;
+  margin-right: 10px;
 }
 
 .v-enter,
