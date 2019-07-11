@@ -43,7 +43,7 @@ export default {
       appKey: "taRHm1fEce4nGp2lmNgkiW9U", // your appKey
       // notify: true,
       avatar: 'hide',
-      placeholder: "既然来了就说点什么吧...",
+      placeholder: "既然来了就说点什么吧~记得留下名字哦~",
       visitor: true,
       // verfy: true,
       lang: 'zh-cn',
