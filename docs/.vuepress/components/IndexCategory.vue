@@ -264,9 +264,9 @@ export default {
 </script>
 
 <style scoped>
-a{
+/* a{
   color: black !important;
-}
+} */
 .cardLastUpdate {
   margin-bottom: 40px;
 }

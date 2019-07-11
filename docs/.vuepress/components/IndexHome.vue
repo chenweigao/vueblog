@@ -347,9 +347,9 @@ export default {
 </script>
 
 <style scoped>
-a{
+/* a{
   color: black;
-}
+} */
 .cardLastUpdate {
   margin-bottom: 40px;
 }
