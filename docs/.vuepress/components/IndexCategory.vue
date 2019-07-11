@@ -5,14 +5,15 @@
     <el-container>
 
       <el-header>
+        <el-button
+          v-for="year in years"
+          :key="year.index"
+          v-show="isShow"
+          :type="btnType"
+          @click="showPost(year)"
+        >{{year}}</el-button>
 
-        <!-- <el-row>
-          <el-button type="default" @click="showPost('')">All</el-button>
-          <el-button type="default" :autofocus="true" @click="showPost('2019')" >2019</el-button>
-          <el-button type="default" @click="showPost('2018')">2018</el-button>
-          <el-button type="default" @click="showPost('2017')">2017</el-button>
-        </el-row> -->
-        <el-form
+        <!-- <el-form
           :inline="true"
           class="demo-form-inline"
         >
@@ -34,14 +35,14 @@
               </el-select>
             </el-badge>
           </el-form-item>
-        </el-form>
+        </el-form> -->
       </el-header>
       <!-- <el-divider><i class="el-icon-loading"></i></el-divider> -->
 
       <el-main
         v-for="year in years"
         :key="year.index"
-        v-show="value === year "
+        v-show="value === year"
       >
         <el-card shadow="hover">
           <div
@@ -112,13 +113,22 @@ export default {
       recent_update_number: 3,
       show_comments: false,
       hslArray: [],
-
+      btnType: 'default',
+      isShow: true
     };
   },
   created: function () {
     this.hslArray = this.getHslArray();
   },
   methods: {
+    showPost: function (n) {
+      this.isShow = !this.isShow
+      if (this.isShow) {
+        this.value = n
+      }
+      else {
+      }
+    },
     getTimestamp: function (time) {
       return time.replace(/[^0-9]/gi, "");
     },
@@ -350,6 +360,5 @@ body > .el-container {
 .center::after {
   transform-origin: center;
 }
-
 @import "https:////at.alicdn.com/t/font_1014632_8btj1lgimlo.css";
 </style>
