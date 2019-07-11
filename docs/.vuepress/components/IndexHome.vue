@@ -4,9 +4,43 @@
       class="h1title"
       :style="randomRgb()"
     > WEIGAO CHEN</h1> -->
-  <Titles title="All POSTS"></Titles>
+    <Titles title="All POSTS"></Titles>
     <el-container>
 
+      <el-carousel
+        :interval="8000"
+        type="card"
+        height="150px"
+        class="carousel"
+      >
+        <el-carousel-item
+          v-for="item in recentUpdate()"
+          :key="item.index"
+        >
+          <el-card class="box-card"
+          shadow="hover"
+          >
+            <div class="text item">
+            <router-link
+                :to="item.path"
+                class="super-link center"
+                style="font-size: 18px;"
+              >
+              <a :style="randomRgb()">{{ item.title }}</a>
+                
+              </router-link>
+            </div>
+            <div class="text item" style="color:#999">
+
+            last updated: {{item.lastUpdated}}
+            </div >
+            <div style="color:grey">
+
+            {{item.readingTime.text}}
+            </div>
+          </el-card>
+        </el-carousel-item>
+      </el-carousel>
       <el-header>
         <el-form
           :inline="true"
@@ -59,7 +93,10 @@
               <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}</time>
 
               <!-- <time class="time">{{ post.lastUpdated | dateFormat2 }}</time> -->
-              <router-link :to="post.path" class="super-link center">
+              <router-link
+                :to="post.path"
+                class="super-link center"
+              >
                 ### {{ post.title }}
               </router-link>
               <!-- <el-link type="info" :href="post.path">{{post.key}}</el-link> -->
@@ -119,7 +156,10 @@
 
                 <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}</time>
                 <!-- <Mybadge :title="post.regularPath | badgeFormat"></Mybadge> -->
-                <router-link :to="post.path" class="super-link center">
+                <router-link
+                  :to="post.path"
+                  class="super-link center"
+                >
                   ### {{ post.title }}
                 </router-link>
                 <br />
@@ -214,6 +254,7 @@ export default {
       this.value = year
     },
     recentUpdate(n) {
+      // console.log(this.$site.pages);
       return this.$site.pages
         .filter(x => (x.path.startsWith("/blog/") || x.path.startsWith("/algorithm/")) && !x.frontmatter.blogindex)
         .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated))
@@ -368,7 +409,11 @@ export default {
   top: 100%;
   left: 0;
 
-  background-color: rgb(36, 179, 76); /*当前标签继承的文字颜色，这里让伪元素的背景色与父元素的文字颜色相同*/
+  background-color: rgb(
+    36,
+    179,
+    76
+  ); /*当前标签继承的文字颜色，这里让伪元素的背景色与父元素的文字颜色相同*/
   transform: scale(0);
   transition: all 0.35s;
 }
@@ -381,7 +426,6 @@ export default {
 .cardLastUpdate {
   margin-bottom: 40px;
 }
-
 .commentitem {
   margin-top: 10px;
   margin-right: 40px;
@@ -391,11 +435,9 @@ export default {
   color: #999;
   float: right;
 }
-
 .text {
   font-size: 16px;
 }
-
 .item {
   margin-bottom: 18px;
 }
@@ -405,21 +447,17 @@ export default {
   opacity: 0;
   transform: translateX(50px);
 }
-
 .v-enter-active,
 .v-leave-active {
   transition: all 0.6s ease;
 }
-
 body > .el-container {
   margin-bottom: 40px;
 }
-
 .el-container:nth-child(5) .el-aside,
 .el-container:nth-child(6) .el-aside {
   line-height: 260px;
 }
-
 .el-container:nth-child(7) .el-aside {
   line-height: 320px;
 }
