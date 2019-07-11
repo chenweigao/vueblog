@@ -135,7 +135,7 @@ mongorestore -h <hostname><:port> -d dbname <path>
 
 Install: `pip install flask_pymongo`
 
-in `config.py`:
+in `nginxig.py`:
 
 ```python
 class Config:

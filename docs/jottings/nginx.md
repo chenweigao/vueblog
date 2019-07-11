@@ -74,7 +74,7 @@ nginx 可以配置多种类型的虚拟主机：
 
 以基于端口的虚拟主机为例，对 `nginx.conf` 进行配置。
 
-```conf
+```nginx
 http {
     include       mime.types;
     #default_type  application/octet-stream;
@@ -119,7 +119,7 @@ http {
 
 ## 反向代理
 
-```conf
+```nginx
 http {
     # 指定 upstream
     upstream to_google {
@@ -188,7 +188,7 @@ upstream 用于负载均衡的时候，可以支持以下参数：
 
 例子：
 
-```conf
+```nginx
 upstream loadBalance {
     server localhost:8090 weight=1;
     server localhost:8091 weight=2 backup;
@@ -199,7 +199,7 @@ upstream loadBalance {
 
 每个请求按访问 IP 的 hash 结果分配，这样来自同一 IP 访客固定访问一个后端服务器，有效解决了动态网页存在的 sesion 共享问题。
 
-```conf
+```nginx
 upstream loadBalance {
     ip_hash;
     server localhost:8090;
@@ -213,7 +213,7 @@ upstream loadBalance {
 
 即最少连接数策略，nginx 可以使请求分配到最少连接数的机器上。
 
-```conf
+```nginx
 upstream loadBalance {
     least_conn;
     server localhost:8090;
@@ -225,7 +225,7 @@ upstream loadBalance {
 
 Nginx 缓存在 `ngx_http_proxy_module` 下的 几个模块中 [http://nginx.org/en/docs/http/ngx_http_proxy_module.html](http://nginx.org/en/docs/http/ngx_http_proxy_module.html).
 
-```conf
+```nginx
 http {
     proxy_cache_path cache/test levels=1:2 keys_zone=myCache:10m maxsize=1g inactive=30s;
 

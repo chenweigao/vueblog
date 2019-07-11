@@ -83,7 +83,7 @@ yarn add @vuepress/plugin-last-updated@next -D
 }
 ```
 
-Add the `back-to-top` plugin to `config.js`:
+Add the `back-to-top` plugin to `nginxig.js`:
 
 ```js
 plugins: ['@vuepress/back-to-top']
@@ -147,7 +147,7 @@ Source code is:
 
 1. Install markdown-it-katex: `yarn add markdown-it-katex -D`.
 
-2. Modify your `config.js` in `.vuepress`
+2. Modify your `nginxig.js` in `.vuepress`
 
     ```js
     module.exports = {
