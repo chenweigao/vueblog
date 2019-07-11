@@ -37,7 +37,6 @@
       </el-header>
       <!-- <el-divider><i class="el-icon-loading"></i></el-divider> -->
 
-
       <el-main
         v-for="year in years"
         :key="year.index"
@@ -49,8 +48,11 @@
             slot="header"
             class="animated bounce"
           >
-            <span class="titles" :style="randomRgb()">
-              {{ year }}<br/>
+            <span
+              class="titles"
+              :style="randomRgb()"
+            >
+              {{ year }}<br />
               <!-- <Mybadge :title="year" ></Mybadge> -->
             </span>
           </div>
@@ -67,8 +69,11 @@
               <!-- <time class="time"> {{ post.readingTime.words }} words, {{ post.readingTime.text }} {{ post.lastUpdated | dateFormat }}</time> -->
               <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}</time>
               <!-- <Mybadge :title="post.regularPath | badgeFormat"></Mybadge> -->
-              <router-link :to="post.path">
-              <a :style="randomRgb()">###</a> {{ post.title }}
+              <router-link
+                :to="post.path"
+                class="super-link center"
+              >
+                <a :style="randomRgb()">###</a> {{ post.title }}
               </router-link>
               <br />
 
@@ -76,8 +81,6 @@
           </transition-group>
         </el-card>
       </el-main>
-      
-
 
       <el-footer>
 
@@ -215,6 +218,9 @@ export default {
     }
   },
   computed: {
+    randomColor: function() {
+      return rgb(123,123,123)
+    },
     rgbArray: function () {
       var self = this;
       if (!self.hslArray.length) return [];
@@ -318,6 +324,32 @@ body > .el-container {
 
 .h1title {
   text-align: center;
+}
+
+.super-link {
+  position: relative;
+  text-decoration: none;
+  color: #000;
+}
+/*伪元素是两个冒号*/
+.super-link::after {
+  content: "";
+
+  width: 100%;
+  height: 1px; /*设置伪元素的高度，这里是下划线的粗细*/
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  background-color: rgb(36, 179, 76); /*当前标签继承的文字颜色，这里让伪元素的背景色与父元素的文字颜色相同*/
+  transform: scale(0);
+  transition: all 0.25s;
+}
+.super-link:hover::after {
+  transform: scale(1);
+}
+.center::after {
+  transform-origin: center;
 }
 
 @import "https:////at.alicdn.com/t/font_1014632_8btj1lgimlo.css";

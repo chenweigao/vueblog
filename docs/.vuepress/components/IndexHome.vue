@@ -59,7 +59,7 @@
               <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}</time>
 
               <!-- <time class="time">{{ post.lastUpdated | dateFormat2 }}</time> -->
-              <router-link :to="post.path">
+              <router-link :to="post.path" class="super-link center">
                 ### {{ post.title }}
               </router-link>
               <br />
@@ -118,7 +118,7 @@
 
                 <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}</time>
                 <!-- <Mybadge :title="post.regularPath | badgeFormat"></Mybadge> -->
-                <router-link :to="post.path">
+                <router-link :to="post.path" class="super-link center">
                   ### {{ post.title }}
                 </router-link>
                 <br />
@@ -186,7 +186,8 @@ export default {
       show3: false,
       showRecent: true,
       delay1: 100,
-      after1: 50
+      after1: 50,
+      randomColor: null
     };
   },
   created: function () {
@@ -231,6 +232,7 @@ export default {
       var R = Math.floor(Math.random() * 255);
       var G = Math.floor(Math.random() * 255);
       var B = Math.floor(Math.random() * 255);
+      this.randomColor = 'rgb(' + R + ',' + G + ',' + B + ')'
       return { color: 'rgb(' + R + ',' + G + ',' + B + ')' };
       // console.log(this.rgbArray);
       // let i = Math.floor(Math.random()*15)
@@ -350,6 +352,31 @@ export default {
 /* a{
   color: black;
 } */
+.super-link {
+  position: relative;
+  text-decoration: none;
+  color: #000;
+}
+/*伪元素是两个冒号*/
+.super-link::after {
+  content: "";
+
+  width: 100%;
+  height: 1px; /*设置伪元素的高度，这里是下划线的粗细*/
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  background-color: rgb(36, 179, 76); /*当前标签继承的文字颜色，这里让伪元素的背景色与父元素的文字颜色相同*/
+  transform: scale(0);
+  transition: all 0.35s;
+}
+.super-link:hover::after {
+  transform: scale(1);
+}
+.center::after {
+  transform-origin: center;
+}
 .cardLastUpdate {
   margin-bottom: 40px;
 }
