@@ -75,7 +75,10 @@
               >
                 <a :style="randomRgb()">###</a> {{ post.title }}
               </router-link>
-              <el-link type="info" :href="post.path">{{post.key}}</el-link>
+              <el-link
+                type="info"
+                :href="post.path"
+              >{{post.key}}</el-link>
 
               <br />
 
@@ -109,7 +112,7 @@ export default {
       recent_update_number: 3,
       show_comments: false,
       hslArray: [],
-      
+
     };
   },
   created: function () {
@@ -221,33 +224,13 @@ export default {
     }
   },
   computed: {
-    tags: function()
-    {
-      console.log(this.value);
-      if(this.value == '')
-      {
+    tags: function () {
+      if (this.value == '') {
         this.value = 'NULL'
       }
       return this.value
     },
-    randomColor: function() {
-      return rgb(123,123,123)
-    },
-    rgbArray: function () {
-      var self = this;
-      if (!self.hslArray.length) return [];
 
-      var rgbArray = self.hslArray.map(function (item) {
-        return self.hslToRgb.apply(this, item);
-      });
-
-      return rgbArray.map(function (item) {
-        return {
-          value: item,
-          style: { color: 'rgb(' + item.toString() + ')' }
-        }
-      });
-    }
   },
   filters: {
     dateFormat: function (dateStr) {
@@ -353,7 +336,11 @@ body > .el-container {
   top: 100%;
   left: 0;
 
-  background-color: rgb(36, 179, 76); /*当前标签继承的文字颜色，这里让伪元素的背景色与父元素的文字颜色相同*/
+  background-color: rgb(
+    36,
+    179,
+    76
+  ); /*当前标签继承的文字颜色，这里让伪元素的背景色与父元素的文字颜色相同*/
   transform: scale(0);
   transition: all 0.25s;
 }
