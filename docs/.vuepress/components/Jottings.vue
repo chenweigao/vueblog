@@ -34,7 +34,8 @@
                     <Mybadge
                         v-for="tag in post.frontmatter.tags"
                         :title="tag"
-                        style="float:right;"
+                        style="float:right;margin-right:5px;padding:8px;"
+                        
                     > </Mybadge>
                     <br />
                     <div>
