@@ -8,7 +8,7 @@
     <el-container>
 
       <el-carousel
-        :interval="8000"
+        :interval="7000"
         type="card"
         height="150px"
         class="carousel"
