@@ -62,6 +62,7 @@
               <router-link :to="post.path" class="super-link center">
                 ### {{ post.title }}
               </router-link>
+              <!-- <el-link type="info" :href="post.path">{{post.key}}</el-link> -->
               <br />
               <Mybadge
                 :title="post.regularPath | badgeFormat"
@@ -73,7 +74,7 @@
           </transition-group>
         </el-card>
 
-        <el-divider><i class="el-icon-loading"> + <i class="el-icon-reading"></i></i> </el-divider>
+        <!-- <el-divider><i class="el-icon-loading"> + <i class="el-icon-reading"></i></i> </el-divider> -->
 
         <!-- <el-button class="showmore" type="default" @click="show3 = !show3">Show All Posts</el-button> -->
         <el-tooltip

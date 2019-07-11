@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Titles title="TAGS"></Titles>
+    <!-- <Titles title="TAGS"></Titles> -->
+    <Titles :title="tags"></Titles>
     <el-container>
 
       <el-header>
@@ -40,9 +41,8 @@
       <el-main
         v-for="year in years"
         :key="year.index"
-        v-show="value === year || value === null"
+        v-show="value === year "
       >
-
         <el-card shadow="hover">
           <div
             slot="header"
@@ -75,6 +75,8 @@
               >
                 <a :style="randomRgb()">###</a> {{ post.title }}
               </router-link>
+              <el-link type="info" :href="post.path">{{post.key}}</el-link>
+
               <br />
 
             </div>
@@ -103,10 +105,11 @@ export default {
       flag: false,
       // years: ['2019', '2018', '2017'],
       years: ['Backend', 'Frontend', 'Projects', 'Grammar', 'Tools', 'Research', 'Deeplearning', 'Others'],
-      value: null,
+      value: 'Backend',
       recent_update_number: 3,
       show_comments: false,
-      hslArray: []
+      hslArray: [],
+      
     };
   },
   created: function () {
@@ -218,6 +221,15 @@ export default {
     }
   },
   computed: {
+    tags: function()
+    {
+      console.log(this.value);
+      if(this.value == '')
+      {
+        this.value = 'NULL'
+      }
+      return this.value
+    },
     randomColor: function() {
       return rgb(123,123,123)
     },
