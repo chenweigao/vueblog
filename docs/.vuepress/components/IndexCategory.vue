@@ -27,7 +27,7 @@
         <el-card shadow="hover">
           <div
             slot="header"
-            class="animated bounce"
+            class="animated fadeIn"
           >
             <span
               class="titles"
@@ -38,14 +38,11 @@
             </span>
           </div>
 
-          <transition-group
-            appear
-            enter-active-class="fadeInUp"
-          >
+         
             <div
               v-for="post in posts(year)"
               :key="post.key"
-              class="animated text item"
+              class="animated fadeInUp text item"
             >
               <!-- <time class="time"> {{ post.readingTime.words }} words, {{ post.readingTime.text }} {{ post.lastUpdated | dateFormat }}</time> -->
               <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}</time>
@@ -64,7 +61,6 @@
               <br />
 
             </div>
-          </transition-group>
         </el-card>
       </el-main>
 
