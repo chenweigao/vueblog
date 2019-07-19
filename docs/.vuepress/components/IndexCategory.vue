@@ -5,7 +5,8 @@
     <el-container>
 
       <el-header
-      class="elheader">
+      style="height:none;"
+      >
         <el-badge
           v-for="year in years"
           :key="year.index"
@@ -267,6 +268,7 @@ export default {
 /* a{
   color: black !important;
 } */
+
 .cardLastUpdate {
   margin-bottom: 40px;
 }

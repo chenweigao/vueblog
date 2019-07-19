@@ -161,7 +161,7 @@ export default {
 
 /* Make sure that all arrows are pointing leftwards */
   .container::before {
-    left: 60px;
+    /* left: 60px; */
     border: medium solid white;
     border-width: 10px 10px 10px 0;
     border-color: transparent white transparent transparent;
