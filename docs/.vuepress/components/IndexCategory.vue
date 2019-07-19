@@ -1,53 +1,33 @@
 <template>
   <div>
-    <!-- <Titles title="TAGS"></Titles> -->
     <Titles :title="tags"></Titles>
     <el-container>
-
       <el-header
       style="height:none;"
       >
         <el-badge
           v-for="year in years"
           :key="year.index"
-          v-show="isShow"
-          style="margin-right:18px;"
+          style="margin-right:18px;margin-top:10px;"
           :value="getPostNum(year)"
           class="item"
           type="info"
         >
-          <el-button @click="showPost(year)">{{year}}</el-button>
+          <el-button @click="value=year">{{year}}</el-button>
         </el-badge>
       </el-header>
-      <!-- <el-divider><i class="el-icon-loading"></i></el-divider> -->
 
       <el-main
-        v-for="year in years"
-        :key="year.index"
-        v-show="value === year"
-        class="elmain"
-        style="margin-top:25px;"
       >
         <el-card shadow="hover">
-          <div
-            slot="header"
-            class="animated fadeIn"
-          >
-            <span
-              class="titles"
-              :style="randomRgb()"
-            >
-              {{ year }}<br />
-              <!-- <Mybadge :title="year" ></Mybadge> -->
-            </span>
-          </div>
-
          
             <div
-              v-for="post in posts(year)"
+              v-for="post in posts(value)"
               :key="post.key"
-              class="animated fadeInUp text item"
+              class="animated fadeInUp text"
             >
+              <el-divider></el-divider>
+
               <!-- <time class="time"> {{ post.readingTime.words }} words, {{ post.readingTime.text }} {{ post.lastUpdated | dateFormat }}</time> -->
               <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}</time>
               <!-- <Mybadge :title="post.regularPath | badgeFormat"></Mybadge> -->
@@ -101,14 +81,6 @@ export default {
     this.hslArray = this.getHslArray();
   },
   methods: {
-    showPost: function (n) {
-      this.isShow = !this.isShow
-      if (this.isShow) {
-        this.value = n
-      }
-      else {
-      }
-    },
     getTimestamp: function (time) {
       return time.replace(/[^0-9]/gi, "");
     },
@@ -133,9 +105,6 @@ export default {
       return this.$site.pages
         .filter(x => x.path.startsWith(postDir) && !x.frontmatter.blogindex)
         .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated));
-    },
-    showPost: function (year) {
-      this.value = year
     },
     recentUpdate(n) {
       return this.$site.pages
@@ -283,17 +252,13 @@ export default {
   float: right;
 }
 
-.text {
+/* .text {
   font-size: 16px;
-}
+} */
 
 /* .item {
   margin-bottom: 18px;
 } */
-.item {
-  margin-top: 25px;
-  margin-right: 10px;
-}
 
 .v-enter,
 .v-leave-to {
