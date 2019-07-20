@@ -81,6 +81,12 @@ git config --global credential.helper cache
 git config --global credential.helper store
 ```
 
+如果遇到了 443 的问题，则可以重置 git 的配置：
+
+```bash
+git config --global credential.helper store
+```
+
 ## GitHub Accelerate
 
 1. Update the host in `C:\Windows\System32\drivers\etc`
