@@ -3,223 +3,94 @@
     <!-- <h1
       class="h1title"
       :style="randomRgb()"
-    > WEIGAO CHEN</h1> -->
-    <Titles title="All POSTS"></Titles>
+    > WEIGAO CHEN</h1>-->
+    <Titles title="Recent Update"></Titles>
     <el-container>
-
-      <el-carousel
-        :interval="7000"
-        type="card"
-        height="150px"
-        class="carousel"
-      >
-        <el-carousel-item
-          v-for="item in recentUpdate()"
-          :key="item.index"
-        >
-          <el-card class="box-card"
-          shadow="hover"
-          >
+      <el-carousel :interval="5000" type="card" height="150px" class="carousel">
+        <el-carousel-item v-for="item in recentUpdate()" :key="item.index">
+          <el-card class="box-card" shadow="hover">
             <div class="text item">
-            <router-link
-                :to="item.path"
-                class="super-link center"
-                style="font-size: 18px;"
-              >
-              <a :style="randomRgb()">{{ item.title }}</a>
-                
+              <router-link :to="item.path" class="super-link center" style="font-size: 18px;">
+                <a :style="randomRgb()">{{ item.title }}</a>
               </router-link>
             </div>
-            <div class="text item" style="color:#999">
-
-            last updated: {{item.lastUpdated}}
-            </div >
-            <div style="color:grey">
-
-            {{item.readingTime.text}}
-            </div>
+            <div class="text item" style="color:#999">last updated: {{item.lastUpdated}}</div>
+            <div style="color:grey">{{item.readingTime.text}}</div>
           </el-card>
         </el-carousel-item>
       </el-carousel>
       <el-header>
-        <el-form
-          :inline="true"
-          class="demo-form-inline"
-        >
-
-          <!-- <el-badge
-            value="new"
-            class="myresume"
-          >
-            <a href="/blog/others/resume.html">
-              <el-button
-                icon="iconfont icon-resume"
-                type=""
-                plain
-              > Resume</el-button>
-            </a>
-          </el-badge> -->
-          <SearchBox
-            class="mysearch"
-            style="float:right"
-          />
+        <el-form :inline="true" class="demo-form-inline">
+          <SearchBox class="mysearch" style="float:right" />
         </el-form>
       </el-header>
-      <!-- <el-divider><i class="el-icon-loading"></i></el-divider> -->
 
       <el-main v-show="value == null">
-
         <el-card shadow="hover">
-          <div
-            slot="header"
-            class="animated bounce"
-            @click="showRecent = ! showRecent"
-          >
-            <span class="titles">
-              Recent Update
-            </span>
+          <div slot="header" class="animated bounce" @click="showRecent = ! showRecent">
+            <span class="titles" :style="randomRgb()">Recent Update</span>
           </div>
-          <transition-group
-            appear
-            enter-active-class="fadeInUp"
-            leave-active-class="zoomOutUp"
-          >
+          <transition-group appear enter-active-class="fadeInUp" leave-active-class="zoomOutUp">
             <div
               v-for="post in recentUpdate()"
               :key="post.key"
               class="animated text item"
               v-show="showRecent"
             >
-              <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}</time>
+              <time class="time">
+                <a :style="randomRgb()">{{ post.readingTime.words }}</a>
+                words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}
+              </time>
 
-              <!-- <time class="time">{{ post.lastUpdated | dateFormat2 }}</time> -->
-              <router-link
-                :to="post.path"
-                class="super-link center"
-              >
-                ### {{ post.title }}
-              </router-link>
-              <!-- <el-link type="info" :href="post.path">{{post.key}}</el-link> -->
+              <router-link :to="post.path" class="super-link center">### {{ post.title }}</router-link>
               <br />
-              <Mybadge
-                :title="post.regularPath | badgeFormat"
-                style="float:right;"
-              ></Mybadge>
+              <Mybadge :title="post.regularPath | badgeFormat" style="float:right;"></Mybadge>
               <el-divider></el-divider>
-
             </div>
           </transition-group>
         </el-card>
-
-        <!-- <el-divider><i class="el-icon-loading"> + <i class="el-icon-reading"></i></i> </el-divider> -->
-
-        <!-- <el-button class="showmore" type="default" @click="show3 = !show3">Show All Posts</el-button> -->
-        <el-tooltip
-          class="item"
-          content="Click to see all"
-          placement="right-start"
-          effect="light"
-        >
-
-          <el-card
-            shadow="hover"
-            style="margin-top: 40px;"
-            @click="show3 = !show3"
-          >
-            <div
-              slot="header"
-              class="clearfix"
-              @click="show3 = !show3"
-            >
-
-              <span class="titles">All Posts</span>
-              <!-- <el-button
-              style="float: right; padding: 3px 0"
-              type="text"
-              @click="show3 = !show3"
-            >Show All Posts</el-button> -->
-              <!-- <SearchBox
-            class="mysearch"
-          /> -->
-            </div>
-            <transition-group
-              enter-active-class="slideInUp"
-              leave-active-class="zoomOutUp"
-            >
-              <div
-                v-for="post in posts()"
-                :key="post.key"
-                class="animated text item"
-                v-show="show3"
-              >
-                <!-- <time class="time">{{ post.lastUpdated | dateFormat2 }}</time> -->
-
-                <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}</time>
-                <!-- <Mybadge :title="post.regularPath | badgeFormat"></Mybadge> -->
-                <router-link
-                  :to="post.path"
-                  class="super-link center"
-                >
-                  ### {{ post.title }}
-                </router-link>
-                <br />
-                <Mybadge
-                  :title="post.regularPath | badgeFormat"
-                  style="float:right;"
-                ></Mybadge>
-                <el-divider></el-divider>
-
-              </div>
-            </transition-group>
-          </el-card>
-        </el-tooltip>
       </el-main>
 
       <el-footer>
-
         <a href="https://github.com/chenweigao">
-          <el-button icon="iconfont icon-github-fill"> GitHub</el-button>
+          <el-button icon="iconfont icon-github-fill">GitHub</el-button>
         </a>
         <a href="mailto:mail@weigao.cc">
-          <el-button
-            icon="iconfont icon-mail"
-            class="myemail"
-          > Email</el-button>
+          <el-button icon="iconfont icon-mail" class="myemail">Email</el-button>
         </a>
-        <el-badge
-          value="Reco"
-          type="primary"
-          style="float:right"
-        >
+        <el-badge value="Reco" type="primary" style="float:right">
           <a href="discuss/">
-            <el-button icon="iconfont icon-liuyan"> Comments</el-button>
-
+            <el-button icon="iconfont icon-liuyan">Comments</el-button>
           </a>
-          <!-- <el-button icon="iconfont icon-liuyan" @click="showComments"> Comments</el-button> -->
           <br />
         </el-badge>
-
       </el-footer>
     </el-container>
-
-    <!-- <el-divider>我是有底线的</el-divider> -->
   </div>
-
 </template>
 
 <script>
-import SearchBox from '@SearchBox'
-import Comments from './Comments.vue'
-import Mybadge from './Mybadge.vue'
-import Titles from './Titles.vue'
+import SearchBox from "@SearchBox";
+import Comments from "./Comments.vue";
+import Mybadge from "./Mybadge.vue";
+import Titles from "./Titles.vue";
 
 export default {
   components: { SearchBox },
-  data: function () {
+  data: function() {
     return {
       flag: false,
       // years: ['2019', '2018', '2017'],
-      years: ['Backend', 'Frontend', 'Projects', 'Grammar', 'Tools', 'Research', 'Deeplearning', 'Others'],
+      years: [
+        "Backend",
+        "Frontend",
+        "Projects",
+        "Grammar",
+        "Tools",
+        "Research",
+        "Deeplearning",
+        "Others"
+      ],
       value: null,
       recent_update_number: 10,
       show_comments: false,
@@ -231,64 +102,44 @@ export default {
       randomColor: null
     };
   },
-  created: function () {
+  created: function() {
     this.hslArray = this.getHslArray();
   },
   methods: {
-    getTimestamp: function (time) {
+    getTimestamp: function(time) {
       return time.replace(/[^0-9]/gi, "");
-    },
-    posts: function (n) {
-      var postDir;
-      if (n == null) {
-        postDir = "/blog";
-      }
-      else {
-        postDir = "/blog/" + n + "/";
-      }
-      return this.$site.pages
-        .filter(x => x.path.startsWith(postDir) && !x.frontmatter.blogindex)
-        .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated));
-    },
-    showPost: function (year) {
-      this.value = year
     },
     recentUpdate(n) {
       // console.log(this.$site.pages);
       return this.$site.pages
-        .filter(x => (x.path.startsWith("/blog/") || x.path.startsWith("/algorithm/")) && !x.frontmatter.blogindex)
+        .filter(
+          x =>
+            (x.path.startsWith("/blog/") || x.path.startsWith("/algorithm/")) &&
+            !x.frontmatter.blogindex
+        )
         .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated))
-        .slice(0, this.recent_update_number)
+        .slice(0, this.recent_update_number);
       // console.log(recentUpdate);
-    },
-    handleChange(value) {
-      //
     },
     getFileCreatedTime(filespc) {
       return filespc.lastModifiedDate();
     },
-    showComments: function () {
-      this.show_comments = !this.show_comments
+    showComments: function() {
+      this.show_comments = !this.show_comments;
     },
-    randomRgb: function () {
+    randomRgb: function() {
       var R = Math.floor(Math.random() * 255);
       var G = Math.floor(Math.random() * 255);
       var B = Math.floor(Math.random() * 255);
-      this.randomColor = 'rgb(' + R + ',' + G + ',' + B + ')'
-      return { color: 'rgb(' + R + ',' + G + ',' + B + ')' };
-      // console.log(this.rgbArray);
-      // let i = Math.floor(Math.random()*15)
-      // let item = toString(this.rgbArray[i])
-      // console.log(this.rgbArray[i].style);
-      // return this.rgbArray[i].style
-
+      this.randomColor = "rgb(" + R + "," + G + "," + B + ")";
+      return { color: "rgb(" + R + "," + G + "," + B + ")" };
     },
-    hslToRgb: function (H, S, L) {
+    hslToRgb: function(H, S, L) {
       var R, G, B;
       if (+S === 0) {
         R = G = B = L; // 饱和度为0 为灰色
       } else {
-        var hue2Rgb = function (p, q, t) {
+        var hue2Rgb = function(p, q, t) {
           if (t < 0) t += 1;
           if (t > 1) t -= 1;
           if (t < 1 / 6) return p + (q - p) * 6 * t;
@@ -306,7 +157,7 @@ export default {
     },
 
     // 获取随机HSL
-    randomHsl: function () {
+    randomHsl: function() {
       var H = Math.random();
       var S = Math.random();
       var L = Math.random();
@@ -314,7 +165,7 @@ export default {
     },
 
     // 获取HSL数组
-    getHslArray: function () {
+    getHslArray: function() {
       var HSL = [];
       var hslLength = 16; // 获取数量
       for (var i = 0; i < hslLength; i++) {
@@ -325,11 +176,11 @@ export default {
           i--;
           continue; // 重新获取随机色
         }
-        ret[1] = 0.7 + (ret[1] * 0.2); // [0.7 - 0.9] 排除过灰颜色
-        ret[2] = 0.4 + (ret[2] * 0.4); // [0.4 - 0.8] 排除过亮过暗色
+        ret[1] = 0.7 + ret[1] * 0.2; // [0.7 - 0.9] 排除过灰颜色
+        ret[2] = 0.4 + ret[2] * 0.4; // [0.4 - 0.8] 排除过亮过暗色
 
         // 数据转化到小数点后两位
-        ret = ret.map(function (item) {
+        ret = ret.map(function(item) {
           return parseFloat(item.toFixed(2));
         });
 
@@ -342,58 +193,79 @@ export default {
     }
   },
   computed: {
-    rgbArray: function () {
+    rgbArray: function() {
       var self = this;
       if (!self.hslArray.length) return [];
 
-      var rgbArray = self.hslArray.map(function (item) {
+      var rgbArray = self.hslArray.map(function(item) {
         return self.hslToRgb.apply(this, item);
       });
 
-      return rgbArray.map(function (item) {
+      return rgbArray.map(function(item) {
         return {
           value: item,
-          style: { color: 'rgb(' + item.toString() + ')' }
-        }
+          style: { color: "rgb(" + item.toString() + ")" }
+        };
       });
     }
   },
   filters: {
-    dateFormat: function (dateStr) {
-      var dt = new Date(Date.parse(dateStr))
-      var y = dt.getFullYear()
-      var m = (dt.getMonth() + 1).toString().padStart(2, '0')
-      var d = dt.getDate().toString().padStart(2, '0')
-      var hh = dt.getHours().toString().padStart(2, '0')
-      var mm = dt.getMinutes().toString().padStart(2, '0')
-      var ss = dt.getSeconds().toString().padStart(2, '0')
-      var n = dt.toTimeString().slice(0, 5)
-      return `${m}/${d}`
+    dateFormat: function(dateStr) {
+      var dt = new Date(Date.parse(dateStr));
+      var y = dt.getFullYear();
+      var m = (dt.getMonth() + 1).toString().padStart(2, "0");
+      var d = dt
+        .getDate()
+        .toString()
+        .padStart(2, "0");
+      var hh = dt
+        .getHours()
+        .toString()
+        .padStart(2, "0");
+      var mm = dt
+        .getMinutes()
+        .toString()
+        .padStart(2, "0");
+      var ss = dt
+        .getSeconds()
+        .toString()
+        .padStart(2, "0");
+      var n = dt.toTimeString().slice(0, 5);
+      return `${m}/${d}`;
       // return `${hh}:${mm} ${m}/${d} ${y}`
     },
-    dateFormat2: function (dateStr) {
-      var dt = new Date(Date.parse(dateStr))
-      var y = dt.getFullYear()
-      var m = (dt.getMonth() + 1).toString().padStart(2, '0')
-      var d = dt.getDate().toString().padStart(2, '0')
-      var hh = dt.getHours().toString().padStart(2, '0')
-      var mm = dt.getMinutes().toString().padStart(2, '0')
-      var ss = dt.getSeconds().toString().padStart(2, '0')
-      var n = dt.toTimeString().slice(0, 5)
+    dateFormat2: function(dateStr) {
+      var dt = new Date(Date.parse(dateStr));
+      var y = dt.getFullYear();
+      var m = (dt.getMonth() + 1).toString().padStart(2, "0");
+      var d = dt
+        .getDate()
+        .toString()
+        .padStart(2, "0");
+      var hh = dt
+        .getHours()
+        .toString()
+        .padStart(2, "0");
+      var mm = dt
+        .getMinutes()
+        .toString()
+        .padStart(2, "0");
+      var ss = dt
+        .getSeconds()
+        .toString()
+        .padStart(2, "0");
+      var n = dt.toTimeString().slice(0, 5);
       // return `${m}/${d}`
-      return `${hh}:${mm} ${m}/${d} ${y}`
+      return `${hh}:${mm} ${m}/${d} ${y}`;
     },
-    badgeFormat: function (str) {
-      return str.split('/')[2]
+    badgeFormat: function(str) {
+      return str.split("/")[2];
     }
   }
 };
 </script>
 
 <style scoped>
-/* a{
-  color: black;
-} */
 .super-link {
   position: relative;
   text-decoration: none;

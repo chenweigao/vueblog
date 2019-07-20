@@ -29,7 +29,7 @@
               <el-divider></el-divider>
 
               <!-- <time class="time"> {{ post.readingTime.words }} words, {{ post.readingTime.text }} {{ post.lastUpdated | dateFormat }}</time> -->
-              <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}</time>
+              <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat2 }}</time>
               <!-- <Mybadge :title="post.regularPath | badgeFormat"></Mybadge> -->
               <router-link
                 :to="post.path"
@@ -224,7 +224,7 @@ export default {
       var ss = dt.getSeconds().toString().padStart(2, '0')
       var n = dt.toTimeString().slice(0, 5)
       // return `${m}/${d}`
-      return `${hh}:${mm} ${m}/${d} ${y}`
+      return `${m}/${d}/${y}`
     },
     badgeFormat: function (str) {
       return str.split('/')[2]
