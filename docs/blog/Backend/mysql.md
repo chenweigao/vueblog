@@ -6,6 +6,18 @@
 2. SQL Server 启动程序 XAMPP
 3. Python peewee 模块
 
+## MySQL Command
+
+```sql
+mysql -uroot
+
+use soc;
+show tables;
+
+show columns in [table name];
+```
+
+
 ## Peewee
 
 创建模型和表字段：
