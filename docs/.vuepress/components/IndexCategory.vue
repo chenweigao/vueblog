@@ -1,105 +1,122 @@
 <template>
-  <div>
-    <Titles :title="tags"></Titles>
+  <div @click="showall">
+    <Titles :title="value?value:'All'"></Titles>
     <el-container>
-      <el-header
-      style="height:none;"
-      >
+      <el-header style="height:none;">
         <el-badge
           v-for="year in years"
           :key="year.index"
           style="margin-right:18px;margin-top:10px;"
-          :value="getPostNum(year)"
+          :value="postNum[year]"
           class="item"
           type="info"
         >
-          <el-button @click="value=year">{{year}}</el-button>
+          <el-button @click.stop="value=year" :type="value==year?'default':''" >{{year}}</el-button>
         </el-badge>
       </el-header>
 
-      <el-main
-      >
-        <el-card shadow="hover">
-         
-            <div
-              v-for="post in posts(value)"
-              :key="post.key"
-              class="animated fadeInUp text"
-            >
-              <el-divider></el-divider>
+      <el-main>
+        <el-card shadow="hover" v-if="value">
+          <div v-for="post in arr[value]" :key="post.key" class="animated fadeInUp text">
+            <el-divider></el-divider>
 
-              <!-- <time class="time"> {{ post.readingTime.words }} words, {{ post.readingTime.text }} {{ post.lastUpdated | dateFormat }}</time> -->
-              <time class="time"> <a :style="randomRgb()">{{ post.readingTime.words }} </a> words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat2 }}</time>
-              <!-- <Mybadge :title="post.regularPath | badgeFormat"></Mybadge> -->
-              <router-link
-                :to="post.path"
-                class="super-link center"
-              >
-                <a :style="randomRgb()">###</a> {{ post.title }}
-              </router-link>
-              <el-link
-                type="info"
-                :href="post.path"
-              >{{post.key}}</el-link>
+            <time class="time">
+              <a :style="randomRgb()">{{ post.readingTime.words }}</a>
+              words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}
+            </time>
+            <!-- <Mybadge :title="post.regularPath | badgeFormat"></Mybadge> -->
+            <router-link :to="post.path" class="super-link center">
+              <a :style="randomRgb()">###</a>
+              {{ post.title }}
+            </router-link>
+            <el-link type="info" :href="post.path">{{post.key}}</el-link>
 
-              <br />
+            <br />
+          </div>
+        </el-card>
+        <el-card shadow="hover" v-else>
+          <template v-for="year in years">
+            <div v-for="post in arr[year]" :key="post.key" class="animated fadeInUp text">
+                <el-divider></el-divider>
 
+                <time class="time">
+                <a :style="randomRgb()">{{ post.readingTime.words }}</a>
+                words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}
+                </time>
+                <!-- <Mybadge :title="post.regularPath | badgeFormat"></Mybadge> -->
+                <router-link :to="post.path" class="super-link center">
+                <a :style="randomRgb()">###</a>
+                {{ post.title }}
+                </router-link>
+                <el-link type="info" :href="post.path">{{post.key}}</el-link>
+
+                <br />
             </div>
+
+          </template>
         </el-card>
       </el-main>
 
-      <el-footer>
-
-      </el-footer>
+      <el-footer></el-footer>
     </el-container>
 
     <el-divider>我是有底线的</el-divider>
   </div>
-
 </template>
 
 <script>
-import SearchBox from '@SearchBox'
-import Comments from './Comments.vue'
-import Mybadge from './Mybadge.vue'
+import SearchBox from "@SearchBox";
+import Comments from "./Comments.vue";
+import Mybadge from "./Mybadge.vue";
 export default {
   components: { SearchBox },
-  data: function () {
+  data: function() {
     return {
       flag: false,
-      // years: ['2019', '2018', '2017'],
-      years: ['Backend', 'Frontend', 'Projects', 'Grammar', 'Tools', 'Research', 'Deeplearning', 'Others'],
-      value: 'Backend',
-      recent_update_number: 3,
-      show_comments: false,
+      years: [
+        "Backend",
+        "Frontend",
+        "Projects",
+        "Grammar",
+        "Tools",
+        "Research",
+        "Deeplearning",
+        "Others"
+      ],
+      value: "",
       hslArray: [],
-      btnType: 'default',
-      isShow: true
+      arr: {},
+      postNum: {}
     };
   },
-  created: function () {
-    this.hslArray = this.getHslArray();
+  beforeMount() {
+    this.years.map(item => {
+      this.arr[item] = this.posts(item);
+      this.postNum[item] = this.getPostNum(item);
+    });
+    
   },
   methods: {
-    getTimestamp: function (time) {
+    showall() {
+      this.value = "";
+    },
+    getTimestamp: function(time) {
       return time.replace(/[^0-9]/gi, "");
     },
-    getPostNum: function (n) {
+    getPostNum: function(n) {
       var postDir;
       if (n == null) {
         postDir = "/blog";
-      }
-      else {
+      } else {
         postDir = "/blog/" + n + "/";
       }
-      return this.$site.pages.filter(x => x.path.startsWith(postDir)).length
+      return this.$site.pages.filter(x => x.path.startsWith(postDir)).length;
     },
-    posts: function (n) {
+    posts: function(n) {
       var postDir;
       if (n == null) {
         postDir = "/blog";
-      }
-      else {
+      } else {
         postDir = "/blog/" + n + "/";
       }
       return this.$site.pages
@@ -108,126 +125,52 @@ export default {
     },
     recentUpdate(n) {
       return this.$site.pages
-        .filter(x => (x.path.startsWith("/blog/") || x.path.startsWith("/algorithm/")) && !x.frontmatter.blogindex)
+        .filter(
+          x =>
+            (x.path.startsWith("/blog/") || x.path.startsWith("/algorithm/")) &&
+            !x.frontmatter.blogindex
+        )
         .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated))
-        .slice(0, this.recent_update_number)
+        .slice(0, this.recent_update_number);
       // console.log(recentUpdate);
     },
-    handleChange(value) {
-      //
-    },
-    getFileCreatedTime(filespc) {
-      return filespc.lastModifiedDate();
-    },
-    showComments: function () {
-      this.show_comments = !this.show_comments
-    },
-    randomRgb: function () {
+    randomRgb: function() {
       var R = Math.floor(Math.random() * 255);
       var G = Math.floor(Math.random() * 255);
       var B = Math.floor(Math.random() * 255);
-      return { color: 'rgb(' + R + ',' + G + ',' + B + ')' };
-      // console.log(this.rgbArray);
-      // let i = Math.floor(Math.random()*15)
-      // let item = toString(this.rgbArray[i])
-      // console.log(this.rgbArray[i].style);
-      // return this.rgbArray[i].style
-
-    },
-    hslToRgb: function (H, S, L) {
-      var R, G, B;
-      if (+S === 0) {
-        R = G = B = L; // 饱和度为0 为灰色
-      } else {
-        var hue2Rgb = function (p, q, t) {
-          if (t < 0) t += 1;
-          if (t > 1) t -= 1;
-          if (t < 1 / 6) return p + (q - p) * 6 * t;
-          if (t < 1 / 2) return q;
-          if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-          return p;
-        };
-        var Q = L < 0.5 ? L * (1 + S) : L + S - L * S;
-        var P = 2 * L - Q;
-        R = hue2Rgb(P, Q, H + 1 / 3);
-        G = hue2Rgb(P, Q, H);
-        B = hue2Rgb(P, Q, H - 1 / 3);
-      }
-      return [Math.round(R * 255), Math.round(G * 255), Math.round(B * 255)];
-    },
-
-    // 获取随机HSL
-    randomHsl: function () {
-      var H = Math.random();
-      var S = Math.random();
-      var L = Math.random();
-      return [H, S, L];
-    },
-
-    // 获取HSL数组
-    getHslArray: function () {
-      var HSL = [];
-      var hslLength = 16; // 获取数量
-      for (var i = 0; i < hslLength; i++) {
-        var ret = this.randomHsl();
-
-        // 颜色相邻颜色差异须大于 0.25
-        if (i > 0 && Math.abs(ret[0] - HSL[i - 1][0]) < 0.25) {
-          i--;
-          continue; // 重新获取随机色
-        }
-        ret[1] = 0.7 + (ret[1] * 0.2); // [0.7 - 0.9] 排除过灰颜色
-        ret[2] = 0.4 + (ret[2] * 0.4); // [0.4 - 0.8] 排除过亮过暗色
-
-        // 数据转化到小数点后两位
-        ret = ret.map(function (item) {
-          return parseFloat(item.toFixed(2));
-        });
-
-        HSL.push(ret);
-      }
-      return HSL;
-    },
-    getBadge(post) {
-      return post;
+      return { color: "rgb(" + R + "," + G + "," + B + ")" };
     }
   },
   computed: {
-    tags: function () {
-      if (this.value == '') {
-        this.value = 'NULL'
-      }
-      return this.value
-    },
-
   },
   filters: {
-    dateFormat: function (dateStr) {
-      var dt = new Date(Date.parse(dateStr))
-      var y = dt.getFullYear()
-      var m = (dt.getMonth() + 1).toString().padStart(2, '0')
-      var d = dt.getDate().toString().padStart(2, '0')
-      var hh = dt.getHours().toString().padStart(2, '0')
-      var mm = dt.getMinutes().toString().padStart(2, '0')
-      var ss = dt.getSeconds().toString().padStart(2, '0')
-      var n = dt.toTimeString().slice(0, 5)
-      return `${m}/${d}`
-      // return `${hh}:${mm} ${m}/${d} ${y}`
-    },
-    dateFormat2: function (dateStr) {
-      var dt = new Date(Date.parse(dateStr))
-      var y = dt.getFullYear()
-      var m = (dt.getMonth() + 1).toString().padStart(2, '0')
-      var d = dt.getDate().toString().padStart(2, '0')
-      var hh = dt.getHours().toString().padStart(2, '0')
-      var mm = dt.getMinutes().toString().padStart(2, '0')
-      var ss = dt.getSeconds().toString().padStart(2, '0')
-      var n = dt.toTimeString().slice(0, 5)
+
+    dateFormat: function(dateStr) {
+      var dt = new Date(Date.parse(dateStr));
+      var y = dt.getFullYear();
+      var m = (dt.getMonth() + 1).toString().padStart(2, "0");
+      var d = dt
+        .getDate()
+        .toString()
+        .padStart(2, "0");
+      var hh = dt
+        .getHours()
+        .toString()
+        .padStart(2, "0");
+      var mm = dt
+        .getMinutes()
+        .toString()
+        .padStart(2, "0");
+      var ss = dt
+        .getSeconds()
+        .toString()
+        .padStart(2, "0");
+      var n = dt.toTimeString().slice(0, 5);
       // return `${m}/${d}`
-      return `${m}/${d}/${y}`
+      return `${m}/${d}/${y}`;
     },
-    badgeFormat: function (str) {
-      return str.split('/')[2]
+    badgeFormat: function(str) {
+      return str.split("/")[2];
     }
   }
 };

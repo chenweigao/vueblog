@@ -1,13 +1,9 @@
 <template>
   <div>
-    <!-- <h1
-      class="h1title"
-      :style="randomRgb()"
-    > WEIGAO CHEN</h1>-->
     <Titles title="Recent Update"></Titles>
     <el-container>
       <el-carousel :interval="5000" type="card" height="150px" class="carousel">
-        <el-carousel-item v-for="item in recentUpdate()" :key="item.index">
+        <el-carousel-item v-for="item in recent_posts" :key="item.index">
           <el-card class="box-card" shadow="hover">
             <div class="text item">
               <router-link :to="item.path" class="super-link center" style="font-size: 18px;">
@@ -32,7 +28,7 @@
           </div>
           <transition-group appear enter-active-class="fadeInUp" leave-active-class="zoomOutUp">
             <div
-              v-for="post in recentUpdate()"
+              v-for="post in recent_posts"
               :key="post.key"
               class="animated text item"
               v-show="showRecent"
@@ -80,7 +76,6 @@ export default {
   data: function() {
     return {
       flag: false,
-      // years: ['2019', '2018', '2017'],
       years: [
         "Backend",
         "Frontend",
@@ -97,13 +92,19 @@ export default {
       hslArray: [],
       show3: false,
       showRecent: true,
-      delay1: 100,
-      after1: 50,
-      randomColor: null
+      randomColor: null,
+      recent_posts: []
     };
   },
-  created: function() {
-    this.hslArray = this.getHslArray();
+  beforeMount() {
+    this.recent_posts = this.$site.pages
+      .filter(
+        x =>
+          (x.path.startsWith("/blog/") || x.path.startsWith("/algorithm/")) &&
+          !x.frontmatter.blogindex
+      )
+      .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated))
+      .slice(0, this.recent_update_number);
   },
   methods: {
     getTimestamp: function(time) {
@@ -121,92 +122,13 @@ export default {
         .slice(0, this.recent_update_number);
       // console.log(recentUpdate);
     },
-    getFileCreatedTime(filespc) {
-      return filespc.lastModifiedDate();
-    },
-    showComments: function() {
-      this.show_comments = !this.show_comments;
-    },
+
     randomRgb: function() {
       var R = Math.floor(Math.random() * 255);
       var G = Math.floor(Math.random() * 255);
       var B = Math.floor(Math.random() * 255);
       this.randomColor = "rgb(" + R + "," + G + "," + B + ")";
       return { color: "rgb(" + R + "," + G + "," + B + ")" };
-    },
-    hslToRgb: function(H, S, L) {
-      var R, G, B;
-      if (+S === 0) {
-        R = G = B = L; // 饱和度为0 为灰色
-      } else {
-        var hue2Rgb = function(p, q, t) {
-          if (t < 0) t += 1;
-          if (t > 1) t -= 1;
-          if (t < 1 / 6) return p + (q - p) * 6 * t;
-          if (t < 1 / 2) return q;
-          if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-          return p;
-        };
-        var Q = L < 0.5 ? L * (1 + S) : L + S - L * S;
-        var P = 2 * L - Q;
-        R = hue2Rgb(P, Q, H + 1 / 3);
-        G = hue2Rgb(P, Q, H);
-        B = hue2Rgb(P, Q, H - 1 / 3);
-      }
-      return [Math.round(R * 255), Math.round(G * 255), Math.round(B * 255)];
-    },
-
-    // 获取随机HSL
-    randomHsl: function() {
-      var H = Math.random();
-      var S = Math.random();
-      var L = Math.random();
-      return [H, S, L];
-    },
-
-    // 获取HSL数组
-    getHslArray: function() {
-      var HSL = [];
-      var hslLength = 16; // 获取数量
-      for (var i = 0; i < hslLength; i++) {
-        var ret = this.randomHsl();
-
-        // 颜色相邻颜色差异须大于 0.25
-        if (i > 0 && Math.abs(ret[0] - HSL[i - 1][0]) < 0.25) {
-          i--;
-          continue; // 重新获取随机色
-        }
-        ret[1] = 0.7 + ret[1] * 0.2; // [0.7 - 0.9] 排除过灰颜色
-        ret[2] = 0.4 + ret[2] * 0.4; // [0.4 - 0.8] 排除过亮过暗色
-
-        // 数据转化到小数点后两位
-        ret = ret.map(function(item) {
-          return parseFloat(item.toFixed(2));
-        });
-
-        HSL.push(ret);
-      }
-      return HSL;
-    },
-    getBadge(post) {
-      return post;
-    }
-  },
-  computed: {
-    rgbArray: function() {
-      var self = this;
-      if (!self.hslArray.length) return [];
-
-      var rgbArray = self.hslArray.map(function(item) {
-        return self.hslToRgb.apply(this, item);
-      });
-
-      return rgbArray.map(function(item) {
-        return {
-          value: item,
-          style: { color: "rgb(" + item.toString() + ")" }
-        };
-      });
     }
   },
   filters: {
