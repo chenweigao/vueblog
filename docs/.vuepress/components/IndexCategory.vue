@@ -4,14 +4,14 @@
     <el-container>
       <el-header style="height:none;">
         <el-badge
-          v-for="year in years"
-          :key="year.index"
+          v-for="category in categories"
+          :key="category.index"
           style="margin-right:18px;margin-top:10px;"
-          :value="postNum[year]"
+          :value="postNum[category]"
           class="item"
           type="info"
         >
-          <el-button @click.stop="value=year" :type="value==year?'default':''" >{{year}}</el-button>
+          <el-button @click.stop="value=category" :type="value==category?'default':''">{{category}}</el-button>
         </el-badge>
       </el-header>
 
@@ -35,24 +35,23 @@
           </div>
         </el-card>
         <el-card shadow="hover" v-else>
-          <template v-for="year in years">
-            <div v-for="post in arr[year]" :key="post.key" class="animated fadeInUp text">
-                <el-divider></el-divider>
+          <template v-for="category in categories">
+            <div v-for="post in arr[category]" :key="post.key" class="animated fadeInUp text">
+              <el-divider></el-divider>
 
-                <time class="time">
+              <time class="time">
                 <a :style="randomRgb()">{{ post.readingTime.words }}</a>
                 words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}
-                </time>
-                <!-- <Mybadge :title="post.regularPath | badgeFormat"></Mybadge> -->
-                <router-link :to="post.path" class="super-link center">
+              </time>
+              <!-- <Mybadge :title="post.regularPath | badgeFormat"></Mybadge> -->
+              <router-link :to="post.path" class="super-link center">
                 <a :style="randomRgb()">###</a>
                 {{ post.title }}
-                </router-link>
-                <el-link type="info" :href="post.path">{{post.key}}</el-link>
+              </router-link>
+              <el-link type="info" :href="post.path">{{post.key}}</el-link>
 
-                <br />
+              <br />
             </div>
-
           </template>
         </el-card>
       </el-main>
@@ -73,28 +72,27 @@ export default {
   data: function() {
     return {
       flag: false,
-      years: [
-        "Backend",
-        "Frontend",
-        "Projects",
-        "Grammar",
-        "Tools",
-        "Research",
-        "Deeplearning",
-        "Others"
-      ],
       value: "",
       hslArray: [],
       arr: {},
-      postNum: {}
+      postNum: {},
+      categories: []
     };
   },
   beforeMount() {
-    this.years.map(item => {
+    this.$site.pages.map(item => {
+      if (
+        this.categories.indexOf(item.path.split("/")[2]) == -1 &&
+        item.path.startsWith("/blog/")
+      ) {
+        this.categories.push(item.path.split("/")[2]);
+      }
+    });
+    this.categories.map(item => {
       this.arr[item] = this.posts(item);
       this.postNum[item] = this.getPostNum(item);
     });
-    
+    // console.log(this.categories);
   },
   methods: {
     showall() {
@@ -141,10 +139,8 @@ export default {
       return { color: "rgb(" + R + "," + G + "," + B + ")" };
     }
   },
-  computed: {
-  },
+  computed: {},
   filters: {
-
     dateFormat: function(dateStr) {
       var dt = new Date(Date.parse(dateStr));
       var y = dt.getFullYear();
