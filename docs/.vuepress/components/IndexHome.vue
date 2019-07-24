@@ -75,24 +75,9 @@ export default {
   components: { SearchBox },
   data: function() {
     return {
-      flag: false,
-      years: [
-        "Backend",
-        "Frontend",
-        "Projects",
-        "Grammar",
-        "Tools",
-        "Research",
-        "Deeplearning",
-        "Others"
-      ],
       value: null,
       recent_update_number: 10,
-      show_comments: false,
-      hslArray: [],
-      show3: false,
       showRecent: true,
-      randomColor: null,
       recent_posts: []
     };
   },
