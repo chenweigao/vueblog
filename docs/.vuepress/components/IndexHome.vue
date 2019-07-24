@@ -49,14 +49,14 @@
 
       <el-footer>
         <a href="https://github.com/chenweigao">
-          <el-button icon="iconfont icon-github-fill">GitHub</el-button>
+          <el-button icon="iconfont icon-github-fill"> GitHub</el-button>
         </a>
         <a href="mailto:mail@weigao.cc">
-          <el-button icon="iconfont icon-mail" class="myemail">Email</el-button>
+          <el-button icon="iconfont icon-mail" class="myemail"> Email</el-button>
         </a>
         <el-badge value="Reco" type="primary" style="float:right">
           <a href="discuss/">
-            <el-button icon="iconfont icon-liuyan">Comments</el-button>
+            <el-button icon="iconfont icon-liuyan"> Comments</el-button>
           </a>
           <br />
         </el-badge>

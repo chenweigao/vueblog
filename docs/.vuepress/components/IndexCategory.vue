@@ -3,6 +3,7 @@
     <Titles :title="value?value:'All'"></Titles>
     <el-container>
       <el-header style="height:none;">
+
         <el-badge
           v-for="category in categories"
           :key="category.index"
@@ -13,6 +14,7 @@
         >
           <el-button @click.stop="value=category" :type="value==category?'default':''">{{category}}</el-button>
         </el-badge>
+
       </el-header>
 
       <el-main>
