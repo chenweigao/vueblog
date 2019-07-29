@@ -1,9 +1,16 @@
 <template>
-  <div @click="showall">
+  <div>
     <Titles :title="value?value:'All'"></Titles>
     <el-container>
       <el-header style="height:none;">
-
+        <el-badge
+          style="margin-right:18px;margin-top:10px;"
+          :value="allpost.length"
+          class="item"
+          type="info"
+        >
+          <el-button @click.stop="value=''" type="default">All</el-button>
+        </el-badge>
         <el-badge
           v-for="category in categories"
           :key="category.index"
@@ -14,12 +21,15 @@
         >
           <el-button @click.stop="value=category" :type="value==category?'default':''">{{category}}</el-button>
         </el-badge>
-
       </el-header>
 
       <el-main>
         <el-card shadow="hover" v-if="value">
-          <div v-for="post in arr[value]" :key="post.key" class="animated fadeInUp text">
+          <div
+            v-for="post in arr[value].slice((page_count-1)*page_size,page_count*page_size)"
+            :key="post.key"
+            class="animated fadeInUp text"
+          >
             <el-divider></el-divider>
 
             <time class="time">
@@ -35,32 +45,51 @@
 
             <br />
           </div>
+          <el-pagination
+            style="margin-top:20px;"
+            background
+            @current-change="changeCount"
+            :page-size="page_size"
+            :hide-on-single-page="true"
+            layout="total, prev, pager, next, jumper"
+            :total="arr[value].length"
+          ></el-pagination>
         </el-card>
         <el-card shadow="hover" v-else>
-          <template v-for="category in categories">
-            <div v-for="post in arr[category]" :key="post.key" class="animated fadeInUp text">
-              <el-divider></el-divider>
+          <div
+            v-for="post in allpost.slice((page_count_all-1)*page_size_all,page_count_all*page_size_all)"
+            :key="post.key"
+            class="animated fadeInUp text"
+          >
+            <el-divider></el-divider>
 
-              <time class="time">
-                <a :style="randomRgb()">{{ post.readingTime.words }}</a>
-                words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}
-              </time>
-              <!-- <Mybadge :title="post.regularPath | badgeFormat"></Mybadge> -->
-              <router-link :to="post.path" class="super-link center">
-                <a :style="randomRgb()">###</a>
-                {{ post.title }}
-              </router-link>
-              <el-link type="info" :href="post.path">{{post.key}}</el-link>
+            <time class="time">
+              <a :style="randomRgb()">{{ post.readingTime.words }}</a>
+              words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}
+            </time>
+            <router-link :to="post.path" class="super-link center">
+              <a :style="randomRgb()">###</a>
+              {{ post.title }}
+            </router-link>
+            <el-link type="info" :href="post.path">{{post.key}}</el-link>
 
-              <br />
-            </div>
-          </template>
+            <br />
+          </div>
+
+          <el-pagination
+            background
+            style="margin-top:20px;"
+            :pager-count="5"
+            :page-size="page_size_all"
+            @current-change="changeCountAll"
+            layout="total, prev, pager, next, jumper"
+            :total="allpost.length"
+          ></el-pagination>
         </el-card>
       </el-main>
 
       <el-footer></el-footer>
     </el-container>
-
     <el-divider>我是有底线的</el-divider>
   </div>
 </template>
@@ -78,7 +107,12 @@ export default {
       hslArray: [],
       arr: {},
       postNum: {},
-      categories: []
+      categories: [],
+      page_size: 10,
+      page_count: 1,
+      page_size_all: 12,
+      page_count_all: 1,
+      allpost: []
     };
   },
   beforeMount() {
@@ -94,11 +128,20 @@ export default {
       this.arr[item] = this.posts(item);
       this.postNum[item] = this.getPostNum(item);
     });
+    this.allpost = this.$site.pages
+      .filter(x => x.path.startsWith("/blog"))
+      .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated));
     // console.log(this.categories);
   },
   methods: {
+    changeCount(val) {
+      this.page_count = val;
+    },
+    changeCountAll(val) {
+      this.page_count_all = val;
+    },
     showall() {
-      this.value = "";
+      // this.value = "";
     },
     getTimestamp: function(time) {
       return time.replace(/[^0-9]/gi, "");
