@@ -695,6 +695,29 @@ re.findall(pattern, sentence)
 # find all matched of pattern in sentence
 ```
 
+## requests
+
+```py
+import requests
+import urllib.parse
+
+data = {
+    "name": "weigao",
+    "age": 20
+}
+
+json_data = json.dumps(data)
+# '{"name": "weigao", "age": 20}'
+
+values = urllib.parse.urlencode({"data": json_data})
+# 'data=%7B%22name%22%3A+%22weigao%22%2C+%22age%22%3A+20%7D'
+
+url='http://api.weixin.oa.com/itilalarmcgi/sendmsg'
+
+response = requests.post(url, data=values)
+```
+
+
 ## Python Tools
 
 ### IPython

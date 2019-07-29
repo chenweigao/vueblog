@@ -15,6 +15,7 @@ use soc;
 show tables;
 
 show columns in [table name];
+select * from [table name] limit 1 \G;
 ```
 
 
@@ -33,6 +34,8 @@ class BaseModel(Model):
 class User(BaseModel):
     username = CharField()
     # etc, etc
+    class Meta:
+        table_name = "database_name"
 ```
 
 在数据库中使用 sql 语句创建表字段，然后可以使用 `User` model 对其进行操作。
