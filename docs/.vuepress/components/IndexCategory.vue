@@ -25,13 +25,13 @@
 
       <el-main>
         <el-card shadow="hover" v-if="value">
+          <el-divider></el-divider>
+
           <div
             v-for="post in arr[value].slice((page_count-1)*page_size,page_count*page_size)"
             :key="post.key"
             class="animated fadeInUp text"
           >
-            <el-divider></el-divider>
-
             <time class="time">
               <a :style="randomRgb()">{{ post.readingTime.words }}</a>
               words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}
@@ -42,8 +42,7 @@
               {{ post.title }}
             </router-link>
             <el-link type="info" :href="post.path">{{post.key}}</el-link>
-
-            <br />
+            <el-divider></el-divider>
           </div>
           <el-pagination
             style="margin-top:20px;"
@@ -56,13 +55,13 @@
           ></el-pagination>
         </el-card>
         <el-card shadow="hover" v-else>
+          <el-divider></el-divider>
+
           <div
             v-for="post in allpost.slice((page_count_all-1)*page_size_all,page_count_all*page_size_all)"
             :key="post.key"
             class="animated fadeInUp text"
           >
-            <el-divider></el-divider>
-
             <time class="time">
               <a :style="randomRgb()">{{ post.readingTime.words }}</a>
               words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}
@@ -72,8 +71,7 @@
               {{ post.title }}
             </router-link>
             <el-link type="info" :href="post.path">{{post.key}}</el-link>
-
-            <br />
+            <el-divider></el-divider>
           </div>
 
           <el-pagination
