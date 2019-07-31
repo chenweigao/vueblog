@@ -27,7 +27,7 @@
     "vuepress-plugin-reading-progress": "^1.0.7",
     "vuepress-plugin-reading-time": "^0.1.1",
     "xmlhttprequest": "^1.8.0",
-    "yarn": "^1.16.0"
+    "yarn": "^1.17.3"
   },
   "dependencies": {}
 }
