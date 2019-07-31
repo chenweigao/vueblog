@@ -89,13 +89,15 @@ So just remember:
 
 ## MySql vs DAG
 
+[可以参考这一篇博客，讲述了如何使用 MySql + 邻接表存储一个 DAG](https://www.codeproject.com/Articles/22824/A-Model-to-Represent-Directed-Acyclic-Graphs-DAG-o)
+
 ```sql
 EXPLAIN SELECT * FROM node
 WHERE id IN (
 	SELECT child FROM edge
 	WHERE parent = 3 )
 
-CREATE TABLE soc_node_config
+CREATE TABLE edge
 (
     id INT(11) UNIQUE COMMENT '节点id',
     state VARCHAR(25),
@@ -107,8 +109,8 @@ CREATE TABLE child_parent_relation
 	id INT(11) COMMENT '标识符id，作为主键',
 	child INT(11) COMMENT '子节点的id',
 	parent INT(11) COMMENT '子节点对应的父节点id',
-	FOREIGN KEY(child) REFERENCES soc_node_config(id),
-	FOREIGN KEY(parent) REFERENCES soc_node_config(id),
+	FOREIGN KEY(child) REFERENCES soc_nodedgee_config(id),
+	FOREIGN KEY(parent) REFERENCES edge(id),
 	PRIMARY KEY(id),
 	KEY parent(parent) USING BTREE,
 	KEY child(child) USING BTREE,
