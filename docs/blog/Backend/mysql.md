@@ -39,6 +39,17 @@ ALTER TABLE edge
 DROP COLUMN ancestor
 ```
 
+### JOIN
+
+在 MySQL 中，主要是 `INNER JOIN`, 表示内连接，可以同时连接两个表进行组合查询：
+
+```sql
+SELECT column_name(s)
+FROM table_name1
+INNER JOIN table_name2 
+ON table_name1.column_name=table_name2.column_name
+```
+
 ## Peewee
 
 创建模型和表字段：
