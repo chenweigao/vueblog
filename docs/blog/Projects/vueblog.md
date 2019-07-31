@@ -73,6 +73,13 @@ yarn add @vuepress/plugin-back-to-top -D
 yarn add @vuepress/plugin-last-updated@next -D
 ```
 
+如果想更新所有的 `package.json` 中的依赖到最新版本，则可以使用：
+
+```bash
+yarn upgrade-interactive --latest
+```
+需要手动选择升级的依赖包，按空格键选择，a 键切换所有，i 键反选选择。
+
 也可以在 `package.json` 中的 `scripts` 下添加自定义的更新命令。
 
 ```js
