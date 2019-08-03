@@ -20,6 +20,24 @@ show columns in table_name;
 select * from table_name limit 1 \G;
 ```
 
+## DROP
+
+删除：
+
+```sql
+DROP DATABASE db_name
+
+DROP TABLE table_name
+
+ALTER TABLE table_name DROP INDEX index_name
+```
+
+如果想删除表中所有的数据但是不影响到表的结构：
+
+```sql
+TRUNCATE TABLE table_name
+```
+
 ### ALTER
 
 在数据库中插入新的 table 或者说新的列：
