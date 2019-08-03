@@ -33,8 +33,8 @@
             class="animated fadeInUp text"
           >
             <time class="time">
-              <a :style="randomRgb()">{{ post.readingTime.words }}</a>
-              words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}
+              <a :style="randomRgb()">{{ post.readingTime.text }},</a>
+              {{ post.lastUpdated | dateFormat }}
             </time>
             <!-- <Mybadge :title="post.regularPath | badgeFormat"></Mybadge> -->
             <router-link :to="post.path" class="super-link center">
@@ -63,8 +63,8 @@
             class="animated fadeInUp text"
           >
             <time class="time">
-              <a :style="randomRgb()">{{ post.readingTime.words }}</a>
-              words, {{ post.readingTime.text }}, {{ post.lastUpdated | dateFormat }}
+              <a :style="randomRgb()">{{ post.readingTime.text }},</a>
+              {{ post.lastUpdated | dateFormat }}
             </time>
             <router-link :to="post.path" class="super-link center">
               <a :style="randomRgb()">###</a>
