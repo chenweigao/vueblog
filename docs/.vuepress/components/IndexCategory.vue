@@ -122,6 +122,7 @@ export default {
         this.categories.push(item.path.split("/")[2]);
       }
     });
+    this.categories.sort(),
     this.categories.map(item => {
       this.arr[item] = this.posts(item);
       this.postNum[item] = this.getPostNum(item);
