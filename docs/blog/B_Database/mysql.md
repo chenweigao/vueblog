@@ -1,4 +1,4 @@
-# MySQL and ORM
+# MySQL
 
 ## Tools and Environment
 

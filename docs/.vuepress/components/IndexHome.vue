@@ -21,42 +21,50 @@
         </el-form>
       </el-header>
 
-      <el-main v-show="value == null">
+      <el-main>
         <el-card shadow="hover">
           <div slot="header" class="animated bounce" @click="showRecent = ! showRecent">
-            <span class="titles" :style="randomRgb()">Recent Update</span>
+            <span class="titles" :style="randomRgb()">All Post</span>
           </div>
-          <transition-group appear enter-active-class="fadeInUp" leave-active-class="zoomOutUp">
-            <div
-              v-for="post in recent_posts"
-              :key="post.key"
-              class="animated text item"
-              v-show="showRecent"
-            >
-              <time class="time">
-                <a :style="randomRgb()">{{ post.readingTime.text }},</a>
+          <div
+            v-for="post in allpost.slice((page_count_all-1)*page_size_all,page_count_all*page_size_all)"
+            :key="post.key"
+            class="animated fadeInUp text"
+          >
+            <time class="time">
+              <a :style="randomRgb()">{{ post.readingTime.text }},</a>
               {{ post.lastUpdated | dateFormat }}
-              </time>
+            </time>
+            <router-link :to="post.path" class="super-link center">
+              <a :style="randomRgb()">###</a>
+              {{ post.title }}
+            </router-link>
+            <el-link type="info" :href="post.path">{{post.key}}</el-link>
+            <el-divider></el-divider>
+          </div>
 
-              <router-link :to="post.path" class="super-link center">### {{ post.title }}</router-link>
-              <br />
-              <Mybadge :title="post.regularPath | badgeFormat" style="float:right;"></Mybadge>
-              <el-divider></el-divider>
-            </div>
-          </transition-group>
+          <el-pagination
+            background
+            style="margin-top:20px;"
+            :pager-count="5"
+            :page-size="page_size_all"
+            @current-change="changeCountAll"
+            layout="total, prev, pager, next, jumper"
+            :total="allpost.length"
+          ></el-pagination>
         </el-card>
       </el-main>
 
       <el-footer>
         <a href="https://github.com/chenweigao">
-          <el-button icon="iconfont icon-github-fill"> GitHub</el-button>
+          <el-button icon="iconfont icon-github-fill">GitHub</el-button>
         </a>
         <a href="mailto:mail@weigao.cc">
-          <el-button icon="iconfont icon-mail" class="myemail"> Email</el-button>
+          <el-button icon="iconfont icon-mail" class="myemail">Email</el-button>
         </a>
         <el-badge value="Reco" type="primary" style="float:right">
           <a href="discuss/">
-            <el-button icon="iconfont icon-liuyan"> Comments</el-button>
+            <el-button icon="iconfont icon-liuyan">Comments</el-button>
           </a>
           <br />
         </el-badge>
@@ -78,7 +86,12 @@ export default {
       value: null,
       recent_update_number: 10,
       showRecent: true,
-      recent_posts: []
+      recent_posts: [],
+      allpost: [],
+      page_size: 10,
+      page_count: 1,
+      page_size_all: 12,
+      page_count_all: 1
     };
   },
   beforeMount() {
@@ -90,10 +103,17 @@ export default {
       )
       .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated))
       .slice(0, this.recent_update_number);
+    this.allpost = this.$site.pages
+      .filter(x => x.path.startsWith("/blog"))
+      .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated));
+    // console.log(this.categories);
   },
   methods: {
     getTimestamp: function(time) {
       return time.replace(/[^0-9]/gi, "");
+    },
+    changeCountAll(val) {
+      this.page_count_all = val;
     },
     recentUpdate(n) {
       // console.log(this.$site.pages);

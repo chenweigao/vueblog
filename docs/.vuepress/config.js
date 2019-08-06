@@ -80,7 +80,7 @@ module.exports = {
     },
     {
       text: 'Tags',
-      link: '/Tags.html'
+      link: '/tags/'
     },
     {
       text: 'Discuss',

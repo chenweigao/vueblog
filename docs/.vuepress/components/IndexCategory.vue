@@ -88,7 +88,7 @@
 
       <el-footer></el-footer>
     </el-container>
-    <el-divider>我是有底线的</el-divider>
+    <el-divider>O(∩_∩)O 这是可爱的底线 (#^.^#)</el-divider>
   </div>
 </template>
 
