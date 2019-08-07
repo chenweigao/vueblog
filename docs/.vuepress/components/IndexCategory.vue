@@ -19,14 +19,17 @@
           class="item"
           type="info"
         >
-          <el-button @click.stop="value=category" :type="value==category?'default':''">{{category}}</el-button>
+          <el-button
+            @click.stop="changeRouter(category)"
+            :type="value==category?'default':''"
+          >{{category}}
+          </el-button>
         </el-badge>
       </el-header>
 
       <el-main>
         <el-card shadow="hover" v-if="value">
           <el-divider></el-divider>
-
           <div
             v-for="post in arr[value].slice((page_count-1)*page_size,page_count*page_size)"
             :key="post.key"
@@ -123,16 +126,30 @@ export default {
       }
     });
     this.categories.sort(),
-    this.categories.map(item => {
-      this.arr[item] = this.posts(item);
-      this.postNum[item] = this.getPostNum(item);
-    });
+      this.categories.map(item => {
+        this.arr[item] = this.posts(item);
+        this.postNum[item] = this.getPostNum(item);
+      });
     this.allpost = this.$site.pages
       .filter(x => x.path.startsWith("/blog"))
       .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated));
     // console.log(this.categories);
   },
+  watch: {
+    "$route.query": {
+      deep: true,
+      immediate: true,
+      handler: function(val) {
+        // console.log("val", val);
+        this.value = val.category;
+      }
+    }
+  },
   methods: {
+    changeRouter(val) {
+      this.value = val;
+      this.$router.push(this.$route.path + "?category=" + val);
+    },
     changeCount(val) {
       this.page_count = val;
     },
