@@ -10,7 +10,7 @@
           type="info"
         >
           <el-button @click.stop="value=''" type="info">All</el-button>
-        </el-badge> -->
+        </el-badge>-->
         <el-badge
           v-for="category in categories"
           :key="category.index"
@@ -23,8 +23,7 @@
             @click.stop="changeRouter(category)"
             :type="value==category?'success':'default'"
             round
-          >{{category}}
-          </el-button>
+          >{{category}}</el-button>
         </el-badge>
       </el-header>
 
