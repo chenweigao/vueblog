@@ -22,6 +22,7 @@
           <el-button
             @click.stop="changeRouter(category)"
             :type="value==category?'success':'default'"
+            round
           >{{category}}
           </el-button>
         </el-badge>
