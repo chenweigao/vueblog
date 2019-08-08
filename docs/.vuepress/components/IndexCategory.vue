@@ -3,14 +3,14 @@
     <Titles :title="value?value:'All'"></Titles>
     <el-container>
       <el-header style="height:none;">
-        <el-badge
+        <!-- <el-badge
           style="margin-right:18px;margin-top:10px;"
           :value="allpost.length"
           class="item"
           type="info"
         >
-          <el-button @click.stop="value=''" type="default">All</el-button>
-        </el-badge>
+          <el-button @click.stop="value=''" type="info">All</el-button>
+        </el-badge> -->
         <el-badge
           v-for="category in categories"
           :key="category.index"
@@ -21,7 +21,7 @@
         >
           <el-button
             @click.stop="changeRouter(category)"
-            :type="value==category?'default':''"
+            :type="value==category?'success':'default'"
           >{{category}}
           </el-button>
         </el-badge>
