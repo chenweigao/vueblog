@@ -99,3 +99,15 @@ CREATE TABLE child_parent_relation
 
 SHOW INDEX FROM child_parent_relation
 ```
+
+## index
+
+### explain
+
+对于建立的索引，想查看其性能如何：
+
+```sql
+explain select * from tables where c1='a1'and c2='c2';
+```
+
+使用 explain 命令即可。
