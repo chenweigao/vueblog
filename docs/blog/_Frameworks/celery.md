@@ -24,6 +24,39 @@ pip install celery[librabbitmq, redis, auth, msgpack]
 
 - 安装 Redis 可视化软件 RDM(redis desktop manager)
 
+## 初始化
+
+初始化时指定消息代理和存储：
+
+```py
+# app.py
+from __future__ import absolute_import, unicode_literals
+
+from celery import Celery
+
+app = Celery(
+    'myapp',
+    broker='redis://localhost:6379/0',
+    # ## add result backend here if needed.
+    # backend='rpc'
+)
+
+
+@app.task
+def add(x, y):
+    return x + y
+
+
+if __name__ == '__main__':
+    app.start()
+```
+
+然后再命令行中启动：
+
+```sh
+celery -A app worker -l info
+```
+
 ## 调用 Task
 
 参考这篇文章：[https://mp.weixin.qq.com/s/kxwlLQ5H479PXCKuS4ZueA](https://mp.weixin.qq.com/s/kxwlLQ5H479PXCKuS4ZueA)
@@ -58,4 +91,3 @@ T.apply_async(countdown=60, expires=120)
 # 任务会在now之后的两天过期
 T.apply_async(expires=now + timedelta(days=2))
 ```
-

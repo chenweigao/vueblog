@@ -2,10 +2,10 @@ module.exports = {
   title: 'weigao',
   description: '...',
   head: [
-    // ['link', {
-    //   rel: 'icon',
-    //   href: `/android-chrome-512x512.png`
-    // }],
+    ['link', {
+      rel: 'icon',
+      href: `/android-chrome-512x512.png`
+    }],
     ['link', {
       rel: 'manifest',
       href: '/manifest.json'
