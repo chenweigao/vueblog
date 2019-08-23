@@ -16,7 +16,9 @@
         </el-carousel-item>
       </el-carousel>
       <el-header>
+        
         <el-form :inline="true" class="demo-form-inline">
+          
           <SearchBox class="mysearch" style="float:right" />
         </el-form>
       </el-header>
@@ -56,6 +58,7 @@
       </el-main>
 
       <el-footer>
+        
         <a href="https://github.com/chenweigao">
           <el-button icon="iconfont icon-github-fill">GitHub</el-button>
         </a>
@@ -68,6 +71,7 @@
           </a>
           <br />
         </el-badge>
+        
       </el-footer>
     </el-container>
   </div>

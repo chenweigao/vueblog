@@ -61,6 +61,9 @@ module.exports = {
       showError: true
     }],
     // [
+    //   'social-share'
+    // ],
+    // [
     //   'vuepress-plugin-baidu-autopush' 
     // ],
     [

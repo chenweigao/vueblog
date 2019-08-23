@@ -27,6 +27,7 @@
     "vuepress-plugin-mathjax": "^1.2.8",
     "vuepress-plugin-reading-progress": "^1.0.7",
     "vuepress-plugin-reading-time": "^0.1.1",
+    "vuepress-plugin-social-share": "^0.0.3",
     "xmlhttprequest": "^1.8.0",
     "yarn": "^1.17.3"
   },
