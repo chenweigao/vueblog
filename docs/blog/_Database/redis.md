@@ -2,6 +2,14 @@
 
 ## Abstract
 
+Redis server 的启动：
+
+```sh
+redis-server.exe redis.windows.conf
+```
+
+安装 redis-py:
+
 ```sh
 pip install redis
 ```
@@ -9,6 +17,10 @@ pip install redis
 [官方文档](https://redis-py.readthedocs.io/en/latest/)
 
 > redis 提供两个类 Redis 和 StrictRedis 用于实现 Redis 的命令，StrictRedis 用于实现大部分官方的命令，并使用官方的语法和命令，Redis 是 StrictRedis 的子类，用于向后兼容旧版本的 redis-py。
+
+可以使用 Redis 可视化工具 **RDM(redis deaktop manager)**
+
+## redis-py
 
 ### StrictRedis()
 
