@@ -40,6 +40,7 @@
 - 容器：Docker, K8S
 - 服务器：Nginx/OpenResty/Kong
 - 异步模型：Celery, Epoll/libevent
+- 跨平台应用：electron-vue 
 - 数据库：Mysql, MongoDB, Redis
 - 深度学习：OpenCV, TensorFlow
 - 文档构建：Vuepress
