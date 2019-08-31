@@ -74,6 +74,7 @@
 
     - 管道
 
+5. 虚拟内存是什么？简单描述一下
 
 ## DataBase
 
@@ -87,6 +88,24 @@
     3字节：由一个随机开始的计数器生成的值
 
 2. MongoDB 分页查询
+
+## 开放性问题
+
+1. 对当前后台开发的前沿技术有什么了解吗？分别阐述一下
+
+    可以分类阐述，比如说当前我了解到的后台常用技术有：
+    - 前端：Vue.js
+    - Web 框架：Flask, Tronado
+    - 架构思想：微服务架构、规则引擎
+    - 版本管理：Git
+    - DevOps：蓝鲸&蓝盾
+    - 容器：Docker, K8S
+    - 服务器：Nginx/OpenResty/Kong
+    - 异步模型：Celery, Epoll/libevent
+    - 数据库：Mysql, MongoDB, Redis
+    - 深度学习：OpenCV, TensorFlow
+    - 文档构建：Vuepress
+
 
 ## Self-introducation
 
