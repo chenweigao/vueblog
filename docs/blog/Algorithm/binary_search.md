@@ -80,6 +80,50 @@ print(bisect.bisect_left(nums, 4))
 
 注意到，`bisect()` 默认会查找元素需要插入的位置，如果是重复的元素，则会返回其最右侧可以插入的位置，使用 `bisect_left()` 可以返回其左侧位置。
 
+### 向上、下取整
+
+1. 使用 $\frac {(A+B-1)} {B}$ 计算
+
+2. 使用 `math.ceil()` 和 `math.floor()`:
+
+```py
+imprt math
+math.ceil(7/4) # 2
+math.floor(7/4) # 1 or 7//4
+round(2.6) # 3 四舍五入
+```
+
+一般而言，我们在快速排序或者二分查找中如果要计算 mid, 则可以使用 $$mid = left + \frac{right - left}{2}$$ 来计算，可以参考[二分查找 python 代码](https://github.com/chenweigao/_code/blob/master/data_struct/binary_search.py)
+
+## Problems
+
+### 查找二维数组中是否存在某个元素
+
+在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。
+请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
+
+```py
+def find_in_array_binary_search(self, alist, target) -> bool:
+"""
+利用二分查找的思想：
+需要遍历每一行得到最后的答案，这个操作顺便复习一下二分查找
+"""
+for i in range(len(alist)):
+    l = 0
+    r = len(alist[i]) - 1
+    while l <= r:
+        mid = (l + r) // 2
+        # mid = l + (r - l) // 2
+        if target < alist[i][mid]:
+            l = mid + 1
+        elif target > alist[i][mid]:
+            r = mid - 1
+        else:
+            return True
+return False
+```
+
+注意到这里用到了先小(<)后大(>), 先左(l)后右的口诀。
 
 ### 完全平方数
 
@@ -101,18 +145,3 @@ def isPerfectSquare(self, num: int) -> bool:
             r = mid - 1
     return False
 ```
-
-### 向上、下取整
-
-1. 使用 $\frac {(A+B-1)} {B}$ 计算
-
-2. 使用 `math.ceil()` 和 `math.floor()`:
-
-```py
-imprt math
-math.ceil(7/4) # 2
-math.floor(7/4) # 1 or 7//4
-round(2.6) # 3 四舍五入
-```
-
-一般而言，我们在快速排序或者二分查找中如果要计算 mid, 则可以使用 $$mid = left + \frac{right - left}{2}$$ 来计算，可以参考[二分查找 python 代码](https://github.com/chenweigao/_code/blob/master/data_struct/binary_search.py)

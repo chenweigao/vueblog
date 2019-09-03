@@ -15,7 +15,6 @@
 >>> alist = [[1, 2],[3, 4], [5, 6]]
 >>> len(alist)
 $ 3
-
 >>> len(alist[0])
 $ 2
 ```
@@ -23,7 +22,6 @@ $ 2
 所以一般的计算方式为：
 
 ```py
-
 # alist
 rows = len(alist)
 cols = len(alist[0])

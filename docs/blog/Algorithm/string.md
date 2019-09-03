@@ -2,7 +2,9 @@
 
 在算法中，字符串的操作和数组一样，都是很热门的考察点，这篇文章将总结一下常见的有关 string 的算法，方便查阅学习、总结。
 
-## 查找字符串中第一个出现的不重复的元素（阿里）
+## Problems
+
+### 查找字符串中第一个出现的不重复的元素（阿里）
 
 这道题目是阿里面试的第一道算法题目，题目意思大概如下：
 
@@ -78,3 +80,58 @@ class Solution:
                 return i
         return -1
 ```
+
+### 替换字符串中的空格
+
+> 请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。
+
+这道题目用python 实现比较简单：
+
+```py
+class Solution:
+    def replaceSpace(self, s):
+        res = ''
+        for ch in s:
+            if ch == ' ':
+                res += '%20'
+            else:
+                res += ch
+        return res
+```
+
+但是用 C++ 实现会比较麻烦：
+
+```cpp
+class Solution {
+public:
+    void replaceSpace(char *str,int length) {
+        char s;
+        int newlen = length;
+        for(int i = 0; str[i] != '\0'; i++)
+        {
+            if(str[i] == ' ')
+            {
+                newlen += 2;
+            }
+        }
+        str = (char *)malloc(newlen * sizeof(char));
+
+        for(int i = newlen - 1; i >= 0; i--)
+        {
+            if(str[i] == ' ')
+            {
+                str[i] = '0';
+                str[i - 1] = '2';
+                str[i - 2] = '%';
+            }
+            else
+            {
+                str[i] = str[length];
+                length--;
+            }
+        }
+    }
+};
+```
+
+放在这里可以参考。
