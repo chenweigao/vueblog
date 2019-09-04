@@ -15,6 +15,21 @@
 
 这种题目使用递归实现比较优雅：
 
+```py
+class Solution:
+    def __init__(self):
+        self.ret = []
+
+    def printListFromTailToHead(self, head):
+        if head:
+            if head.next:
+                self.printListFromTailToHead(head.next)
+            self.ret.append(head.val)
+        return self.ret
+```
+
+注意到这里的核心是要创建一个全部变量供递归调用。
+
 #### 2. 翻转数组
 
 这种方法比较直观，先按序存储到数组中，然后再把数组逆序：

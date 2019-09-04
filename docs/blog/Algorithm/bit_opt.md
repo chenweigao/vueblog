@@ -1,6 +1,15 @@
 # Bit Manipulation: Binary Number and Bitmap
 
-## 求二进制
+## Summary
+
+总结一下常用位操作：
+
+1. `n >> 1`, 相当于 `n // 2`
+2. `n & 1`, 相当于 `n % 2`
+
+## Example
+
+### 求二进制
 
 Example: 求 12 的二进制
 
@@ -39,7 +48,7 @@ int("".join(res), 2)
 
 ---
 
-## 二进制中1的个数
+### 二进制中1的个数
 
 Example 2: 计算一个二进制串中 1 的个数，用到了一个 trick:
 
