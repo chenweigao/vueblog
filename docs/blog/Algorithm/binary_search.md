@@ -145,3 +145,40 @@ def isPerfectSquare(self, num: int) -> bool:
             r = mid - 1
     return False
 ```
+
+### 数字在排序数组中出现的次数
+
+> 统计一个数字在排序数组中出现的次数。
+
+使用二分查找，首先查找在前面出现的位置 start, 再查找在后面出现的位置 end, 然后相减得到答案。
+
+这个题目对查找插入位置的概念进行了强化：
+
+```py
+class Solution:
+    def GetNumberOfK(self, data, k):
+        start = self.get_start(data, k)
+        end = self.get_end(data, k)
+        return end - start
+
+    def get_start(self, data, k):
+        l, r = 0, len(data) - 1
+        while l <= r:
+            mid = (l + r) // 2
+            if data[mid] < k:
+                l = mid + 1
+            else:
+                r = mid - 1
+        return l
+
+    def get_end(self, data, k):
+        l, r = 0, len(data) - 1
+        while l <= r:
+            mid = (l + r) // 2
+            if data[mid] <= k:
+                l = mid + 1
+            else:
+                r = mid - 1
+        return l
+```
+

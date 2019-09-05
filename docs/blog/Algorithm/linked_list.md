@@ -149,4 +149,27 @@ class Solution:
             return list2
 ```
 
+### 判断链表是否有环
+
+> 给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。
+
+```py
+class Solution(object):
+    def detectCycle(self, head):
+        slow = fast = head
+
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+            if slow == fast:
+                break
+        else:
+            return None
+        while head != slow:
+            slow = slow.next
+            head = head.next
+        return head
+```
+
+注意如果快慢指针相等，则说明链表有环，这时候慢指针相对于 head 的位置等于 head 相当于入环口的位置。
 
