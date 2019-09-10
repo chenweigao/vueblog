@@ -368,3 +368,33 @@ awk '/a/{++cnt} END {print "Count = ", cnt}' marks.txt
 ```
 
 > **$0** variable stores the entire line and in the absence of a body block, default action is taken, i.e., the print action.
+
+## tar
+
+解压一般的 tag.gz:
+
+```bash
+tar -xzvf [file]
+```
+
+解压 xz：
+
+```bash
+xz -d *.tar.xz
+tar -xvf *.tar
+```
+
+## 查看端口号
+
+查看端口被哪个进程占用：
+
+```bash
+lsof -i:80
+```
+
+或者
+
+```bash
+netstat -tunlp | grep 80
+```
+
