@@ -24,7 +24,6 @@
 3. `left` 初值为 `-1`, 循环条件使用 `while(left + 1 != right)`;
 4. 对边界条件专门进行判断。
 
-
 ## Code
 
 ### wiki 伪代码
@@ -182,3 +181,47 @@ class Solution:
         return l
 ```
 
+### Find Peak Element - 寻找峰值
+
+> 找寻一个数组的峰值
+>
+> 输入: nums = [1,2,1,3,5,6,4]
+>
+> 输出: 1 或 5
+>
+> 解释: 你的函数可以返回索引 1，其峰值元素为 2；或者返回索引 5， 其峰值元素为 6。
+
+#### 暴力求解
+
+这道题目只要求返回一个峰值，所以可以从前往后遍历，遇到符合条件的返回即可：
+
+```py
+class Solution:
+    def findPeakElement(self, nums: List[int]) -> int:
+        for i in range(1, len(nums)):
+            if nums[i] < nums[i-1]:
+                return i-1
+        return len(nums)-1
+```
+
+#### 二分法
+
+```py
+class Solution:
+    def findPeakElement(self, nums: List[int]) -> int:
+        n = len(nums)
+        if n == 0:
+            return 0
+        l = 0
+        r = len(nums) - 1
+        while l + 1 < r:
+            mid = l + (r - l) // 2
+            if nums[mid] < nums[mid + 1]:
+                l = mid + 1
+            else:
+                r = mid
+        if l == n - 1 or nums[l] > nums[l + 1]:
+            return l
+        else:
+            return r
+```

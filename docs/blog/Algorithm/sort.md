@@ -137,3 +137,70 @@ std::sort(numbers.begin(), numbers.end(), greater());
    #define swap(x, y) { x = x + y; y = x - y; x = x - y; }
    swap(x, y);
    ```
+
+## Problems
+
+### Largest Number - 拼接最大数
+
+> Given a list of non negative integers, arrange them such that they form the largest number.
+>
+> Input: [10,2]
+>
+> Output: "210"
+
+对于这个题目，本质上是一个排序问题，要是不使用自带的排序方法，可以使用冒泡排序的方法。
+
+10 和 2 的大小关系（或者说前后顺序），可以根据 10 + 2 = 102 和 2 + 10 = 210 的大小来判断。
+
+这是百度百科冒泡排序算法的参考：
+
+```c
+void bubbleSort(elemType arr[], int len)
+{
+    elemType temp;
+    int i, j;
+    for (i = 0; i < len - 1; i++)
+        for (j = 0; j < len - 1 - i; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+}
+```
+
+该题目的解法如下：
+
+```py
+class Solution:
+    def largestNumber(self, nums: List[int]) -> str:
+        for i in range(len(nums) - 1):
+            for j in range(len(nums) - i - 1):
+                if int(str(nums[j]) + str(nums[j + 1])) < int(str(nums[j + 1]) + str(nums[j])):
+                    nums[j], nums[j+1] = nums[j+1], nums[j]
+        if set(nums) == {0}:
+            return '0'
+        res = ''.join([str(_) for _ in nums])
+        i = 0
+        while i < len(res) and res[i] == '0':
+            i += 1
+            res = res[1:]
+        return res  
+```
+
+附上 leetcode 大神的解法：
+
+```py
+class Solution:
+    def largestNumber(self, nums: List[int]) -> str:
+        nums = list(map(str, nums))
+        max_len = max(map(len, nums))
+        nums.sort(key=lambda x: x*(max_len // len(x) + 1), reverse=True)
+        return ''.join(nums) if nums[0] != '0' else '0'
+```
+
+主要到 lambda 表达式中出现了一个 `+1`, 是因为有时候会遇到奇数的情况，比如说：[121, 12] 这种情况，会得出商为 1, 从而产生错误的结果。
+
