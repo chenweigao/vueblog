@@ -395,7 +395,7 @@ lsof -i:80
 或者
 
 ```bash
-netstat -tunlp | grep 80
+netstat -ano | grep 80
 ```
 
 ## 守护进程
