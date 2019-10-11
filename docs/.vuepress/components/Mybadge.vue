@@ -25,7 +25,7 @@ export default {
     path: {
       type: String,
       default: () => {
-        return "/tags/"
+        return ''
       }
     }
   },
