@@ -2,76 +2,106 @@
   <div>
     <Titles title="Recent Update"></Titles>
     <el-container>
-      <el-carousel :interval="5000" type="card" height="150px" class="carousel">
-        <el-carousel-item v-for="item in recent_posts" :key="item.index">
-          <el-card class="box-card" shadow="hover">
+      <el-carousel
+        :interval="5000"
+        type="card"
+        height="150px"
+        class="carousel"
+      >
+        <el-carousel-item
+          v-for="item in recent_posts"
+          :key="item.index"
+        >
+          <el-card
+            class="box-card"
+            shadow="hover"
+          >
             <div class="text item">
-              <router-link :to="item.path" class="super-link center" style="font-size: 18px;">
+              <router-link
+                :to="item.path"
+                class="super-link center"
+                style="font-size: 18px;"
+              >
                 <a :style="randomRgb()">{{ item.title }}</a>
               </router-link>
             </div>
-            <div class="text item" style="color:#999">last updated: {{item.lastUpdated}}</div>
+            <div
+              class="text item"
+              style="color:#999"
+            >last updated: {{item.lastUpdated}}</div>
             <div style="color:grey">{{item.readingTime.text}}</div>
           </el-card>
         </el-carousel-item>
       </el-carousel>
       <el-header>
-        
-        <el-form :inline="true" class="demo-form-inline">
-          
-          <SearchBox class="mysearch" style="float:right" />
+
+        <el-form
+          :inline="true"
+          class="demo-form-inline"
+        >
+
+          <SearchBox
+            class="mysearch"
+            style="float:right"
+          />
         </el-form>
       </el-header>
 
       <el-main>
-        <el-card shadow="hover">
-          <div slot="header" class="animated bounce" @click="showRecent = ! showRecent">
-            <span class="titles" :style="randomRgb()">All Post</span>
-          </div>
-          <div
-            v-for="post in allpost.slice((page_count_all-1)*page_size_all,page_count_all*page_size_all)"
-            :key="post.key"
-            class="animated fadeInUp text"
-          >
-            <time class="time">
-              <a :style="randomRgb()">{{ post.readingTime.text }},</a>
-              {{ post.lastUpdated | dateFormat }}
-            </time>
-            <router-link :to="post.path" class="super-link center">
-              <a :style="randomRgb()">###</a>
-              {{ post.title }}
-            </router-link>
-            <el-link type="info" :href="post.path">{{post.key}}</el-link>
-            <el-divider></el-divider>
-          </div>
+        <div
+          v-for="post in allpost.slice((page_count_all-1)*page_size_all,page_count_all*page_size_all)"
+          :key="post.key"
+          class="animated fadeInUp text"
+        >
+          <time class="time">
+            <a :style="randomRgb()">{{ post.readingTime.text }},</a>
+            {{ post.lastUpdated | dateFormat2 }}
+          </time>
 
-          <el-pagination
-            background
-            style="margin-top:20px;"
-            :pager-count="5"
-            :page-size="page_size_all"
-            @current-change="changeCountAll"
-            layout="total, prev, pager, next, jumper"
-            :total="allpost.length"
-          ></el-pagination>
-        </el-card>
+          <Mybadge :title="post.path.split('/')[2]"></Mybadge>
+          <router-link
+            :to="post.path"
+            class="super-link center"
+          >
+            <a :style="randomRgb()">###</a>
+            {{ post.title }}
+          </router-link>
+          <!-- <el-link type="info" :href="post.path">{{post.key}}</el-link> -->
+          <el-divider></el-divider>
+        </div>
+        <el-pagination
+          background
+          style="margin-top:20px;"
+          :pager-count="5"
+          :page-size="page_size_all"
+          @current-change="changeCountAll"
+          layout="total, prev, pager, next, jumper"
+          :total="allpost.length"
+        ></el-pagination>
       </el-main>
 
       <el-footer>
-        
+
         <a href="https://github.com/chenweigao">
           <el-button icon="iconfont icon-github-fill">GitHub</el-button>
         </a>
         <a href="mailto:mail@weigao.cc">
-          <el-button icon="iconfont icon-mail" class="myemail">Email</el-button>
+          <el-button
+            icon="iconfont icon-mail"
+            class="myemail"
+          >Email</el-button>
         </a>
-        <el-badge value="Reco" type="primary" style="float:right">
+        <el-badge
+          value="Reco"
+          type="primary"
+          style="float:right"
+        >
           <a href="discuss/">
             <el-button icon="iconfont icon-liuyan">Comments</el-button>
           </a>
           <br />
         </el-badge>
-        
+
       </el-footer>
     </el-container>
   </div>
@@ -85,7 +115,7 @@ import Titles from "./Titles.vue";
 
 export default {
   components: { SearchBox },
-  data: function() {
+  data: function () {
     return {
       value: null,
       recent_update_number: 10,
@@ -94,7 +124,7 @@ export default {
       allpost: [],
       page_size: 10,
       page_count: 1,
-      page_size_all: 12,
+      page_size_all: 20,
       page_count_all: 1
     };
   },
@@ -109,11 +139,11 @@ export default {
       .slice(0, this.recent_update_number);
     this.allpost = this.$site.pages
       .filter(x => x.path.startsWith("/blog"))
-      .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated));
+      .sort((a, b) => a.title.localeCompare(b.title));
     // console.log(this.categories);
   },
   methods: {
-    getTimestamp: function(time) {
+    getTimestamp: function (time) {
       return time.replace(/[^0-9]/gi, "");
     },
     changeCountAll(val) {
@@ -132,7 +162,7 @@ export default {
       // console.log(recentUpdate);
     },
 
-    randomRgb: function() {
+    randomRgb: function () {
       var R = Math.floor(Math.random() * 255);
       var G = Math.floor(Math.random() * 255);
       var B = Math.floor(Math.random() * 255);
@@ -141,7 +171,7 @@ export default {
     }
   },
   filters: {
-    dateFormat: function(dateStr) {
+    dateFormat: function (dateStr) {
       var dt = new Date(Date.parse(dateStr));
       var y = dt.getFullYear();
       var m = (dt.getMonth() + 1).toString().padStart(2, "0");
@@ -165,7 +195,7 @@ export default {
       return `${m}/${d}`;
       // return `${hh}:${mm} ${m}/${d} ${y}`
     },
-    dateFormat2: function(dateStr) {
+    dateFormat2: function (dateStr) {
       var dt = new Date(Date.parse(dateStr));
       var y = dt.getFullYear();
       var m = (dt.getMonth() + 1).toString().padStart(2, "0");
@@ -187,9 +217,9 @@ export default {
         .padStart(2, "0");
       var n = dt.toTimeString().slice(0, 5);
       // return `${m}/${d}`
-      return `${hh}:${mm} ${m}/${d} ${y}`;
+      return `${hh}:${mm} ${m}/${d}/${y}`;
     },
-    badgeFormat: function(str) {
+    badgeFormat: function (str) {
       return str.split("/")[2];
     }
   }
@@ -244,7 +274,6 @@ export default {
 .item {
   margin-bottom: 18px;
 }
-
 .v-enter,
 .v-leave-to {
   opacity: 0;
@@ -267,10 +296,10 @@ body > .el-container {
 .labels {
   padding: 5px;
 }
-
 .h1title {
   text-align: center;
 }
+
 .showmore {
   margin-top: 20px;
   margin-left: 43%;
