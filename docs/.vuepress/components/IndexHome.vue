@@ -58,7 +58,10 @@
             {{ post.lastUpdated | dateFormat2 }}
           </time>
 
-          <Mybadge :title="post.path.split('/')[2]"></Mybadge>
+          <Mybadge
+            :title="post.path.split('/')[2]"
+          ></Mybadge>
+
           <router-link
             :to="post.path"
             class="super-link center"
@@ -299,7 +302,6 @@ body > .el-container {
 .h1title {
   text-align: center;
 }
-
 .showmore {
   margin-top: 20px;
   margin-left: 43%;
