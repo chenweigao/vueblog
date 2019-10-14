@@ -51,29 +51,30 @@
         <div
           v-for="post in allpost.slice((page_count_all-1)*page_size_all,page_count_all*page_size_all)"
           :key="post.key"
-          class="animated fadeInUp text"
+          class="animated fadeInRight text"
         >
-          <time class="time">
-            <a :style="randomRgb()">{{ post.readingTime.text }},</a>
-            {{ post.lastUpdated | dateFormat2 }}
-          </time>
+          <el-card shadow="hover">
+            <time class="time">
+              <a :style="randomRgb()">{{ post.readingTime.text }},</a>
+              {{ post.lastUpdated | dateFormat2 }}
+            </time>
 
-          <Mybadge
-            :title="post.path.split('/')[2]"
-          ></Mybadge>
+            <Mybadge :title="post.path.split('/')[2]"></Mybadge>
 
-          <router-link
-            :to="post.path"
-            class="super-link center"
-          >
-            <a :style="randomRgb()">###</a>
-            {{ post.title }}
-          </router-link>
+            <router-link
+              :to="post.path"
+              class="super-link center"
+            >
+              <a :style="randomRgb()">###</a>
+              {{ post.title }}
+            </router-link>
+          </el-card>
           <!-- <el-link type="info" :href="post.path">{{post.key}}</el-link> -->
-          <el-divider></el-divider>
+          <br/>
+          <br/>
+          <!-- <el-divider></el-divider> -->
         </div>
         <el-pagination
-          background
           style="margin-top:20px;"
           :pager-count="5"
           :page-size="page_size_all"
