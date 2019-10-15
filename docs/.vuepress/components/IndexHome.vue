@@ -51,9 +51,11 @@
         <div
           v-for="post in allpost.slice((page_count_all-1)*page_size_all,page_count_all*page_size_all)"
           :key="post.key"
-          class="animated fadeInRight text"
         >
-          <el-card shadow="hover">
+          <el-card
+            shadow="hover"
+            class="animated flipInX"
+          >
             <time class="time">
               <a :style="randomRgb()">{{ post.readingTime.text }},</a>
               {{ post.lastUpdated | dateFormat2 }}
@@ -68,11 +70,53 @@
               <a :style="randomRgb()">###</a>
               {{ post.title }}
             </router-link>
-          </el-card>
-          <!-- <el-link type="info" :href="post.path">{{post.key}}</el-link> -->
-          <br/>
-          <br/>
           <!-- <el-divider></el-divider> -->
+          <br/>
+
+            <el-collapse v-model="activeNames">
+              <el-collapse-item
+                :title="'Content of ' + post.title"
+                :name="post.key"
+              >
+                <div v-for="title in post.headers">
+                  <el-link
+                    type="primary"
+                    v-if="title.level == 2"
+                    :underline="false"
+                    :href="post.path + '#' + title.slug"
+                    icon="el-icon-sunny"
+                  >{{ title.title }}</el-link>
+                  <el-link
+                    type="info"
+                    v-else
+                    :underline="false"
+                    icon="el-icon-s-operation"
+                    :href="post.path + '#' + title.slug"
+                  > + + {{ title.title }}</el-link>
+                </div>
+                <!-- <!-- <div>{{post}}</div> -->
+              </el-collapse-item>
+
+              <el-collapse-item
+                :name="post.title"
+                title="Author Info"
+              >
+                <div>
+                  <el-link
+                    type="success"
+                    href="/blog/others/resume.html"
+                    :underline="false"
+                  >weigao chen</el-link>
+                  updated at
+                  {{post.lastUpdated}}
+
+                </div>
+              </el-collapse-item>
+
+            </el-collapse>
+          </el-card>
+          <el-divider></el-divider>
+          <!-- <el-link type="info" :href="post.path">{{post.key}}</el-link> -->
         </div>
         <el-pagination
           style="margin-top:20px;"
@@ -129,7 +173,8 @@ export default {
       page_size: 10,
       page_count: 1,
       page_size_all: 20,
-      page_count_all: 1
+      page_count_all: 1,
+      activeNames: ['1']
     };
   },
   beforeMount() {
@@ -145,6 +190,10 @@ export default {
       .filter(x => x.path.startsWith("/blog"))
       .sort((a, b) => a.title.localeCompare(b.title));
     // console.log(this.categories);
+
+    this.allpost.forEach(element => {
+      this.activeNames.push(element.key)
+    })
   },
   methods: {
     getTimestamp: function (time) {

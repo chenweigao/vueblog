@@ -3,4 +3,4 @@ home: true
 sidebar: false
 ---
 
-<Jottings/>
+<!-- <Jottings/> -->
