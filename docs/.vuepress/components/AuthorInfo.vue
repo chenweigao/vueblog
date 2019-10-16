@@ -1,5 +1,6 @@
 <template>
-  <a-card hoverable>
+  <a-card hoverable :title="title">
+    
     <template
       class="ant-card-actions"
       slot="actions"
@@ -32,9 +33,15 @@ export default {
     description: {
       type: String,
       default: () => {
-        return ''
+        return 'Software Engineer, Huawei Technologies Co Ltd'
       }
-    }
+    },
+    title: {
+      type: String,
+      default: () => {
+        return 'Author'
+      }
+    },
   },
 };
 </script>
