@@ -32,5 +32,7 @@
     "xmlhttprequest": "^1.8.0",
     "yarn": "^1.19.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "set-value": "^3.0.1"
+  }
 }
