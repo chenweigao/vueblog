@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <Titles title="Recent Update"></Titles>
     <el-container>
@@ -70,8 +71,7 @@
               <a :style="randomRgb()">###</a>
               {{ post.title }}
             </router-link>
-          <!-- <el-divider></el-divider> -->
-          <br/>
+            <el-divider></el-divider>
 
             <el-collapse v-model="activeNames">
               <el-collapse-item
@@ -101,16 +101,10 @@
                 :name="post.title"
                 title="Author Info"
               >
-                <div>
-                  <el-link
-                    type="success"
-                    href="/blog/others/resume.html"
-                    :underline="false"
-                  >weigao chen</el-link>
-                  updated at
-                  {{post.lastUpdated}}
-
-                </div>
+                <AuthorInfo
+                  :author_name="author_name"
+                  :description="'update at ' + post.lastUpdated"
+                ></AuthorInfo>
               </el-collapse-item>
 
             </el-collapse>
@@ -126,6 +120,7 @@
           layout="total, prev, pager, next, jumper"
           :total="allpost.length"
         ></el-pagination>
+
       </el-main>
 
       <el-footer>
@@ -160,7 +155,7 @@ import SearchBox from "@SearchBox";
 import Comments from "./Comments.vue";
 import Mybadge from "./Mybadge.vue";
 import Titles from "./Titles.vue";
-
+import AuthorInfo from './AuthorInfo.vue';
 export default {
   components: { SearchBox },
   data: function () {
@@ -174,7 +169,8 @@ export default {
       page_count: 1,
       page_size_all: 20,
       page_count_all: 1,
-      activeNames: ['1']
+      activeNames: ['1'],
+      author_name: "Weigao Chen"
     };
   },
   beforeMount() {
