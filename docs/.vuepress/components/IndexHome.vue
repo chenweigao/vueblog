@@ -70,8 +70,8 @@
               <a :style="randomRgb()">###</a>
               {{ post.title }}
             </router-link>
-          <!-- <el-divider></el-divider> -->
-          <br/>
+            <el-divider></el-divider>
+            <br />
 
             <el-collapse v-model="activeNames">
               <el-collapse-item
@@ -107,10 +107,14 @@
                     href="/blog/others/resume.html"
                     :underline="false"
                   >weigao chen</el-link>
+                  
                   updated at
                   {{post.lastUpdated}}
 
                 </div>
+                <!-- <div>
+                    <AuthorInfo :author="author"></AuthorInfo>
+                </div> -->
               </el-collapse-item>
 
             </el-collapse>
@@ -160,7 +164,7 @@ import SearchBox from "@SearchBox";
 import Comments from "./Comments.vue";
 import Mybadge from "./Mybadge.vue";
 import Titles from "./Titles.vue";
-
+import AuthorInfo from './AuthorInfo.vue';
 export default {
   components: { SearchBox },
   data: function () {
@@ -174,7 +178,8 @@ export default {
       page_count: 1,
       page_size_all: 20,
       page_count_all: 1,
-      activeNames: ['1']
+      activeNames: ['1'],
+      author: "Weigao Chen"
     };
   },
   beforeMount() {

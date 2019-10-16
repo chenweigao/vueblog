@@ -4,7 +4,10 @@
     :class="type"
     :style="randomRgb()"
   >
-    <a :href=" '/tags/?category=' + title" style="color:white">{{title.toUpperCase()}}</a>
+    <a
+      :href=" '/tags/?category=' + title"
+      style="color:white"
+    >{{title.toUpperCase()}}</a>
   </div>
 </template>
 <script>
