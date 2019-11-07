@@ -8490,6 +8490,16 @@ vuepress-plugin-container@^2.0.2:
   dependencies:
     markdown-it-container "^2.0.0"
 
+vuepress-plugin-cursor-effects@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npm.taobao.org/vuepress-plugin-cursor-effects/download/vuepress-plugin-cursor-effects-0.0.3.tgz#9459ca2bfc96922502de8675b3e15cbda3863e47"
+  integrity sha1-lFnKK/yWkiUC3oZ1s+FcvaOGPkc=
+
+vuepress-plugin-go-top@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npm.taobao.org/vuepress-plugin-go-top/download/vuepress-plugin-go-top-0.0.1.tgz#c2c45557b2c0b4dc602459b962e55a3ccfa67a5b"
+  integrity sha1-wsRVV7LAtNxgJFm5YuVaPM+mels=
+
 vuepress-plugin-mathjax@^1.2.8:
   version "1.2.8"
   resolved "https://registry.npm.taobao.org/vuepress-plugin-mathjax/download/vuepress-plugin-mathjax-1.2.8.tgz#decec38e9dbb82de9cf79f042463fa4a56e25340"
@@ -8510,6 +8520,11 @@ vuepress-plugin-reading-time@^0.1.1:
   integrity sha1-PqPc3tQkoAwdUXWlCvjVaUiZ8eo=
   dependencies:
     reading-time "1.1.3"
+
+vuepress-plugin-ribbon@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.npm.taobao.org/vuepress-plugin-ribbon/download/vuepress-plugin-ribbon-0.0.6.tgz#159c5d2b38bcb7022ddeb8272294616836dba3bb"
+  integrity sha1-FZxdKzi8twIt3rgnIpRhaDbbo7s=
 
 vuepress-plugin-smooth-scroll@^0.0.3:
   version "0.0.3"
