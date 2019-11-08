@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Titles :title="value?value:'All'"></Titles>
+    <Titles :title="value?value:'Tags'"></Titles>
     <el-container>
       <el-header style="height:none;">
         <!-- <el-badge

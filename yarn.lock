@@ -8495,6 +8495,11 @@ vuepress-mergeable@^1.0.2:
   dependencies:
     deconstruct-merge "^1.1.0"
 
+vuepress-plugin-code-copy@^1.0.4-alpha:
+  version "1.0.4-alpha"
+  resolved "https://registry.npm.taobao.org/vuepress-plugin-code-copy/download/vuepress-plugin-code-copy-1.0.4-alpha.tgz#93fd02c8d47dde53e63fde112f6391420347835f"
+  integrity sha1-k/0CyNR93lPmP94RL2ORQgNHg18=
+
 vuepress-plugin-container@^2.0.2:
   version "2.0.2"
   resolved "https://registry.npm.taobao.org/vuepress-plugin-container/download/vuepress-plugin-container-2.0.2.tgz#3489cc732c7a210b31f202556e1346125dffeb73"

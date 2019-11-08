@@ -87,7 +87,7 @@ module.exports = {
         "mobileShow": false,
         "position": "left"
       }
-    ]
+    ],
     // [
     //   'vuepress-plugin-element-tabs'
     // ]
@@ -106,20 +106,20 @@ module.exports = {
       link: '/tags/'
     },
     {
-      text: 'Discuss',
-      link: '/discuss/'
+      text: 'Recent&All',
+      link: '/all/'
     },
-    {
-      text: 'About',
-      link: '/blog/others/resume.html'
-    },
-
+   
     {
       text: 'More',
       items: [
         {
           text: 'Jottings',
           link: '/Jottings.html'
+        },
+        {
+          text: 'About',
+          link: '/blog/others/resume.html'
         },
         {
           text: 'Git',

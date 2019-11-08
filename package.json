@@ -38,6 +38,7 @@
     "yarn": "^1.19.1"
   },
   "dependencies": {
-    "set-value": "^3.0.1"
+    "set-value": "^3.0.1",
+    "vuepress-plugin-code-copy": "^1.0.4-alpha"
   }
 }
