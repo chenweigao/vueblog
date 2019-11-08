@@ -1,4 +1,4 @@
-// $accentColor = blue
+$accentColor = black
 // $accentColor = #2b2b2b
 // $textColor = #2c3e50
 // $textColor = #2b2b2b
@@ -133,9 +133,9 @@ $readingProgressImage = linear-gradient(-120deg, #E50743 0%, #F9870F 15%, #E8ED3
 //         margin-top: 200px;}
 // }
 
-// $codeBgColor = #F6F8FA
-// $codeBgColor = #F8F8F8
-// $codeBgColor =#acc7f20a
+$codeBgColor = #F6F8FA
+$codeBgColor = #F8F8F8
+$codeBgColor =#acc7f20a
 
 
 // $theme-color = #00c4b6
@@ -179,21 +179,21 @@ $readingProgressImage = linear-gradient(-120deg, #E50743 0%, #F9870F 15%, #E8ED3
 // $blockquote-color = #6a737d
 // $blockquote-padding-color = #dfe2e5
 
-// $highlight-background = #F6F8FA
-// // $highlight-background = white
-// $highlight-current-line = #00346e
-// $highlight-selection = #80CBC440
-// $highlight-foreground = #696969
-// $highlight-comment = #A9A9A9
-// $highlight-red = #E53935
-// $highlight-orange = #F76D47
-// $highlight-yellow = #FFB62C
-// $highlight-green = #91B859
-// $highlight-aqua = #39ADB5
-// $highlight-blue = #6182B8
-// $highlight-purple = #7C4DFF
-// $highlight-deletion = #fdd
-// $highlight-addition = #dfd
+$highlight-background = #F6F8FA
+// $highlight-background = white
+$highlight-current-line = #00346e
+$highlight-selection = #80CBC440
+$highlight-foreground = #696969
+$highlight-comment = #A9A9A9
+$highlight-red = #E53935
+$highlight-orange = #F76D47
+$highlight-yellow = #FFB62C
+$highlight-green = #91B859
+$highlight-aqua = #39ADB5
+$highlight-blue = #6182B8
+$highlight-purple = #7C4DFF
+$highlight-deletion = #fdd
+$highlight-addition = #dfd
 
 // transition()
 //   transition all .2s ease-in-out
@@ -273,84 +273,84 @@ h2{
 // //       background: $theme-text-selection-color
 // //       color: #fff
 
-// // code highlight
-// // -------------
+// code highlight
+// -------------
 
-// :not(pre) > code[class*="language-"],
-// pre[class*="language-"]
-//   background: $highlight-background
-//   color: black !important
+:not(pre) > code[class*="language-"],
+pre[class*="language-"]
+  background: $highlight-background
+  color: black !important
 
-// .content pre code,
-// .content pre[class*="language-"] code
-//   color $highlight-foreground
-//   font-family consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace, Helvetica Neue For Number
+.content pre code,
+.content pre[class*="language-"] code
+  color $highlight-foreground
+  font-family consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace, Helvetica Neue For Number
 
-// #app.content
-//   pre, pre[class*="language-"]
-//     color $highlight-foreground
-
-
-// .theme-default-content pre code, .theme-default-content pre[class*="language-"] code {
-//     color $highlight-foreground !important
-// }
-
-// .token.comment,
-// .token.block-comment,
-// .token.prolog,
-// .token.doctype,
-// .token.cdata
-//   color: $highlight-comment
-
-// .token.punctuation
-//   color: $highlight-foreground !important
+#app.content
+  pre, pre[class*="language-"]
+    color $highlight-foreground
 
 
-// .token.namespace,
-// .token.tag
-//   color $highlight-red
-// .token.attr-name
-//   color $highlight-purple
+.theme-default-content pre code, .theme-default-content pre[class*="language-"] code {
+    color $highlight-foreground !important
+}
 
-// .token.deleted
-//   color: #fdd
-// .token.inserted
-//   color: #dfd
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata
+  color: $highlight-comment
 
-
-// .token.function-name
-//   color: $highlight-blue
-
-// .token.string,
-// .token.number
-//   color: $highlight-green
-
-// .token.boolean,
-// .token.property,
-// .token.constant,
-// .token.symbol,
-// .token.regex,
-// .token.important.boolean
-//   color: $highlight-orange
-
-// .token.function,
-// .token.class-name
-//   color $highlight-yellow
-
-// .token.selector,
-// .token.important,
-// .token.atrule,
-// .token.keyword,
-// .token.builtin
-//   color: $highlight-aqua
+.token.punctuation
+  color: $highlight-foreground !important
 
 
-// .token.char,
-// .token.attr-value,
-// .token.variable
-//   color: $highlight-green !important
+.token.namespace,
+.token.tag
+  color $highlight-red
+.token.attr-name
+  color $highlight-purple
 
-// .token.operator,
-// .token.entity,
-// .token.url
-//   color: $highlight-aqua
+.token.deleted
+  color: #fdd
+.token.inserted
+  color: #dfd
+
+
+.token.function-name
+  color: $highlight-blue
+
+.token.string,
+.token.number
+  color: $highlight-green
+
+.token.boolean,
+.token.property,
+.token.constant,
+.token.symbol,
+.token.regex,
+.token.important.boolean
+  color: $highlight-orange
+
+.token.function,
+.token.class-name
+  color $highlight-yellow
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin
+  color: $highlight-aqua
+
+
+.token.char,
+.token.attr-value,
+.token.variable
+  color: $highlight-green !important
+
+.token.operator,
+.token.entity,
+.token.url
+  color: $highlight-aqua
