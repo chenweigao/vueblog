@@ -27,6 +27,7 @@
     "vuepress": "^1.2.0",
     "vuepress-plugin-cursor-effects": "^0.0.3",
     "vuepress-plugin-go-top": "^0.0.1",
+    "vuepress-plugin-live2d": "^0.0.7",
     "vuepress-plugin-mathjax": "^1.2.8",
     "vuepress-plugin-nest": "^1.0.1",
     "vuepress-plugin-reading-progress": "^1.0.7",

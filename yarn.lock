@@ -8512,6 +8512,11 @@ vuepress-plugin-go-top@^0.0.1:
   resolved "https://registry.npm.taobao.org/vuepress-plugin-go-top/download/vuepress-plugin-go-top-0.0.1.tgz#c2c45557b2c0b4dc602459b962e55a3ccfa67a5b"
   integrity sha1-wsRVV7LAtNxgJFm5YuVaPM+mels=
 
+vuepress-plugin-live2d@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.npm.taobao.org/vuepress-plugin-live2d/download/vuepress-plugin-live2d-0.0.7.tgz#e09d415c018c3fad871c03151d6e5124e7c56946"
+  integrity sha1-4J1BXAGMP62HHAMVHW5RJOfFaUY=
+
 vuepress-plugin-mathjax@^1.2.8:
   version "1.2.8"
   resolved "https://registry.npm.taobao.org/vuepress-plugin-mathjax/download/vuepress-plugin-mathjax-1.2.8.tgz#decec38e9dbb82de9cf79f042463fa4a56e25340"

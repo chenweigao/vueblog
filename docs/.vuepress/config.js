@@ -80,6 +80,14 @@ module.exports = {
     [
       'reading-progress'
     ],
+    [
+      "vuepress-plugin-live2d",
+      {
+        "modelName": ['hijiki', 'tororo', "z16", "Epsilon2.1", "izumi", "koharu", "shizuku", "miku"],
+        "mobileShow": false,
+        "position": "left"
+      }
+    ]
     // [
     //   'vuepress-plugin-element-tabs'
     // ]
