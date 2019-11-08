@@ -96,6 +96,7 @@ module.exports = {
   ],
   themeConfig: {
     sidebar: 'auto',
+    logo: 'weigao.jpg',
     nav: [{
       text: 'Home',
       link: '/'

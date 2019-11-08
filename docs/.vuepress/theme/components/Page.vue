@@ -3,12 +3,12 @@
     <slot name="top" />
 
     <Content class="theme-default-content" />
+    <PageEdit />
     <div style="padding:10px;">
 
     <AuthorInfo></AuthorInfo>
     </div>
 
-    <PageEdit />
 
     <PageNav v-bind="{ sidebarItems }" />
     <slot name="bottom" />
@@ -21,7 +21,7 @@ import PageNav from '@theme/components/PageNav.vue'
 import AuthorInfo from '@theme/components/AuthorInfo.vue'
 export default {
   components: { PageEdit, PageNav },
-  props: ['sidebarItems']
+  props: ['sidebarItems'],
 }
 </script>
 
