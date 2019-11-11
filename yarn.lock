@@ -1194,7 +1194,7 @@ acorn@^6.2.1:
   resolved "https://registry.npm.taobao.org/acorn/download/acorn-6.3.0.tgz?cache=0&sync_timestamp=1569334654641&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Facorn%2Fdownload%2Facorn-6.3.0.tgz#0087509119ffa4fc0a0041d1e93a417e68cb856e"
   integrity sha1-AIdQkRn/pPwKAEHR6TpBfmjLhW4=
 
-add-dom-event-listener@^1.0.2:
+add-dom-event-listener@^1.0.2, add-dom-event-listener@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/add-dom-event-listener/download/add-dom-event-listener-1.1.0.tgz#6a92db3a0dd0abc254e095c0f1dc14acbbaae310"
   integrity sha1-apLbOg3Qq8JU4JXA8dwUrLuq4xA=
@@ -2010,6 +2010,13 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000989, caniuse-lite@^1.0.30000999:
   version "1.0.30000999"
   resolved "https://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30000999.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcaniuse-lite%2Fdownload%2Fcaniuse-lite-1.0.30000999.tgz#427253a69ad7bea4aa8d8345687b8eec51ca0e43"
   integrity sha1-QnJTpprXvqSqjYNFaHuO7FHKDkM=
+
+canvas-nest.js@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.npm.taobao.org/canvas-nest.js/download/canvas-nest.js-2.0.4.tgz#e010075d5dbbf3cbfc1ef18942c266b1af873469"
+  integrity sha1-4BAHXV2788v8HvGJQsJmsa+HNGk=
+  dependencies:
+    size-sensor "^0.2.0"
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -7293,6 +7300,13 @@ set-value@^2.0.0, set-value@^2.0.1:
     is-plain-object "^2.0.3"
     split-string "^3.0.1"
 
+set-value@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.npm.taobao.org/set-value/download/set-value-3.0.1.tgz#52c82af7653ba69eb1db92e81f5cdb32739b9e95"
+  integrity sha1-Usgq92U7pp6x25LoH1zbMnObnpU=
+  dependencies:
+    is-plain-object "^2.0.4"
+
 setimmediate@^1.0.4:
   version "1.0.5"
   resolved "https://registry.npm.taobao.org/setimmediate/download/setimmediate-1.0.5.tgz#290cbb232e306942d7d7ea9b83732ab7856f8285"
@@ -7361,6 +7375,11 @@ simple-swizzle@^0.2.2:
   integrity sha1-pNprY1/8zMoz9w0Xy5JZLeleVXo=
   dependencies:
     is-arrayish "^0.3.1"
+
+size-sensor@^0.2.0:
+  version "0.2.5"
+  resolved "https://registry.npm.taobao.org/size-sensor/download/size-sensor-0.2.5.tgz#e8ffb7cc5258893472bfda4f5734d66583247757"
+  integrity sha1-6P+3zFJYiTRyv9pPVzTWZYMkd1c=
 
 slash@^1.0.0:
   version "1.0.0"
@@ -8476,12 +8495,32 @@ vuepress-mergeable@^1.0.2:
   dependencies:
     deconstruct-merge "^1.1.0"
 
+vuepress-plugin-code-copy@^1.0.4-alpha:
+  version "1.0.4-alpha"
+  resolved "https://registry.npm.taobao.org/vuepress-plugin-code-copy/download/vuepress-plugin-code-copy-1.0.4-alpha.tgz#93fd02c8d47dde53e63fde112f6391420347835f"
+  integrity sha1-k/0CyNR93lPmP94RL2ORQgNHg18=
+
 vuepress-plugin-container@^2.0.2:
   version "2.0.2"
   resolved "https://registry.npm.taobao.org/vuepress-plugin-container/download/vuepress-plugin-container-2.0.2.tgz#3489cc732c7a210b31f202556e1346125dffeb73"
   integrity sha1-NInMcyx6IQsx8gJVbhNGEl3/63M=
   dependencies:
     markdown-it-container "^2.0.0"
+
+vuepress-plugin-cursor-effects@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npm.taobao.org/vuepress-plugin-cursor-effects/download/vuepress-plugin-cursor-effects-0.0.3.tgz#9459ca2bfc96922502de8675b3e15cbda3863e47"
+  integrity sha1-lFnKK/yWkiUC3oZ1s+FcvaOGPkc=
+
+vuepress-plugin-go-top@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npm.taobao.org/vuepress-plugin-go-top/download/vuepress-plugin-go-top-0.0.1.tgz#c2c45557b2c0b4dc602459b962e55a3ccfa67a5b"
+  integrity sha1-wsRVV7LAtNxgJFm5YuVaPM+mels=
+
+vuepress-plugin-live2d@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.npm.taobao.org/vuepress-plugin-live2d/download/vuepress-plugin-live2d-0.0.7.tgz#e09d415c018c3fad871c03151d6e5124e7c56946"
+  integrity sha1-4J1BXAGMP62HHAMVHW5RJOfFaUY=
 
 vuepress-plugin-mathjax@^1.2.8:
   version "1.2.8"
@@ -8491,6 +8530,14 @@ vuepress-plugin-mathjax@^1.2.8:
     lru-cache "^5.1.1"
     mathjax3 "3.0.0-beta.3"
     vuepress-mergeable "^1.0.2"
+
+vuepress-plugin-nest@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/vuepress-plugin-nest/download/vuepress-plugin-nest-1.0.1.tgz#948402182b5137b15a3cbb3155c917e4e87fdb04"
+  integrity sha1-lIQCGCtRN7FaPLsxVckX5Oh/2wQ=
+  dependencies:
+    add-dom-event-listener "^1.1.0"
+    canvas-nest.js "^2.0.4"
 
 vuepress-plugin-reading-progress@^1.0.7:
   version "1.0.7"
@@ -8503,6 +8550,11 @@ vuepress-plugin-reading-time@^0.1.1:
   integrity sha1-PqPc3tQkoAwdUXWlCvjVaUiZ8eo=
   dependencies:
     reading-time "1.1.3"
+
+vuepress-plugin-ribbon@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.npm.taobao.org/vuepress-plugin-ribbon/download/vuepress-plugin-ribbon-0.0.6.tgz#159c5d2b38bcb7022ddeb8272294616836dba3bb"
+  integrity sha1-FZxdKzi8twIt3rgnIpRhaDbbo7s=
 
 vuepress-plugin-smooth-scroll@^0.0.3:
   version "0.0.3"

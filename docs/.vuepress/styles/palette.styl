@@ -1,14 +1,14 @@
-// $accentColor = blue
+$accentColor = black
 // $accentColor = #2b2b2b
 // $textColor = #2c3e50
-$textColor = #2b2b2b
+// $textColor = #2b2b2b
 // $borderColor = #afdfe4
 // $borderColor = #545454
 // $codeBgColor = #1b315e
 // $codeBgColor = 	#2585a6
 // $codeBgColor = 	#2570a1
 // $codeBgColor = 	#2b2b2b
-$nprogressColor = #00c4b6
+// $nprogressColor = #00c4b6
 // $arrowBgColor = #00c4b6
 // $codeBgColor = 	#545454
 // $arrowBgColor = red
@@ -28,14 +28,54 @@ $readingProgressImage = linear-gradient(-120deg, #E50743 0%, #F9870F 15%, #E8ED3
 // a {
 //   color: $textColor !important
 // }
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+  width: 8px;
+  height: 8px;
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  border-radius: 10px;
+  /* 线性渐变 */
+  background-image: -webkit-gradient(linear, 
+  left bottom, left top,
+   color-stop(0.44, rgb(60,186,146)), 
+   color-stop(0.72, rgb(253,187,45)), 
+   color-stop(0.86, rgb(253,187,45)));
+  transition: 0.3s ease-in-out;
+}
+/*定义滑块悬浮样式*/
+::-webkit-scrollbar-thumb:hover{
+  background-image: -webkit-gradient(linear, 
+  left bottom, left top, 
+  color-stop(0.44, rgb(253,187,45)), 
+  olor-stop(0.72, rgb(253,187,45)), 
+  color-stop(0.86, rgb(60,186,146)));
+  transition: 0.3s ease-in-out;
+}
 
 .navbar {
     opacity: 0.8;
 }
 
-.titles {
-    font-weight: 600;
-}
+// .titles {
+//     font-weight: 600;
+// }
 
 .description {
     /* visibility: hidden; */
@@ -44,13 +84,13 @@ $readingProgressImage = linear-gradient(-120deg, #E50743 0%, #F9870F 15%, #E8ED3
 .hero {
   display: none;
 }
-.sidebar {     
-  -ms-overflow-style:none; 
-  overflow:-moz-scrollbars-none; 
-}
-.sidebar::-webkit-scrollbar{
-    width:0px;
-}
+// .sidebar {     
+//   -ms-overflow-style:none; 
+//   overflow:-moz-scrollbars-none; 
+// }
+// .sidebar::-webkit-scrollbar{
+//     width:0px;
+// }
 // html{     
 //   -ms-overflow-style:none; 
 //     overflow:-moz-scrollbars-none; }
@@ -93,51 +133,51 @@ $readingProgressImage = linear-gradient(-120deg, #E50743 0%, #F9870F 15%, #E8ED3
 //         margin-top: 200px;}
 // }
 
-// $codeBgColor = #F6F8FA
-// $codeBgColor = #F8F8F8
+$codeBgColor = #F6F8FA
+$codeBgColor = #F8F8F8
 $codeBgColor =#acc7f20a
 
 
-$theme-color = #00c4b6
-$theme-paginator-color = #00c4b6
-$theme-button-hover-color = #FF7242
-$theme-text-selection-color = #00c4b6
-$theme-meta-color = #858585
-$theme-link-color = #2b2b2b
-$theme-hr-color = #A4D8FA
-$pale-blue = $theme-hr-color
-$light-blue = $theme-color
-$blue = #1B9EF3
-$dark-blue = #0790E8
-$orange = #F1BE48
-$pale-green = #B4E1C1
-$light-green = #69C282
-$green = #44B363
-$dark-green = #379F54
-$pale-cyan = #D1F4F2
-$light-cyan = #8CE4DE
-$cyan = $theme-paginator-color
-$pale-red = #F9b9b3
-$light-red = #F47466
-$red = #F15140
-$dark-red = #E63E2C
-$ruby = $theme-button-hover-color
-$light-black = #3B3A3A
-$black = #2E2E2E
-$dark-black = #000000
-$pale-grey = #F7F7F7
-$light-grey = #EEEEEE
-$grey = $theme-meta-color
-$white = #FFFFFF
-$dark-white = #F9F9F9
-$font-black = #4C4948
-$selection = $theme-text-selection-color
-$font-color = #1F2D3D
-// code highlight
-$code-foreground = $font-color
-$code-background = rgba(27, 31, 35, 0.05)
-$blockquote-color = #6a737d
-$blockquote-padding-color = #dfe2e5
+// $theme-color = #00c4b6
+// $theme-paginator-color = #00c4b6
+// $theme-button-hover-color = #FF7242
+// $theme-text-selection-color = #00c4b6
+// $theme-meta-color = #858585
+// $theme-link-color = #2b2b2b
+// $theme-hr-color = #A4D8FA
+// $pale-blue = $theme-hr-color
+// $light-blue = $theme-color
+// $blue = #1B9EF3
+// $dark-blue = #0790E8
+// $orange = #F1BE48
+// $pale-green = #B4E1C1
+// $light-green = #69C282
+// $green = #44B363
+// $dark-green = #379F54
+// $pale-cyan = #D1F4F2
+// $light-cyan = #8CE4DE
+// $cyan = $theme-paginator-color
+// $pale-red = #F9b9b3
+// $light-red = #F47466
+// $red = #F15140
+// $dark-red = #E63E2C
+// $ruby = $theme-button-hover-color
+// $light-black = #3B3A3A
+// $black = #2E2E2E
+// $dark-black = #000000
+// $pale-grey = #F7F7F7
+// $light-grey = #EEEEEE
+// $grey = $theme-meta-color
+// $white = #FFFFFF
+// $dark-white = #F9F9F9
+// $font-black = #4C4948
+// $selection = $theme-text-selection-color
+// $font-color = #1F2D3D
+// // code highlight
+// $code-foreground = $font-color
+// $code-background = rgba(27, 31, 35, 0.05)
+// $blockquote-color = #6a737d
+// $blockquote-padding-color = #dfe2e5
 
 $highlight-background = #F6F8FA
 // $highlight-background = white
@@ -155,65 +195,83 @@ $highlight-purple = #7C4DFF
 $highlight-deletion = #fdd
 $highlight-addition = #dfd
 
-transition()
-  transition all .2s ease-in-out
+// transition()
+//   transition all .2s ease-in-out
 
-// styles
-// -------------
+// // styles
+// // -------------
 
-.home .hero .action-button
-  background $theme-color
-  border-bottom $theme-color
-  text-decoration none
-  transition()
-  &:hover
-    background $theme-button-hover-color
-a
-  color $theme-link-color
-  &:hover
-    color $theme-color
+// .home .hero .action-button
+//   background $theme-color
+//   border-bottom $theme-color
+//   text-decoration none
+//   transition()
+//   &:hover
+//     background $theme-button-hover-color
+// a
+//   color $theme-link-color
+//   &:hover
+//     color $theme-color
 
-*::selection
-  background $theme-text-selection-color
-  color: #f7f7f7
+// *::selection
+//   background $theme-text-selection-color
+//   color: #f7f7f7
 
-// nav-bar theme
-// -------------
-.navbar
-  box-shadow 0 5px 6px -5px rgba(133,133,133,.2)
-  border-bottom 0
-  background rgba(255,255,255,.8)
-  .links
-    background transparent
+// // nav-bar theme
+// // -------------
+// .navbar
+//   box-shadow 0 5px 6px -5px rgba(133,133,133,.2)
+//   border-bottom 0
+//   background rgba(255,255,255,.8)
+//   .links
+//     background transparent
 
-h2
-  border-bottom: 1px solid $theme-color
+h2{
+  background-image: -webkit-linear-gradient(left,
+   #22c1c3, #fdbb2d 25%, #22c1c3 50%, #fdbb2d 75%, #22c1c3);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-background-size: 200% 100%;
+  -webkit-animation: myGradientChange 4s infinite linear;
+  animation: myGradientChange 4s infinite linear;
+}
+.description,.card h2{
+  background-image: -webkit-linear-gradient(left,
+   #fdbb2d, #22c1c3 25%, #fdbb2d 50%, #22c1c3 75%, #fdbb2d);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-background-size: 200% 100%;
+  -webkit-animation: myGradientChange 4s infinite linear;
+  animation: myGradientChange 4s infinite linear;
+}
+@keyframes myGradientChange  {
+  0%{ background-position: 0 0;}
+  100% { background-position: -100% 0;}
+}
 
-h3 
-  font-style: italic
-  font-weight: normal
-// sidebar theme
-// -------------
-// .sidebar
-//   background $highlight-background
-//   border-right 0
-//   box-shadow -0.25rem 0 0.25rem rgba(232,237,250,.6) inset
 
-a.sidebar-link
-  // &:hover
-  //   color $theme-text-selection-color
-  &.active
-    border-left-color $theme-text-selection-color
-    color $theme-text-selection-color
+// // sidebar theme
+// // -------------
+// // .sidebar
+// //   background $highlight-background
+// //   border-right 0
+// //   box-shadow -0.25rem 0 0.25rem rgba(232,237,250,.6) inset
 
-// .sidebar-sub-headers
-//   a.sidebar-link
-//     transition()
-//     &.active
-//       border-right 3px solid #009d92
-//       border-right-color: #009d92
-//       background: $theme-text-selection-color
-//       color: #fff
+// a.sidebar-link
+//   // &:hover
+//   //   color $theme-text-selection-color
+//   &.active
+//     border-left-color $theme-text-selection-color
+//     color $theme-text-selection-color
+
+// // .sidebar-sub-headers
+// //   a.sidebar-link
+// //     transition()
+// //     &.active
+// //       border-right 3px solid #009d92
+// //       border-right-color: #009d92
+// //       background: $theme-text-selection-color
+// //       color: #fff
 
 // code highlight
 // -------------

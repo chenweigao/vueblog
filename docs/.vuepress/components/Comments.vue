@@ -82,5 +82,6 @@ export default {
 .h1title {
   text-align: center;
 }
+
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
 </style>

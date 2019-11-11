@@ -1,5 +1,9 @@
 # HTTP and HTTP/2
 
+> HTTP/2，简称h2，是万维网（World Wide Web）所使用的HTTP 网络协议的一个重大修订版本，其目的是提升加载 Web 内容时的感知性能。
+
+<!-- more -->
+
 ## HTTP/2
 
 HTTP/1.1 于 1998 年年底发布，HTTP/2 于 2015 年发布。

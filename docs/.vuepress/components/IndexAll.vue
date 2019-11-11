@@ -73,7 +73,7 @@
             </router-link>
             <el-divider></el-divider>
 
-            <el-collapse v-model="activeNames">
+            <el-collapse>
               <el-collapse-item
                 :title="'Content of ' + post.title"
                 :name="post.key"

@@ -41,7 +41,7 @@ module.exports = {
     }]
   ],
   plugins: [
-    ['@vuepress/back-to-top', true],
+    // ['@vuepress/back-to-top', true],
     ['@vuepress/pwa', {
       serviceWorker: true,
       updatePopup: true
@@ -61,6 +61,17 @@ module.exports = {
       showError: true
     }],
     // [
+    //   "ribbon",
+    //   {
+    //     size: 90, // 彩带的宽度，默认为 90
+    //     opacity: 0.8, // 彩带的不透明度，默认为 0.3
+    //     zIndex: -1// 彩带的 z-index 属性，默认值为 -1
+    //   }
+    // ],
+    ["cursor-effects"],
+    ['go-top'],
+    ['nest'],
+    // [
     //   'social-share'
     // ],
     // [
@@ -68,6 +79,15 @@ module.exports = {
     // ],
     [
       'reading-progress'
+    ],
+    [
+      "vuepress-plugin-live2d",
+      {
+        "modelName": "tororo",
+        // "modelName": ['hijiki', 'tororo', "z16", "Epsilon2.1", "izumi", "koharu", "shizuku", "miku"],
+        "mobileShow": false,
+        "position": "left"
+      }
     ],
     // [
     //   'vuepress-plugin-element-tabs'
@@ -77,6 +97,7 @@ module.exports = {
   ],
   themeConfig: {
     sidebar: 'auto',
+    logo: 'weigao.jpg',
     nav: [{
       text: 'Home',
       link: '/'
@@ -86,20 +107,20 @@ module.exports = {
       link: '/tags/'
     },
     {
-      text: 'Discuss',
-      link: '/discuss/'
+      text: 'Recent&All',
+      link: '/all/'
     },
-    {
-      text: 'About',
-      link: '/blog/others/resume.html'
-    },
-
+   
     {
       text: 'More',
       items: [
         {
           text: 'Jottings',
           link: '/Jottings.html'
+        },
+        {
+          text: 'About',
+          link: '/blog/others/resume.html'
         },
         {
           text: 'Git',
