@@ -29,7 +29,7 @@
       />
     </Sidebar>
 
-    <Home v-if="$page.frontmatter.home" style="max-width: 80%"/>
+    <Home v-if="$page.frontmatter.home" />
 
     <Page
       v-else

@@ -5,7 +5,7 @@
             <Titles title="Home"></Titles>
         </el-header>
         <el-container>
-            <el-aside>
+            <el-aside class="themeaside">
                 <div
                     class="block"
                     style="margin-top: 20px;"
@@ -26,14 +26,14 @@
                         style="width:25%;textAlign:'center'"
                         :to="'/tags/?category=' + c"
                     >
-                        <!-- <el-link
+                        <el-link
                             type="info"
                             :href="'/tags/?category=' + c"
                             :underline="false"
-                        > {{c}}</el-link> -->
-                        <a :href="'/tags/?category=' + c">
+                        > {{c}}</el-link>
+                        <!-- <a :href="'/tags/?category=' + c">
                             {{c}}
-                        </a>
+                        </a> -->
                     </a-card-grid>
 
                 </a-card>
@@ -162,6 +162,12 @@ a {
 }
 .myexcerpt.h1 {
   display: none;
+}
+@media screen and (max-width: 768px)
+{
+    .themeaside {
+        display: none;
+    }
 }
 </style>
 
