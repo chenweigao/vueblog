@@ -26,14 +26,15 @@
                         style="width:25%;textAlign:'center'"
                         :to="'/tags/?category=' + c"
                     >
-                        <el-link
+                        <!-- <el-link
                             type="info"
                             :href="'/tags/?category=' + c"
                             :underline="false"
-                        > {{c}}</el-link>
+                        > {{c}}</el-link> -->
                         <!-- <a :href="'/tags/?category=' + c">
                             {{c}}
                         </a> -->
+                        <router-link :to="'/tags/?category=' + c">{{c}}</router-link>
                     </a-card-grid>
 
                 </a-card>
