@@ -83,7 +83,8 @@ module.exports = {
     [
       "vuepress-plugin-live2d",
       {
-        "modelName": ['hijiki', 'tororo', "z16", "Epsilon2.1", "izumi", "koharu", "shizuku", "miku"],
+        "modelName": "tororo",
+        // "modelName": ['hijiki', 'tororo', "z16", "Epsilon2.1", "izumi", "koharu", "shizuku", "miku"],
         "mobileShow": false,
         "position": "left"
       }
