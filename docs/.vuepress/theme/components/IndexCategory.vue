@@ -27,8 +27,8 @@
         </el-badge>
       </el-header>
 
-      <el-main >
-        <el-card shadow="hover" v-if="value">
+      <el-main class="myelmain">
+        <el-card shadow="hover" v-if="value" class="myelmain">
           <el-divider></el-divider>
           <div
             v-for="post in arr[value].slice((page_count-1)*page_size,page_count*page_size)"
@@ -97,7 +97,8 @@
 
 <script>
 import SearchBox from "@SearchBox";
-import Mybadge from "./Mybadge.vue";
+// import Comments from "./Comments.vue";
+// import Mybadge from "./Mybadge.vue";
 export default {
   components: { SearchBox },
   data: function() {
@@ -319,7 +320,9 @@ body > .el-container {
 .center::after {
   transform-origin: center;
 }
-
-
+.myelmain {
+  max-width: 30%;
+  
+}
 @import "https:////at.alicdn.com/t/font_1014632_8btj1lgimlo.css";
 </style>

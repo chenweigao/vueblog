@@ -4,10 +4,9 @@
     :class="type"
     :style="randomRgb()"
   >
-    <a
-      :href=" '/tags/?category=' + title"
-      style="color:white"
-    >{{title.toUpperCase()}}</a>
+
+    <router-link :to="'/tags/?category=' + title">{{title.toUpperCase()}}</router-link>
+
   </div>
 </template>
 <script>

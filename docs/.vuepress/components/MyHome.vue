@@ -1,11 +1,11 @@
-<template>
+<template >
     <el-container>
         <el-header>
 
             <Titles title="Home"></Titles>
         </el-header>
-        <el-container>
-            <el-aside class="themeaside">
+        <el-container >
+            <el-aside class="themeaside" width="25%">
                 <div
                     class="block"
                     style="margin-top: 20px;"
@@ -16,10 +16,11 @@
                 <AuthorInfo></AuthorInfo>
 
             </el-aside>
-            <el-main>
+            <el-main  direction='vertical'>
                 <a-card
                     title="All Tags"
                     style="margin-bottom: 20px;"
+                    class="themeaside"
                 >
                     <a-card-grid
                         v-for="c in categories"
@@ -170,5 +171,6 @@ a {
         display: none;
     }
 }
+
 </style>
 
