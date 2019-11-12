@@ -6,7 +6,7 @@
     <PageEdit />
     <div style="padding:10px;">
 
-    <AuthorInfo></AuthorInfo>
+    <!-- <AuthorInfo></AuthorInfo> -->
     </div>
 
 

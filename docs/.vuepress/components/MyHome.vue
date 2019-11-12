@@ -70,12 +70,12 @@
                         </a>
                     </el-col>
                     <el-col :span="6">
-                        <a href="tags/">
+                        <router-link to="tags/">
                             <el-button
                                 icon="el-icon-more"
                                 round
                             > </el-button>
-                        </a>
+                        </router-link>
                     </el-col>
                 </el-row>
 
@@ -87,9 +87,9 @@
                         <el-card shadow="hover">
                             <div slot="header">
                                 <Mybadge :title="p.path.split('/')[2]"></Mybadge>
-                                <a :href="p.path">
+                                <router-link :to="p.path">
                                     {{p.title}}
-                                    </a>
+                                </router-link>
                                 
 
                             </div>
