@@ -28,8 +28,7 @@
 
                     </div>
 
-                    <div v-html="post.excerpt">
-                        {{post.excerpt}}
+                    <div v-html="delh1(post.excerpt)">
                     </div>
                     <Mybadge
                         v-for="tag in post.frontmatter.tags"
@@ -81,6 +80,14 @@ export default {
         parseHtml: function (txt) {
             var parser = new DOMParser()
             return parser.parseFromString(txt, "text/html")
+        },
+
+        delh1(string) {
+            if (string) {
+                var end = string.indexOf('</h1>') + 5
+                // console.log(start, end, string.substr(end));
+                return string.substr(end)
+            }
         }
     },
     filters: {
