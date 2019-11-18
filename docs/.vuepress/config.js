@@ -107,6 +107,10 @@ module.exports = {
       link: '/tags/'
     },
     {
+      text: 'Minds',
+      link: '/mind.html'
+    },
+    {
       text: 'Recent&All',
       link: '/all/'
     },

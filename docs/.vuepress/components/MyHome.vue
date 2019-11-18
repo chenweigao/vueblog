@@ -14,7 +14,38 @@
                     <el-image src="/xidian.png"></el-image>
                 </div>
                 <AuthorInfo></AuthorInfo>
+                {{recent_mind}}
+            <el-row v-for="p in recent_mind">
+                    <el-col
+                        :span="24"
+                        style="margin-bottom: 10px;"
+                    >
+                        <el-card shadow="hover">
+                            <div slot="header">
+                                <Mybadge :title="p.path.split('/')[2]"></Mybadge>
+                                <router-link :to="p.path">
+                                    {{p.title}}
+                                </router-link>
+                                
 
+                            </div>
+                            <div>
+                                <div
+                                    v-html="delh1(p.excerpt)"
+                                    class="myexcerpt"
+                                >
+
+                                </div>
+                                <el-link
+                                    :underline="false"
+                                    :href="p.path"
+                                    style="float:right;"
+                                > <i class="el-icon-view el-icon--right"></i> ..</el-link>
+                                <br/>
+                            </div>
+                        </el-card>
+                    </el-col>
+                </el-row>
             </el-aside>
             <el-main  direction='vertical'>
                 <a-card
@@ -125,7 +156,8 @@ export default {
             title: "About",
             src: 'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg',
             categories: [],
-            recent_posts: []
+            recent_posts: [],
+            recent_mind: []
         };
     },
     methods: {
@@ -154,6 +186,15 @@ export default {
             )
             .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated))
             .slice(0, 3);
+        this.rencent_mind = this.$site.pages
+            .filter(
+                x =>
+                    (x.path.startsWith("/blog/") || x.path.startsWith("/algorithm/")) &&
+                    !x.frontmatter.blogindex
+            )
+            .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated))
+            .slice(0, 3);
+            
     }
 };
 </script>

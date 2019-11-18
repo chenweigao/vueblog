@@ -2,5 +2,4 @@
 home: true
 sidebar: false
 ---
-
-<Jottings/>
+<Mind/>
