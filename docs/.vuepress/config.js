@@ -93,18 +93,30 @@ module.exports = {
     //   'vuepress-plugin-element-tabs'
     // ]
     // ['git-log'],
-    [
-      '@vssue/vuepress-plugin-vssue',
-      {
-        platform: 'github',
+    // [
+    //   '@vssue/vuepress-plugin-vssue',
+    //   {
+    //     platform: 'gitlab',
 
-        // 其他的 Vssue 配置
-        owner: 'chenweigao',
-        repo: 'vueblog',
-        clientId: '1717de9f7deb4116c97b',
-        clientSecret: 'b6f4c57885156a9de3adcafa324ad64e2c28cf59',
-      }
-    ]
+    //     // 其他的 Vssue 配置
+    //     owner: 'chenweigao',
+    //     repo: 'vueblog',
+    //     clientId: 'fbd6a6171cae801196a4cc4b7438f32a569e2c7ebb943667642163becd72ed3b',
+    //     clientSecret: '5894de5187e1d37b2266b52da80a678ff0bcbe621a8e38a6fb6ab53b43c058ba',
+    //   }
+    // ],
+    // [
+    //   'vuepress-plugin-comment',
+    //   {
+    //     choosen: 'valine', 
+    //     // options选项中的所有参数，会传给Valine的配置
+    //     options: {
+    //       el: '#valine-vuepress-comment',
+    //       appId: 'wJrq8Ck2MqeaFzOYUf0TcP6G-gzGzoHsz',
+    //       appKey: 'taRHm1fEce4nGp2lmNgkiW9U'
+    //     }
+    //   }
+    // ]
 
   ],
   themeConfig: {

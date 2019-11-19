@@ -5,7 +5,7 @@
     <Content class="theme-default-content" />
     <PageEdit />
     <div style="padding:100px;">
-    <Vssue title="Vssue Demo" />
+    <!-- <Vssue title="Vssue Demo" /> -->
 
     <!-- <AuthorInfo></AuthorInfo> -->
     </div>
