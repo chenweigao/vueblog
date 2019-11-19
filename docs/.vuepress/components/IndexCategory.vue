@@ -27,7 +27,7 @@
         </el-badge>
       </el-header>
 
-      <el-main >
+      <el-main style="text-align:center">
         <el-card shadow="hover" v-if="value">
           <el-divider></el-divider>
           <div
@@ -36,15 +36,23 @@
             class="animated fadeInUp text"
           >
             <time class="time">
-              <a :style="randomRgb()">{{ post.readingTime.text }},</a>
-              {{ post.lastUpdated | dateFormat }}
+
+              <Mybadge :title="post.path.split('/')[2]"></Mybadge>
+
             </time>
+            <div style="float:right">
+
+              <a :style="randomRgb()" >{{ post.readingTime.text }}</a>,
+              {{ post.lastUpdated | dateFormat }}
+
+            <!-- <el-link type="info" :href="post.path">{{post.key}}</el-link> -->
+            </div>
+
             <!-- <Mybadge :title="post.regularPath | badgeFormat"></Mybadge> -->
             <router-link :to="post.path" class="super-link center">
               <a :style="randomRgb()">###</a>
               {{ post.title }}
             </router-link>
-            <el-link type="info" :href="post.path">{{post.key}}</el-link>
             <el-divider></el-divider>
           </div>
           <el-pagination
@@ -65,15 +73,23 @@
             :key="post.key"
             class="animated fadeInUp text"
           >
-            <time class="time">
-              <a :style="randomRgb()">{{ post.readingTime.text }},</a>
-              {{ post.lastUpdated | dateFormat }}
+           <time class="time">
+
+              <Mybadge :title="post.path.split('/')[2]"></Mybadge>
             </time>
+            <div style="float:right">
+
+              <a :style="randomRgb()" >{{ post.readingTime.text }}</a>,
+              {{ post.lastUpdated | dateFormat }}
+
+            <!-- <el-link type="info" :href="post.path">{{post.key}}</el-link> -->
+            </div>
+            
             <router-link :to="post.path" class="super-link center">
               <a :style="randomRgb()">###</a>
               {{ post.title }}
             </router-link>
-            <el-link type="info" :href="post.path">{{post.key}}</el-link>
+            <!-- <el-link type="info" :href="post.path">{{post.key}}</el-link> -->
             <el-divider></el-divider>
           </div>
 
@@ -223,7 +239,7 @@ export default {
         .padStart(2, "0");
       var n = dt.toTimeString().slice(0, 5);
       // return `${m}/${d}`
-      return `${m}/${d}/${y}`;
+      return `${y}/${m}/${d} ${hh}:${mm}:${ss}`;
     },
     badgeFormat: function(str) {
       return str.split("/")[2];
@@ -248,9 +264,11 @@ export default {
 .time {
   font-size: 14px;
   color: #999;
-  float: right;
+  float: left;
 }
+.read {
 
+}
 /* .text {
   font-size: 16px;
 } */

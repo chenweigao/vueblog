@@ -1,5 +1,5 @@
 <template>
-  <main class="home" aria-labelledby="main-title">
+  <main class="home" aria-labelledby="main-title" style="max-width:1400px;">
     <header class="hero">
       <img
         v-if="data.heroImage"

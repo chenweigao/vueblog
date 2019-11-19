@@ -54,7 +54,7 @@
             </a>
           </el-col>
           <el-col :span="6">
-            <a href="discuss/">
+            <a href="/discuss/">
               <el-button icon="iconfont icon-liuyan" round></el-button>
             </a>
           </el-col>

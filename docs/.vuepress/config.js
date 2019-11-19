@@ -92,7 +92,19 @@ module.exports = {
     // [
     //   'vuepress-plugin-element-tabs'
     // ]
-    // ['git-log']
+    // ['git-log'],
+    [
+      '@vssue/vuepress-plugin-vssue',
+      {
+        platform: 'github',
+
+        // 其他的 Vssue 配置
+        owner: 'chenweigao',
+        repo: 'vueblog',
+        clientId: '1717de9f7deb4116c97b',
+        clientSecret: 'b6f4c57885156a9de3adcafa324ad64e2c28cf59',
+      }
+    ]
 
   ],
   themeConfig: {
@@ -114,7 +126,7 @@ module.exports = {
       text: 'Recent&All',
       link: '/all/'
     },
-   
+
     {
       text: 'More',
       items: [

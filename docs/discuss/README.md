@@ -2,4 +2,4 @@
 sidebar: false
 ---
 
-<Comments/>
+<Vssue title="Vssue Demo" />
