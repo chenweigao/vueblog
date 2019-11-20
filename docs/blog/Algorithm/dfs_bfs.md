@@ -63,3 +63,4 @@ nums = [
 print(Solution().longestIncreasingPath(nums))
 ```
 
+solution
