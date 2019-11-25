@@ -127,7 +127,7 @@ export default {
           !x.frontmatter.blogindex
       )
       .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated))
-      .slice(0, 3);
+      .slice(0, 5);
     this.recent_mind = this.$site.pages
       .filter(x => x.path.startsWith("/minds/"))
       .sort((a, b) => Date.parse(b.lastUpdated) - Date.parse(a.lastUpdated))
