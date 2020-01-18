@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/github-markdown-css/2.2.1/github-markdown.css"/>
+
 # LaTeX
 
 本文主要总结 LaTeX 的安装配置和一些使用方法。
@@ -10,7 +13,7 @@
 
 - 西安电子科技大学毕业论文 LaTex 模板，[链接](https://gr.xidian.edu.cn/info/1047/5087.htm)
 
-- 下载 windows 客户端，[链接-ctex-tsinghua](https://mirrors.tuna.tsinghua.edu.cn/ctex/legacy/2.9/), 需要注意的是 ctex 不是很好用，在实验室老师的建议下，使用 texlive + vscode 的方式
+- 下载 windows 客户端，[链接-ctex-tsinghua](https://mirrors.tuna.tsinghua.edu.cn/ctex/legacy/2.9/), 在 windows 环境下强烈推荐这种方式。
 
 - 下载 TexLive 安装包，[TexLive 官方网站](http://tug.org/texlive/)
 
@@ -53,5 +56,18 @@ LaTex 有宏包的概念，引入方式为 `\usepackage{foo}`, 可以类比于 C
 本文为CSDN博主「Mikchy」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
 原文链接：[https://blog.csdn.net/Mikchy/article/details/94448707](https://blog.csdn.net/Mikchy/article/details/94448707)
 
-
 ## Hello World of Ctex
+
+暂时没有
+
+## LaTex Formual
+
+### 矩阵转置
+
+```tex
+\mathbf{h_1}^\mathrm{T} \mathbf{A}^\mathrm{-T} \mathbf{A}^\mathrm{-1} = 0
+```
+
+效果如下：
+
+$$\mathbf{h_1}^\mathrm{T} \mathbf{A}^\mathrm{-T} \mathbf{A}^\mathrm{-1} = 0$$

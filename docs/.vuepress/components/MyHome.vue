@@ -16,8 +16,9 @@
               My Mind
               </router-link>
           </div>
-          <div v-for="p in recent_mind" :key="p.key">
-              <router-link :to="p.path">
+          <div v-for="p in recent_mind" :key="p.key" style="margin-bottom: 20px;">
+              
+              ### <router-link :to="p.path">
               {{ p.title }}
               </router-link></div>
         </el-card>
