@@ -37,7 +37,7 @@
     "vuepress-plugin-ribbon": "^0.0.6",
     "vuepress-plugin-social-share": "^0.0.6",
     "xmlhttprequest": "^1.8.0",
-    "yarn": "^1.11.1"
+    "yarn": "^1.22.0"
   },
   "dependencies": {
     "@vssue/vuepress-plugin-vssue": "^1.2.1",
