@@ -15,7 +15,7 @@
     "add": "^2.0.6",
     "animate.css": "^3.7.2",
     "ant-design-vue": "^1.4.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.2",
     "element-ui": "^2.12.0",
     "leancloud-storage": "^3.15.0",
     "markdown-it-katex": "^2.0.3",
