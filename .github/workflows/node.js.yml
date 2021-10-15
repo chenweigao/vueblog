@@ -31,3 +31,7 @@ jobs:
         yarn install
         yarn run docs:build
         yarn upgrade --pattern "*" --latest
+    - name: Node Dependency
+      # You may pin to the exact commit or the version.
+      # uses: AlexRogalskiy/github-action-node-dependency@055bcf99d5ba9f779d34b0356f65fd5a210e2edb
+      uses: AlexRogalskiy/github-action-node-dependency@v2.0.1
