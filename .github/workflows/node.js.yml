@@ -30,4 +30,3 @@ jobs:
     - run: |
         yarn install
         yarn run docs:build
-        yarn upgrade --pattern "*" --latest
